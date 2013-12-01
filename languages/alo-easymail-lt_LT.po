@@ -1,0 +1,2693 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ALO EasyMail Newsletter v2.4.12\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2012-10-09 06:58:18+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Poedit-Language: \n"
+"X-Poedit-Country: \n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: \n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: alo-easymail.php:674
+#, php-format
+#@ alo-easymail
+msgid " <a href=\"%s\">View Newsletter</a>"
+msgstr " <a href=\"%s\">Peržiūrėti Naujienlaiškį</a>"
+
+#: alo-easymail.php:675
+#, php-format
+#@ alo-easymail
+msgid " <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
+msgstr " <a target=\"_blank\" href=\"%s\">Greitoji Naujienlaiškio Peržiūra</a>"
+
+#: alo-easymail_options.php:480
+#@ alo-easymail
+msgid " free choice for authors"
+msgstr " laisvas autorių pasirinkimas"
+
+#: alo-easymail_subscribers.php:676
+#, php-format
+#@ alo-easymail
+msgid "%d new subscribers successfully added from blog members"
+msgstr "%d nauji prenumeratoriai sėkmingai pridėti iš Jūsų tinklaraščio narių sąrašo"
+
+#: alo-easymail_functions.php:3527
+#: alo-easymail_functions.php:3535
+#: alo-easymail_subscribers.php:460
+#: alo-easymail_subscribers.php:588
+#, php-format
+#@ alo-easymail
+msgid "%s ago"
+msgstr "prieš %s"
+
+#: alo-easymail_custom-hooks-sample.php:37
+#@ alo-easymail
+msgid "A list with the latest published posts"
+msgstr "Naujausių publikuotų įrašų sąrašas"
+
+#: alo-easymail_subscribers.php:1002
+#@ alo-easymail
+msgid "A subscriber will be deleted if not activated in 5 days."
+msgstr "Prenumeratorius bus ištrintas, jeigu nepanaudos aktyvinimo nuorodos per 5 dienas."
+
+#: alo-easymail.php:1974
+#@ alo-easymail
+msgid "ALO Easymail Newsletter needs attention"
+msgstr "ALO Easymail Newsletter prašo atkreipti dėmesį"
+
+#: alo-easymail-widget.php:160
+#@ alo-easymail
+msgid "ALO Easymail Widget"
+msgstr "ALO Easymail Valdiklis"
+
+#: alo-easymail_options.php:1259
+#@ alo-easymail
+msgid "Action"
+msgstr "Veiksmas"
+
+#: alo-easymail_subscribers.php:1005
+#@ alo-easymail
+msgid "Actions"
+msgstr "Veiksmai"
+
+#: alo-easymail_subscribers.php:895
+#@ alo-easymail
+msgid "Activate"
+msgstr "Suaktyvinti"
+
+#: alo-easymail_subscribers.php:1002
+#@ alo-easymail
+msgid "Activated"
+msgstr "Suaktyvinta"
+
+#: alo-easymail_options.php:686
+#@ alo-easymail
+msgid "Activation e-mail"
+msgstr "Suaktyvinimo elektroninis laiškas"
+
+#: alo-easymail_subscribers.php:17
+#@ alo-easymail
+msgid "Activation state updated"
+msgstr "Aktyvavimo būsena atnaujinta"
+
+#: alo-easymail_subscribers.php:349
+#@ alo-easymail
+msgid "Add"
+msgstr "Pridėti"
+
+#: alo-easymail.php:619
+#: alo-easymail.php:1897
+#@ alo-easymail
+msgid "Add New"
+msgstr "Pridėti Naują"
+
+#: alo-easymail.php:620
+#: alo-easymail.php:1874
+#@ alo-easymail
+msgid "Add New Newsletter"
+msgstr "Pridėti Naują Naujienlaiškį"
+
+#: alo-easymail_subscribers.php:292
+#@ alo-easymail
+msgid "Add a subscriber"
+msgstr "Pridėti prenumeratorių"
+
+#: alo-easymail_subscribers.php:138
+#: alo-easymail_subscribers.php:388
+#@ alo-easymail
+msgid "Add to selected lists"
+msgstr "Pridėti į pasirinktus sąrašus"
+
+#: alo-easymail_subscribers.php:145
+#@ alo-easymail
+msgid "Add to selected lists and remove from not selected lists"
+msgstr "Pridėti į pasirinktus sąrašus ir ištrinti iš nepasirinktų sąrašų"
+
+#: alo-easymail_recipients-list.php:196
+#@ alo-easymail
+msgid "Add to sending queue"
+msgstr "Pridėti į siuntimo eilę"
+
+#: alo-easymail.php:1668
+#@ alo-easymail
+msgid "Added on"
+msgstr "Pridėta"
+
+#: alo-easymail.php:1406
+#: alo-easymail_functions.php:314
+#@ alo-easymail
+msgid "All registered users"
+msgstr "Visi registruoti vartotojai"
+
+#: alo-easymail.php:1438
+#: alo-easymail_functions.php:323
+#@ alo-easymail
+msgid "All subscribers"
+msgstr "Visi prenumeratoriai"
+
+#: alo-easymail-widget.php:154
+#@ alo-easymail
+msgid "Allow users to opt in/out of email"
+msgstr "Leisti vartotojams rinktis gauti ar negauti elektroninių laiškų"
+
+#: alo-easymail_options.php:439
+#@ alo-easymail
+msgid "Apply 'the_content' filters and shortcodes to newsletter content"
+msgstr "Pritaikyti 'the_content' filtrus ir trumpuosius kodus naujienlaiškių turiniui"
+
+#: alo-easymail_report.php:197
+#@ alo-easymail
+msgid "Are you sure?"
+msgstr "Ar Jūs tuo tikras?"
+
+#: alo-easymail_options.php:925
+#@ alo-easymail
+msgid "Ask your provider the cut-off of emails you can send per day. Multiplying the hourly limit by 24 is not the right way to calculate it: very often the resulting number is much higher than the actual cut-off."
+msgstr "Paprašykite savo tiekėjo apriboti per dieną galimų išsiųsti elektroninių laiškų kiekį. Dauginti per valandą leidžiamų išsiųsti laikų skaičių iš 24 nėra teisingas sprendimas: labai dažnai tikras skaičius yra didesnis negu esamas apribojimas."
+
+#: alo-easymail_options.php:1188
+#: alo-easymail_options.php:1256
+#@ alo-easymail
+msgid "Availability"
+msgstr "Prieinamumas"
+
+#: alo-easymail_subscribers.php:454
+#: alo-easymail_subscribers.php:462
+#: alo-easymail_subscribers.php:549
+#: alo-easymail_subscribers.php:630
+#: alo-easymail_subscribers.php:694
+#: alo-easymail_subscribers.php:710
+#: alo-easymail_subscribers.php:727
+#: alo-easymail_subscribers.php:736
+#@ alo-easymail
+msgid "Back"
+msgstr "Atgal"
+
+#: alo-easymail_options.php:248
+#: alo-easymail_options.php:827
+#@ alo-easymail
+msgid "Batch sending"
+msgstr "Paketinis siuntimas"
+
+#: alo-easymail_functions.php:1140
+#@ alo-easymail
+msgid "Before editing other fields you have to click the subscription choice"
+msgstr "Prieš redaguojant kitus laukelius, Jūs turite paspausti prenumeratos pasirinkimą"
+
+#: alo-easymail_subscribers.php:357
+#@ alo-easymail
+msgid "Blog registered users"
+msgstr "Tinklaraštyje užsiregistravę vartotojai"
+
+#: alo-easymail_functions.php:3593
+#: alo-easymail_options.php:1243
+#: alo-easymail_subscribers.php:154
+#: alo-easymail_subscribers.php:201
+#: alo-easymail_subscribers.php:289
+#: alo-easymail_subscribers.php:427
+#@ alo-easymail
+msgid "Cancel"
+msgstr "Atšaukti"
+
+#: alo-easymail_subscribers.php:174
+#: alo-easymail_subscribers.php:894
+#@ alo-easymail
+msgid "Change language ascribed to subscribers"
+msgstr "Pakeisti prenumeratoriams priskirtą kalbą"
+
+#: alo-easymail_subscribers.php:628
+#@ alo-easymail
+msgid "Check the Error column to modify records that otherwise will not be imported"
+msgstr "Patikrinkite klaidos stulpelį, norėdami modifikuoti įrašus, kurie kitaip nebus importuoti"
+
+#: alo-easymail.php:1395
+#@ alo-easymail
+msgid "Check this flag to delete the existing list and save new recipients now"
+msgstr "Pažymėkite šią gairelę norėdami ištrinti egzistuojantį sąrašą ir įtraukti naujus gavėjus"
+
+#: alo-easymail_subscribers.php:187
+#: alo-easymail_subscribers.php:775
+#@ alo-easymail
+msgid "Choose a language"
+msgstr "Pasirinkti kalbą"
+
+#: alo-easymail.php:1553
+#@ alo-easymail
+msgid "Choose a post"
+msgstr "Pasirinkite įrašą"
+
+#: alo-easymail_subscribers.php:136
+#@ alo-easymail
+msgid "Choose an action"
+msgstr "Pasirinkite veiksmą"
+
+#: alo-easymail_subscribers.php:125
+#@ alo-easymail
+msgid "Choose mailing lists"
+msgstr "Pasirinkite adresatų sąrašus"
+
+#: alo-easymail_report.php:161
+#: alo-easymail_report.php:265
+#@ alo-easymail
+msgid "Clicks"
+msgstr "Paspaudimai"
+
+#: alo-easymail_options.php:681
+#@ alo-easymail
+msgid "Communications"
+msgstr "Komunikacijos"
+
+#: alo-easymail.php:964
+#: alo-easymail_report.php:93
+#@ alo-easymail
+msgid "Completed"
+msgstr "Baigta"
+
+#: alo-easymail.php:1819
+#, php-format
+#@ alo-easymail
+msgid "Confirm your subscription to %BLOGNAME% Newsletter"
+msgstr "Patvirtinkite savo %BLOGNAME% Naujienlaiškio prenumeratą"
+
+#: alo-easymail.php:1019
+#: alo-easymail.php:2316
+#: alo-easymail_recipients-list.php:174
+#@ alo-easymail
+msgid "Create list of recipients"
+msgstr "Sukurti gavėjų sąrašą"
+
+#: alo-easymail.php:682
+#@ alo-easymail
+msgid "Custom field deleted."
+msgstr "Individualizuotas laukelis ištrintas."
+
+#: alo-easymail.php:681
+#@ alo-easymail
+msgid "Custom field updated."
+msgstr "Individualizuotas laukelis atnaujintas."
+
+#: alo-easymail_functions.php:1932
+#@ alo-easymail
+msgid "Date of the newsletter."
+msgstr "Naujienlaiškio data."
+
+#: alo-easymail_subscribers.php:896
+#@ alo-easymail
+msgid "Deactivate"
+msgstr "Deaktyvuoti"
+
+#: alo-easymail.php:1965
+#@ alo-easymail
+msgid "Debug mode is activated"
+msgstr "Derinimo būsena suaktyvinta"
+
+#: alo-easymail_options.php:530
+#@ alo-easymail
+msgid "Debug newsletters"
+msgstr "Derinimo naujienlaiškiai"
+
+#: alo-easymail_functions.php:2403
+#: alo-easymail_functions.php:2405
+#: alo-easymail_functions.php:2407
+#: alo-easymail_options.php:504
+#: alo-easymail_options.php:897
+#@ alo-easymail
+msgid "Default"
+msgstr "Numatyta"
+
+#: alo-easymail_options.php:369
+#: alo-easymail_options.php:371
+#: alo-easymail_options.php:372
+#@ alo-easymail
+msgid "Delete all plugin data on deactivation"
+msgstr "Deaktyvuojant ištrinti visus papildinio duomenis"
+
+#: alo-easymail_options.php:1298
+#: alo-easymail_options.php:1300
+#@ alo-easymail
+msgid "Delete list"
+msgstr "Ištrinti sąrašą"
+
+#: alo-easymail_functions.php:3603
+#: alo-easymail_functions.php:3604
+#@ alo-easymail
+msgid "Delete subscriber"
+msgstr "Ištrinti prenumeratorių"
+
+#: alo-easymail_report.php:144
+#: alo-easymail_report.php:193
+#@ alo-easymail
+msgid "Detailed report was archived"
+msgstr "Detalizuota ataskaita archyvuota"
+
+#: alo-easymail_options.php:331
+#@ alo-easymail
+msgid "Disable activation e-mail"
+msgstr "Išjungti suaktyvinimą elektroniniu paštu"
+
+#: alo-easymail_subscribers.php:805
+#@ alo-easymail
+msgid "Do not show it again"
+msgstr "Nerodyti to dar kartą"
+
+#: alo-easymail_subscribers.php:866
+#: alo-easymail_subscribers.php:869
+#@ alo-easymail
+msgid "Do you really want to DELETE these subscribers?"
+msgstr "Ar Jūs tikrai norite IŠTRINTI šiuos prenumeratorius?"
+
+#: alo-easymail_options.php:1299
+#@ alo-easymail
+msgid "Do you really want to DELETE this list?"
+msgstr "Ar tikrai norite IŠTRINTI šį sąrašą?"
+
+#: alo-easymail.php:1299
+#: alo-easymail.php:1300
+#@ alo-easymail
+msgid "Do you really want to DELETE this subscriber?"
+msgstr "Ar tikrai norite IŠTRINTI šį prenumeratorių?"
+
+#: alo-easymail-widget.php:116
+#: alo-easymail_report.php:260
+#: alo-easymail_subscribers.php:295
+#: alo-easymail_subscribers.php:551
+#: alo-easymail_subscribers.php:981
+#@ alo-easymail
+msgid "E-mail"
+msgstr "Elektroninio pašto adresas"
+
+#: alo-easymail.php:621
+#@ alo-easymail
+msgid "Edit Newsletter"
+msgstr "Redaguoti Naujienlaiškį"
+
+#: alo-easymail_options.php:1182
+#: alo-easymail_options.php:1295
+#: alo-easymail_options.php:1296
+#@ alo-easymail
+msgid "Edit list"
+msgstr "Redaguoti sąrašą"
+
+#: alo-easymail_subscribers.php:111
+#: alo-easymail_subscribers.php:893
+#@ alo-easymail
+msgid "Edit subscription to mailing lists"
+msgstr "Redaguoti adresatų sąrašų prenumeratą"
+
+#: alo-easymail_options.php:319
+#@ alo-easymail
+msgid "Embed CSS file"
+msgstr "Įterpta CSS rinkmena"
+
+#: alo-easymail_subscribers.php:559
+#@ alo-easymail
+msgid "Error"
+msgstr "Klaida"
+
+#: alo-easymail_subscr-page.php:35
+#@ alo-easymail
+msgid "Error during activation. Please check the activation link."
+msgstr "Klaida bandant suaktyvinti. Prašome patikrinti suaktyvinimo nuorodą."
+
+#: alo-easymail_functions.php:1138
+#: alo-easymail_functions.php:1207
+#: alo-easymail_options.php:1112
+#: alo-easymail_options.php:1144
+#: alo-easymail_options.php:1163
+#: alo-easymail_options.php:1166
+#: alo-easymail_subscr-page.php:22
+#: alo-easymail_subscribers.php:19
+#: alo-easymail_subscribers.php:29
+#: alo-easymail_subscribers.php:103
+#: alo-easymail_subscribers.php:166
+#: alo-easymail_subscribers.php:213
+#: alo-easymail_subscribers.php:226
+#: alo-easymail_subscribers.php:243
+#: alo-easymail_subscribers.php:256
+#: alo-easymail_subscribers.php:434
+#: alo-easymail_subscribers.php:451
+#: alo-easymail_subscribers.php:458
+#: alo-easymail_subscribers.php:493
+#: alo-easymail_subscribers.php:527
+#@ alo-easymail
+msgid "Error during operation."
+msgstr "Klaida operacijos metu."
+
+#: alo-easymail_functions.php:1221
+#@ alo-easymail
+msgid "Error during sending: please try again"
+msgstr "Klaida siunčiant: bandykite dar kartą"
+
+#: alo-easymail_subscr-page.php:96
+#@ alo-easymail
+msgid "Error during unsubscription."
+msgstr "Klaida atsisakant prenumeratos."
+
+#: alo-easymail_subscribers.php:413
+#: alo-easymail_subscribers.php:423
+#@ alo-easymail
+msgid "Export"
+msgstr "Esportuoti"
+
+#: alo-easymail_subscribers.php:407
+#@ alo-easymail
+msgid "Export subscribers"
+msgstr "Eksportuoti prenumeratorius"
+
+#: alo-easymail.php:1465
+#@ alo-easymail
+msgid "Filter subscribers according to languages"
+msgstr "Filtruoti prenumeratorius pagal naudojamą kalbą"
+
+#: alo-easymail.php:1445
+#@ alo-easymail
+msgid "Filter subscribers according to lists"
+msgstr "Filtruoti prenumeratorius pagal sąrašus"
+
+#: alo-easymail_options.php:437
+#@ alo-easymail
+msgid "Filters to the newsletter text"
+msgstr "Naujienlaiškio teksto filtrai"
+
+#: alo-easymail_functions.php:1047
+#@ alo-easymail
+msgid "First name of registered user."
+msgstr "Pirmas registruoto vartotojo vardas."
+
+#: alo-easymail_subscribers.php:368
+#@ alo-easymail
+msgid "For each line you have to specify: e-mail address (mandatory), name (optional), language code (optional). Use semicolon (;) to separate the fields."
+msgstr "Kiekvienai eilutei Jūs turite apibūdinti: elektroninio pašto adresą (privaloma), vardą (pasirinktinai), kalbos kodą (pasirinktinai). Laukelių atskyrimui naudokite kabliataškį (;)."
+
+#: alo-easymail.php:1976
+#: alo-easymail_options.php:850
+#: alo-easymail_options.php:871
+#@ alo-easymail
+msgid "For more info, visit the FAQ of the site."
+msgstr "Norėdami gauti daugiau informacijos, apsilankykite Dažniausiai Užduodamų Klausimų (FAQ) skiltyje šiame tinklapyje."
+
+#: alo-easymail_functions.php:127
+#: alo-easymail_options.php:930
+#@ alo-easymail
+msgid "For more links you can use the Help button"
+msgstr "Norėdami matyti daugiau nuorodų, naudokitės Pagalbos mygtuku"
+
+#: alo-easymail_subscribers.php:1002
+#@ alo-easymail
+msgid "For registered users the dafault state is activated. For public subscribers the default state is deactivated: it will be activated by clicking on the activation link in the e-mail."
+msgstr "Registruotiems varototojams suaktyvinta numatytoji būsena. Viešiesiems prenumeratoriams numatytoji būsena yra deaktyvinta: ji bus suaktyvinta, kai bus pasinaudota aktyvavimo nuoroda, gauta elektroniniu paštu."
+
+#: alo-easymail_functions.php:1046
+#: alo-easymail_functions.php:1047
+#@ alo-easymail
+msgid "For subscribers: the name used for registration"
+msgstr "Prenumeratoriams: vardas, naudotas registracijos metu"
+
+#: alo-easymail_subscribers.php:627
+#, php-format
+#@ alo-easymail
+msgid "Found %d records"
+msgstr "Rasta %d įrašų"
+
+#: alo-easymail_options.php:245
+#: alo-easymail_options.php:263
+#@ alo-easymail
+msgid "General"
+msgstr "Bendri(-os)"
+
+#: alo-easymail.php:1829
+#, php-format
+#@ alo-easymail
+msgid ""
+"Hi %NAME%\n"
+"to complete your subscription to %BLOGNAME% newsletter you need to click on the following link (or paste it in the address bar of your browser):\n"
+msgstr ""
+"Sveiki, %NAME%\n"
+"kad užbaigtumėte %BLOGNAME% naujienlaiškio pernumeratą, reikia paspausti parodytą nuorodą (arba nukopijuokite ją į savo naršyklės adreso laukelį):\n"
+
+#: alo-easymail_options.php:632
+#@ alo-easymail
+msgid "If filled in it will appear at the bottom of widget/page. Useful to show/link more info about privacy"
+msgstr "Jeigu užpildyta, pasirodys apatinėje valdiklio/puslapio dalyje. Naudinga nurodant daugiau privatumo informacijos"
+
+#: alo-easymail_options.php:636
+#@ alo-easymail
+msgid "If filled in it will appear at the top of widget/page. Useful to invite to subscribe"
+msgstr "Jeigu užpildyta, pasirodys viršutinėje valdiklio/puslapio dalyje. Naudinga kviečiant prenumeruoti"
+
+#: alo-easymail_options.php:927
+#@ alo-easymail
+msgid "If in doubt, just choose a number definitely lower than the cut-off: you'll have more chances to have your mail delivered, and less chances to end up in a blacklist..."
+msgstr "Jeigu dvejojate, pasirinkite skaičių, ryškiai mažesnį, negu apribojamasis: tokiu būdu egzistuos didesnė tikimybė, jog Jūsų laiškai bus pristatyti ir mažesnė galimybė patekti į juodąjį sąrašą..."
+
+#: alo-easymail_subscr-page.php:97
+#@ alo-easymail
+msgid "If it fails again you can contact the administrator"
+msgstr "Jeigu nepavyksta, susisiekite su administratoriumi"
+
+#: alo-easymail_options.php:345
+#@ alo-easymail
+msgid "If no, newsletters are not available online"
+msgstr "Jeigu ne, naujienlaiškis gyvai (naršyklėje) nepasiekiamas"
+
+#: alo-easymail_options.php:513
+#@ alo-easymail
+msgid "If the standard and cool method does not work for you, you can try another option"
+msgstr "Jeigu standartiniai ir ramūs metodai Jums neveikia, galite išbandyti kitą parinktį"
+
+#: alo-easymail_options.php:332
+#@ alo-easymail
+msgid "If yes, a new subscriber is automatically activated without confirmation e-mail"
+msgstr "Jeigu taip, naujas prenumeratorius bus automatiškai suaktyvintas be patvirtinimo elektroninio laiško"
+
+#: alo-easymail_options.php:345
+#@ alo-easymail
+msgid "If yes, newsletters automatically are published into your blog so they can be read online"
+msgstr "Jeigu taip, naujienlaiškiai automatiškai yra publikuojami Jūsų tinklaraštyje, tad jie gali būti skaitomi gyvai (naršyklėje)"
+
+#: alo-easymail_options.php:320
+#@ alo-easymail
+msgid "If yes, the plugin loads the CSS styles from a file in its directory"
+msgstr "Jeigu taip, papildinys įkelia CSS stilius iš rinkmenos jų kataloge"
+
+#: alo-easymail_options.php:308
+#@ alo-easymail
+msgid "If yes, the subscription page appears in menu or widget that list all blog pages"
+msgstr "Jeigu taip, tinklaraščio puslapių sąrašo pateikties valdyklyje arba meniu atsiras prenumeratos puslapis"
+
+#: alo-easymail_options.php:592
+#@ alo-easymail
+msgid "If you are not using a multilanguage site ignore this piece of information"
+msgstr "Jeigu Jūs jau sėkmingai įdiegėte ir naudojate daugiakalbystės funkciją savo svetainėje, ignoruokite šią informaciją"
+
+#: alo-easymail_options.php:539
+#@ alo-easymail
+msgid "If you choose a debug mode the newsletters won&#39;t be sent to the selected recipients"
+msgstr "Jeigu pasirinksite derinimo būseną, naujienlaiškiai pažymėtiems prenumeratoriams siunčiami nebus"
+
+#: alo-easymail.php:1831
+#@ alo-easymail
+msgid "If you did not ask for this subscription ignore this message."
+msgstr "Jeigu nenorėjote minimos prenumeratos, ignoruotkite šį pranešimą."
+
+#: alo-easymail_options.php:585
+#@ alo-easymail
+msgid "If you like here you can list the languages available"
+msgstr "Jeigu norite čia galite įrašyti prieinamas kalbas"
+
+#: alo-easymail_options.php:370
+#@ alo-easymail
+msgid "If you need these data make sure you do a database backup before plugin deactivation"
+msgstr "Jeigu Jums reikia šių duomenų, įsitikinkite, jog turite atsarginę duomenų bazės kopiją prieš papildinio deaktyvavimą."
+
+#: alo-easymail.php:487
+#: alo-easymail_functions.php:132
+#@ alo-easymail
+msgid "If you use this plugin consider the idea of donating and supporting its development"
+msgstr "Jeigu Jūs jau naudojatės šiuo papildinių, pagalvokite apie paaukojimą (prisidėjimą prie papildinio plėtojimo)"
+
+#: alo-easymail_functions.php:1934
+#@ alo-easymail
+msgid "Image gallery of newsletter"
+msgstr "Naujienlaiškio vaizdų galerija"
+
+#: alo-easymail_subscribers.php:362
+#@ alo-easymail
+msgid "Import from WP members"
+msgstr "Importuoti iš WordPress narių sąrašo"
+
+#: alo-easymail_subscribers.php:353
+#@ alo-easymail
+msgid "Import from WP registered users"
+msgstr "Imporuoti iš WordPress registruotų vartotojų sąrašo"
+
+#: alo-easymail_subscribers.php:366
+#@ alo-easymail
+msgid "Import from uploaded CSV file"
+msgstr "Importuoti iš įkeltos CSV rinkmenos"
+
+#: alo-easymail.php:2272
+#: alo-easymail_subscribers.php:797
+#@ alo-easymail
+msgid "Import/export subscribers"
+msgstr "Importuoti/eksportuoti prenumeratorius"
+
+#: alo-easymail_options.php:923
+#@ alo-easymail
+msgid "Important advice to calculate the best limit"
+msgstr "Svarbus patarimas skaičiuojant naudingiausią limitą"
+
+#: alo-easymail_options.php:1147
+#@ alo-easymail
+msgid "Inputs are incompled or wrong. Please check and try again."
+msgstr "Įvediniai yra nebaigti arba klaidingi. Patikrinkite juos ir bandykite vėl."
+
+#: alo-easymail_options.php:895
+#@ alo-easymail
+msgid "Interval between emails in a single batch, in milliseconds"
+msgstr "Inteveralas tarp elekektroninių laiškų siuntimo viename pakate, milisekundėmis"
+
+#: alo-easymail_options.php:618
+#@ alo-easymail
+msgid "Invite to join mailing lists"
+msgstr "Pakviesti prisijungti prie adresatų sąrašo"
+
+#: alo-easymail_options.php:897
+#@ alo-easymail
+msgid "It is useful if your provider allows a maximum number of emails that can be sent per second or minute"
+msgstr "Labai gerai, jeigu Jūsų tiekėjas nustato didžiausią išsiunčiamų elektroninių laiškų skaičių per minutę arba sekundę"
+
+#: alo-easymail_report.php:199
+#@ alo-easymail
+msgid "It reduces the data in database tables and make the plugin queries and actions faster"
+msgstr "Sumažina duomenų kiekį duomenų bazės lentelėse ir pagreitina papildinio užklausas ir veiksmus greitesniais"
+
+#: alo-easymail_subscribers.php:1000
+#@ alo-easymail
+msgid "Join date"
+msgstr "Prisijungimo data"
+
+#: alo-easymail_report.php:262
+#: alo-easymail_subscribers.php:316
+#: alo-easymail_subscribers.php:551
+#: alo-easymail_subscribers.php:1004
+#@ alo-easymail
+msgid "Language"
+msgstr "Kalba"
+
+#: alo-easymail_subscribers.php:369
+#@ alo-easymail
+msgid "Language codes"
+msgstr "Kalbų kodai"
+
+#: alo-easymail_functions.php:340
+#@ alo-easymail
+msgid "Languages"
+msgstr "Kalbos"
+
+#: alo-easymail_subscribers.php:1001
+#@ alo-easymail
+msgid "Last activity"
+msgstr "Paskutinis aktyvumas"
+
+#: alo-easymail_custom-hooks-sample.php:35
+#@ alo-easymail
+msgid "Latest posts"
+msgstr "Naujausi įrašai"
+
+#: alo-easymail_options.php:624
+#: alo-easymail_options.php:687
+#: alo-easymail_options.php:726
+#: alo-easymail_options.php:768
+#@ alo-easymail
+msgid "Leave blank to use default text"
+msgstr "Palikite tuščią, kad būtų naudojamas numatytasis tekstas"
+
+#: alo-easymail_options.php:1187
+#: alo-easymail_options.php:1255
+#@ alo-easymail
+msgid "List name"
+msgstr "Sąrašo pavadinimas"
+
+#: alo-easymail_options.php:589
+#@ alo-easymail
+msgid "List of two-letter language codes separated by commas"
+msgstr "Dviem simboliais pažymėtų kalbų sąrašas (atskirta kableliais)"
+
+#: alo-easymail_functions.php:334
+#: alo-easymail_options.php:250
+#: alo-easymail_options.php:1065
+#: alo-easymail_options.php:1089
+#: alo-easymail_options.php:1251
+#: alo-easymail_subscribers.php:331
+#: alo-easymail_subscribers.php:1003
+#@ alo-easymail
+msgid "Mailing Lists"
+msgstr "Adresatų Sąrašai"
+
+#: alo-easymail_options.php:703
+#: alo-easymail_report.php:100
+#@ alo-easymail
+msgid "Main body"
+msgstr "Turinys"
+
+#: alo-easymail_options.php:880
+#@ alo-easymail
+msgid "Maximum number of emails that can be sent in a 24-hr period"
+msgstr "Didžiausias per 24 valandas siunčiamų elektroninių laiškų skaičius"
+
+#: alo-easymail_options.php:887
+#@ alo-easymail
+msgid "Maximum number of emails that can be sent per batch"
+msgstr "Didžiausias vienu paketu siunčiamų elektroninių laiškų skaičius"
+
+#: alo-easymail.php:2274
+#: alo-easymail_subscribers.php:804
+#, php-format
+#@ alo-easymail
+msgid "Maybe you would like to import subscribers from your blog registered members or an external archive (using CSV). Click the &#39;%s&#39; button"
+msgstr "Galbūt Jūs norėtumėte importuoti prenumeratorius iš Jūsų tinklaraščio registruotų narių sąrašo arba išorinio archyvo (naudodami CSV). Spragtelkite &#39;%s&#39; mygtuką"
+
+#: alo-easymail_options.php:500
+#@ alo-easymail
+msgid "Method of creation of the recipient list"
+msgstr "Gavėjų sąrašo sukūrimo metodas"
+
+#: alo-easymail-widget.php:112
+#: alo-easymail_report.php:261
+#: alo-easymail_subscribers.php:297
+#: alo-easymail_subscribers.php:551
+#: alo-easymail_subscribers.php:982
+#@ alo-easymail
+msgid "Name"
+msgstr "Vardas"
+
+#: alo-easymail_functions.php:1046
+#@ alo-easymail
+msgid "Name and surname of registered user."
+msgstr "Užsiregistravusio vartotojo vardas ir pavardė."
+
+#: alo-easymail.php:622
+#@ alo-easymail
+msgid "New Newsletter"
+msgstr "Naujas Naujienlaiškis"
+
+#: alo-easymail_options.php:1182
+#@ alo-easymail
+msgid "New list"
+msgstr "Naujas sąrašas"
+
+#: alo-easymail_subscribers.php:486
+#@ alo-easymail
+msgid "New subscriber added"
+msgstr "Naujas prenumeratorius pridėtas"
+
+#: alo-easymail-widget.php:251
+#: alo-easymail.php:463
+#: alo-easymail.php:618
+#: alo-easymail.php:1080
+#: alo-easymail_options.php:246
+#: alo-easymail_options.php:401
+#@ alo-easymail
+msgid "Newsletter"
+msgstr "Naujienlaiškis"
+
+#: alo-easymail.php:692
+#@ alo-easymail
+msgid "Newsletter draft updated."
+msgstr "Naujienlaiškio juodraštis atnaujintas."
+
+#: alo-easymail.php:1104
+#@ alo-easymail
+msgid "Newsletter fields"
+msgstr "Naujienlaiškio laukeliai"
+
+#: alo-easymail.php:686
+#@ alo-easymail
+msgid "Newsletter published."
+msgstr "Naujienlaiškis publikuotas."
+
+#: alo-easymail.php:1292
+#: alo-easymail_report.php:33
+#@ alo-easymail
+msgid "Newsletter report"
+msgstr "Naujienlaiškio ataskaita"
+
+#. translators: %s: date and time of the revision 
+#: alo-easymail.php:685
+#, php-format
+#@ alo-easymail
+msgid "Newsletter restored to revision from %s"
+msgstr "Naujienlaiškis atstatytas %s peržiūrai"
+
+#: alo-easymail.php:687
+#@ alo-easymail
+msgid "Newsletter saved."
+msgstr "Naujienlaiškis įrašytas."
+
+#: alo-easymail.php:689
+#, php-format
+#@ alo-easymail
+msgid "Newsletter scheduled for: <strong>%1$s</strong>."
+msgstr "Naujienlaiškis suplanuotas: <strong>%1$s</strong>."
+
+#: alo-easymail.php:737
+#@ alo-easymail
+msgid "Newsletter status"
+msgstr "Naujienlaiškio būsena"
+
+#: alo-easymail.php:688
+#, php-format
+#@ alo-easymail
+msgid "Newsletter submitted. <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
+msgstr "Naujienlaiškis pateiktas. <a target=\"_blank\" href=\"%s\">Greitoji Naujienlaiškio peržiūra</a>"
+
+#: alo-easymail.php:1435
+#: alo-easymail_subscribers.php:356
+#@ alo-easymail
+msgid "Newsletter subscribers"
+msgstr "Naujienlaiškio prenumeratoriai"
+
+#: alo-easymail.php:1293
+#: alo-easymail_recipients-list.php:78
+#@ alo-easymail
+msgid "Newsletter subscribers creation"
+msgstr "Naujienlaiškio prenumeratorių kūrimas"
+
+#: alo-easymail_recipients-list.php:96
+#: alo-easymail_recipients-list.php:124
+#: alo-easymail_recipients-list.php:152
+#@ alo-easymail
+msgid "Newsletter successfully sent to recipients"
+msgstr "Naujienlaiškis sėkmingai išsiųstas gavėjams"
+
+#: alo-easymail_functions.php:1928
+#@ alo-easymail
+msgid "Newsletter tags"
+msgstr "Naujienlaiškio gairės"
+
+#: alo-easymail.php:680
+#: alo-easymail.php:683
+#@ alo-easymail
+msgid "Newsletter updated."
+msgstr "Naujienlaiškis atnaujintas."
+
+#: alo-easymail.php:617
+#: alo-easymail.php:628
+#: alo-easymail.php:1872
+#: alo-easymail.php:1873
+#: alo-easymail.php:1891
+#: alo-easymail.php:1894
+#@ alo-easymail
+msgid "Newsletters"
+msgstr "Naujienlaiškiai"
+
+#: alo-easymail.php:1661
+#@ alo-easymail
+msgid "Newsletters scheduled for sending"
+msgstr "Naujienlaiškiai suplanuoti išsiuntimui"
+
+#: alo-easymail.php:1088
+#: alo-easymail.php:1508
+#: alo-easymail_recipients-list.php:188
+#: alo-easymail_report.php:96
+#: alo-easymail_report.php:280
+#@ alo-easymail
+msgid "No"
+msgstr "Ne"
+
+#: alo-easymail.php:625
+#@ alo-easymail
+msgid "No Newsletters found"
+msgstr "Nerasta jokių Naujienlaiškių"
+
+#: alo-easymail.php:626
+#@ alo-easymail
+msgid "No Newsletters found in Trash"
+msgstr "Šiukšlėse jokių Naujienlaiškių nerasta."
+
+#: alo-easymail_subscribers.php:435
+#: alo-easymail_subscribers.php:742
+#: alo-easymail_subscribers.php:862
+#@ alo-easymail
+msgid "No action selected"
+msgstr "Nepasirinktas joks veiksmas"
+
+#: alo-easymail_subscribers.php:188
+#@ alo-easymail
+msgid "No language"
+msgstr "Jokia kalba"
+
+#: alo-easymail_subscribers.php:207
+#@ alo-easymail
+msgid "No language available"
+msgstr "Neprieinama jokia kalba"
+
+#: alo-easymail_subscribers.php:168
+#: alo-easymail_subscribers.php:529
+#@ alo-easymail
+msgid "No language option selected"
+msgstr "Nepažymėta jokia kalbos parinktis"
+
+#: alo-easymail_subscribers.php:105
+#: alo-easymail_subscribers.php:495
+#@ alo-easymail
+msgid "No list selected"
+msgstr "Nepažymėtas joks sąrašas"
+
+#: alo-easymail_options.php:579
+#@ alo-easymail
+msgid "No multilanguage plugin is enabled, so you will only see texts in the main language of the site"
+msgstr "Tarp aktyvuotųjų neaptiktas joks daugiakalbystės papildinys, taigi šio tinklapio tekstą Jūs matysite tik viena, pagrindine kalba."
+
+#: alo-easymail.php:756
+#: alo-easymail.php:2294
+#: alo-easymail_recipients-list.php:72
+#@ alo-easymail
+msgid "No recipients selected yet"
+msgstr "Dar nepažymėti jokie gavėjai"
+
+#: alo-easymail_subscribers.php:104
+#: alo-easymail_subscribers.php:167
+#: alo-easymail_subscribers.php:214
+#: alo-easymail_subscribers.php:227
+#: alo-easymail_subscribers.php:244
+#: alo-easymail_subscribers.php:257
+#: alo-easymail_subscribers.php:436
+#: alo-easymail_subscribers.php:494
+#: alo-easymail_subscribers.php:528
+#: alo-easymail_subscribers.php:858
+#@ alo-easymail
+msgid "No subscriber selected"
+msgstr "Joks prenumeratorius ištrintas nebuvo"
+
+#: alo-easymail.php:1679
+#: alo-easymail_subscribers.php:708
+#: alo-easymail_subscribers.php:1035
+#@ alo-easymail
+msgid "No subscribers"
+msgstr "Prenumeratorių nėra"
+
+#: alo-easymail_subscribers.php:678
+#@ alo-easymail
+msgid "No subscribers added from blog members"
+msgstr "Nepridėta nė vieno prenumeratoriaus iš Jūsų tinklaraščio narių sąrašo"
+
+#: alo-easymail-widget.php:58
+#: alo-easymail_options.php:628
+#@ alo-easymail
+msgid "No, please do not email me"
+msgstr "Ne, nieko nesiųskite elektroniniu paštu"
+
+#: alo-easymail_subscribers.php:29
+#@ alo-easymail
+msgid "Not deleted"
+msgstr "Neištrinta"
+
+#: alo-easymail.php:1480
+#: alo-easymail_functions.php:339
+#@ alo-easymail
+msgid "Not specified / others"
+msgstr "Neapibūdinti / kiti"
+
+#: alo-easymail_subscribers.php:19
+#@ alo-easymail
+msgid "Not updated"
+msgstr "Neatnaujinta"
+
+#: alo-easymail_subscribers.php:652
+#@ alo-easymail
+msgid "Not valid CSV file uploaded"
+msgstr "Nėra importavimui tinkamos CSV  rinkmenos"
+
+#: alo-easymail_subscribers.php:286
+#@ alo-easymail
+msgid "Note: the email addresses of who unsubscribed the newsletter are archivied in a database table, so you cannot add or import those addresses using the tools in this page"
+msgstr "Pastaba: elektroninio pašto adresai, kurie nutraukia naujienlaiškio prenumeratą yra archyvuojami duomenų bazės lentelėje, tad Jūs negalite pridėti ar importuoti šių adresų, naudojant šio puslapio įrankius"
+
+#: alo-easymail_options.php:405
+#@ alo-easymail
+msgid "Number of last posts to display"
+msgstr "Vaizduojamų paskutinių įrašų skaičius"
+
+#: alo-easymail_options.php:407
+#@ alo-easymail
+msgid "Number of recent posts to show in the dropdown list of the newsletter sending form"
+msgstr "Naujienlaiško siuntimo formos išskleidžiamajame sąraše rodomų paskutinių įrašų skaičius "
+
+#: alo-easymail_options.php:370
+#@ alo-easymail
+msgid "On plugin deactivation, all plugin options, preferences and database tables (including all newsletters and subscribers data) will be definitely deleted"
+msgstr "Papildinio deaktyvavimo metu visos papildinio parinktys, pirmenybės ir duomenų bazės lentelės (įskaitant visus naujienlaiškių ir prenumeratorių duomenis) bus negrįžtamai ištrintos."
+
+#: alo-easymail.php:974
+#@ alo-easymail
+msgid "On sending queue"
+msgstr "Siuntimų eilėje"
+
+#: alo-easymail_options.php:616
+#@ alo-easymail
+msgid "Optin message"
+msgstr "Informacijos prenumeratos pranešimas"
+
+#: alo-easymail.php:1881
+#: alo-easymail.php:1905
+#@ alo-easymail
+msgid "Options"
+msgstr "Parinktys"
+
+#: alo-easymail_options.php:617
+#@ alo-easymail
+msgid "Optout message"
+msgstr "Informacijos prenumeratos nutraukimo pranešimas"
+
+#: alo-easymail_options.php:1189
+#: alo-easymail_options.php:1257
+#@ alo-easymail
+msgid "Order"
+msgstr "Rūšiavimas"
+
+#: alo-easymail_subscribers.php:991
+#, php-format
+#@ alo-easymail
+msgid "Order by %s"
+msgstr "Rikiuoti pagal %s"
+
+#: alo-easymail_subscribers.php:1002
+#@ alo-easymail
+msgid "Order by activation state"
+msgstr "Rūšiuoti pagal suaktyvinimo būseną"
+
+#: alo-easymail_subscribers.php:1001
+#@ alo-easymail
+msgid "Order by date of last activity"
+msgstr "Rikiuoti pagal paskutinio aktyvumo datą"
+
+#: alo-easymail_subscribers.php:981
+#@ alo-easymail
+msgid "Order by e-mail"
+msgstr "Rūšiuoti pagal elektroninio pašto adresą"
+
+#: alo-easymail_subscribers.php:1000
+#@ alo-easymail
+msgid "Order by join date"
+msgstr "Rūšiuoti pagal prisijungimo datą"
+
+#: alo-easymail_subscribers.php:1004
+#@ alo-easymail
+msgid "Order by language"
+msgstr "Rūšiuoti pagal kalbą"
+
+#: alo-easymail_options.php:1066
+#@ alo-easymail
+msgid "Other sections can be modified only by administrators"
+msgstr "Kitos sritys gali būti keičiamos tik administratorių"
+
+#: alo-easymail_options.php:516
+#@ alo-easymail
+msgid "Otherwise, you can create the list directly when the newsletter is saved, without use of ajax"
+msgstr "Kitu atveju Jūs galite sukurti sąrašą, tiesiogiai kai naujienlaiškis yra įrašomas, be ajax naudojimo"
+
+#: alo-easymail.php:627
+#: alo-easymail.php:629
+#@ alo-easymail
+msgid "Parent Newsletter"
+msgstr "Viršnaujienlaiškis"
+
+#: alo-easymail.php:1003
+#@ alo-easymail
+msgid "Paused"
+msgstr "Pristabdyta"
+
+#: alo-easymail_options.php:249
+#: alo-easymail_options.php:960
+#@ alo-easymail
+msgid "Permissions"
+msgstr "Leidimai"
+
+#: alo-easymail.php:1372
+#@ alo-easymail
+msgid "Placeholders"
+msgstr "Rezervuotojai"
+
+#: alo-easymail_functions.php:125
+#@ alo-easymail
+msgid "Please visit the plugin site for more info and feedback"
+msgstr "Norėdami gauti daugiau informacijos ar palikti atsiliepimą, apsilankykite papildinių puslapyje"
+
+#: alo-easymail_options.php:619
+#@ alo-easymail
+msgid "Policy claim"
+msgstr "Taisyklių pretenzijos"
+
+#: alo-easymail_functions.php:1942
+#@ alo-easymail
+msgid "Post Thumbnail"
+msgstr "Įrašo Miniatiūrą"
+
+#: alo-easymail_functions.php:1933
+#@ alo-easymail
+msgid "Post Thumbnail of newsletter"
+msgstr "Paskelbti naujienlaiškio miniatiūrą"
+
+#: alo-easymail_functions.php:1036
+#@ alo-easymail
+msgid "Post tags"
+msgstr "Įrašų gairės"
+
+#: alo-easymail.php:975
+#: alo-easymail.php:1004
+#: alo-easymail.php:1667
+#@ alo-easymail
+msgid "Progress"
+msgstr "Eiga"
+
+#: alo-easymail_options.php:344
+#@ alo-easymail
+msgid "Publish newsletters online"
+msgstr "Paskelbti naujienlaiškį gyvai (naršyklinėje versijoje)"
+
+#: alo-easymail_functions.php:3600
+#: alo-easymail_functions.php:3601
+#@ alo-easymail
+msgid "Quick edit"
+msgstr "Greitasis redagavimas"
+
+#: alo-easymail_options.php:767
+#@ alo-easymail
+msgid "Read newsletter online"
+msgstr "Skaityti naujienlaiškį internete"
+
+#: alo-easymail.php:736
+#: alo-easymail.php:1370
+#: alo-easymail_report.php:250
+#@ alo-easymail
+msgid "Recipients"
+msgstr "Gavėjai"
+
+#: alo-easymail_recipients-list.php:95
+#: alo-easymail_recipients-list.php:123
+#: alo-easymail_recipients-list.php:151
+#@ alo-easymail
+msgid "Recipients successfully added"
+msgstr "Gavėjai sėkmingai pridėti"
+
+#: alo-easymail_options.php:580
+#@ alo-easymail
+msgid "Recommended plugins, fully compatible with EasyMail, for a complete multilingual functionality"
+msgstr "Rekomenduojami, puikiai su EasyMail suderinami papildiniai, daugiakalbystės funkcijai palaikyti"
+
+#: alo-easymail_subscribers.php:141
+#@ alo-easymail
+msgid "Remove from selected lists"
+msgstr "Ištrinti iš pasirinktų sąrašų"
+
+#: alo-easymail.php:957
+#: alo-easymail.php:958
+#@ alo-easymail
+msgid "Report"
+msgstr "Ataskaita"
+
+#: alo-easymail.php:1019
+#@ alo-easymail
+msgid "Required"
+msgstr "Privaloma"
+
+#: alo-easymail.php:475
+#: alo-easymail.php:516
+#@ alo-easymail
+msgid "Resources about EasyMail Newsletter"
+msgstr "Šaltiniai apie EasyMail Naujienlaiškį"
+
+#: alo-easymail_functions.php:2411
+#: alo-easymail_functions.php:2413
+#: alo-easymail_options.php:589
+#@ alo-easymail
+msgid "Sample:"
+msgstr "Pavyzdys:"
+
+#: alo-easymail_functions.php:3596
+#: alo-easymail_options.php:1241
+#@ alo-easymail
+msgid "Save"
+msgstr "Įrašyti"
+
+#: alo-easymail.php:1669
+#: alo-easymail_report.php:86
+#@ alo-easymail
+msgid "Scheduled by"
+msgstr "Suplanavo"
+
+#: alo-easymail.php:624
+#@ alo-easymail
+msgid "Search Newsletters"
+msgstr "Ieškoti Naujienlaiškių"
+
+#: alo-easymail_subscribers.php:764
+#@ alo-easymail
+msgid "Select a mailing list"
+msgstr "Pasirinkite adresatų sąrašą"
+
+#: alo-easymail_custom-hooks-sample.php:55
+#@ alo-easymail
+msgid "Select how many posts"
+msgstr "Pasirinkite kiek įrašų"
+
+#: alo-easymail_functions.php:2160
+#: alo-easymail_functions.php:2177
+#@ alo-easymail
+msgid "Select the image size"
+msgstr "Pasirinkite paveikslėlio dydį"
+
+#: alo-easymail.php:1384
+#@ alo-easymail
+msgid "Selected recipients"
+msgstr "Pasirinkti gavėjai"
+
+#: alo-easymail_subscribers.php:112
+#: alo-easymail_subscribers.php:175
+#@ alo-easymail
+msgid "Selected subscribers"
+msgstr "Pažymėti prenumeratoriai"
+
+#: alo-easymail_recipients-list.php:185
+#@ alo-easymail
+msgid "Send"
+msgstr "Siųsti"
+
+#: alo-easymail_recipients-list.php:198
+#@ alo-easymail
+msgid "Send now"
+msgstr "Siųsti dabar"
+
+#: alo-easymail_options.php:411
+#@ alo-easymail
+msgid "Sender's email address"
+msgstr "Siuntėjo elektroninio pašto adresas"
+
+#: alo-easymail_options.php:416
+#@ alo-easymail
+msgid "Sender's name"
+msgstr "Siuntėjo vardas"
+
+#: alo-easymail_report.php:150
+#@ alo-easymail
+msgid "Sendings done"
+msgstr "Siuntimai įvykdyti"
+
+#: alo-easymail_report.php:152
+#@ alo-easymail
+msgid "Sendings failed"
+msgstr "Siuntimai nepavyko"
+
+#: alo-easymail_report.php:151
+#@ alo-easymail
+msgid "Sendings succesful"
+msgstr "Siuntimai sėkmingai atlikti"
+
+#: alo-easymail.php:1034
+#: alo-easymail_report.php:263
+#@ alo-easymail
+msgid "Sent"
+msgstr "Išsiųsta"
+
+#: alo-easymail.php:1875
+#: alo-easymail_subscribers.php:786
+#@ alo-easymail
+msgid "Show all"
+msgstr "Rodyti visus"
+
+#: alo-easymail_options.php:357
+#@ alo-easymail
+msgid "Show credit banners in back-end"
+msgstr "Rodyti reklamjuostes vidinėje pusėje"
+
+#: alo-easymail_options.php:307
+#@ alo-easymail
+msgid "Show subscription page"
+msgstr "Rodyti prenumeratos puslapį"
+
+#: alo-easymail_functions.php:1936
+#@ alo-easymail
+msgid "Site tags"
+msgstr "Puslapio gairės"
+
+#: alo-easymail_options.php:837
+#, php-format
+#@ alo-easymail
+msgid "Some parameters are already setted up in %s, so the values below could be ignored"
+msgstr "Kai kurie parametrai jau įtraukti %s, tad reikšmės žemiau gali būti ignoruojamos"
+
+#: alo-easymail_subscribers.php:635
+#@ alo-easymail
+msgid "Some records have not been imported"
+msgstr "Kai kurie įrašai nebuvo importuoti"
+
+#: alo-easymail.php:738
+#: alo-easymail_report.php:89
+#@ alo-easymail
+msgid "Start"
+msgstr "Pradėti"
+
+#: alo-easymail.php:735
+#: alo-easymail_options.php:699
+#: alo-easymail_report.php:67
+#@ alo-easymail
+msgid "Subject"
+msgstr "Tema"
+
+#: alo-easymail-widget.php:140
+#: alo-easymail_functions.php:1227
+#@ alo-easymail
+msgid "Subscribe"
+msgstr "Prenumeruoti"
+
+#: alo-easymail_functions.php:2353
+#@ alo-easymail
+msgid "Subscriber"
+msgstr "Prenumeratorius"
+
+#: alo-easymail_subscribers.php:26
+#@ alo-easymail
+msgid "Subscriber deleted"
+msgstr "Prenumeratorius ištrintas"
+
+#: alo-easymail_subscribers.php:616
+#@ alo-easymail
+msgid "Subscriber has been added to selected mailing lists"
+msgstr "Prenumeratorius pridėtas į pasirinktus laiškų gavėjų sąrašus"
+
+#: alo-easymail_functions.php:1044
+#@ alo-easymail
+msgid "Subscriber tags"
+msgstr "Prenumeruotojo gairės"
+
+#: alo-easymail.php:414
+#: alo-easymail.php:1674
+#: alo-easymail.php:1878
+#: alo-easymail.php:1901
+#: alo-easymail_options.php:1258
+#: alo-easymail_subscribers.php:54
+#@ alo-easymail
+msgid "Subscribers"
+msgstr "Prenumeratoriai"
+
+#: alo-easymail_subscribers.php:251
+#@ alo-easymail
+msgid "Subscribers activated"
+msgstr "Prenumeratoriai suaktyvinti"
+
+#: alo-easymail_subscribers.php:264
+#@ alo-easymail
+msgid "Subscribers deactivated"
+msgstr "Prenumeratoriai deaktyvinti"
+
+#: alo-easymail_subscribers.php:221
+#@ alo-easymail
+msgid "Subscribers deleted"
+msgstr "Prenumeratoriai ištrinti"
+
+#: alo-easymail_options.php:275
+#@ alo-easymail
+msgid "Subscription page"
+msgstr "Prenumeratos puslapis"
+
+#: alo-easymail_functions.php:1223
+#@ alo-easymail
+msgid "Subscription successful. You will receive an e-mail with a link. You have to click on the link to activate your subscription."
+msgstr "Prenumeravimo procedūra sėkminga. Jūs gausite elektroninį laišką su nuoroda. Aplankykite gautą nuoroda, kad suaktyvintumėte savo prenumeratą."
+
+#: alo-easymail_options.php:926
+#@ alo-easymail
+msgid "Subtract from this cut-off the number of emails you want to send from your blog (e.g. registration procedures, activation and unsubscribing of EasyMail, notices from other plugins etc.)."
+msgstr "Iš šio apribojimo atimkite elektroninių laiškų, kuriuos norite išsiųsti iš savo tinklaraščio skaičių (pavyzdžiui, elektroninių laiškų reikalingų registracijos procedūroms, EasyMail aktyvinimui ir atsisakymui bei kitų papildinių pranešimų siuntimui)."
+
+#: alo-easymail_subscribers.php:633
+#, php-format
+#@ alo-easymail
+msgid "Successfully import: %d records out of %d total"
+msgstr "Sėkmingai importuoti: %d įrašai iš %d iš viso"
+
+#: alo-easymail_functions.php:1139
+#@ alo-easymail
+msgid "Successfully updated"
+msgstr "Sėkmingai atnaujinta"
+
+#: alo-easymail_subscribers.php:384
+#@ alo-easymail
+msgid "Test mode (no importation, show records on screen)"
+msgstr "Testavimo rėžimas (jokio importavimo, įrašus rodyti ekrane)"
+
+#: alo-easymail_functions.php:1929
+#@ alo-easymail
+msgid "Text and URL to the online version."
+msgstr "Tekstas ir universalioji nuoroda gyvai versijai."
+
+#: alo-easymail_functions.php:1925
+#@ alo-easymail
+msgid "Text and URL to unsubscribe."
+msgstr "Tekstas ir Universalioji nuoroda atsisakant prenumertos"
+
+#: alo-easymail_options.php:247
+#: alo-easymail_options.php:570
+#: alo-easymail_options.php:1064
+#@ alo-easymail
+msgid "Texts"
+msgstr "Tekstai"
+
+#: alo-easymail.php:1832
+#@ alo-easymail
+msgid "Thank you"
+msgstr "Ačiū Jums"
+
+#: alo-easymail_options.php:991
+#: alo-easymail_options.php:1018
+#, php-format
+#@ alo-easymail
+msgid "The authorised roles are the same with the %s capability"
+msgstr "Įgaliotos vartotojo funkcijos yra tas pats, kas ir %s charakteristika"
+
+#: alo-easymail.php:1393
+#@ alo-easymail
+msgid "The creation of the recipients list has already started"
+msgstr "Gavėjų sąrašo kūrimas jau vyksta"
+
+#: alo-easymail.php:1296
+#: alo-easymail_functions.php:1208
+#: alo-easymail_subscribers.php:452
+#: alo-easymail_subscribers.php:586
+#@ alo-easymail
+msgid "The e-email address is not correct"
+msgstr "Neteisingas elektroninio pašto adresas"
+
+#: alo-easymail_functions.php:1039
+#@ alo-easymail
+msgid "The excerpt (if any) of the post."
+msgstr "Įrašo ištrauka (jeigu reikalinga)."
+
+#: alo-easymail_options.php:897
+#@ alo-easymail
+msgid "The higher this value, the lower the number of emails sent for each batch"
+msgstr "Kuo didensė ši reikšmė, tuo mažesnis elektroninių laiškų skaičius viename pakete"
+
+#: alo-easymail_functions.php:1943
+#@ alo-easymail
+msgid "The image gallery of the post"
+msgstr "Įrašo vaizdų galerija"
+
+#: alo-easymail_functions.php:1705
+#: alo-easymail_functions.php:1937
+#@ alo-easymail
+msgid "The link to the site"
+msgstr "Kita nuoroda į svetainę"
+
+#: alo-easymail_functions.php:1038
+#@ alo-easymail
+msgid "The link to the title of the selected post."
+msgstr "Nuoroda į pažymėto įrašo antraštę."
+
+#: alo-easymail_options.php:998
+#@ alo-easymail
+msgid "The lowest role can manage newsletters"
+msgstr "Žemiausios charakteristikos vartotojai gali valdyti naujienlaiškių sritį"
+
+#: alo-easymail_options.php:1048
+#@ alo-easymail
+msgid "The lowest role can manage options"
+msgstr "Žemiausios charakteristikos vartotojai gali valdyti parinktis"
+
+#: alo-easymail_options.php:1026
+#@ alo-easymail
+msgid "The lowest role can manage subscribers"
+msgstr "Žemiausios charakteristikos vartotojai gali valdyti prenumeratorių sritį"
+
+#: alo-easymail_options.php:964
+#@ alo-easymail
+msgid "The lowest role can send newsletters"
+msgstr "Žemiausios funkcijos vartotojai, kurie gali siųsti naujienlaiškius"
+
+#: alo-easymail_functions.php:1040
+#@ alo-easymail
+msgid "The main content of the post."
+msgstr "Pagrindinis įrašo turinys."
+
+#: alo-easymail_subscribers.php:1001
+#@ alo-easymail
+msgid "The most recent date when the subcriber made an action"
+msgstr "Paskiausi duomenys, kuomet prenumeratorius buvo veiksnus"
+
+#: alo-easymail.php:1297
+#: alo-easymail_functions.php:1209
+#@ alo-easymail
+msgid "The name field is empty"
+msgstr "Vardo laukelis paliktas tuščias"
+
+#: alo-easymail_report.php:157
+#: alo-easymail_report.php:163
+#@ alo-easymail
+msgid "The number includes max a view per recipient"
+msgstr "Į skaičių įtrauktas daugiausiai viena to paties siuntėjo peržiūra"
+
+#: alo-easymail_subscribers.php:459
+#: alo-easymail_subscribers.php:588
+#@ alo-easymail
+msgid "The owner of the e-email address unsubscribed the newsletter"
+msgstr "Elektroninio pašto adreso savininkas nutraukė naujienlaiškio prenumeratą"
+
+#: alo-easymail.php:1975
+#@ alo-easymail
+msgid "The plugin database tables have not properly installed"
+msgstr "Papildinio duomenų bazės lentelės nebuvo teisingai įdiegtos"
+
+#: alo-easymail_options.php:591
+#@ alo-easymail
+msgid "The plugin looks for the subscriber&#39;s language in the browser setting and sends the e-mail accordingly"
+msgstr "Papildinys ieško prenumeruotojų naudojamų kalbų jų naršyklių parinktyse ir apie tai praneša elektroninu paštu."
+
+#: alo-easymail_report.php:156
+#@ alo-easymail
+msgid "The plugin tries to count how many recipients open the newsletter"
+msgstr "Papildinys mėgina suskaičiuoti kiek gavėjų peržiūrėjo naujienlaiškį"
+
+#: alo-easymail_recipients-list.php:21
+#: alo-easymail_recipients-list.php:22
+#: alo-easymail_report.php:17
+#: alo-easymail_report.php:18
+#@ alo-easymail
+msgid "The required newsletter does not exist"
+msgstr "Pareikalautas naujienlaiškis neegzistuoja"
+
+#: alo-easymail_recipients-list.php:68
+#@ alo-easymail
+msgid "The required newsletter seems to already have a list"
+msgstr "Pareikalautas naujienlaiškis jau turi reikiamą sąrašą"
+
+#: alo-easymail_options.php:1019
+#@ alo-easymail
+msgid "The user with this capability can manage newsletters of all users (view the report, delete)"
+msgstr "Šios charakteristikos vartotojas galės valdyti visų vartotojų naujienlaiškių sritį (peržiūrėti ataskaitas, ištrinti)"
+
+#: alo-easymail_options.php:992
+#@ alo-easymail
+msgid "The user with this capability can manage own newsletters (view the report, delete)"
+msgstr "Šio veiksnumo vartotojas gali valdyti savo naujienlaiškius (peržiūrėti ataskaitas, ištrinti)"
+
+#: alo-easymail_options.php:1042
+#@ alo-easymail
+msgid "The user with this capability can manage subscribers (add, delete, assign to mailing lists...)"
+msgstr "Šios charakteristikos vartotojas gali valdyti prenumeratorių sritį (pridėti, ištrinti, priskirti į adresatų sąrašus...)"
+
+#: alo-easymail_options.php:1063
+#@ alo-easymail
+msgid "The user with this capability can set up these setting sections"
+msgstr "Šio veiksnumo vartotojas gali keisti šiuos nuostatų skyrius"
+
+#: alo-easymail_subscribers.php:999
+#@ alo-easymail
+msgid "The username of registered users. It is blank for public subscribers."
+msgstr "Registurotų varotojų vartotojų vardai. Viešiesiems prenumeratoriams rodomas tuščias laukelis."
+
+#: alo-easymail_custom-hooks-sample.php:37
+#: alo-easymail_functions.php:1038
+#: alo-easymail_functions.php:1929
+#: alo-easymail_functions.php:1930
+#: alo-easymail_functions.php:1937
+#: alo-easymail_functions.php:1938
+#@ alo-easymail
+msgid "The visit to this url will be tracked."
+msgstr "Šios universaliosios nuorodos aplankymas bus užfiksuotas."
+
+#: alo-easymail.php:1371
+#@ alo-easymail
+msgid "Themes"
+msgstr "Apipavidalinimai"
+
+#: alo-easymail.php:1677
+#, php-format
+#@ alo-easymail
+msgid "There are %d subscribers: %d activated, %d not activated"
+msgstr "Iš viso yra %d prenumeratorių: %d aktyvuoti, %d neaktyvuoti"
+
+#: alo-easymail_options.php:1307
+#: alo-easymail_subscribers.php:160
+#@ alo-easymail
+msgid "There are no available lists"
+msgstr "Nėra prieinamų sąrašų"
+
+#: alo-easymail.php:1672
+#@ alo-easymail
+msgid "There are no newsletters in queue"
+msgstr "Eilėje nėra jokių naujienlaiškių"
+
+#: alo-easymail.php:1561
+#@ alo-easymail
+msgid "There are no posts"
+msgstr "Nėra įrašų"
+
+#: alo-easymail.php:1298
+#: alo-easymail_subscribers.php:590
+#: alo-easymail_subscribers.php:616
+#@ alo-easymail
+msgid "There is already a subscriber with this e-email address"
+msgstr "Jau yra prenumeratorius tokiu pačiu elektroninio pašto adresu"
+
+#: alo-easymail_report.php:197
+#@ alo-easymail
+msgid "This action cannot be undone"
+msgstr "Šis veiksmas yra negrįžtamas"
+
+#: alo-easymail_report.php:199
+#@ alo-easymail
+msgid "This action deletes the detailed info about recipients (see below) and keeps only the summary (see above)"
+msgstr "Šiuo veiksmu ištrinama detalizuota informacija apie gavėjus (žiūrėkite žemiau). Paliekamos tik santraukos (žiūrėti aukščiau)"
+
+#: alo-easymail_subscribers.php:355
+#@ alo-easymail
+msgid "This feature is useful if you have just installed the plugin and you would like to automatically subscribe existing users."
+msgstr "Ši funkcija naudinga jeigu neseniai įdiegėte papildinį ir Jūs norėtumėte į prenumeratorių sąrašą įtraukti esamus vartotojus."
+
+#: alo-easymail_functions.php:1704
+#@ alo-easymail
+msgid "This newsletter is available only in html"
+msgstr "Naujienlaiškis įmanomas tik html kodu"
+
+#: alo-easymail.php:1387
+#@ alo-easymail
+msgid "This newsletter was already sent"
+msgstr "Šis naujienlaiškis jau išsiųstas"
+
+#: alo-easymail_options.php:294
+#@ alo-easymail
+msgid "This should be the page that includes the [ALO-EASYMAIL-PAGE] shortcode. By default, this page is titled &#39;Newsletter&#39;"
+msgstr "Tai turėtų būti puslapis, į kūrį įtraukti [ALO-EASYMAIL-PAGE] trumpieji kodai. Numatytoji šio puslapio antraštė &#39;Newsletter&#39;"
+
+#: alo-easymail_functions.php:1923
+#@ alo-easymail
+msgid "This tag now does not work because the online publication of newsletters is disabled"
+msgstr "Ši gairė neveikia, nes tiesioginis naujienlaiškių publikavimas yra išjungtas"
+
+#: alo-easymail_functions.php:1038
+#: alo-easymail_functions.php:1046
+#: alo-easymail_functions.php:1047
+#@ alo-easymail
+msgid "This tag works also in the <strong>subject</strong>"
+msgstr "Gairė taip pat veiksni <strong>temoje</strong>"
+
+#: alo-easymail_options.php:487
+#@ alo-easymail
+msgid "Tip: copy &#39;alo-easymail-themes&#39; folder to your theme directory and edit your themes there. Useful to prevent the loss of themes when you upgrade the plugin"
+msgstr "Patarimas: nukopijuokite &#39;alo-easymail-themes&#39; aplanką į Jūsų apipavidalinimų katalogą ir redaguokite savo apipavidalinimus tenai. Naudinga, nenorint prarasti apipavidalinimų, naujovinant papildinį"
+
+#: alo-easymail_options.php:320
+#@ alo-easymail
+msgid "Tip: copy &#39;alo-easymail.css&#39; to your theme directory and edit it there. Useful to prevent the loss of styles when you upgrade the plugin"
+msgstr "Patarimas: nukopijuokite &#39;alo-easymail.css&#39; į Jūsų apipavidalinimų katalogą ir atlikite redagavimo darbus jame. Naudinga, jeigu norite apsisaugoti nuo stilių nustatymų praradimų atnaujinant papildinį."
+
+#: alo-easymail_subscribers.php:382
+#@ alo-easymail
+msgid "Tips if you have problems: you can try changing the file extension from .csv to .txt; use double quotes to delimit each field (&quot;email_address1@domain.ltd&quot;;&quot;name1 surname1&quot;)"
+msgstr "Patarimai, jeigu kyla kokių nors problemų: Jūs galite mėginti pakeisti rinkmenos plėtinį iš .csv į .txt; naudokite dvigubas kabutes, atskiriant kiekvieną laukelį (&quot;adresas1@sritis.ltd&quot;;&quot:vardas1 pavardė1&quot;)"
+
+#: alo-easymail_functions.php:1931
+#@ alo-easymail
+msgid "Title of the newsletter."
+msgstr "Naujienlaiškio antraštė."
+
+#: alo-easymail_subscr-page.php:48
+#@ alo-easymail
+msgid "To modify your subscription to mailing lists use this form"
+msgstr "Norėdami keisti savo adresatų sąrašo prenumeratą, naudokite šią formą"
+
+#: alo-easymail_functions.php:1979
+#: alo-easymail_options.php:770
+#@ alo-easymail
+msgid "To read the newsletter online you can visit this link:"
+msgstr "Kad skaitytumėte naujienlaiškį internete, Jūs galite aplankyti šią nuorodą:"
+
+#: alo-easymail_subscr-page.php:80
+#@ alo-easymail
+msgid "To unsubscribe the newsletter for good click this button"
+msgstr "Norėdami atsisakyti naujienlaiškio, paspauskite šį mygtuką"
+
+#: alo-easymail_options.php:620
+#@ alo-easymail
+msgid "Top claim"
+msgstr "Aukščiausia pretenzija"
+
+#: alo-easymail.php:760
+#: alo-easymail_report.php:149
+#@ alo-easymail
+msgid "Total recipients"
+msgstr "Iš viso gavėjų"
+
+#: alo-easymail_subscr-page.php:96
+#@ alo-easymail
+msgid "Try again."
+msgstr "Bandykite vėl."
+
+#: alo-easymail_functions.php:1930
+#@ alo-easymail
+msgid "URL to the online version."
+msgstr "Universalioji nuoroda gyvai versijai."
+
+#: alo-easymail_functions.php:1938
+#@ alo-easymail
+msgid "URL to the site."
+msgstr "Puslapio universalioji nuoroda."
+
+#: alo-easymail_functions.php:1926
+#@ alo-easymail
+msgid "URL to unsubscribe."
+msgstr "Prenumeratos nutraukimo universalioji nuoroda."
+
+#: alo-easymail_report.php:154
+#@ alo-easymail
+msgid "Unique views"
+msgstr "Unikalios peržiūros"
+
+#: alo-easymail_subscr-page.php:86
+#@ alo-easymail
+msgid "Unsubscribe me"
+msgstr "Noriu nutraukti prenumeratą"
+
+#: alo-easymail_options.php:725
+#@ alo-easymail
+msgid "Unsubscription disclaimer"
+msgstr "Prenumeratos nutraukimo atsakomybės apribojimas"
+
+#: alo-easymail_options.php:382
+#: alo-easymail_options.php:554
+#: alo-easymail_options.php:588
+#: alo-easymail_options.php:811
+#: alo-easymail_options.php:937
+#: alo-easymail_options.php:1076
+#@ alo-easymail
+msgid "Update"
+msgstr "Atnaujinti"
+
+#: alo-easymail_options.php:214
+#: alo-easymail_options.php:1142
+#: alo-easymail_options.php:1161
+#: alo-easymail_subscribers.php:521
+#: alo-easymail_subscribers.php:538
+#@ alo-easymail
+msgid "Updated"
+msgstr "Atnaujinta"
+
+#: alo-easymail.php:1683
+#@ alo-easymail
+msgid "Updates from plugin developer"
+msgstr "Atnaujinimai nuo papildinio kūrėjo"
+
+#: alo-easymail-widget.php:60
+#@ alo-easymail
+msgid "Updating..."
+msgstr "Atnaujinama..."
+
+#: alo-easymail_subscribers.php:403
+#@ alo-easymail
+msgid "Upload CSV file"
+msgstr "Įkelti CSV rinkmeną"
+
+#: alo-easymail_options.php:476
+#@ alo-easymail
+msgid "Use themes"
+msgstr "Naudoti apipavidalinimus"
+
+#: alo-easymail_subscribers.php:999
+#@ alo-easymail
+msgid "Username"
+msgstr "Vartotojo vardas"
+
+#: alo-easymail_options.php:897
+#@ alo-easymail
+msgid "Usually you do not have to modify this value"
+msgstr "Dažniausiai Jums nereikia keisti šios reikšmės"
+
+#: alo-easymail.php:623
+#@ alo-easymail
+msgid "View Newsletter"
+msgstr "Peržiūrėti Naujienlaiškį"
+
+#: alo-easymail_functions.php:3520
+#@ alo-easymail
+msgid "View user profile"
+msgstr "Peržiūrėti vartotojo prifilį"
+
+#: alo-easymail_report.php:264
+#@ alo-easymail
+msgid "Viewed"
+msgstr "Peržiūrėta"
+
+#: alo-easymail_recipients-list.php:181
+#@ alo-easymail
+msgid "Warning: do not close or reload the browser window during process"
+msgstr "<strong>Dėmesio: neuždarykite ir neperkraukite aktyvaus naršyklės lango, kol vyksta procesas</strong>"
+
+#: alo-easymail_functions.php:1220
+#@ alo-easymail
+msgid "Warning: this email address has already been subscribed"
+msgstr "Dėmesio: šis elektroninio pašto adresas jau priklauso prenumeravimo paskyrai"
+
+#: alo-easymail_functions.php:1219
+#@ alo-easymail
+msgid "Warning: this email address has already been subscribed, but not activated. We are now sending another activation email"
+msgstr "Dėmesio: šis elektroninio pašto adresas jau priklauso prenumeravimo paskyrai, bet niekada nebuvo suaktyvintas. Siunčiame kitą elektroninį laišką su suaktyvinimo nuoroda"
+
+#: alo-easymail_options.php:602
+#@ alo-easymail
+msgid "Widget/Page Texts"
+msgstr "Valdiklių/Puslapių Tekstai"
+
+#: alo-easymail.php:1087
+#: alo-easymail_functions.php:2405
+#: alo-easymail_recipients-list.php:187
+#: alo-easymail_report.php:280
+#@ alo-easymail
+msgid "Yes"
+msgstr "Taip"
+
+#: alo-easymail_options.php:372
+#@ alo-easymail
+msgid "Yes, I understand"
+msgstr "Taip, aš suprantu"
+
+#: alo-easymail-widget.php:57
+#: alo-easymail.php:1083
+#: alo-easymail.php:1725
+#: alo-easymail_options.php:627
+#: alo-easymail_subscr-page.php:24
+#@ alo-easymail
+msgid "Yes, I would like to receive the Newsletter"
+msgstr "Taip, aš norėčiau gauti Naujienlaiškį"
+
+#: alo-easymail_options.php:358
+#@ alo-easymail
+msgid "You are free to hide the credits, but in that case it's a common practice to make a small donatation via Paypal to the plugin author"
+msgstr "Jūs galite paslėpti reklamjuostes. Tačiau tokiu atveju įprasta atlikti mažytį paaukijimą per PayPal internetinių mokėjimų sistemą žmonėms, sukūrusiems tokį naudingą Jums papildinį."
+
+#: alo-easymail_recipients-list.php:180
+#@ alo-easymail
+msgid "You can add the recipients to the sending queue (best choice) or send them the newsletter immediately (suggested only if few recipients)"
+msgstr "Jūs galite pridėti gavėjus į siuntimo eilę (geriausias sprendimas) arba išsiųsti jiems naujienlaiškį dabar pat (rekomenduojama tik siunčiant keliems gavėjams)"
+
+#: alo-easymail-widget.php:20
+#: alo-easymail.php:1731
+#: alo-easymail_functions.php:2696
+#: alo-easymail_options.php:629
+#@ alo-easymail
+msgid "You can also sign up for specific lists"
+msgstr "Jūs taip pat galite užsisakyti specialius sąrašus"
+
+#: alo-easymail_functions.php:1925
+#: alo-easymail_functions.php:1929
+#@ alo-easymail
+msgid "You can customise this text in settings"
+msgstr "Jūs galite individualizuoti šį tekstą nuostatose"
+
+#: alo-easymail_subscribers.php:408
+#@ alo-easymail
+msgid "You can export newsletter subscribers: the plugin shows them on screen so you can copy and paste them into a text file or into any application"
+msgstr "Jūs galite eksportuoti naujienlaiškio prenumeratorius: papildinys rodo juos ekrane, tad Jūs galite kopijuoti ir įklijuoti juos į tekstinę rinkmeną arba į kurią nors kitą programą."
+
+#: alo-easymail_subscribers.php:354
+#@ alo-easymail
+msgid "You can import new subscribers from WordPress registered users. Each member will be subscribed to the newsletter."
+msgstr "Jūs galite importuoti naujus prenumeratorius iš WordPress registruotų vartotojų sąrašo. Kiekvienas narys taps naujienlaiškio prenumeratoriumi."
+
+#: alo-easymail_subscribers.php:367
+#@ alo-easymail
+msgid "You can import new subscribers from a CSV file."
+msgstr "Jūs galite importuoti naujus prenumeratorius iš CSV rinkmenos."
+
+#: alo-easymail_subscribers.php:369
+#@ alo-easymail
+msgid "You can list only languages available in the blog"
+msgstr "Į sąrašą įrašyti gaite tik kalbas, prieinamas Jūsų tinklaraštyje"
+
+#: alo-easymail_options.php:514
+#@ alo-easymail
+msgid "You can load only javascript of the plugin, useful to prevent conflicts with javascripts of other plugins"
+msgstr "Jūs galite įkelti tik papildinio javascript. Tai yra naudinga išvengiant konfiltų tarp javascript ir kitų papildinių"
+
+#: alo-easymail_subscr-page.php:56
+#@ alo-easymail
+msgid "You can modify your subscription details"
+msgstr "Jūs galite keisti Jūsų prenumeratos informaciją"
+
+#: alo-easymail_recipients-list.php:183
+#@ alo-easymail
+msgid "You can send the newsletter as test to"
+msgstr "Jūs galite testuoti, nusiųsdamas naujienlaiškį į"
+
+#: alo-easymail_options.php:1174
+#@ alo-easymail
+msgid "You can setup mailing lists. For each you have to specify the name, the order (the lowest appear at top) and the availability"
+msgstr "Jūs galite sudaryti adresatų sąrašus. Kiekvienam jų turite priskirti vardą, tvarką (žemiausia bus rodoma viršuje) ir prieinamumą"
+
+#: alo-easymail_options.php:515
+#@ alo-easymail
+msgid "You can try an alternative javascript library"
+msgstr "Jūs galite išbandyti alternatyvią javascript biblioteką"
+
+#: alo-easymail_options.php:715
+#: alo-easymail_options.php:754
+#: alo-easymail_options.php:794
+#@ alo-easymail
+msgid "You can use the following tags"
+msgstr "Galite naudoti šias gaires"
+
+#: alo-easymail_functions.php:1998
+#: alo-easymail_options.php:728
+#@ alo-easymail
+msgid "You have received this message because you subscribed to our newsletter. If you want to unsubscribe: "
+msgstr "Jūs gavote ši pranešimą, nes esate mūsų naujienlaiškio prenumeratorius. Jeigu norite atsisakyti prenumeratos:"
+
+#: alo-easymail.php:2317
+#: alo-easymail_recipients-list.php:179
+#@ alo-easymail
+msgid "You have to prepare the list of recipients to send the newsletter to"
+msgstr "Jūs turite paruošti gavėjų sąrašą, kad galėtume jiems išsiųsti naujienlaiškį"
+
+#: alo-easymail_subscr-page.php:132
+#@ alo-easymail
+msgid "Your subscription to mailing lists successfully updated"
+msgstr "Jūsų adresatų sąrašų prenumerata sėkmingai atnaujinta"
+
+#: alo-easymail_functions.php:1225
+#: alo-easymail_subscr-page.php:37
+#@ alo-easymail
+msgid "Your subscription was successfully activated. You will receive the next newsletter. Thank you."
+msgstr "Jūsų prenumerata sėkmingai suaktyvinta. Sekantį naujienlaiškį Jūs gausite. Ačiū Jūms."
+
+#: alo-easymail_subscr-page.php:93
+#@ alo-easymail
+msgid "Your subscription was successfully deleted. Bye bye."
+msgstr "Jūsų prenumerata sėkmingai nutraukta. Viso geriausio."
+
+#: alo-easymail_options.php:1177
+#: alo-easymail_options.php:1229
+#: alo-easymail_options.php:1278
+#@ alo-easymail
+msgid "admin side only"
+msgstr "tik administratoriaus dalis"
+
+#: alo-easymail_options.php:504
+#: alo-easymail_options.php:505
+#: alo-easymail_options.php:506
+#@ alo-easymail
+msgid "ajax"
+msgstr "ajax"
+
+#: alo-easymail.php:1967
+#: alo-easymail_options.php:542
+#@ alo-easymail
+msgid "all messages will be recorded into a log file"
+msgstr "visos žinutės bus įrašytos į žurnalo rinkmeną"
+
+#: alo-easymail.php:1966
+#: alo-easymail_options.php:541
+#@ alo-easymail
+msgid "all messages will be sent to the newsletter author"
+msgstr "visos žinutės bus išsiųstos naujienlaiškio autoriui"
+
+#: alo-easymail.php:959
+#@ alo-easymail
+msgid "archived"
+msgstr "perkelta į archyvą"
+
+#: alo-easymail_options.php:484
+#@ alo-easymail
+msgid "but always use"
+msgstr "bet visuomet naudokite"
+
+#: alo-easymail_options.php:543
+#, php-format
+#@ alo-easymail
+msgid "called %s and saved in %s"
+msgstr "Pavadintas %s ir įrašytas į %s"
+
+#: alo-easymail_recipients-list.php:5
+#: alo-easymail_recipients-list.php:202
+#@ alo-easymail
+msgid "close"
+msgstr "uždaryti"
+
+#: alo-easymail.php:1008
+#: alo-easymail_recipients-list.php:200
+#@ alo-easymail
+msgid "continue"
+msgstr "tęsti"
+
+#: alo-easymail.php:1008
+#@ alo-easymail
+msgid "continue the sending"
+msgstr "tęsti siuntimą"
+
+#: alo-easymail_options.php:507
+#@ alo-easymail
+msgid "creation when newsletter is saved"
+msgstr "elementas, sukuriamas kuomet naujienlaiškis įrašomas"
+
+#: alo-easymail_functions.php:3525
+#: alo-easymail_functions.php:3534
+#@ alo-easymail
+msgid "d/m/Y \\h.H:i"
+msgstr "d/m/Y \\h.H:i"
+
+#: alo-easymail_subscribers.php:1001
+#@ alo-easymail
+msgid "e.g. open a newsletter, click a newsletter link, update info in subscription form"
+msgstr "pvz. atidarė naujienlaiškį, paspaudė naujienlaiškio nuorodą, atnaujino infromaciją prenumeratos formoje"
+
+#: alo-easymail_options.php:631
+#: alo-easymail_options.php:635
+#@ alo-easymail
+msgid "empty"
+msgstr "tuščia"
+
+#: alo-easymail_options.php:1178
+#: alo-easymail_options.php:1230
+#: alo-easymail_options.php:1281
+#@ alo-easymail
+msgid "entire site"
+msgstr "visa svetainė"
+
+#: alo-easymail_options.php:888
+#, php-format
+#@ alo-easymail
+msgid "every %s minutes"
+msgstr "kas %s minutes"
+
+#: alo-easymail_options.php:1176
+#: alo-easymail_options.php:1228
+#: alo-easymail_options.php:1275
+#@ alo-easymail
+msgid "hidden"
+msgstr "paslėpta"
+
+#: alo-easymail-widget.php:127
+#: alo-easymail.php:1114
+#: alo-easymail_functions.php:1146
+#: alo-easymail_functions.php:1148
+#: alo-easymail_functions.php:1214
+#: alo-easymail_functions.php:1216
+#: alo-easymail_subscr-page.php:61
+#@ alo-easymail
+msgid "humans_name"
+msgstr "žmogaus_vardas"
+
+#: alo-easymail_subscribers.php:138
+#: alo-easymail_subscribers.php:141
+#@ alo-easymail
+msgid "ignore not selected lists"
+msgstr "ignoruoti nepasirinktus sąrašus"
+
+#: alo-easymail_options.php:589
+#: alo-easymail_subscribers.php:369
+#@ alo-easymail
+msgid "iso 639-1 codes"
+msgstr "ISO 639-1 kodai"
+
+#: alo-easymail.php:1700
+#@ alo-easymail
+msgid "j F Y"
+msgstr "j F Y"
+
+#: alo-easymail.php:1557
+#@ alo-easymail
+msgid "j M Y"
+msgstr "j M Y"
+
+#: alo-easymail.php:691
+#: alo-easymail.php:966
+#: alo-easymail.php:1668
+#: alo-easymail_functions.php:1827
+#: alo-easymail_options.php:867
+#: alo-easymail_report.php:90
+#: alo-easymail_report.php:96
+#@ alo-easymail
+#@ default
+msgid "j M Y @ G:i"
+msgstr "j M Y @ G:i"
+
+#: alo-easymail_options.php:505
+#@ alo-easymail
+msgid "loading only javascript of the plugin"
+msgstr "įkeliamas tik papildinio javascript"
+
+#: alo-easymail_functions.php:2401
+#: alo-easymail_subscribers.php:295
+#@ alo-easymail
+msgid "mandatory"
+msgstr "privalomai"
+
+#: alo-easymail_options.php:455
+#: alo-easymail_options.php:479
+#: alo-easymail_options.php:533
+#@ alo-easymail
+msgid "no"
+msgstr "ne"
+
+#: alo-easymail_options.php:507
+#@ alo-easymail
+msgid "no ajax"
+msgstr "be ajax"
+
+#: alo-easymail_options.php:1207
+#@ alo-easymail
+msgid "no translation for this language, yet"
+msgstr "nėra šios kalbos vertimo. Kol kas"
+
+#: alo-easymail.php:1665
+#@ alo-easymail
+msgid "now sending"
+msgstr "dabar siunčiama"
+
+#: alo-easymail_report.php:61
+#@ alo-easymail
+msgid "open in a new window"
+msgstr "atidaryti naujame lange"
+
+#: alo-easymail.php:979
+#: alo-easymail_recipients-list.php:199
+#@ alo-easymail
+msgid "pause"
+msgstr "pristabdyti"
+
+#: alo-easymail.php:979
+#@ alo-easymail
+msgid "pause the sending"
+msgstr "pristabdyti siuntimą"
+
+#: alo-easymail_options.php:534
+#: alo-easymail_options.php:542
+#@ alo-easymail
+msgid "put all emails into a log file"
+msgstr "žurnalo rinkmenoje kaupti visus elektroninius laiškus"
+
+#: alo-easymail.php:977
+#: alo-easymail.php:990
+#@ alo-easymail
+msgid "refresh"
+msgstr "įkelti iš naujo"
+
+#: alo-easymail_options.php:534
+#: alo-easymail_options.php:541
+#@ alo-easymail
+msgid "send all emails to the author"
+msgstr "autoriui siųsti visus elektroninius laiškus"
+
+#: alo-easymail-widget.php:106
+#: alo-easymail_functions.php:1228
+#@ alo-easymail
+msgid "sending..."
+msgstr "siunčiama..."
+
+#: alo-easymail_options.php:717
+#: alo-easymail_options.php:756
+#@ alo-easymail
+msgid "the blog name"
+msgstr "tinklaraščio pavadinimas"
+
+#: alo-easymail_options.php:1176
+#@ alo-easymail
+msgid "the list can be shown only here in settings and nowhere in the site"
+msgstr "sąrašas gali būti rodomas tik čia, nuostatose, tačiau niekur kitur tinklapyje"
+
+#: alo-easymail_options.php:1178
+#@ alo-easymail
+msgid "the list is available in the whole site, so subscribers can see it"
+msgstr "sąrašas prieinamas visoje svetainėje, tad prenumeratoriai gali jį matyti"
+
+#: alo-easymail_options.php:1177
+#@ alo-easymail
+msgid "the list is available only for administratrion use (settings, sending page, subscribers), so subscribers cannot see it"
+msgstr "sąrašas prieinamas tik administravimo tikslams (nuostatų, siuntimo puslapio, prenumeratorių valdymui), taigi prenumeratoriai sąrašo matyti negali"
+
+#: alo-easymail_options.php:543
+#@ alo-easymail
+msgid "the log file is accessible on your server and contains personal information so you have to delete it as soon as possible!"
+msgstr "žurnalo rinkmena yra pasiekiama Jūsų serveryje ir joje saugoma daug asmeninės informacijos, tad privalote ištrinti ją kaip įmanoma greičiau!"
+
+#: alo-easymail_options.php:718
+#@ alo-easymail
+msgid "the subscriber name"
+msgstr "prenumeratoriaus vardas"
+
+#: alo-easymail_options.php:719
+#@ alo-easymail
+msgid "the url that the new subscriber must click/visit to confirm the subscription"
+msgstr "universalioji nuoroda, kurią prenumeratorius turi aplankyti, norėdamas patvirtinti prenumeratą"
+
+#: alo-easymail_options.php:517
+#@ alo-easymail
+msgid "this is the quickest and safest mode, but it could not work if case of several thousands of recipients"
+msgstr "tai yra greičiausia ir saugiausia būsena, bet ši būsena neveiksni, jeigu yra keli tūkstančiai gavėjų"
+
+#: alo-easymail_subscribers.php:382
+#@ alo-easymail
+msgid "try using a different browser"
+msgstr "mėginkite naudoti kitą naršyklę"
+
+#: alo-easymail_options.php:729
+#@ alo-easymail
+msgid "visit this link"
+msgstr "aplankykite šią nuorodą"
+
+#: alo-easymail_report.php:100
+#@ alo-easymail
+msgid "without formatting"
+msgstr "be formatavimo"
+
+#: alo-easymail_options.php:480
+#: alo-easymail_options.php:484
+#@ alo-easymail
+msgid "yes"
+msgstr "taip"
+
+#: alo-easymail_functions.php:1923
+#@ alo-easymail
+msgid "you can set it up in settings"
+msgstr "jūs galite tai nustatyti nuostatose"
+
+#: alo-easymail_subscribers.php:369
+#@ alo-easymail
+msgid "you can set them up in Settings &gt; Newsletter"
+msgstr "galite įrašyti jas Naujienlaiškio Parinktyse"
+
+#: alo-easymail.php:1975
+#: alo-easymail_options.php:870
+#@ alo-easymail
+msgid "you can try to deactivate and activate the plugin"
+msgstr "galite pamėginti deaktyvuoti, o po to vėl suaktyvinti šį papildinį"
+
+#: alo-easymail.php:418
+#@ default
+msgid "Settings"
+msgstr ""
+
+#: alo-easymail.php:474
+#@ default
+msgid "Links"
+msgstr ""
+
+#: alo-easymail.php:498
+#@ alo-easymail
+msgid "subscribers per page"
+msgstr ""
+
+#: alo-easymail.php:735
+#@ default
+msgid "Title"
+msgstr ""
+
+#: alo-easymail.php:739
+#@ default
+msgid "Author"
+msgstr ""
+
+#: alo-easymail.php:985
+#@ default
+msgid "Pending Review"
+msgstr ""
+
+#: alo-easymail.php:988
+#@ default
+msgid "Scheduled"
+msgstr ""
+
+#: alo-easymail.php:994
+#@ default
+msgid "Draft"
+msgstr ""
+
+#: alo-easymail.php:997
+#@ default
+msgid "Pending"
+msgstr ""
+
+#: alo-easymail.php:1300
+#: alo-easymail_subscribers.php:869
+#@ alo-easymail
+msgid "The email address will be added to the list of who unsubscribed"
+msgstr ""
+
+#: alo-easymail.php:1300
+#: alo-easymail_subscribers.php:869
+#@ alo-easymail
+msgid "so you cannot add or import these email addresses using the tools in admin pages"
+msgstr ""
+
+#: alo-easymail.php:1403
+#@ default
+msgid "Users"
+msgstr ""
+
+#: alo-easymail.php:1414
+#@ alo-easymail
+msgid "Filter users according to roles"
+msgstr ""
+
+#: alo-easymail.php:1514
+#: alo-easymail_options.php:1291
+#@ default
+msgid "View"
+msgstr ""
+
+#: alo-easymail.php:1707
+#, php-format
+#@ default
+msgid "<strong>RSS Error</strong>: %s"
+msgstr ""
+
+#: alo-easymail.php:2295
+#@ alo-easymail
+msgid "Before sending the newsletter you have to select recipients."
+msgstr ""
+
+#: alo-easymail.php:2295
+#: alo-easymail.php:2317
+#@ alo-easymail
+msgid "Click the link to do it now."
+msgstr ""
+
+#: alo-easymail_custom-hooks-sample.php:70
+#@ alo-easymail
+msgid "Filter by category"
+msgstr ""
+
+#: alo-easymail_functions.php:318
+#@ default
+msgid "User Roles"
+msgstr ""
+
+#: alo-easymail_functions.php:1039
+#@ alo-easymail
+msgid "If it is empty, the beginning of post content will be used."
+msgstr ""
+
+#: alo-easymail_functions.php:1067
+#@ default
+msgid "title"
+msgstr ""
+
+#: alo-easymail_functions.php:1939
+#@ default
+msgid "Site Title"
+msgstr ""
+
+#: alo-easymail_functions.php:1940
+#@ default
+msgid "Tagline"
+msgstr ""
+
+#: alo-easymail_functions.php:2397
+#@ alo-easymail
+msgid "Custom links"
+msgstr ""
+
+#: alo-easymail_functions.php:2399
+#@ alo-easymail
+msgid "This placeholder produces a link (html &lt;a&gt; tag) and has the following parameters"
+msgstr ""
+
+#: alo-easymail_functions.php:2401
+#@ alo-easymail
+msgid "the ID of a post or a full web address"
+msgstr ""
+
+#: alo-easymail_functions.php:2403
+#@ alo-easymail
+msgid "the text of the link"
+msgstr ""
+
+#: alo-easymail_functions.php:2403
+#@ alo-easymail
+msgid "the title of the post (if &#39;href&#39; is a post ID) or the &#39;href&#39; itself"
+msgstr ""
+
+#: alo-easymail_functions.php:2405
+#@ alo-easymail
+msgid "the click on the link by the recipient will be tracked (1) or not (0)"
+msgstr ""
+
+#: alo-easymail_functions.php:2407
+#@ alo-easymail
+msgid "the class tag attribute"
+msgstr ""
+
+#: alo-easymail_functions.php:2409
+#@ alo-easymail
+msgid "the style tag attribute"
+msgstr ""
+
+#: alo-easymail_functions.php:2411
+#@ alo-easymail
+msgid "a link to blog post with ID 1, with custom css style, without tracking"
+msgstr ""
+
+#: alo-easymail_functions.php:2413
+#@ alo-easymail
+msgid "a link to Wordress.org, with custom title"
+msgstr ""
+
+#: alo-easymail_functions.php:2423
+#@ alo-easymail
+msgid "You can insert customised links to blog posts or external web addresses"
+msgstr ""
+
+#: alo-easymail_functions.php:3606
+#: alo-easymail_functions.php:3607
+#@ alo-easymail
+msgid "Delete subscriber and add the email to the list of who unsubscribed"
+msgstr ""
+
+#: alo-easymail_options.php:3
+#: alo-easymail_recipients-list.php:6
+#: alo-easymail_recipients-list.php:17
+#: alo-easymail_recipients-list.php:23
+#: alo-easymail_recipients-list.php:25
+#: alo-easymail_report.php:5
+#: alo-easymail_report.php:19
+#: alo-easymail_report.php:22
+#: alo-easymail_subscribers.php:3
+#@ default
+msgid "Cheatin&#8217; uh?"
+msgstr ""
+
+#: alo-easymail_options.php:452
+#@ alo-easymail
+msgid "Appends campaign variables to links"
+msgstr ""
+
+#: alo-easymail_options.php:456
+#: alo-easymail_options.php:463
+#@ alo-easymail
+msgid "Google Analytics"
+msgstr ""
+
+#: alo-easymail_options.php:456
+#@ alo-easymail
+msgid "you need an account"
+msgstr ""
+
+#: alo-easymail_options.php:462
+#@ alo-easymail
+msgid "The plugin appends campagin variables to links"
+msgstr ""
+
+#: alo-easymail_options.php:463
+#@ alo-easymail
+msgid "E.g."
+msgstr ""
+
+#: alo-easymail_options.php:757
+#@ alo-easymail
+msgid "the html link that the new subscriber must click/visit to unsubscribe the newsletter"
+msgstr ""
+
+#: alo-easymail_options.php:758
+#@ alo-easymail
+msgid "the plain url that the new subscriber must click/visit to unsubscribe the newsletter"
+msgstr ""
+
+#: alo-easymail_options.php:759
+#: alo-easymail_options.php:798
+#@ alo-easymail
+msgid "It's a plain url, you have to compose the link"
+msgstr ""
+
+#: alo-easymail_options.php:796
+#@ alo-easymail
+msgid "html link to the newsletter web url"
+msgstr ""
+
+#: alo-easymail_options.php:797
+#@ alo-easymail
+msgid "plain url to the newsletter web url"
+msgstr ""
+
+#: alo-easymail_options.php:847
+#@ alo-easymail
+msgid "WP-Cron is not working properly"
+msgstr ""
+
+#: alo-easymail_options.php:848
+#, php-format
+#@ alo-easymail
+msgid "%s is returning a %s response which could mean cron jobs aren't getting fired properly"
+msgstr ""
+
+#: alo-easymail_options.php:849
+#@ alo-easymail
+msgid "The file seems to be not accessible: is your blog behind some kind of authentication, maintenance plugin, .htpasswd protection?"
+msgstr ""
+
+#: alo-easymail_options.php:851
+#: alo-easymail_options.php:872
+#@ alo-easymail
+msgid "If you are using an external cron job ignore this piece of information"
+msgstr ""
+
+#: alo-easymail_options.php:867
+#, php-format
+#@ alo-easymail
+msgid "The cron is scheduled to launch a batch every %s minutes"
+msgstr ""
+
+#: alo-easymail_options.php:867
+#@ alo-easymail
+msgid "Next possible sending"
+msgstr ""
+
+#: alo-easymail_options.php:869
+#@ alo-easymail
+msgid "There is not any next scheduled sending in WP-Cron"
+msgstr ""
+
+#: alo-easymail_options.php:891
+#@ alo-easymail
+msgid "Recommended"
+msgstr ""
+
+#: alo-easymail_options.php:904
+#@ alo-easymail
+msgid "What about the batch sending based on WP cron system?"
+msgstr ""
+
+#: alo-easymail_options.php:906
+#@ alo-easymail
+msgid "Let&#39;s speak clearly: the WP cron system is a pseudo-cron and it's not accurate by definition"
+msgstr ""
+
+#: alo-easymail_options.php:913
+#@ alo-easymail
+msgid "The number of recipients for each sending is calculated on the cut-off of emails you can send per day and on the time interval from the previous sending"
+msgstr ""
+
+#: alo-easymail_options.php:916
+#@ alo-easymail
+msgid "If your blog gets a few visitors a day or you like to have an accurate batch sending, you have to set up an external cron job"
+msgstr ""
+
+#: alo-easymail_options.php:919
+#@ alo-easymail
+msgid "You can ask your provider to setup a GET cron job that periodically hits the WP cron on your blog, e.g."
+msgstr ""
+
+#: alo-easymail_options.php:1254
+#@ default
+msgid "ID"
+msgstr ""
+
+#: alo-easymail_report.php:175
+#@ alo-easymail
+msgid "click to view list of clicked links"
+msgstr ""
+
+#: alo-easymail_report.php:197
+#: alo-easymail_report.php:199
+#@ alo-easymail
+msgid "You are about to DELETE the detailed info about recipients"
+msgstr ""
+
+#: alo-easymail_report.php:198
+#@ alo-easymail
+msgid "Delete the detailed report of recipients"
+msgstr ""
+
+#: alo-easymail_report.php:208
+#@ alo-easymail
+msgid "Back to list of recipients"
+msgstr ""
+
+#: alo-easymail_report.php:213
+#@ alo-easymail
+msgid "Requested URL"
+msgstr ""
+
+#: alo-easymail_report.php:214
+#@ alo-easymail
+msgid "Visits"
+msgstr ""
+
+#: alo-easymail_report.php:230
+#, php-format
+#@ default
+msgid "Visit %s"
+msgstr ""
+
+#: alo-easymail_subscr-page.php:75
+#@ alo-easymail
+msgid "Edit"
+msgstr ""
+
+#: alo-easymail_subscribers.php:153
+#: alo-easymail_subscribers.php:200
+#: alo-easymail_subscribers.php:912
+#@ default
+msgid "Apply"
+msgstr ""
+
+#: alo-easymail_subscribers.php:238
+#@ alo-easymail
+msgid "Subscribers deleted and added to list of who unsubscribed"
+msgstr ""
+
+#: alo-easymail_subscribers.php:286
+#@ alo-easymail
+msgid "You can view and export these email addresses"
+msgstr ""
+
+#: alo-easymail_subscribers.php:417
+#@ alo-easymail
+msgid "Export unsubscribed emails"
+msgstr ""
+
+#: alo-easymail_subscribers.php:418
+#@ alo-easymail
+msgid "You can export email addresses of who unsubscribed the newsletter: the plugin shows them on screen so you can copy and paste them into a text file or into any application"
+msgstr ""
+
+#: alo-easymail_subscribers.php:734
+#@ alo-easymail
+msgid "No unsubscribed emails"
+msgstr ""
+
+#: alo-easymail_subscribers.php:784
+#@ default
+msgid "Search"
+msgstr ""
+
+#: alo-easymail_subscribers.php:892
+#@ default
+msgid "Bulk Actions"
+msgstr ""
+
+#: alo-easymail_subscribers.php:897
+#@ default
+msgid "Delete"
+msgstr ""
+
+#: alo-easymail_subscribers.php:898
+#@ alo-easymail
+msgid "Delete and add to list of who unsubscribed"
+msgstr ""
+
+#: alo-easymail_subscribers.php:969
+#@ default
+msgid "items"
+msgstr ""
+
