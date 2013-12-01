@@ -1,0 +1,226 @@
+/*
+ * Edit / New Newsletter
+ */
+
+.easymail-edit-recipients ul {
+	font-size: 11px;
+}
+
+.easymail-edit-recipients ul.level-1st {
+	padding: 0.5em;
+	background-color: #EAF2FA;
+	margin-bottom: 0.5em;
+}
+
+.easymail-edit-recipients ul.level-2st {
+	padding-left: 1em;
+}
+
+.easymail-edit-recipients ul li input[type=checkbox] {
+	float: right;	
+}
+
+.easymail-edit-recipients ul li.list-title {
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+}
+
+.easymail-edit-recipients ul li {
+}
+
+.easymail-alert {
+ 	background-color: #FFFFE0;
+    border-radius: 3px 3px 3px 3px;
+    border: 1px solid #E6DB55;
+    margin: 0.5em auto;
+    padding: 0.8em;
+}
+
+.easymail-txtwarning {
+ 	color: #f00;
+}
+
+
+/*
+ * Table List Newsletters
+ */
+ 
+td.column-easymail_status img {
+	vertical-align: text-top;
+}
+
+td.column-easymail_status .status-completed {
+	font-weight: bold;
+	color: #090;
+}
+
+td.column-easymail_status .status-onsending {
+	font-style: italic;
+ 	font-weight: bold;
+}
+
+td.column-easymail_status .status-paused {
+	font-weight: bold;
+	color: #999;
+}
+
+.column-easymail_recipients ul li {
+	margin-bottom: 0;
+}
+
+.easymail-recipients-done {
+	background-color: #FFFF99;
+}
+
+.easymail-refresh-column-status {
+	cursor: pointer;
+}
+
+
+/*
+ * Newsletters Recipients Thickbox
+ */
+ 
+#easymail-recipient-list-modal {
+	text-align: center;
+	margin: 0 auto;
+	width: 100%;
+	font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+	background-color: white;
+}
+
+#ajaxloop-response {
+	font-size: 11px;
+	padding: 30px;
+}
+
+#easymail-recipients-navbar {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+	height: 35px;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+
+.easymail-navbutton {
+    cursor: pointer;
+}
+
+.easymail-navbutton-primary {
+    font-weight: bold;
+}
+
+.easymail-navbutton:hover {
+}
+
+#alo-easymail-bar-outer {
+	width: 90%;
+	border: 1px solid #ccc;
+	height:	22px;
+	margin: 50px auto 0;
+}
+
+#alo-easymail-bar-inner {
+	background-color: #21759B;
+	background-image: url("../images/pbar-ani.gif");
+	height:	22px;	
+	text-align: center;
+}
+
+#alo-easymail-bar-inner.stopped {
+	background-color: #90abc6;
+	background-image: url("../images/pbar.jpg");
+}
+
+#alo-easymail-list-disclaimer {
+	margin: 2em;
+}
+
+
+/*
+ * Report
+ */
+
+#par-1 { padding:1px 12px;border-bottom:1px dotted #aaa}
+#par-1 dl {font-size:80%}
+#par-1 dd {margin-bottm:5px}
+#par-1 dt {font-style: italic;}
+
+#par-2 {padding:10px 12px;}
+#par-3 { padding: 14px 12px; border-bottom:1px dotted #aaa; text-align: center}
+#par-2 .tot, #par-2  .success, #par-2 .error, #par-2 .done, #par-2 .views {font-size:300%;}
+#par-2 .tot {color:#666;font-weight:bold;}
+#par-2 .done {color:#999;font-weight:bold;}
+#par-2 .success {color:#0c6;font-weight:bold;}
+#par-2 .error {color:#f00;font-weight:bold;}
+#par-2 .views {color:#fa0;font-weight:bold;}
+#par-2 table {font-size:75%;width:550px;margin:0 auto;}
+#par-2 td {padding:4px}
+#par-2 td.center {text-align:center}
+#par-2 table.summary { width:100%;margin-top:10px;background-color:#eef;padding: 1em 0.5em; }
+#par-1 #mailbody { font-weight:normal; font-size:90%;height: 50px; overflow: auto; border-left:1px dotted #aaa; padding-left: 1em;}
+#par-1 #mailbody img { height: 5em; width: auto; display: block; }
+#par-1 #mailbody p { margin:0 }
+
+.new-win-link { font-size:75%; float:right; }
+
+#easymail_report_tabs { margin-top: 15px; font-weight: bold }
+
+.easymail-navbutton.button-archive {
+	background: linear-gradient(to bottom, #FEFEFE, #F4F4F4) repeat scroll 0 0 #F3F3F3;
+    border-color: #BBBBBB;
+    color: #333333;
+    text-shadow: 0 1px 0 #FFFFFF;
+	-moz-box-sizing: border-box;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 12px;
+    height: 24px;
+    line-height: 23px;
+    margin: 0;
+    padding: 0 10px 1px;
+    text-decoration: none;
+    white-space: nowrap;    
+}
+
+
+/*
+ * Recipients List Table
+ */
+
+body.alo-easymail-alo-easymail_subscribers-php img.clock {
+	vertical-align: middle;
+}
+
+
+/*
+ * Misc
+ */
+
+#wpadminbar .alo-easymail-toolbar-ico {
+	background: transparent url("../images/16-email-letter.png") no-repeat 0 0;
+	display: inline-block;
+    margin-right: 3px;
+    position: relative;
+    top: 6px;
+    width: 20px;
+    opacity: 0.8;
+}
+
+#wpadminbar .hover .alo-easymail-toolbar-ico {
+    opacity: 1;
+}
+
+#content_easymail_text {
+	background: url("../images/16-email-letter.png") no-repeat scroll 7px 3px transparent;
+    padding-left: 30px;
+}
+
+.wp-pointer-content h3:before {
+	background: url('../images/icon-pointer.png') 0 50% no-repeat;
+}

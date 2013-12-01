@@ -1,0 +1,55 @@
+/*
+
+ALO-EasyMail CSS Styles
+
+To enable this file go to Settings > Newsletter > tab General.
+
+Tip : copy this file to your theme directory and edit it there. Useful to prevent the loss of styles when you upgrade the plugin.
+
+For more plugin classes and ids you can look at the source code of a blog page.
+
+*/
+
+
+/* Generic form styles */ 
+.alo_easymail_widget_form  { color:#000; }
+
+/* Form for unknown visitors (not-registered) */
+.alo_easymail_widget_form_public {}
+
+/* Form for registered users */
+.alo_easymail_widget_form_registered {}
+
+/* Form elements */
+.alo_easymail_widget_form .input-text {}
+.alo_easymail_widget_form .input-checkbox {}
+.alo_easymail_widget_form .input-radio {}
+
+/* Lists table container */
+.alo_easymail_lists_table {}
+
+/* Error msg */
+.alo_easymail_widget_error { color:#f00; }
+
+/* Success msg */
+.alo_easymail_widget_ok { color:#008000; }
+
+/* Top claim, before form */
+.alo_easymail_preform_msg {}
+
+/* Policy disclaimer, after form */
+.alo_easymail_disclaimer {}
+
+/* Uncomment to customise the loading wheel (Note: be sure to copy this file into your theme dir and edit the image url) */
+/*
+.alo_em_widget_loading img { display: none }
+.alo_em_widget_loading {
+	background: transparent url(images/loading.png) top left no-repeat;
+	padding-left: 20px;
+}
+*/
+
+/* Shortcode newsletter Archive */
+.easymail-newsletter-archive li {
+	margin-bottom: 5px;
+}

@@ -1,0 +1,6 @@
+<!-- EasyMail tells to WMPL plugin that 'newsletter' post type has to be translated -->
+<wpml-config>
+    <custom-types>
+        <custom-type translate="1">newsletter</custom-type>
+    </custom-types>    
+</wpml-config>
