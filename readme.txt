@@ -2,7 +2,7 @@
 Contributors: eventualo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA
 Tags: send, mail, newsletter, widget, subscription, mailing list, subscribe, cron, batch sending, bounce, mail throttling, signup, multilanguage
-Requires at least: 3.5
+Requires at least: 3.6
 Tested up to: 3.7.1
 Stable tag: 2.5.0
 License: GPLv2 or later
@@ -38,8 +38,9 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 *Available in more than 20 languages.*
 
 You can add or update the translation in your language. To make the plugin package lighter you can find only the .MO files inside it.
-You can visit [code.google.com/p/alo-easymail/](http://code.google.com/p/alo-easymail/) to look for the most updated language files (.MO and .PO files) and to join the translation group. There is also a glotpress collaborative site to translate the plugin: [www.translators.hunstart.hu/projects/alo-easymail](http://www.translators.hunstart.hu/projects/alo-easymail) 
+You can visit the plugin [repository on Github](https://github.com/groucho75/alo-easymail/tree/master/languages) to look for the most updated language files (.MO and .PO files). You can share your updated translation files.
 
+*If you are a developer, on Github you can find a repository with latest version: [github.com/groucho75/alo-easymail](https://github.com/groucho75/alo-easymail)*
 
 == Installation ==
 
