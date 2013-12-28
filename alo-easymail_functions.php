@@ -2068,7 +2068,7 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 			// Tracking code
 			$track_vars = $recipient->ID . '|' . $recipient->unikey;
 		    $track_vars = urlencode( base64_encode( $track_vars ) );    
-			$tracking_view = '<img src="'. ALO_EM_PLUGIN_URL .'/tr.php?v='. $track_vars .'" width="1" height="1" border="0" >';
+			$tracking_view = '<img src="'. ALO_EM_PLUGIN_URL .'/tr.php?v='. $track_vars .'" width="1" height="1" border="0" alt="" >';
 		}
 		
 		// Content default if not theme found
