@@ -887,7 +887,7 @@ function alo_em_add_subscriber( $fields, $newstate=0, $lang="" ) { //edit : orig
  	$output = true;
  	$fields = array_map( 'strip_tags', $fields );
  	$email = $fields['email'];
- 	if ( !is_admin() ) $fields['ip_address'] = alo_em_ip_address();
+ 	if ( !is_admin() || ( defined('DOING_AJAX') && DOING_AJAX ) ) $fields['ip_address'] = alo_em_ip_address();
 	//foreach( $fields as $key => $value ) { ${$key} = $value; } //edit : added all this line in order to transform the fields array into simple variables
     // if there is NOT a subscriber with this email address: add new subscriber and send activation email
     if (alo_em_is_subscriber($email) == false){
