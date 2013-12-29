@@ -19,3 +19,5 @@ Please visit the plugin homepage on WordPress.org: [wordpress.org/plugins/alo-ea
 Fork & Pull requests are welcome.
 
 PS: I encourage brave developers to rewrite from scratch the entire plugin. The plugin was 1st released in 2009, then I upgraded it little by little, but now the whole plugin code should be rewritten... But I don't have time to do it now. I'm currently trying to keep the plugin updated and compatible with the latest WordPress versions.
+
+If you use this plugin and to keep it updated please consider the idea of [donating and supporting its development](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA).
