@@ -17,7 +17,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 
 **Here you are a short screencast:** [How to create and send a newsletter](http://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/)
 
-**Features:**
+**Features:** 
 
 * **write and send html/text newsletters, simple like writing posts**: newsletter is a custom post type, using the standard WordPress GUI and API
 * **select the recipients to send to**: registered users, subscribers, mailing lists
@@ -39,6 +39,14 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 
 You can add or update the translation in your language. To make the plugin package lighter you can find only the .MO files inside it.
 You can visit [www.translators.hunstart.hu/projects/plugins/alo-easymail](http://www.translators.hunstart.hu/projects/plugins/alo-easymail) to look for the most updated language files (.MO and .PO files), you can download and share translation files.
+
+
+**For developers** 
+
+Developers can easily add own code using plugin action and filter hooks.
+Inside plugin package there is a *mu-plugins* folders that contains some useful samples, e.g.: "latest posts" placeholder, "multiple posts" placeholder, include attachments, add custom fields in subscription form. 
+You can move one or more of those files into *wp-content/mu-plugins* (if the directory doesn”t exist, simply create it) to activate them.
+You can use them as starting point for your development. Other samples at: [plugin developer page](http://www.eventualo.net/blog/easymail-newsletter-for-developers).
 
 *On Github you can find a repository with latest plugin version: [github.com/groucho75/alo-easymail](https://github.com/groucho75/alo-easymail)*
 
