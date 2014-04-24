@@ -418,7 +418,7 @@ msgstr "Nézet"
 
 #: .././alo-easymail.php:1704
 msgid "Choose a post"
-msgstr "Hozzászólás kiválasztása"
+msgstr "Bejegyzés kiválasztása"
 
 #: .././alo-easymail.php:1708
 msgid "j M Y"
@@ -629,7 +629,7 @@ msgstr "Valódi név (Vezetéknév Keresztnév)"
 #: .././alo-easymail_subscribers.php:295 .././alo-easymail_subscribers.php:551
 #: .././alo-easymail_subscribers.php:981
 msgid "E-mail"
-msgstr "Feliratkozott email címe"
+msgstr "Email cím"
 
 #: .././alo-easymail-widget.php:140 .././alo-easymail_functions.php:1268
 msgid "Subscribe"
@@ -637,7 +637,7 @@ msgstr "Feliratkozás"
 
 #: .././alo-easymail-widget.php:154
 msgid "Allow users to opt in/out of email"
-msgstr "A felhasznlók fel / leiratkozhatnak"
+msgstr "A felhasználók fel / leiratkozhatnak"
 
 #: .././alo-easymail-widget.php:160
 msgid "ALO Easymail Widget"
