@@ -3,11 +3,11 @@ Contributors: eventualo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA
 Tags: send, mail, newsletter, widget, subscription, mailing list, subscribe, cron, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
-Tested up to: 3.8
-Stable tag: 2.5.01
+Tested up to: 3.9
+Stable tag: 2.5.02
 License: GPLv2 or later
 
-To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage.
+To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
 
 == Description ==
 
@@ -82,6 +82,9 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 5. The list of subscribers in administration
 
 == Changelog ==
+
+= 2.5.02 =
+* Fixed: a bug about Close button in recipient list modal
 
 = 2.5.01 =
 * Fixed: now subscriber ip address is not always null
@@ -537,3 +540,6 @@ Some improvements
 
 = 2.5.01 =
 Some bug fixes.
+
+= 2.5.02 =
+Fixed a bug about Close button in modal.

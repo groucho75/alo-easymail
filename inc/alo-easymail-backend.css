@@ -95,8 +95,6 @@ td.column-easymail_status .status-paused {
 }
 
 #easymail-recipients-navbar {
-	position: absolute;
-	bottom: 0;
 	width: 100%;
 	text-align: center;
 	height: 35px;
@@ -134,8 +132,8 @@ td.column-easymail_status .status-paused {
 	background-image: url("../images/pbar.jpg");
 }
 
-#alo-easymail-list-disclaimer {
-	margin: 2em;
+#alo-easymail-list-disclaimer p {
+	margin: 0.5em 0;
 }
 
 

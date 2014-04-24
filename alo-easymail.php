@@ -4,7 +4,7 @@
 Plugin Name: ALO EasyMail Newsletter
 Plugin URI: http://www.eventualo.net/blog/wp-alo-easymail-newsletter/
 Description: To send newsletters. Features: collect subcribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage.
-Version: 2.5.01
+Version: 2.5.02
 Author: Alessandro Massasso
 Author URI: http://www.eventualo.net
 
@@ -2550,7 +2550,6 @@ function alo_em_recipient_list_modal() {
 		<p><?php _e("You have to prepare the list of recipients to send the newsletter to", "alo-easymail") ?>.</p>
 		<p><?php _e("You can add the recipients to the sending queue (best choice) or send them the newsletter immediately (suggested only if few recipients)", "alo-easymail") ?>.</p>
 		<p><em><?php _e("Warning: do not close or reload the browser window during process", "alo-easymail") ?>.</em></p>
-		<br /><br />
 		<p><?php _e("You can send the newsletter as test to", "alo-easymail") ?>: 
 			<input type="text" id="easymail-testmail" name="easymail-testmail" size="20" value="<?php echo $user_email; ?>" />
 			<button type="button" class="button easymail-navbutton easymail-send-testmail"><?php _e("Send", "alo-easymail") ?></button> 
