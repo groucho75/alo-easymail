@@ -3018,6 +3018,9 @@ function alo_em_translate_text ( $lang, $text, $post=false, $prop="post_title" )
 		if ( $transl_post_text ) return $transl_post_text;
 	}		
 
+	// Choice by custom filters
+	$text = apply_filters ( 'alo_easymail_multilang_translate_text', $text, $lang, $post, $prop ); // Hook	
+	
 	// last case: return as is
 	return $text ;
 }
