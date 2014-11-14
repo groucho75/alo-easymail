@@ -220,11 +220,15 @@ function alo_em_install_db_tables() {
 	
     if ( alo_em_db_tables_need_update()  ) {
 	    
-		if( defined( 'DB_COLLATE' ) && constant( 'DB_COLLATE' ) != '' ) {
-			$collate = constant( 'DB_COLLATE' );
-		} else {
-			$collate = constant( 'DB_CHARSET' );
-		}
+        $charset_collate = '';
+
+        if ( ! empty( $wpdb->charset ) ) {
+            $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset}";
+        }
+
+        if ( ! empty( $wpdb->collate ) ) {
+            $charset_collate .= " COLLATE {$wpdb->collate}";
+        }
 		
 	    // Create the table structure
 	    $sql = "CREATE TABLE {$wpdb->prefix}easymail_subscribers ( 
@@ -239,7 +243,7 @@ function alo_em_install_db_tables() {
 				    last_act datetime NULL ,
 				    ip_address varchar(50) NULL , 
 				    PRIMARY KEY  (ID) 
-				) DEFAULT CHARSET=".$collate.";
+				) $charset_collate;
 
 				CREATE TABLE {$wpdb->prefix}easymail_recipients ( 
 					ID int(11) unsigned NOT NULL auto_increment , 
@@ -248,7 +252,7 @@ function alo_em_install_db_tables() {
 					result varchar(3) NOT NULL DEFAULT '0' , 
 					user_id int(11) unsigned DEFAULT NULL , 
 					PRIMARY KEY  (ID) 
-				) DEFAULT CHARSET=".$collate.";
+				) $charset_collate;
 
 				CREATE TABLE {$wpdb->prefix}easymail_stats (
 					ID int(11) unsigned NOT NULL auto_increment ,
@@ -257,13 +261,13 @@ function alo_em_install_db_tables() {
 					added_on datetime NOT NULL ,
 					request text ,
 					PRIMARY KEY  (ID)
-				) DEFAULT CHARSET=".$collate.";
+				) $charset_collate;
 					
 				CREATE TABLE {$wpdb->prefix}easymail_unsubscribed (
 					email varchar(100) NOT NULL ,  
 					added_on datetime NOT NULL ,
 					PRIMARY KEY  (email)
-				) DEFAULT CHARSET=".$collate.";				
+				) $charset_collate;				
 									
 			    ";  
 				
