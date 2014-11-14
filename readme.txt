@@ -84,7 +84,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 == Changelog ==
 
 = 2.5.04 =
-* Fixed: on database table creation now the plugin follows the guidelines for the character set and collation
+* Fixed: on database table creation now the plugin follows the guidelines for the character set and collation - thanks to [cfinnberg](https://github.com/cfinnberg)
 * Updated: ads banners in plugin admin pages
 
 = 2.5.03 =
