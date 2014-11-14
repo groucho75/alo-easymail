@@ -126,7 +126,7 @@ function alo_em_html2plain ( $text ) {
 function alo_em_show_credit_banners ( $all=false ) { 
 	if ( get_option('alo_em_show_credit_banners') == "no" ) return; ?>
 	<style type="text/css">
-		.alo-banner { border:1px solid #ccc; background-color: #efefef; width:300px; height: 130px; padding: 6px; margin-right: 15px; float: left }
+		.alo-banner { border:1px solid #ccc; background-color: #ffffff; width:300px; height: 130px; padding: 6px; margin-right: 15px; float: left }
 		.alo-banner p { font-size: 0.9em; margin: 0.5em 0 }
 	</style>
 	<ul style="width:100%; margin-top:20px">
@@ -145,8 +145,12 @@ function alo_em_show_credit_banners ( $all=false ) {
 		</li>
 		<?php if ( $all ) : ?>		
 		<li class="alo-banner">
-			<a href="http://themefuse.com/amember/aff/go?r=6700&i=44" title="Original WP Themes by ThemeFuse"> <img border="0" src="http://themefuse.com/banners/125x125.jpg" alt="Original WP by ThemeFuse" width="125" height="125" style="float:right;margin-left:10px" /></a>		
-			<p><em>If you are interested in buying an original wp theme I would recommend <a href="http://themefuse.com/amember/aff/go?r=6700&i=44" title="Original WP Themes by ThemeFuse">ThemeFuse</a>.</em></p>
+			<a href="http://account.themefuse.com/aff/go/groucho75/?i=114" target="_blank"><img src="http://themefuse.com/banners/125x125.jpg" border="0" alt="Original WP Themes by ThemeFuse" width="125" height="125" style="float:right;margin-left:10px"></a>		
+			<p><em>If you are interested in buying <strong>original WP themes</strong> I would recommend <a href="http://account.themefuse.com/aff/go/groucho75/?i=114" title="Original WP Themes by ThemeFuse" target="_blank">ThemeFuse</a>.</em></p>
+		</li>
+		<li class="alo-banner">
+			<a href="http://www.smtp2go.com/?s=eventualo" title="Worldwide SMTP Service" target="_blank"> <img border="0" src="http://www.smtp2go.com/images/partner/smtp2go-logo-dark-square-125.png" alt="Original WP by ThemeFuse" width="125" height="125" style="float:right;margin-left:10px" /></a>		
+			<p><em><strong>Do you need SMTP?</strong><br /><a href="http://www.smtp2go.com/?s=eventualo" title="Worldwide SMTP Service" target="_blank">SMTP2GO</a> provides a complete outgoing email infrastructure allowing you to send your emails through a professional SMTP service.</em></p>
 		</li>			
 		<?php endif; ?>
 	</ul>
