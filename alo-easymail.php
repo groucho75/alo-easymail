@@ -219,17 +219,15 @@ function alo_em_install_db_tables() {
     //-------------------------------------------------------------------------
 	
     if ( alo_em_db_tables_need_update()  ) {
-	    
-        $charset_collate = '';
 
-        if ( ! empty( $wpdb->charset ) ) {
-            $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset}";
-        }
+	    $charset_collate = '';
+	    if ( ! empty( $wpdb->charset ) ) {
+		    $charset_collate = "DEFAULT CHARACTER SET {$wpdb->charset}";
+	    }
+	    if ( ! empty( $wpdb->collate ) ) {
+		    $charset_collate .= " COLLATE {$wpdb->collate}";
+	    }
 
-        if ( ! empty( $wpdb->collate ) ) {
-            $charset_collate .= " COLLATE {$wpdb->collate}";
-        }
-		
 	    // Create the table structure
 	    $sql = "CREATE TABLE {$wpdb->prefix}easymail_subscribers ( 
 				    ID int(11) unsigned NOT NULL auto_increment , 
