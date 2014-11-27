@@ -1884,26 +1884,33 @@ function alo_em_get_recipients_in_queue ( $limit=false, $newsletter=false ) {
 	
     // ---- Send MAIL (or DEBUG) ----
     $send_mode = ( $force_send ) ? "" : get_option('alo_em_debug_newsletters');
-    switch ( $send_mode ) {
-    	case "to_author":
+   	
+	if ( !empty($recipient->name) ) {
+		$recipient_address = $recipient->name .' <'. $recipient->email.'>';
+	} else {
+		$recipient_address = $recipient->email;
+	}
+    
+	switch ( $send_mode ) {
+	    case "to_author":
 	    		$author = get_userdata( $newsletter->post_author );
-    			$debug_subject = "( DEBUG - TO: ". $recipient->email ." ) " . $subject;
-    			$mail_engine = wp_mail( $author->user_email, $debug_subject, $content, $headers, $attachs );
+	    		$debug_subject = "( DEBUG - TO: ". $recipient_address ." ) " . $subject; // EDIT
+	    		$mail_engine = wp_mail( $author->user_email, $debug_subject, $content, $headers, $attachs );
 				break;
-    	case "to_file":
-    			$log = fopen( WP_CONTENT_DIR . "/user_{$newsletter->post_author}_newsletter_{$newsletter->ID}.log", 'a+' );
-    			$log_message = 	"\n------------------------------ ". date_i18n( __( 'j M Y @ G:i' ) ) ." ------------------------------\n\n";
-    			$log_message .=	"HEADERS:\n". $headers ."\n";
-    			$log_message .=	"TO:\t\t\t". $recipient->email ."\n";
-    			$log_message .=	"SUBJECT:\t". $subject ."\n\n";
-    			$log_message .=	"CONTENT:\n". $content ."\n\n";
-    			if ( !empty($attachs) ) $log_message .=	"ATTACHMENTS:\n". ( is_array($attachs) ? print_r($attachs,true) : $attachs ) ."\n\n";
+	    case "to_file":
+	    		$log = fopen( WP_CONTENT_DIR . "/user_{$newsletter->post_author}_newsletter_{$newsletter->ID}.log", 'a+' );
+	    		$log_message = 	"\n------------------------------ ". date_i18n( __( 'j M Y @ G:i' ) ) ." ------------------------------\n\n";
+	    		$log_message .=	"HEADERS:\n". $headers ."\n";
+	    		$log_message .=	"TO:\t\t\t". $recipient_address ."\n"; // EDIT
+	    		$log_message .=	"SUBJECT:\t". $subject ."\n\n";
+	    		$log_message .=	"CONTENT:\n". $content ."\n\n";
+	    		if ( !empty($attachs) ) $log_message .=	"ATTACHMENTS:\n". ( is_array($attachs) ? print_r($attachs,true) : $attachs ) ."\n\n";
 				$mail_engine = ( fwrite ( $log, $log_message ) ) ? true : false;
 				fclose ( $log );
 				break;
-    	default:  // no debug: send it!
-				$mail_engine = wp_mail( $recipient->email, $subject, $content, $headers, $attachs );       					        					
-    }
+	    default:  // no debug: send it!
+			$mail_engine = wp_mail( $recipient_address, $subject, $content, $headers, $attachs );  // EDIT	        					
+	}
       
     $sent = ( $mail_engine ) ? "1" : "-1";
 	
