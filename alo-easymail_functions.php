@@ -1894,14 +1894,14 @@ function alo_em_get_recipients_in_queue ( $limit=false, $newsletter=false ) {
 	switch ( $send_mode ) {
 	    case "to_author":
 	    		$author = get_userdata( $newsletter->post_author );
-	    		$debug_subject = "( DEBUG - TO: ". $recipient_address ." ) " . $subject; // EDIT
+	    		$debug_subject = "( DEBUG - TO: ". $recipient_address ." ) " . $subject;
 	    		$mail_engine = wp_mail( $author->user_email, $debug_subject, $content, $headers, $attachs );
 				break;
 	    case "to_file":
 	    		$log = fopen( WP_CONTENT_DIR . "/user_{$newsletter->post_author}_newsletter_{$newsletter->ID}.log", 'a+' );
 	    		$log_message = 	"\n------------------------------ ". date_i18n( __( 'j M Y @ G:i' ) ) ." ------------------------------\n\n";
 	    		$log_message .=	"HEADERS:\n". $headers ."\n";
-	    		$log_message .=	"TO:\t\t\t". $recipient_address ."\n"; // EDIT
+	    		$log_message .=	"TO:\t\t\t". $recipient_address ."\n";
 	    		$log_message .=	"SUBJECT:\t". $subject ."\n\n";
 	    		$log_message .=	"CONTENT:\n". $content ."\n\n";
 	    		if ( !empty($attachs) ) $log_message .=	"ATTACHMENTS:\n". ( is_array($attachs) ? print_r($attachs,true) : $attachs ) ."\n\n";
@@ -1909,7 +1909,7 @@ function alo_em_get_recipients_in_queue ( $limit=false, $newsletter=false ) {
 				fclose ( $log );
 				break;
 	    default:  // no debug: send it!
-			$mail_engine = wp_mail( $recipient_address, $subject, $content, $headers, $attachs );  // EDIT	        					
+			$mail_engine = wp_mail( $recipient_address, $subject, $content, $headers, $attachs ); 	        					
 	}
       
     $sent = ( $mail_engine ) ? "1" : "-1";
