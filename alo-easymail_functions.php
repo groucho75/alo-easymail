@@ -1886,7 +1886,7 @@ function alo_em_get_recipients_in_queue ( $limit=false, $newsletter=false ) {
     $send_mode = ( $force_send ) ? "" : get_option('alo_em_debug_newsletters');
    	
 	if ( !empty($recipient->name) ) {
-		$recipient_address = $recipient->name .' <'. $recipient->email.'>';
+		$recipient_address = html_entity_decode ( wp_kses_decode_entities ($recipient->name) ) .' <'. $recipient->email.'>';
 	} else {
 		$recipient_address = $recipient->email;
 	}
