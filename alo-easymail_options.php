@@ -142,6 +142,12 @@ if ( isset($_POST['submit']) ) {
 			} else {
 				update_option('alo_em_filter_the_content', "no") ;
 			}
+			if ( isset($_POST['use_tracking_pixel']) ) {
+				update_option('alo_em_use_tracking_pixel', "yes");
+			} else {
+				update_option('alo_em_use_tracking_pixel', "no") ;
+			}
+			
 			if ( isset($_POST['js_rec_list']) ) {
 				update_option('alo_em_js_rec_list', "yes");
 			} else {
@@ -505,6 +511,19 @@ endforeach; ?>
 <span class="description"><?php _e("The plugin appends campagin variables to links", "alo-easymail") ?>.
 <?php echo __("E.g.", "alo-easymail").' '. __("Google Analytics", "alo-easymail") .': </span><br /><code><small>'. '...&utm_source=AloEasyMail&utm_medium=email&utm_campaign={newsletter-id-and-title}&utm_content={requested-url}</small></code>'; ?>
 </td>
+</tr>
+
+
+<?php 
+if ( get_option('alo_em_use_tracking_pixel') == "yes" ) {
+	$checked_tracking_pixel = 'checked="checked"';
+} else {
+	$checked_tracking_pixel = "";
+}
+?>
+<tr valign="top">
+<th scope="row"><?php _e("Use a tracking pixel", "alo-easymail") ?>:</th>
+<td><input type="checkbox" name="use_tracking_pixel" id="use_tracking_pixel" value="yes" <?php echo $checked_tracking_pixel ?> /> <span class="description"><?php _e("If yes, the plugin inserts a 1x1 pixel at the end of the newsletters to track views.", "alo-easymail") ?>. <?php _e('The plugin tries to count how many recipients open the newsletter', "alo-easymail")?>. <?php _e("Please keep in mind that the tracking pixel is not accurate.", "alo-easymail") ?>.</span></td>
 </tr>
 
 

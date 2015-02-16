@@ -1052,7 +1052,14 @@ function alo_em_send_activation_email( $fields, $unikey, $lang ) { //edit : orig
    	//$content = "email=$email";
    
     //echo "<br />".$headers."<br />".$subscriber->email."<br />". $subject."<br />".  $content ."<hr />" ; // DEBUG
-    $sending = wp_mail( $email, /*$subject*/ "#_EASYMAIL_ACTIVATION_#", $content, $headers);  
+
+	if ( !empty($name) ) {
+		$recipient_address = html_entity_decode ( wp_kses_decode_entities ($name) ) .' <'. $email.'>';
+	} else {
+		$recipient_address = $email;
+	}
+	    
+    $sending = wp_mail( $recipient_address, /*$subject*/ "#_EASYMAIL_ACTIVATION_#", $content, $headers);  
     return $sending;
 } 
 
@@ -1884,33 +1891,33 @@ function alo_em_get_recipients_in_queue ( $limit=false, $newsletter=false ) {
 	
     // ---- Send MAIL (or DEBUG) ----
     $send_mode = ( $force_send ) ? "" : get_option('alo_em_debug_newsletters');
-   	
+
 	if ( !empty($recipient->name) ) {
 		$recipient_address = html_entity_decode ( wp_kses_decode_entities ($recipient->name) ) .' <'. $recipient->email.'>';
 	} else {
 		$recipient_address = $recipient->email;
 	}
     
-	switch ( $send_mode ) {
-	    case "to_author":
+    switch ( $send_mode ) {
+    	case "to_author":
 	    		$author = get_userdata( $newsletter->post_author );
-	    		$debug_subject = "( DEBUG - TO: ". $recipient_address ." ) " . $subject;
-	    		$mail_engine = wp_mail( $author->user_email, $debug_subject, $content, $headers, $attachs );
+    			$debug_subject = "( DEBUG - TO: ". $recipient_address ." ) " . $subject;
+    			$mail_engine = wp_mail( $author->user_email, $debug_subject, $content, $headers, $attachs );
 				break;
-	    case "to_file":
-	    		$log = fopen( WP_CONTENT_DIR . "/user_{$newsletter->post_author}_newsletter_{$newsletter->ID}.log", 'a+' );
-	    		$log_message = 	"\n------------------------------ ". date_i18n( __( 'j M Y @ G:i' ) ) ." ------------------------------\n\n";
-	    		$log_message .=	"HEADERS:\n". $headers ."\n";
-	    		$log_message .=	"TO:\t\t\t". $recipient_address ."\n";
-	    		$log_message .=	"SUBJECT:\t". $subject ."\n\n";
-	    		$log_message .=	"CONTENT:\n". $content ."\n\n";
-	    		if ( !empty($attachs) ) $log_message .=	"ATTACHMENTS:\n". ( is_array($attachs) ? print_r($attachs,true) : $attachs ) ."\n\n";
+    	case "to_file":
+    			$log = fopen( WP_CONTENT_DIR . "/user_{$newsletter->post_author}_newsletter_{$newsletter->ID}.log", 'a+' );
+    			$log_message = 	"\n------------------------------ ". date_i18n( __( 'j M Y @ G:i' ) ) ." ------------------------------\n\n";
+    			$log_message .=	"HEADERS:\n". $headers ."\n";
+    			$log_message .=	"TO:\t\t\t". $recipient->email ."\n";
+    			$log_message .=	"SUBJECT:\t". $subject ."\n\n";
+    			$log_message .=	"CONTENT:\n". $content ."\n\n";
+    			if ( !empty($attachs) ) $log_message .=	"ATTACHMENTS:\n". ( is_array($attachs) ? print_r($attachs,true) : $attachs ) ."\n\n";
 				$mail_engine = ( fwrite ( $log, $log_message ) ) ? true : false;
 				fclose ( $log );
 				break;
-	    default:  // no debug: send it!
-			$mail_engine = wp_mail( $recipient_address, $subject, $content, $headers, $attachs ); 	        					
-	}
+    	default:  // no debug: send it!
+				$mail_engine = wp_mail( $recipient_address, $subject, $content, $headers, $attachs );       					        					
+    }
       
     $sent = ( $mail_engine ) ? "1" : "-1";
 	
@@ -2077,9 +2084,13 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 			$unsubfooter = str_replace ( '%UNSUBSCRIBEURL%', $uns_link, $unsubfooter );
 
 			// Tracking code
-			$track_vars = $recipient->ID . '|' . $recipient->unikey;
-		    $track_vars = urlencode( base64_encode( $track_vars ) );    
-			$tracking_view = '<img src="'. ALO_EM_PLUGIN_URL .'/tr.php?v='. $track_vars .'" width="1" height="1" border="0" alt="" >';
+			if ( get_option('alo_em_use_tracking_pixel') != "no" ) {
+				$track_vars = $recipient->ID . '|' . $recipient->unikey;
+				$track_vars = urlencode( base64_encode( $track_vars ) );
+				$tracking_view = '<img src="'. ALO_EM_PLUGIN_URL .'/tr.php?v='. $track_vars .'" width="1" height="1" border="0" alt="" >';
+			} else {
+				$tracking_view = '';
+			}
 		}
 		
 		// Content default if not theme found
@@ -3400,9 +3411,9 @@ function alo_em_assign_subscriber_to_lang ( $subscriber, $lang ) {
 }
 
 
-/**
+/**********************************************************************
  * Polylang integration
- **/
+ **********************************************************************/
 function alo_em_polylang_set_plugin( $multilang_plugin ){
 
 	if ( defined('POLYLANG_VERSION') )
@@ -3458,6 +3469,248 @@ function alo_em_polylang_get_subscrpage_id( $translated_id, $lang ){
 	return $translated_id;
 }
 add_filter ( 'alo_easymail_multilang_get_subscrpage_id', 'alo_em_polylang_get_subscrpage_id', 10, 2 );
+
+
+/**********************************************************************
+ * zTranslate integration
+ **********************************************************************/
+ 
+function alo_em_ztrans_set_plugin( $multilang_plugin ){
+
+	if ( function_exists('ztrans_init') )
+		$multilang_plugin = 'zTrans';
+	return $multilang_plugin;
+}
+add_filter ( 'alo_easymail_multilang_enabled_plugin', 'alo_em_ztrans_set_plugin' );
+
+function alo_em_ztrans_get_language( $lang, $detect_from_browser ){
+
+	if ( function_exists('ztrans_init') )
+		$lang = ztrans_getLanguage();
+	return $lang;
+}
+add_filter ( 'alo_easymail_multilang_get_language', 'alo_em_ztrans_get_language', 10, 2 );
+
+function alo_em_ztrans_get_all_languages( $langs, $fallback_by_users  ){
+
+	if ( function_exists('ztrans_init') )
+	{
+		return ztrans_getSortedLanguages();
+	}
+	return $langs;
+}
+add_filter ( 'alo_easymail_multilang_get_all_languages', 'alo_em_ztrans_get_all_languages', 10, 2 );
+
+function alo_em_ztrans_translate_url( $filtered_url, $post, $lang ){
+
+	if ( function_exists('ztrans_init') )
+	{
+		$filtered_url = add_query_arg( "lang", $lang, get_permalink( $post ) );
+	}
+	return $filtered_url;
+}
+add_filter ( 'alo_easymail_multilang_translate_url', 'alo_em_ztrans_translate_url', 10, 3 );
+
+function alo_em_ztrans_get_subscrpage_id( $translated_id, $lang ){
+
+	if ( function_exists('ztrans_init') )
+	{
+		$translated_id = get_option('alo_em_subsc_page');
+	}
+	return $translated_id;
+}
+add_filter ( 'alo_easymail_multilang_get_subscrpage_id', 'alo_em_ztrans_get_subscrpage_id', 10, 2 );
+
+function alo_em_ztrans_filter_title( $subject, $newsletter, $recipient ) {
+	
+	if ( function_exists('ztrans_init') )
+	{
+		$subject = ztrans_use($recipient->lang, $newsletter->post_title, false);
+    }	
+	return $subject;
+}
+add_filter ( 'alo_easymail_newsletter_title',  'alo_em_ztrans_filter_title', 2, 3 );
+
+function alo_em_ztrans_alo_em___( $text ) {
+	
+	if ( function_exists('ztrans_useCurrentLanguageIfNotFoundUseDefaultLanguage') )
+	{
+		$text = ztrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($text);
+    }	
+	return $text;
+}
+add_filter ( 'alo_easymail_multilang_alo_em___',  'alo_em_ztrans_alo_em___' );
+
+function alo_em_ztrans_translate_text( $text, $lang, $post, $prop ) {
+
+	if ( function_exists('ztrans_init') )
+	{
+		$text = ztrans_use($lang, $text, false);
+    }	
+	return $text;
+}
+add_filter ( 'alo_easymail_multilang_translate_text',  'alo_em_ztrans_translate_text', 2, 4 );
+
+
+
+/**********************************************************************
+ * qTranslate Plus
+ **********************************************************************/
+ 
+function alo_em_ppqtrans_set_plugin( $multilang_plugin ){
+
+	if ( function_exists('ppqtrans_init') )
+		$multilang_plugin = 'zTrans';
+	return $multilang_plugin;
+}
+add_filter ( 'alo_easymail_multilang_enabled_plugin', 'alo_em_ppqtrans_set_plugin' );
+
+function alo_em_ppqtrans_get_language( $lang, $detect_from_browser ){
+
+	if ( function_exists('ppqtrans_init') )
+		$lang = ppqtrans_getLanguage();
+	return $lang;
+}
+add_filter ( 'alo_easymail_multilang_get_language', 'alo_em_ppqtrans_get_language', 10, 2 );
+
+function alo_em_ppqtrans_get_all_languages( $langs, $fallback_by_users  ){
+
+	if ( function_exists('ppqtrans_init') )
+	{
+		return ppqtrans_getSortedLanguages();
+	}
+	return $langs;
+}
+add_filter ( 'alo_easymail_multilang_get_all_languages', 'alo_em_ppqtrans_get_all_languages', 10, 2 );
+
+function alo_em_ppqtrans_translate_url( $filtered_url, $post, $lang ){
+
+	if ( function_exists('ppqtrans_init') )
+	{
+		$filtered_url = add_query_arg( "lang", $lang, get_permalink( $post ) );
+	}
+	return $filtered_url;
+}
+add_filter ( 'alo_easymail_multilang_translate_url', 'alo_em_ppqtrans_translate_url', 10, 3 );
+
+function alo_em_ppqtrans_get_subscrpage_id( $translated_id, $lang ){
+
+	if ( function_exists('ppqtrans_init') )
+	{
+		$translated_id = get_option('alo_em_subsc_page');
+	}
+	return $translated_id;
+}
+add_filter ( 'alo_easymail_multilang_get_subscrpage_id', 'alo_em_ppqtrans_get_subscrpage_id', 10, 2 );
+
+function alo_em_ppqtrans_filter_title( $subject, $newsletter, $recipient ) {
+	
+	if ( function_exists('ppqtrans_init') )
+	{
+		$subject = ppqtrans_use($recipient->lang, $newsletter->post_title, false);
+    }	
+	return $subject;
+}
+add_filter ( 'alo_easymail_newsletter_title',  'alo_em_ppqtrans_filter_title', 2, 3 );
+
+function alo_em_ppqtrans_alo_em___( $text ) {
+	
+	if ( function_exists('ppqtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage') )
+	{
+		$text = ppqtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage($text);
+    }	
+	return $text;
+}
+add_filter ( 'alo_easymail_multilang_alo_em___',  'alo_em_ppqtrans_alo_em___' );
+
+function alo_em_ppqtrans_translate_text( $text, $lang, $post, $prop ) {
+
+	if ( function_exists('ppqtrans_init') )
+	{
+		$text = ppqtrans_use($lang, $text, false);
+    }	
+	return $text;
+}
+add_filter ( 'alo_easymail_multilang_translate_text',  'alo_em_ppqtrans_translate_text', 2, 4 );
+
+
+/**********************************************************************
+* qTranslate X
+* thanks to Gunu
+**********************************************************************/
+function alo_em_qtranxf_set_plugin( $multilang_plugin ){
+
+	if ( function_exists('qtranxf_init') )
+		$multilang_plugin = 'qtranslate-x';
+	return $multilang_plugin;
+}
+add_filter ( 'alo_easymail_multilang_enabled_plugin', 'alo_em_qtranxf_set_plugin' );
+
+function alo_em_qtranxf_get_language( $lang, $detect_from_browser ){
+
+	if ( function_exists('qtranxf_init') )
+		$lang = qtranxf_getLanguage();
+	return $lang;
+}
+add_filter ( 'alo_easymail_multilang_get_language', 'alo_em_qtranxf_get_language', 10, 2 );
+
+function alo_em_qtranxf_get_all_languages( $langs, $fallback_by_users ){
+
+	if ( function_exists('qtranxf_init') )
+	{
+		return qtranxf_getSortedLanguages();
+	}
+	return $langs;
+}
+add_filter ( 'alo_easymail_multilang_get_all_languages', 'alo_em_qtranxf_get_all_languages', 10, 2 );
+
+function alo_em_qtranxf_translate_url( $filtered_url, $post, $lang ){
+
+	if ( function_exists('qtranxf_init') )
+	{
+		$filtered_url = add_query_arg( "lang", $lang, get_permalink( $post ) );
+	}
+	return $filtered_url;
+}
+add_filter ( 'alo_easymail_multilang_translate_url', 'alo_em_qtranxf_translate_url', 10, 3 );
+
+function alo_em_qtranxf_get_subscrpage_id( $translated_id, $lang ){
+
+	if ( function_exists('qtranxf_init') )
+	{
+		$translated_id = get_option('alo_em_subsc_page');
+	}
+	return $translated_id;
+}
+add_filter ( 'alo_easymail_multilang_get_subscrpage_id', 'alo_em_qtranxf_get_subscrpage_id', 10, 2 );
+
+function alo_em_qtranxf_filter_title( $subject, $newsletter, $recipient ) {
+	if ( function_exists('qtranxf_init') )
+	{
+		$subject = qtranxf_use($recipient->lang, $newsletter->post_title, false);
+	}
+	return $subject;
+}
+add_filter ( 'alo_easymail_newsletter_title', 'alo_em_qtranxf_filter_title', 2, 3 );
+
+function alo_em_qtranxf_alo_em___( $text ) {
+	if ( function_exists('qtranxf_useCurrentLanguageIfNotFoundUseDefaultLanguage') )
+	{
+		$text = qtranxf_useCurrentLanguageIfNotFoundUseDefaultLanguage($text);
+	}
+	return $text;
+}
+add_filter ( 'alo_easymail_multilang_alo_em___', 'alo_em_qtranxf_alo_em___' );
+
+function alo_em_qtranxf_translate_text( $text, $lang, $post, $prop ) {
+
+	if ( function_exists('qtranxf_init') )
+	{
+		$text = qtranxf_use($lang, $text, false);
+	}
+	return $text;
+}
+add_filter ( 'alo_easymail_multilang_translate_text', 'alo_em_qtranxf_translate_text', 2, 4 );
 
 
 

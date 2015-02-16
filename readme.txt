@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, widget, subscription, mailing list, subscribe, cron, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.1
-Stable tag: 2.5.04
+Stable tag: 2.5.05
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -82,6 +82,11 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 5. The list of subscribers in administration
 
 == Changelog ==
+
+= 2.5.05 =
+* Fixed: wp_create_user() now does not add email to unsubscribed table
+* Added: compatibility with qTranslate-forks plugins: zTranslate, qTranslate Plus, qTranslate X
+* Added: email recipients now have the 'name <email>' format in TO field in newsletters and activation emails
 
 = 2.5.04 =
 * Fixed: on database table creation now the plugin follows the guidelines for the character set and collation - thanks to [cfinnberg](https://github.com/cfinnberg)
@@ -556,3 +561,6 @@ Added a hook filter for plugin multilingual integration.
 
 = 2.5.04 =
 Fix: on database table creation now the plugin follows the guidelines for the character set and collation.
+
+= 2.5.05 =
+Fixed a bug and added some minor updates.

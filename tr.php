@@ -11,6 +11,8 @@ eg. link in email:
 '<img src="{...path_to_easymail_dir...}tr.php?v={base-64-vars}" width="1" height="1" border="0" alt="">';
 */
 
+if ( get_option('alo_em_use_tracking_pixel') == 'no' ) exit;
+
 ob_start();
 error_reporting(0);
 
