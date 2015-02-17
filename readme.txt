@@ -84,6 +84,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 == Changelog ==
 
 = 2.5.05 =
+* Added: an option to enable/disable tracking pixel in newsletters
 * Fixed: wp_create_user() now does not add email to unsubscribed table
 * Added: compatibility with qTranslate-forks plugins: zTranslate, qTranslate Plus, qTranslate X
 * Added: email recipients now have the 'name <email>' format in TO field in newsletters and activation emails

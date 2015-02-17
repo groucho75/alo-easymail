@@ -515,7 +515,7 @@ endforeach; ?>
 
 
 <?php 
-if ( get_option('alo_em_use_tracking_pixel') == "yes" ) {
+if ( get_option('alo_em_use_tracking_pixel') != "no" ) {
 	$checked_tracking_pixel = 'checked="checked"';
 } else {
 	$checked_tracking_pixel = "";
@@ -523,7 +523,7 @@ if ( get_option('alo_em_use_tracking_pixel') == "yes" ) {
 ?>
 <tr valign="top">
 <th scope="row"><?php _e("Use a tracking pixel", "alo-easymail") ?>:</th>
-<td><input type="checkbox" name="use_tracking_pixel" id="use_tracking_pixel" value="yes" <?php echo $checked_tracking_pixel ?> /> <span class="description"><?php _e("If yes, the plugin inserts a 1x1 pixel at the end of the newsletters to track views.", "alo-easymail") ?>. <?php _e('The plugin tries to count how many recipients open the newsletter', "alo-easymail")?>. <?php _e("Please keep in mind that the tracking pixel is not accurate.", "alo-easymail") ?>.</span></td>
+<td><input type="checkbox" name="use_tracking_pixel" id="use_tracking_pixel" value="yes" <?php echo $checked_tracking_pixel ?> /> <span class="description"><?php _e("If yes, the plugin inserts a 1x1 pixel at the end of the newsletters to track views.", "alo-easymail") ?> <?php _e('The plugin tries to count how many recipients open the newsletter', "alo-easymail")?>. <?php _e("Please keep in mind that the tracking pixel is not accurate.", "alo-easymail") ?></span></td>
 </tr>
 
 
