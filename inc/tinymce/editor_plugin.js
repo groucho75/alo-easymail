@@ -9,7 +9,7 @@
 		init : function(ed, url) {
 			the_editor = ed;
 		},
-		
+
         createControl: function(n, cm) {
             switch (n) {
                 case 'easymail':
@@ -18,7 +18,7 @@
                         onselect : function(v) {
 							if ( v != '' ) {
 								//sel_content = tinyMCE.activeEditor.selection.getContent();
-								//tinyMCE.activeEditor.selection.setContent("[tag-1]" + sel_content + "[/tag-1]");								
+								//tinyMCE.activeEditor.selection.setContent("[tag-1]" + sel_content + "[/tag-1]");
 								//tinyMCE.activeEditor.windowManager.alert('Value selected:' + v);
 								tinyMCE.activeEditor.selection.setContent(v);
 							}
@@ -40,32 +40,6 @@
 
                 // Return the new listbox instance
                 return mlb;
-
-                /*
-                case 'easymail':
-                var c = cm.createSplitButton('easymail', {
-                    title : 'My split button',
-                    image : 'img/example.gif',
-                    onclick : function() {
-                        tinyMCE.activeEditor.windowManager.alert('Button was clicked.');
-                    }
-                });
-
-                c.onRenderMenu.add(function(c, m) {
-                    m.add({title : 'Some title', 'class' : 'mceMenuItemTitle'}).setDisabled(1);
-
-                    m.add({title : 'Some item 1', onclick : function() {
-                        tinyMCE.activeEditor.windowManager.alert('Some  item 1 was clicked.');
-                    }});
-
-                    m.add({title : 'Some item 2', onclick : function() {
-                        tinyMCE.activeEditor.windowManager.alert('Some  item 2 was clicked.');
-                    }});
-                });
-
-                // Return the new splitbutton instance
-                return c;
-                */
             }
             return null;
         }
@@ -74,85 +48,25 @@
 })();
 
 
-
-
 /*
-function tiny_plugin() {
-    return "[tiny-plugin]";
-}
- 
-(function() {
-    tinymce.create('tinymce.plugins.tinyplugin', {
- 
-        init : function(ed, url){
-            ed.addButton('tinyplugin', {
-            title : 'Insert TinyPlugin',
-                onclick : function() {
-                    ed.execCommand(
-                    'mceInsertContent',
-                    false,
-                    tiny_plugin()
-                    );
-                },
-                image: url + "/wand.png"
-            });
-        }
-    });
- 
-    tinymce.PluginManager.add('tinyplugin', tinymce.plugins.tinyplugin);
- 
-})();
-*/
-
-/*
-(function() {
-tinymce.create('tinymce.plugins.tinyplugin', {
-    createControl: function(n, cm) {
-        switch (n) {
-            case 'mylistbox':
-                var mlb = cm.createListBox('mylistbox', {
-                     title : 'My list box',
-                     onselect : function(v) {
-                         tinyMCE.activeEditor.windowManager.alert('Value selected:' + v);
-                     }
-                });
-
-                // Add some values to the list box
-                mlb.add('Some item 1', 'val1');
-                mlb.add('some item 2', 'val2');
-                mlb.add('some item 3', 'val3');
-
-                // Return the new listbox instance
-                return mlb;
-
-            case 'mysplitbutton':
-                var c = cm.createSplitButton('mysplitbutton', {
-                    title : 'My split button',
-                    //image : 'img/example.gif',
-                    onclick : function() {
-                        tinyMCE.activeEditor.windowManager.alert('Button was clicked.');
-                    }
-                });
-
-                c.onRenderMenu.add(function(c, m) {
-                    m.add({title : 'Some title', 'class' : 'mceMenuItemTitle'}).setDisabled(1);
-
-                    m.add({title : 'Some item 1', onclick : function() {
-                        tinyMCE.activeEditor.windowManager.alert('Some  item 1 was clicked.');
-                    }});
-
-                    m.add({title : 'Some item 2', onclick : function() {
-                        tinyMCE.activeEditor.windowManager.alert('Some  item 2 was clicked.');
-                    }});
-                });
-
-                // Return the new splitbutton instance
-                return c;
-        }
-
-        return null;
-    }
-});
-
-})();
-*/
+ // TODO tinymce 4
+ (function() {
+ tinymce.PluginManager.add('easymail', function( editor, url ) {
+     editor.addButton( 'easymail', {
+         title: 'shortcodes',
+         text: '[shortcodes]',
+         type: 'menubutton',
+         icon: 'icon easymail-tinymce-icon',
+             menu: [
+             {
+                 text: 'Menu item I',
+                 value: 'Text from menu item I',
+                 onclick: function() {
+                    editor.insertContent(this.value());
+                 }
+             }
+         ]
+         });
+     });
+ })();
+ */

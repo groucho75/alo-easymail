@@ -1290,7 +1290,9 @@ function alo_em_pubblic_form ()
   alo_em_sack.execute = 1;
   alo_em_sack.method = 'POST';
   alo_em_sack.setVar( "action", "alo_em_pubblic_form_check" );
+  <?php if ( get_option('alo_em_hide_name_input') != 'yes' ) : ?>
   alo_em_sack.setVar( "alo_em_opt_name", document.alo_easymail_widget_form.alo_em_opt_name.value );
+  <?php endif; ?>
   alo_em_sack.setVar( "alo_em_opt_email", document.alo_easymail_widget_form.alo_em_opt_email.value );
   <?php
   //edit : added all this foreach
@@ -1476,17 +1478,21 @@ function alo_em_pubblic_form_callback() {
 		die($feedback);
 	}
 	$alo_em_cf = alo_easymail_get_custom_fields();
-    if (isset($_POST['alo_em_opt_name']) && isset($_POST['alo_em_opt_email'])){
+    if (isset($_POST['alo_em_opt_email'])){
         $error_on_adding = "";
         $just_added = false;
         $_POST = array_map( 'strip_tags', $_POST );
-		$name 	= trim( $_POST['alo_em_opt_name'] );
+		if ( get_option('alo_em_hide_name_input') != 'yes' ) {
+			$name 	= trim( $_POST['alo_em_opt_name'] );
+		} else {
+			$name 	= '';
+		}
 		$email	= trim( $_POST['alo_em_opt_email'] );
 		$lang = ( isset($_POST['alo_em_lang_code']) && in_array ( $_POST['alo_em_lang_code'], alo_em_get_all_languages( false )) ) ? $_POST['alo_em_lang_code'] : "" ;
         if ( !is_email($email) ) {
             $error_on_adding .= esc_js($_POST['alo_em_error_email_incorrect']). "<br />";
         }
-        if ( $name == "") {
+        if ( get_option('alo_em_hide_name_input') != 'yes' && $name == "") {
             $error_on_adding .= esc_js($_POST['alo_em_error_name_empty']) . ".<br />";
         }
 				
@@ -1551,8 +1557,10 @@ function alo_em_pubblic_form_callback() {
 		// if just added, clean inputs, otherwise only sanitize them
 		$alo_em_opt_name = ( $just_added ) ? '' : esc_js(sanitize_text_field($_POST['alo_em_opt_name']));
 		$alo_em_opt_email = ( $just_added ) ? '' : esc_js(sanitize_text_field($_POST['alo_em_opt_email']));
-		
-		$feedback .= "document.alo_easymail_widget_form.alo_em_opt_name.value ='".$alo_em_opt_name."';";
+
+	    if( get_option('alo_em_hide_name_input') != 'yes' ) {
+		    $feedback .= "document.alo_easymail_widget_form.alo_em_opt_name.value ='".$alo_em_opt_name."';";
+	    }
 		$feedback .= "document.alo_easymail_widget_form.alo_em_opt_email.value ='".$alo_em_opt_email."';";
 		if ( $alo_em_cf ) {
 			foreach( $alo_em_cf as $key => $value ){

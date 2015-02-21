@@ -222,3 +222,7 @@ body.alo-easymail-alo-easymail_subscribers-php img.clock {
 .wp-pointer-content h3:before {
 	background: url('../images/icon-pointer.png') 0 50% no-repeat;
 }
+
+i.easymail-tinymce-icon {
+	background-image: url('../images/16-email-letter.png');
+}

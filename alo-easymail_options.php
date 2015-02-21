@@ -123,7 +123,11 @@ if ( isset($_POST['submit']) ) {
 			} else {
 				update_option('alo_em_hide_widget_users', "no") ;
 			}
-			
+			if ( isset($_POST['hide_name_input']) ) {
+				update_option('alo_em_hide_name_input', "yes");
+			} else {
+				update_option('alo_em_hide_name_input', "no") ;
+			}
 			
 		} // end Tab GENERAL
 
@@ -366,6 +370,19 @@ if ( get_option('alo_em_no_activation_mail') == "yes" ) {
 <tr valign="top">
 <th scope="row"><?php _e("Disable activation e-mail", "alo-easymail") ?>:</th>
 <td><input type="checkbox" name="no_activation_mail" id="no_activation_mail" value="yes" <?php echo $checked_embed_css ?> /> <span class="description"><?php _e("If yes, a new subscriber is automatically activated without confirmation e-mail", "alo-easymail") ?>.</span></td>
+</tr>
+
+
+<?php
+if ( get_option('alo_em_hide_name_input') == "yes" ) {
+	$checked_hide_name_input = 'checked="checked"';
+} else {
+	$checked_hide_name_input = "";
+}
+?>
+<tr valign="top">
+	<th scope="row"><?php _e("Hide Name input in form", "alo-easymail") ?>:</th>
+	<td><input type="checkbox" name="hide_name_input" id="hide_name_input" value="yes" <?php echo $checked_hide_name_input ?> /> <span class="description"><?php _e("If yes, the Name input will be not shown in subscription form", "alo-easymail") ?>.</span></td>
 </tr>
 
 
