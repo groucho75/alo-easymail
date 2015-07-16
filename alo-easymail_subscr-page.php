@@ -6,15 +6,16 @@ global $wpdb;
 
 $allowed_actions = array('activate', 'unsubscribe', 'do_unsubscribe', 'do_editlists');
 
+$parsed = parse_url(parse_url($_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI], PHP_URL_QUERY));
+parse_str($parsed['path'], $get_array);
+
 // Email
-$em1 = ( isset($_REQUEST['em1']) ) ? $_REQUEST['em1'] : '';
-$em2 = ( isset($_REQUEST['em2']) ) ? $_REQUEST['em2'] : '';
+$em1 = ( isset($get_array['em1']) ) ? $get_array['em1'] : '';
+$em2 = ( isset($get_array['em2']) ) ? $get_array['em2'] : '';
 $concat_email = $em1 . "@" . $em2; 
 $email  = ( is_email($concat_email) ) ? $concat_email : false;
-
-$unikey = ( isset($_REQUEST['uk']) ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', $_REQUEST['uk'])  : false;
-$action = ( isset($_REQUEST['ac']) && in_array( $_REQUEST['ac'], $allowed_actions) ) ? $_REQUEST['ac'] : false;
-
+$unikey = ( isset($get_array['uk']) ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', $get_array['uk'])  : false;
+$action = ( isset($get_array['ac']) && in_array( $get_array['ac'], $allowed_actions) ) ? $get_array['ac'] : false;
 
 // If there is not an activation/unsubscribe request
 if ( !$action || !$email || alo_em_can_access_subscrpage ($email, $unikey) == false ) : // if cannot
