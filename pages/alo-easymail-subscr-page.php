@@ -1,4 +1,11 @@
 <?php
+/**
+ * Frontend page where subscribers manage their subscription
+ *
+ * @package WordPress
+ * @subpackage ALO EasyMail plugin
+ */
+
 global $wpdb;
 
 // example:
@@ -7,19 +14,19 @@ global $wpdb;
 $allowed_actions = array('activate', 'unsubscribe', 'do_unsubscribe', 'do_editlists');
 
 // Email
-$em1 = ( isset($_REQUEST['em1']) ) ? $_REQUEST['em1'] : '';
-$em2 = ( isset($_REQUEST['em2']) ) ? $_REQUEST['em2'] : '';
+$em1 = get_query_var('em1');
+$em2 = get_query_var('em2');
 $concat_email = $em1 . "@" . $em2; 
 $email  = ( is_email($concat_email) ) ? $concat_email : false;
 
-$unikey = ( isset($_REQUEST['uk']) ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', $_REQUEST['uk'])  : false;
-$action = ( isset($_REQUEST['ac']) && in_array( $_REQUEST['ac'], $allowed_actions) ) ? $_REQUEST['ac'] : false;
+$unikey = ( get_query_var('uk') ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', get_query_var('uk'))  : false;
+$action = ( get_query_var('ac') && in_array( get_query_var('ac'), $allowed_actions) ) ? get_query_var('ac') : false;
 
 
 // If there is not an activation/unsubscribe request
 if ( !$action || !$email || alo_em_can_access_subscrpage ($email, $unikey) == false ) : // if cannot
 	// if there is action show error msg
-	if(isset($_REQUEST['ac'])) echo "<p>".__("Error during operation.", "alo-easymail") ."</p>";
+	if(get_query_var('ac')) echo "<p>".__("Error during operation.", "alo-easymail") ."</p>";
 	
 	$optin_txt = ( alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_optin_msg', false) !="") ? alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_optin_msg', false) : __("Yes, I would like to receive the Newsletter", "alo-easymail"); 
     echo "<div id='alo_easymail_page'>";
@@ -134,4 +141,3 @@ if ($email && $action == 'do_editlists' && isset($_POST['submit']) && wp_verify_
 
 
 endif; //  end CHECK IF CAN ACCESS
-?>

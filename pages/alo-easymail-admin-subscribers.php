@@ -1,4 +1,11 @@
-<?php // No direct access, only through WP
+<?php
+/**
+ * Plugin dashboard page to manage subscribers
+ *
+ * @package WordPress
+ * @subpackage ALO EasyMail plugin
+ */
+
 if(preg_match('#' . basename(__FILE__) . '#', $_SERVER['PHP_SELF'])) die('You can\'t call this page directly.'); 
 if ( !current_user_can('manage_newsletter_subscribers') ) 	wp_die(__('Cheatin&#8217; uh?'));
 global $user_ID;
@@ -8,7 +15,7 @@ global $user_ID;
 <?php // action and feedback
 
 // Base link
-$link_base = "edit.php?post_type=newsletter&page=alo-easymail/alo-easymail_subscribers.php";
+$link_base = "edit.php?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-subscribers.php";
 
 
 // change state activity of subscriber
@@ -113,7 +120,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					
 					<form method="get" action="" id="posts-filter">
 					<input  type="hidden" name="s"  value="<?php if (!empty( $s )) echo stripslashes( $s ) ; ?>" />
-					<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input  type="hidden" name="paged"  value="<?php echo $page ?>" />
 					<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
 					<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />
@@ -176,7 +183,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					
 					<form method="get" action="" id="posts-filter">
 					<input  type="hidden" name="s"  value="<?php if (!empty( $s )) echo stripslashes( $s ) ; ?>" />
-					<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input  type="hidden" name="paged"  value="<?php echo $page ?>" />
 					<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
 					<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />
@@ -345,7 +352,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					</tbody></table>
 					<input type="hidden" name="post_type"  value="newsletter" />
 					<input type="hidden" name="action"  value="addsingle_step2" /> <?php // the action ?>
-					<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input type="submit" value="<?php _e('Add', 'alo-easymail') ?>" class="button" name="doaction_step2" />
 				</form>					 	
 			 	<hr class="break" />
@@ -358,7 +365,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 			 	<form action="" method="get">			 	
 					<input type="hidden" name="action"  value="wpusers_step2" /> <?php // the action ?>
 					<input type="hidden" name="post_type"  value="newsletter" />
-					<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input type="submit" value="<?php _e('Import from WP members', 'alo-easymail') ?>" class="button" name="doaction_step2" />
 				</form>			 	
 			 	<hr class="break" />
@@ -409,7 +416,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 			 	<form action="" method="get">			 	
 			 		<input type="hidden" name="post_type"  value="newsletter" />
 					<input type="hidden" name="action"  value="export_step2" /> <?php // the action ?>
-					<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input type="submit" value="<?php _e('Export', 'alo-easymail') ?>" class="button" name="doaction_step2" />
 				</form>		
 			 	<hr class="break" />
@@ -419,7 +426,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 			 	<form action="" method="get">			 	
 			 		<input type="hidden" name="post_type"  value="newsletter" />
 					<input type="hidden" name="action"  value="export_unsubscribers_step2" /> <?php // the action ?>
-					<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input type="submit" value="<?php _e('Export', 'alo-easymail') ?>" class="button" name="doaction_step2" />
 				</form>		
 			 	<hr class="break" />
@@ -752,7 +759,7 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 	<p class="search-box">
 	<input type="text" name="s" value="<?php if (!empty( $s )) echo stripslashes( $s ) ; ?>" class="search-input" id="s" />
 	<input  type="hidden" name="post_type"   value="newsletter"/>
-	<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+	<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 	<input  type="hidden" name="paged"  value="1" />
 	<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
 	<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />
@@ -900,7 +907,7 @@ function checkBulkForm (form, field) {
 		
 		<input  type="hidden" name="s"  value="<?php if (!empty( $s )) echo stripslashes( $s ) ; ?>" />
 		<input  type="hidden" name="post_type"   value="newsletter"/>
-		<input  type="hidden" name="page"   value="alo-easymail/alo-easymail_subscribers.php"/>
+		<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 		<input  type="hidden" name="paged"  value="<?php echo $page ?>" />
 		<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
 		<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />

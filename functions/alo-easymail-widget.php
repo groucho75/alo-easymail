@@ -1,14 +1,14 @@
 <?php
-// some constants
-define('ALO_EM_OPT_METAKEY','alo_easymail_optin_setting');
-
-//============= Widget functions ==============================================
+/**
+ * Widget functions and class
+ *
+ * @package WordPress
+ * @subpackage ALO EasyMail plugin
+ */
 
 
 /**
- * Show the widget form for registered/pubblic
- *
- * param 	id		div id, useful to distinguish forms (in page, in widget...)
+ * Show the widget form for registered/public
  */
 function alo_em_show_widget_form ( ) {
 	global $user_ID, $user_email, $wpdb;
@@ -151,10 +151,12 @@ function alo_em_show_widget_form ( ) {
 
 }
 
-//============= Widget Class ==============================================
+/**
+ * Class ALO_Easymail_Widget
+ */
 class ALO_Easymail_Widget extends WP_Widget {
-    // this constructor cannot be __construct!! causes 500 server error
-	function ALO_Easymail_Widget() {
+
+	function __construct() {
 		/* Widget settings. NOTE: Class name must be lower case*/
 		$widget_ops = array( 'classname' => 'alo_easymail_widget', 'description' => __('Allow users to opt in/out of email', 'alo-easymail') );
 
@@ -168,18 +170,8 @@ class ALO_Easymail_Widget extends WP_Widget {
 	/**
 	 * Display the widget on the screen.
 	 */
-	/* args array
-        [name] => Sidebar 1
-        [id] => sidebar-1
-        [description] => 
-        [before_widget] => <li id="example-widget-4" class="widget example">
-        [after_widget] => </li>
-        [before_title] => <h2 class="widgettitle">
-        [after_title] => </h2>
-        [widget_id] => example-widget-4
-        [widget_name] => Example Widget
-    */	 
 	function widget( $args, $instance ) {
+
         global $user_ID, $user_email, $wpdb;
         
 		extract( $args );
@@ -187,7 +179,6 @@ class ALO_Easymail_Widget extends WP_Widget {
         // add ALO: hide the widget in subscriber page
         if ( is_page( get_option('alo_em_subsc_page') ) ) return;
         if ( is_page( alo_em_get_subscrpage_id( alo_em_get_language() ) ) ) return;
-        //if ( is_page() ) return;
 
 		// Hide widget to users, if required in setting
         if ( get_option('alo_em_hide_widget_users') == "yes" && is_user_logged_in() ) return;
@@ -195,37 +186,17 @@ class ALO_Easymail_Widget extends WP_Widget {
  		// Our variables from the widget settings.
 		$title = apply_filters('widget_title', $instance['title'] );
 		
-        // Get the the user's optin setting
-        if (alo_em_is_subscriber($user_email)){
-            $optin_checked = "checked='checked'";            
-            $optout_checked = "";            
-        }
-        else{
-            $optin_checked = "";            
-            $optout_checked = "checked='checked'";            
-        }        
-		
 		// Before widget (defined by themes). 
 		echo $before_widget;
 
 		// Display the widget title if one was input (before and after defined by themes). 
-		if ( $title )
-
+		if ( $title ) {
 			echo $before_title . $title . $after_title;
+		}
 
-        // get the message optin/out messages
-        // mod ALO: we need them also outside widget
-		$optin_msg = get_option('alo_em_optin_msg');
-		$optout_msg = get_option('alo_em_optout_msg');
-        //$optin_msg = $instance['alo_easymail_optin_msg'];
-        //$optout_msg = $instance['alo_easymail_optout_msg'];
-        
         // add ALO: print the form
         echo alo_em_show_widget_form ();
-        
-        // and output it
-        //echo $html;
-		
+
 		// After widget (defined by themes). 
 		echo $after_widget;
 	}
@@ -238,13 +209,7 @@ class ALO_Easymail_Widget extends WP_Widget {
 
 		// Strip tags for title and name to remove HTML
 		$instance['title'] = strip_tags( $new_instance['title'] );
-		//$instance['alo_easymail_optin_msg'] = strip_tags( $new_instance['alo_easymail_optin_msg'] );
-		//$instance['alo_easymail_optout_msg'] = strip_tags( $new_instance['alo_easymail_optout_msg'] );
-		
-		// add ALO: add option text to use form outside widget
-		//update_option( "alo_em_optin_msg", strip_tags( $new_instance['alo_easymail_optin_msg']) /*$instance['alo_easymail_optin_msg']*/ );
-		//update_option( "alo_em_optout_msg", strip_tags( $new_instance['alo_easymail_optout_msg']) /*$instance['alo_easymail_optout_msg']*/ );
-		
+
 		return $instance;
 	}
 
@@ -260,28 +225,24 @@ class ALO_Easymail_Widget extends WP_Widget {
 		$instance = wp_parse_args( (array) $instance, $defaults ); 
 
 		$html = "";
-		$html .= "\r\n".'<!-- Widget Title: Text Input -->';
+		$html .= "\r\n";
 		$html .= "\r\n".'<p>';
 		$html .= "\r\n".'	<label for="'.$this->get_field_id( 'title' ).'">Title</label>';
 		$html .= "\r\n".'	<input id="'.$this->get_field_id( 'title' ).'" name="'.$this->get_field_name( 'title' ).'" value="'.esc_attr( $instance['title'] ).'" style="width:100%;" />';
 		$html .= "\r\n".'</p>';
-		
-		/*
-		$html .= "\r\n".'<!-- alo_easymail_optin_msg: Text Input -->';
-		$html .= "\r\n".'<p>';
-		$html .= "\r\n".'	<label for="'.$this->get_field_id( 'alo_easymail_optin_msg' ).'">Optin Message</label>';
-		$html .= "\r\n".'	<input id="'.$this->get_field_id( 'alo_easymail_optin_msg' ).'" name="'.$this->get_field_name( 'alo_easymail_optin_msg' ).'" value="'.$instance['alo_easymail_optin_msg'].'" style="width:100%;" />';
-		$html .= "\r\n".'</p>';
-		
-		$html .= "\r\n".'<!-- alo_easymail_optout_msg: Text Input -->';
-		$html .= "\r\n".'<p>';
-		$html .= "\r\n".'	<label for="'.$this->get_field_id( 'alo_easymail_optout_msg' ).'">Optout Message</label>';
-		$html .= "\r\n".'	<input id="'.$this->get_field_id( 'alo_easymail_optout_msg' ).'" name="'.$this->get_field_name( 'alo_easymail_optout_msg' ).'" value="'.$instance['alo_easymail_optout_msg'].'" style="width:100%;" />';
-		$html .= "\r\n".'</p>';
-		*/
-				
+
 		echo $html;
 
 	}
-}//=========== End  Widget Class ==========================================
-?>
+}
+
+
+/**
+ * Widget activation
+ */
+function alo_em_load_widgets() {
+	register_widget( 'ALO_Easymail_Widget' );
+}
+add_action( 'widgets_init', 'alo_em_load_widgets' );
+
+/* EOF */

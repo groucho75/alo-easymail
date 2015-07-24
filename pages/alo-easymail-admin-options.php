@@ -1,10 +1,16 @@
 <?php
-//auth_redirect();
+/**
+ * Plugin dashboard option page
+ *
+ * @package WordPress
+ * @subpackage ALO EasyMail plugin
+ */
+
 if ( !current_user_can('manage_newsletter_options') ) 	wp_die(__('Cheatin&#8217; uh?'));
 
 
 // Base link
-$link_base = "edit.php?post_type=newsletter&page=alo-easymail/alo-easymail_options.php";
+$link_base = "edit.php?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-options.php";
 	
 global $wp_version, $wpdb, $user_ID, $wp_roles;
 
@@ -1274,7 +1280,7 @@ if ( isset( $_REQUEST['task'] ) ) {
 	<?php }  ?>
 	<input type="submit" name="submit_list" value="<?php _e('Save', 'alo-easymail') ?>"  class="button-primary" />
 	<?php if ( isset ( $_REQUEST['task'] ) && $_REQUEST['task'] == 'edit_list' && $list_id ) { ?>
-		<a href='options-general.php?page=alo-easymail/alo-easymail_options.php#mailinglists' title="<?php _e('Cancel', 'alo-easymail') ?>" ><?php _e('Cancel', 'alo-easymail') ?></a>
+		<a href='options-general.php?page=alo-easymail/pages/alo-easymail-admin-options.php#mailinglists' title="<?php _e('Cancel', 'alo-easymail') ?>" ><?php _e('Cancel', 'alo-easymail') ?></a>
 	<?php } ?>
 </td>
 </tr>
@@ -1326,10 +1332,10 @@ if ($tab_mailinglists) {
 			?></td>
 			
 			<td><?php
-				echo "<a href='edit.php?post_type=newsletter&page=alo-easymail/alo-easymail_options.php&amp;task=edit_list&amp;list_id=". $list . "&amp;rand=".rand(1,99999)."#mailinglists' title='".__("Edit list", "alo-easymail")."' >";
+				echo "<a href='edit.php?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-options.php&amp;task=edit_list&amp;list_id=". $list . "&amp;rand=".rand(1,99999)."#mailinglists' title='".__("Edit list", "alo-easymail")."' >";
 				echo "<img src='".ALO_EM_PLUGIN_URL."/images/16-edit.png' alt='" . __("Edit list", "alo-easymail") ."' /></a>";
 				echo " ";
-				echo "<a href='edit.php?post_type=newsletter&page=alo-easymail/alo-easymail_options.php&amp;task=del_list&amp;list_id=". $list . "&amp;rand=".rand(1,99999)."#mailinglists' title='".__("Delete list", "alo-easymail")."' ";
+				echo "<a href='edit.php?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-options.php&amp;task=del_list&amp;list_id=". $list . "&amp;rand=".rand(1,99999)."#mailinglists' title='".__("Delete list", "alo-easymail")."' ";
 				echo " onclick=\"return confirm('".__("Do you really want to DELETE this list?", "alo-easymail")."');\">";
 				echo "<img src='".ALO_EM_PLUGIN_URL."/images/trash.png' alt='" . __("Delete list", "alo-easymail") ."' /></a>";
 				?>

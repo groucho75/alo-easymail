@@ -1,4 +1,11 @@
-<?php 
+<?php
+/**
+ * This resource has loaded as an embed pixel image at the bottom
+ * of newsletter to tracking the recipient view.
+ *
+ * @package WordPress
+ * @subpackage ALO EasyMail plugin
+ */
 
 include('../../../wp-load.php');
 global $wpdb;
@@ -16,9 +23,9 @@ if ( get_option('alo_em_use_tracking_pixel') == 'no' ) exit;
 ob_start();
 error_reporting(0);
 
-if ( isset( $_REQUEST['v'] ) ) {
+if ( isset( $_GET['v'] ) ) {
 
-	$get_vars = base64_decode( $_REQUEST['v'] );
+	$get_vars = base64_decode( $_GET['v'] );
 	$get = explode( "|", $get_vars );
 
 	$recipient	= ( isset( $get[0] ) && is_numeric($get[0]) ) ? (int)$get[0] : false;

@@ -1,5 +1,12 @@
 <?php
-include('../../../wp-load.php');
+/**
+ * Newsletter report in dashboard
+ *
+ * @package WordPress
+ * @subpackage ALO EasyMail plugin
+ */
+
+include('../../../../wp-load.php');
 //auth_redirect();
 
 if ( !current_user_can( "edit_newsletters" ) ) 	wp_die( __('Cheatin&#8217; uh?') );
@@ -57,7 +64,7 @@ if ( $newsletter ) {
 		<div class="wrap">
 			
 			<?php if ( isset($_GET['_wpnonce']) && !isset($_GET['isnewwin']) ) : ?>
-				<a href="<?php echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/alo-easymail_report.php?newsletter='.$newsletter.'&lang='.$lang.'&isnewwin=1', 'alo-easymail_report'); ?>" target="_blank" class="new-win-link">
+				<a href="<?php echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&isnewwin=1', 'alo-easymail_report'); ?>" target="_blank" class="new-win-link">
 				<?php _e("open in a new window", "alo-easymail") ?></a>
 			<?php endif; ?>				
 			
@@ -172,7 +179,7 @@ if ( $newsletter ) {
 						<td class="error center" style="width:15%"><?php echo $sent_with_error  ?>	</td>
 						<td class="views center" style="width:15%"><?php echo $unique_views  ?></td>		
 						<td class="success center" style="width:15%"><?php echo $unique_clicks ?><?php
-						if ( $unique_clicks >0 ) : ?><a href="<?php echo wp_nonce_url(ALO_EM_PLUGIN_URL . '/alo-easymail_report.php?newsletter='.$newsletter.'&lang='.$lang.'&show_clicked=1', 'alo-easymail_report'); ?>" title="<?php esc_attr_e(__("click to view list of clicked links", "alo-easymail")) ?>"><img src="<?php echo ALO_EM_PLUGIN_URL ?>/images/16-arrow-right.png" /></a><?php
+						if ( $unique_clicks >0 ) : ?><a href="<?php echo wp_nonce_url(ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&show_clicked=1', 'alo-easymail_report'); ?>" title="<?php esc_attr_e(__("click to view list of clicked links", "alo-easymail")) ?>"><img src="<?php echo ALO_EM_PLUGIN_URL ?>/images/16-arrow-right.png" /></a><?php
 						endif; ?>
 						</td>
 					</tr>
@@ -193,8 +200,7 @@ if ( $newsletter ) {
 					if ( !isset($_GET['archive']) ) echo "<div class=\"easymail-alert\">". __("Detailed report was archived", "alo-easymail") ."</div>\n";
 				} else if ( alo_em_get_newsletter_status( $newsletter ) == "sent" ) { ?>
 				<div id="par-3">
-					<a href="<?php //wp_nonce_url( ALO_EM_PLUGIN_URL . '/alo-easymail_report.php?newsletter='.$newsletter.'&lang='.$lang.'&isnewwin=1', 'alo-easymail_report')
-					echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/alo-easymail_report.php?newsletter='.$newsletter.'&lang='.$lang.'&archive=1', 'alo-easymail_report') ; ?>" class="easymail-navbutton button-archive" onclick='javascript:if( confirm("<?php echo esc_js( __("Are you sure?", "alo-easymail")." " .__("You are about to DELETE the detailed info about recipients", "alo-easymail").". " . __("This action cannot be undone", "alo-easymail") ) ?>") == false ) return false;' title="<?php esc_attr_e(__("You are about to DELETE the detailed info about recipients", "alo-easymail")) ?>">
+					<a href="<?php echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&archive=1', 'alo-easymail_report') ; ?>" class="easymail-navbutton button-archive" onclick='javascript:if( confirm("<?php echo esc_js( __("Are you sure?", "alo-easymail")." " .__("You are about to DELETE the detailed info about recipients", "alo-easymail").". " . __("This action cannot be undone", "alo-easymail") ) ?>") == false ) return false;' title="<?php esc_attr_e(__("You are about to DELETE the detailed info about recipients", "alo-easymail")) ?>">
 					<?php _e("Delete the detailed report of recipients", "alo-easymail") ?></a> 
 					<?php echo alo_em_help_tooltip( __("You are about to DELETE the detailed info about recipients", "alo-easymail").". " .__("This action deletes the detailed info about recipients (see below) and keeps only the summary (see above)", "alo-easymail"). ". " .__("It reduces the data in database tables and make the plugin queries and actions faster", "alo-easymail"). ". " ); ?>
 				</div>
@@ -205,7 +211,7 @@ if ( $newsletter ) {
 // Table with clicked links
 if ( isset($_GET['show_clicked']) ) : ?>
 
-<a href="<?php echo wp_nonce_url(ALO_EM_PLUGIN_URL . '/alo-easymail_report.php?newsletter='.$newsletter.'&lang='.$lang, 'alo-easymail_report'); ?>" class="easymail-navbutton" style="margin-top:15px;display: inline-block;">&laquo; <?php _e("Back to list of recipients", "alo-easymail") ?></a>
+<a href="<?php echo wp_nonce_url(ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang, 'alo-easymail_report'); ?>" class="easymail-navbutton" style="margin-top:15px;display: inline-block;">&laquo; <?php _e("Back to list of recipients", "alo-easymail") ?></a>
 
 		<table style="margin-top:15px;width:100%;font-family: sans-serif">
 			<thead>
@@ -248,7 +254,7 @@ elseif ( !alo_em_is_newsletter_recipients_archived ( $newsletter ) ) : 	?>
 						$to_offset = ( $i * $per_page ); 
 						$active = ( $offset == $to_offset ) ? "ui-tabs-selected ui-state-active" : "";
 						$atitle = __("Recipients", "alo-easymail").": ". ($to_offset+1) ." - ". ( ( $i < $tot_pages-1 ) ? $to_offset + $per_page : $tot_recipients ); ?>		
-						<li class="ui-state-default ui-corner-top <?php echo $active ?>"><a href="<?php echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/alo-easymail_report.php?newsletter='.$newsletter.'&lang='.$lang.'&offset='. $to_offset, 'alo-easymail_report') ; ?>" title="<?php echo $atitle ?>"><?php echo $to_offset+1 ?></a></li>			
+						<li class="ui-state-default ui-corner-top <?php echo $active ?>"><a href="<?php echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&offset='. $to_offset, 'alo-easymail_report') ; ?>" title="<?php echo $atitle ?>"><?php echo $to_offset+1 ?></a></li>
 					<?php endfor; ?>
 				</ul>
 				<?php endif; // if ( $tot_pages > 1 ) ?>
@@ -309,4 +315,3 @@ elseif ( !alo_em_is_newsletter_recipients_archived ( $newsletter ) ) : 	?>
 	<?php } // end if $newsletter
 } // edn if (isset($_REQUEST['id']) && (int)$_REQUEST['id'])
 exit;
-?>

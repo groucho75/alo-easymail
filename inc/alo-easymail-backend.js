@@ -114,7 +114,7 @@ aloEM (document).ready ( function(){
 
 						setTimeout(function(){
 							aloEM("#easymail-open-preview-loading").hide();
-							window.open ( easymailJs.pluginPath + 'alo-easymail_preview.php?newsletter=' + easymailJs.postID + '&_wpnonce=' + easymailJs.nonce, 'easymail-preview-'+ easymailJs.postID ); 
+							window.open ( easymailJs.pluginPath + 'pages/alo-easymail-admin-preview.php?newsletter=' + easymailJs.postID + '&_wpnonce=' + easymailJs.nonce, 'easymail-preview-'+ easymailJs.postID );
 						}, 1000);
 				
 					}
@@ -128,7 +128,7 @@ aloEM (document).ready ( function(){
 	 * Subscribers' Table page
 	 */
 
-	if ( easymailJs.pagenow == 'edit.php' && easymailJs.screenID == 'alo-easymail/alo-easymail_subscribers' ) {
+	if ( easymailJs.pagenow == 'edit.php' && easymailJs.screenID == 'alo-easymail/pages/alo-easymail-admin-subscribers' ) {
 		
 		// Start inline-editing a subscriber
 		aloEM('.easymail-subscriber-edit-inline').on( "click", function() {

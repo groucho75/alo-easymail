@@ -1,5 +1,12 @@
-<?php 
-include('../../../wp-load.php');
+<?php
+/**
+ * Preview newsletter in selected theme in edit screen
+ *
+ * @package WordPress
+ * @subpackage ALO EasyMail plugin
+ */
+
+include('../../../../wp-load.php');
 global $wpdb;
 global $user_ID;
 
