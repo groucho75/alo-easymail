@@ -1327,7 +1327,7 @@ if ($tab_mailinglists) {
 			<td><strong><?php echo $val['order'] ?></strong></td>
 			
 			<td><?php // echo count ( alo_em_get_recipients_subscribers( $list ) )
-			$link_subscr = "edit.php?post_type=newsletter&page=alo-easymail/alo-easymail_subscribers.php&filter_list=".$list;
+			$link_subscr = "edit.php?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-subscribers.php&filter_list=".$list;
 			echo '<a href="'. admin_url( $link_subscr ). '">'. __('View') .'</a>';
 			?></td>
 			
