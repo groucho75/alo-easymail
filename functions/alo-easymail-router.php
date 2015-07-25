@@ -21,6 +21,7 @@ function alo_em_register_query_vars( $vars ){
 	$vars[] = "em1";
 	$vars[] = "em2";
 	$vars[] = "uk";
+	$vars[] = "lang";
 	return $vars;
 }
 add_filter( 'query_vars', 'alo_em_register_query_vars' );
