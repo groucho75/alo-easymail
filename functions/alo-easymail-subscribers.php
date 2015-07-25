@@ -100,7 +100,6 @@ function alo_em_add_subscriber( $fields, $newstate=0, $lang="" ) { //edit : orig
 	$fields = array_map( 'strip_tags', $fields );
 	$email = $fields['email'];
 	if ( !is_admin() || ( defined('DOING_AJAX') && DOING_AJAX ) ) $fields['ip_address'] = alo_em_ip_address();
-	//foreach( $fields as $key => $value ) { ${$key} = $value; } //edit : added all this line in order to transform the fields array into simple variables
 	// if there is NOT a subscriber with this email address: add new subscriber and send activation email
 	if (alo_em_is_subscriber($email) == false){
 		$unikey = substr(md5(uniqid(rand(), true)), 0,24);    // a personal key to manage the subscription
@@ -162,9 +161,6 @@ function alo_em_delete_subscriber_by_id($id) {
  */
 function alo_em_update_subscriber_by_email ( $old_email, $fields, $newstate=0, $lang="", $update_lastact=true ) {
 	global $wpdb;
-	//foreach( $fields as $key => $value ) { ${$key} = $value; } //edit : added all this line in order to transform the fields array into simple variables
-	//$old_email = $fields['old_email']; // edit-by-alo: added this line
-	//unset( $fields['old_email'] ); //edit : added all this line in order to prevent "update" to break
 	$fields['active'] = $newstate; //edit : added all this line
 	$fields['lang'] = $lang; //edit : added all this line
 	$fields['ip_address'] = alo_em_ip_address();

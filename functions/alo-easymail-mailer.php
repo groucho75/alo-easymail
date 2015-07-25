@@ -42,7 +42,7 @@ add_action('wp_ajax_easymail_send_mailtest', 'alo_em_send_mailtest');
  * Send email with activation link
  */
 function alo_em_send_activation_email( $fields, $unikey, $lang ) {
-	foreach( $fields as $key => $value ) { ${$key} = $value; } //edit : added all this line in order to transform the fields array into simple variables
+	extract($fields);
 	$blogname = html_entity_decode ( wp_kses_decode_entities ( get_option('blogname') ) );
 	// Headers
 	$mail_sender = ( get_option('alo_em_sender_email') ) ? get_option('alo_em_sender_email') : "noreply@". str_replace("www.","", $_SERVER['HTTP_HOST']);
