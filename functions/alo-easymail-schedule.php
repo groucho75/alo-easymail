@@ -65,10 +65,14 @@ add_action('alo_em_bounce_handle', 'alo_em_handle_bounces');
  */
 function alo_em_clean_no_actived() {
 	global $wpdb;
-	// delete subscribes not yet activated after 5 days
-	$limitdate = date ("Y-m-d",mktime(0,0,0,date("m"),date("d")-5,date("Y")));
-	$output = $wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->prefix}easymail_subscribers WHERE join_date <= '%s' AND active = '0'", $limitdate ) );
-	//return $output;.
+	// delete subscribes not yet activated after 5 days, you can filter the number
+	$default = 5;
+	$days = apply_filters ( 'alo_easymail_clean_no_activated_after', $default ); // Hook
+	if ( !is_numeric($days) ) {
+		$days = $default;
+	}
+	$limitdate = date ("Y-m-d",mktime(0,0,0,date("m"),date("d")-$days,date("Y")));
+	$output = $wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->prefix}easymail_subscribers WHERE join_date <= %s AND active = '0'", $limitdate ) );
 }
 
 add_action('alo_em_schedule', 'alo_em_clean_no_actived');
