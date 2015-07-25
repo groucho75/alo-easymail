@@ -114,8 +114,8 @@ function alo_em_recipients_short_summary ( $recipients ) {
 					if ( in_array ( $list, $recipients['list'] ) ) $list_str .= alo_em_translate_multilangs_array ( alo_em_get_language(), $val['name'], true ) .", ";
 				}
 				$list_str = trim ( $list_str, ", " );
+				$output .= "<li title=\"". esc_attr( $list_str ) ."\" >" . count( $recipients['list'] ) ." ". __( 'Mailing Lists', "alo-easymail") . alo_em_help_tooltip( $list_str ) . "</li>";
 			}
-			$output .= "<li title=\"". esc_attr( $list_str ) ."\" >" . count( $recipients['list'] ) ." ". __( 'Mailing Lists', "alo-easymail") . alo_em_help_tooltip( $list_str ) . "</li>";
 		}
 	}
 	if ( isset( $recipients['subscribers'] ) || isset( $recipients['list'] ) ) {

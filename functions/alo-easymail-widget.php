@@ -156,7 +156,7 @@ function alo_em_show_widget_form ( ) {
  */
 class ALO_Easymail_Widget extends WP_Widget {
 
-	function __construct() {
+	public function __construct() {
 		/* Widget settings. NOTE: Class name must be lower case*/
 		$widget_ops = array( 'classname' => 'alo_easymail_widget', 'description' => __('Allow users to opt in/out of email', 'alo-easymail') );
 
@@ -164,13 +164,13 @@ class ALO_Easymail_Widget extends WP_Widget {
 		$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'alo-easymail-widget' );
 
 		/* Create the widget. */
-		$this->WP_Widget( 'alo-easymail-widget', __('ALO Easymail Widget', 'alo-easymail'), $widget_ops, $control_ops );
+		parent::__construct( 'alo-easymail-widget', __('ALO Easymail Widget', 'alo-easymail'), $widget_ops, $control_ops );
 	}
 
 	/**
 	 * Display the widget on the screen.
 	 */
-	function widget( $args, $instance ) {
+	public function widget( $args, $instance ) {
 
         global $user_ID, $user_email, $wpdb;
         
@@ -204,7 +204,7 @@ class ALO_Easymail_Widget extends WP_Widget {
 	/**
 	 * Update the widget settings.
 	 */
-	function update( $new_instance, $old_instance ) {
+	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
 
 		// Strip tags for title and name to remove HTML
@@ -218,7 +218,7 @@ class ALO_Easymail_Widget extends WP_Widget {
 	 * Make use of the get_field_id() and get_field_name() function
 	 * This handles the confusing stuff.
 	 */
-	function form( $instance ) {
+	public function form( $instance ) {
 
 		/* Set up some default widget settings. */
 		$defaults = array( 'title' => __('Newsletter', 'alo-easymail') );

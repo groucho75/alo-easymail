@@ -84,7 +84,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 == Changelog ==
 
 = 2.6.00 =
-* Updated: refactoring of php files to clean and organize the code in a better way
+* Updated: refactoring of php files to clean and organize the code in a better way, including several minor fixes
 * Updated: the widget constructor in PHP5 style
 * Updated: the tracking script does not load WP theme but only environment
 * Updated: some improvement in dashboard css of plugin screens
