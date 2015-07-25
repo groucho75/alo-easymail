@@ -352,8 +352,9 @@ aloEM (document).ready ( function(){
 			modal         : true,
 			autoOpen      : false, 
 			closeOnEscape : false,
-			width			: 700,
-			height			: 400,
+			maxWidth		: 700,
+			width			: 'auto',
+			maxHeight		: 400,
 			title			: easymailJs.titleRecListModal,
 			resizable		: true,
 			buttons       : [{
