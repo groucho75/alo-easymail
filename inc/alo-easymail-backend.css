@@ -226,3 +226,16 @@ body.alo-easymail-alo-easymail_subscribers-php img.clock {
 i.easymail-tinymce-icon {
 	background-image: url('../images/16-email-letter.png');
 }
+
+
+/*
+ * Subscribers list table
+ */
+@media only screen and (max-width: 480px) {
+
+	/* phones */
+	table#alo-easymailsubscriber-table th:not(.row-important-column),
+	table#alo-easymailsubscriber-table td:not(.row-important-column){
+		display: none;
+	}
+}

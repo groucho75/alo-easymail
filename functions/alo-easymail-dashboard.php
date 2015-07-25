@@ -108,11 +108,11 @@ add_action( "admin_print_styles", 'alo_em_add_admin_styles' );
 function alo_em_add_admin_menu() {
 	if ( current_user_can('manage_newsletter_subscribers') )  {
 		add_submenu_page( 'edit.php?post_type=newsletter', __("Subscribers", "alo-easymail"), __("Subscribers", "alo-easymail"), 'manage_newsletter_subscribers', 'alo-easymail/pages/alo-easymail-admin-subscribers.php' );
-		add_action( 'load-alo-easymail/alo-easymail_subscribers.php', 'alo_em_contextual_help_tabs' );
+		add_action( 'load-alo-easymail/pages/alo-easymail-admin-subscribers.php', 'alo_em_contextual_help_tabs' );
 	}
 	if ( current_user_can('manage_newsletter_options') ) {
 		add_submenu_page( 'edit.php?post_type=newsletter', __("Settings"), __("Settings"), 'manage_newsletter_options', 'alo-easymail/pages/alo-easymail-admin-options.php' );
-		add_action( 'load-alo-easymail/alo-easymail_options.php', 'alo_em_contextual_help_tabs' );
+		add_action( 'load-alo-easymail/pages/alo-easymail-admin-options.php', 'alo_em_contextual_help_tabs' );
 	}
 	add_action( 'load-edit.php', 'alo_em_contextual_help_tabs' );
 	add_action( 'load-post-new.php', 'alo_em_contextual_help_tabs' );
@@ -401,8 +401,8 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 	$html = "";
 	//$html .= "<tr id=\"subscriber-row-{$subscriber_id}\" class=\"subscriber-row\">\n";
 
-	$html .= "<th scope=\"row\" class=\"subscriber-row-index\">". $row_index . "</th>\n";
-	$html .= "<td style=\"vertical-align: middle;\">";
+	$html .= "<th scope=\"row\" class=\"subscriber-row-index row-important-column\">". $row_index . "</th>\n";
+	$html .= "<td class=\"row-important-column\" style=\"vertical-align: middle;\">";
 	$html .= "<input type=\"checkbox\" name=\"subscribers[]\" id=\"subscribers_". $subscriber_id . "\" value=\"". $subscriber_id. "\" />\n";
 	$html .= "</td>\n";
 
@@ -411,7 +411,7 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 		$html .= "<td>" . get_avatar($subscriber->email, 30). "&nbsp;</td>";
 	}
 
-	$html .= "<td class=\"subscriber-email\">";
+	$html .= "<td class=\"subscriber-email row-important-column\">";
 	if ( $edit ) {
 		$html .= "<input type=\"text\" id=\"subscriber-". $subscriber_id ."-email-new\" name=\"subscriber-". $subscriber_id ."-email-new\" class=\"subscriber-email-new\" value=\"". format_to_edit( $subscriber->email ) . "\" />\n";
 	} else {
@@ -501,7 +501,7 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 	}
 	$html .= "</td>\n";
 
-	$html .= "<td class=\"subscriber-active\">\n";
+	$html .= "<td class=\"subscriber-active row-important-column\">\n";
 	if ( $edit ) {
 		$active_checked = ($subscriber->active == 1) ? " checked=\"checked\" ": "";
 		$html .= "<input type=\"checkbox\" id=\"subscriber-". $subscriber_id ."-active-new\" name=\"subscriber-". $subscriber_id ."-active-new\" class=\"subscriber-active-new\" $active_checked />\n";

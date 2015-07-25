@@ -18,10 +18,10 @@ function alo_em_contextual_help_tabs() {
 	$tab = false;
 	switch ( $screen->id ) {
 
-		case 'alo-easymail/alo-easymail_subscribers':
+		case 'alo-easymail/pages/alo-easymail-admin-subscribers':
 			break;
 
-		case 'alo-easymail/alo-easymail_options':
+		case 'alo-easymail/pages/alo-easymail-admin-options':
 			break;
 
 		case 'edit-newsletter':
@@ -58,7 +58,7 @@ function alo_em_contextual_help_tabs() {
 		<img src='https://www.paypal.com/it_IT/i/scr/pixel.gif' border='0' height='1' width='1'></form>" ."</p>"
 	);
 
-	if ( $screen->id == 'alo-easymail/alo-easymail_subscribers' ) {
+	if ( $screen->id == 'alo-easymail/pages/alo-easymail-admin-subscribers' ) {
 		$screen->add_option(
 			'per_page',
 			array(
@@ -104,7 +104,7 @@ function alo_em_print_pointer_footer_scripts() {
 	$page = isset( $_GET['page'] ) ? $_GET['page'] : false;
 
 	// In subscribers screen
-	if ( $pagenow == "edit.php" && 'alo-easymail/alo-easymail_subscribers.php' == $page && ! get_user_setting( 'alo_em_pointer_add_users', 0 ) ) :
+	if ( $pagenow == "edit.php" && 'alo-easymail/pages/alo-easymail-admin-subscribers.php' == $page && ! get_user_setting( 'alo_em_pointer_add_users', 0 ) ) :
 		$impexp_butt = __("Import/export subscribers", "alo-easymail");
 		$pointer_content = '<h3>Easymail | '. esc_js( $impexp_butt ) .'</h3>';
 		$pointer_content .= '<p>'. esc_js( sprintf( __('Maybe you would like to import subscribers from your blog registered members or an external archive (using CSV). Click the &#39;%s&#39; button', 'alo-easymail'), $impexp_butt) ) .'</p>';

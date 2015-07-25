@@ -979,13 +979,13 @@ $total_items = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}easymail_subs
 </div><!-- tablenav -->
 
 
-<table class="widefat" style='margin-top:10px'>
+<table class="widefat" id="alo-easymailsubscriber-table" style='margin-top:10px'>
 	<thead>
 	<tr>
-		<th scope="col"> </th>
-		<th scope="col"><input type="checkbox" name="checkall_subscribers" value="" onclick="toggleCheckboxes(this, 'posts-filter', 'subscribers');" style="margin:1px" /></th>
+		<th scope="col" class="row-important-column"> </th>
+		<th scope="col" class="row-important-column"><input type="checkbox" name="checkall_subscribers" value="" onclick="toggleCheckboxes(this, 'posts-filter', 'subscribers');" style="margin:1px" /></th>
 		<?php if ( get_option('show_avatars') ) : ?> <th scope="col"><div style="text-align: center;"><!-- Avatar --></div></th><?php endif; ?>
-		<th scope="col"><?php echo "<a href='".$link_string."&amp;sortby=email".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".__("Order by e-mail", "alo-easymail")."'>".__("E-mail", "alo-easymail")."</a>"; ?>	</th>
+		<th scope="col" class="row-important-column"><?php echo "<a href='".$link_string."&amp;sortby=email".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".__("Order by e-mail", "alo-easymail")."'>".__("E-mail", "alo-easymail")."</a>"; ?>	</th>
 		<th scope="col"><?php _e("Name", "alo-easymail") ?></th>
         
         <?php
@@ -1006,7 +1006,7 @@ $total_items = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}easymail_subs
 		<th scope="col"><?php echo __("Username", "alo-easymail") . alo_em_help_tooltip( __("The username of registered users. It is blank for public subscribers.", "alo-easymail") ) ?></th>
 		<th scope="col"><?php echo "<a href='".$link_string."&amp;sortby=join_date".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".esc_attr(__("Order by join date", "alo-easymail"))."'>".__("Join date", "alo-easymail")."</a>"; ?></th>
 		<th scope="col"><?php echo "<a href='".$link_string."&amp;sortby=last_act".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".esc_attr(__("Order by date of last activity", "alo-easymail"))."'>".__("Last activity", "alo-easymail")."</a>" . alo_em_help_tooltip( __("The most recent date when the subcriber made an action", "alo-easymail") ." (". __("e.g. open a newsletter, click a newsletter link, update info in subscription form", "alo-easymail").")" ); ?></th>		
-		<th scope="col"><?php echo "<a href='".$link_string."&amp;sortby=active".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".esc_attr(__("Order by activation state", "alo-easymail"))."'>".__("Activated", "alo-easymail")."</a>" .alo_em_help_tooltip( __("For registered users the dafault state is activated. For public subscribers the default state is deactivated: it will be activated by clicking on the activation link in the e-mail.", "alo-easymail") ." ". __("A subscriber will be deleted if not activated in 5 days.", "alo-easymail") ); ?></th>
+		<th scope="col" class="row-important-column"><?php echo "<a href='".$link_string."&amp;sortby=active".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".esc_attr(__("Order by activation state", "alo-easymail"))."'>".__("Activated", "alo-easymail")."</a>" .alo_em_help_tooltip( __("For registered users the dafault state is activated. For public subscribers the default state is deactivated: it will be activated by clicking on the activation link in the e-mail.", "alo-easymail") ." ". __("A subscriber will be deleted if not activated in 5 days.", "alo-easymail") ); ?></th>
 		<th scope="col"><?php _e("Mailing Lists", "alo-easymail"); ?></th>
 		<th scope="col"><?php echo "<a href='".$link_string."&amp;sortby=lang".( ( isset($_GET['order']) && $_GET['order'] == 'ASC' )? "&amp;order=DESC": "&amp;order=ASC")."' title='".esc_attr(__("Order by language", "alo-easymail"))."'>".__("Language", "alo-easymail")."</a>"; ?></th>				
 		<th scope="col"><?php _e("Actions", "alo-easymail") ?></th>
