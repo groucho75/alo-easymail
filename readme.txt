@@ -89,6 +89,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 * Updated: the tracking script does not load WP theme but only environment
 * Updated: some improvement in dashboard css of plugin screens
 * Updated: the [LATEST-POSTS] placeholder now has loaded by default
+* Added: the checkbox type in custom field
 * Added: filter 'alo_easymail_clean_no_activated_after'
 * Fixed: the size in recipient list modal
 * Fixed: a bug of the inline edit buttons in subscriber table

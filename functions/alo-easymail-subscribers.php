@@ -166,20 +166,6 @@ function alo_em_update_subscriber_by_email ( $old_email, $fields, $newstate=0, $
 	$fields['ip_address'] = alo_em_ip_address();
 	if ( $update_lastact ) $fields['last_act'] = get_date_from_gmt( date("Y-m-d H:i:s") );
 
-	// Filter custom fields
-	$alo_em_cf = alo_easymail_get_custom_fields();
-	if( $alo_em_cf ):
-		foreach( $alo_em_cf as $key => $value ){
-			switch ( $value['input_type'] )	{
-				// particular case: checkbox value not only exist, but value 1
-				case "checkbox":
-					if ( $fields[$key] == false ) unset( $fields[$key] );
-					break;
-				default:
-			}
-		}
-	endif;
-
 	$output = $wpdb->update(    "{$wpdb->prefix}easymail_subscribers",
 		$fields, //edit : orig : array ( 'email' => $new_email, 'name' => $name, 'active' => $newstate, 'lang' => $lang ),
 		array ( 'email' => $old_email )

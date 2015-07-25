@@ -119,7 +119,14 @@ function alo_em_ajax_js()
             //edit : added all this foreach
             if( $alo_em_cf ) {
                 foreach( $alo_em_cf as $key => $value ){
-                    echo 'alo_em_sack.setVar( "alo_em_'.$key.'", document.getElementById(\'alo_em_'.$key.'\').value );'."\n";
+                	switch ( $value['input_type']) {
+                		case 'checkbox':
+                			echo 'alo_em_sack.setVar( "alo_em_'.$key.'", ( document.getElementById(\'alo_em_'.$key.'\').checked ? 1 : 0 ) );'."\n";
+
+                			break;
+                		default:
+                    		echo 'alo_em_sack.setVar( "alo_em_'.$key.'", document.getElementById(\'alo_em_'.$key.'\').value );'."\n";
+                	}
                 }
             }
             ?>
@@ -212,7 +219,15 @@ function alo_em_ajax_js()
             //edit : added all this foreach
             if( $alo_em_cf ) {
                 foreach( $alo_em_cf as $key => $value ){
-                    echo 'alo_em_sack.setVar( "alo_em_'.$key.'", document.getElementById(\'alo_em_'.$key.'\').value );'."\n";
+                   	//echo 'alo_em_sack.setVar( "alo_em_'.$key.'", document.getElementById(\'alo_em_'.$key.'\').value );'."\n";
+                	switch ( $value['input_type']) {
+                		case 'checkbox':
+                			echo 'alo_em_sack.setVar( "alo_em_'.$key.'", ( document.getElementById(\'alo_em_'.$key.'\').checked ? 1 : 0 ) );'."\n";
+
+                			break;
+                		default:
+                    		echo 'alo_em_sack.setVar( "alo_em_'.$key.'", document.getElementById(\'alo_em_'.$key.'\').value );'."\n";
+                	}
                 }
             }
               ?>

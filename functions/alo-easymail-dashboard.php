@@ -161,7 +161,7 @@ function alo_em_ajax_alo_easymail_subscriber_edit_inline () {
 				$new_lang = ( isset( $_POST['new_lang'] ) && in_array( $_POST['new_lang'], $languages) ) ? $_POST['new_lang'] : "";
 				$new_lists = ( isset( $_POST['new_lists'] ) ) ? trim( $_POST['new_lists'] ) : false;
 
-
+				$fields = array(); // to be saved
 				//edit : added the following foreach and its content
 
 				$alo_em_cf = alo_easymail_get_custom_fields();
@@ -173,23 +173,25 @@ function alo_em_ajax_alo_easymail_subscriber_edit_inline () {
 
 
 						//$fields[$key] = false;
-						if ( isset( $_POST[$var_name] ) ) {
-							switch ( $value['input_type'] )	{
+						if ( !empty( $_POST[$var_name] ) ) {
 
-								// particular case: checkbox value not only exist, but value 1
+							switch ( $value['input_type'] )	{
 								case "checkbox":
-									if ( $_POST[$var_name] == '1' ) {
-										$fields[$key] = 1;
-									} else {
-										unset( $fields[$key] );
-									}
+									$fields[$key] = 1;
 									break;
 
 								default:
-									$fields[$key] = stripslashes( trim ( $_POST[$var_name] ) );
+									$fields[$key] = sanitize_text_field( trim ( $_POST[$var_name] ) );
 							}
 						} else {
-							$fields[$key] = false;
+							switch ( $value['input_type'] )	{
+								case "checkbox":
+									$fields[$key] = 0;
+									break;
+
+								default:
+									$fields[$key] = false;
+							}
 						}
 					}
 				}

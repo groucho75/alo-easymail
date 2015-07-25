@@ -131,12 +131,11 @@ function alo_easymail_custom_field_html ( $key, $field, $input_name="", $value="
 				}
 				break;
 
-			/*
 			case 'checkbox':
 				if ( $edit )
 				{
 					$checked = $value == 1 ? "checked=\"checked\"" : "";
-					$input .= "<input type=\"checkbox\" id=\"$field_id\" name=\"$field_id\" class=\"input-checkbox\" value=\"1\" $checked {$field['input_attr']} onblur=\"$js_onblur\" />\n";
+					$input .= "<input type=\"checkbox\" id=\"$field_id\" name=\"$field_id\" class=\"input-checkbox\" value=\"1\" $checked {$field['input_attr']} onchange=\"$js_onblur\" />\n";
 				}
 				else
 				{
@@ -144,7 +143,6 @@ function alo_easymail_custom_field_html ( $key, $field, $input_name="", $value="
 					$input .= " alt=\"".( ($value == '1') ? __("yes", "alo-easymail"):__("no", "alo-easymail") ) ."\" />\n";
 				}
 				break;
-			*/
 
 			case 'textarea':
 				if ( $edit )

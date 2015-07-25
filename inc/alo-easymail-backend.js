@@ -122,7 +122,7 @@ aloEM (document).ready ( function(){
 
 			});
 	}
-			
+
 
 	/*
 	 * Subscribers' Table page
@@ -178,7 +178,16 @@ aloEM (document).ready ( function(){
 			//edit : added all this for
 			var alo_cf_array_val = new Array();
 			for( k in alo_cf_array ){
-				alo_cf_array_val[ k ] = aloEM('#subscriber-' + id + '-' + alo_cf_array[k] + '-new').val();
+				var cf = aloEM('#subscriber-' + id + '-' + alo_cf_array[k] + '-new');
+				if ( cf.is('[type=checkbox]') ) {
+					if ( cf.is(':checked') ) {
+						alo_cf_array_val[ k ] = 1;
+					} else {
+						alo_cf_array_val[ k ] = 0;
+					}
+				} else {
+					alo_cf_array_val[ k ] = cf.val();
+				}
 			}
 			var lists = "";
 			aloEM('.subscriber-'+ id +'-lists-new:checked').each ( function () { 

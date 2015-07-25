@@ -231,6 +231,20 @@ i.easymail-tinymce-icon {
 /*
  * Subscribers list table
  */
+table#alo-easymailsubscriber-table input[type=text] {
+	width: 80px;
+	padding: 1px 6px;
+}
+
+table#alo-easymailsubscriber-table.widefat td,
+table#alo-easymailsubscriber-table.widefat th {
+	padding: 5px;
+}
+
+table#alo-easymailsubscriber-table select {
+	width: 80px;
+}
+
 @media only screen and (max-width: 480px) {
 
 	/* phones */
