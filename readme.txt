@@ -84,9 +84,9 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 == Changelog ==
 
 = 2.6.00 =
-* Updated: great refactoring to clean and organize the code!
-* Updated: the widget constructor in PHP5 way.
-* Fixed: removed the "predomain" language file.
+* Updated: great refactoring to clean and organize the code in a better way
+* Updated: the widget constructor in PHP5 style
+* Removed: the "predomain" language file
 
 = 2.5.06 =
 * Added: the Name field now can be disabled in subscription form.
