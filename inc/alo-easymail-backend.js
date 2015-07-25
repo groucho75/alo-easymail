@@ -346,15 +346,14 @@ aloEM (document).ready ( function(){
 	var $listModal = aloEM("#easymail-recipient-list-modal");
 
 	if ( $listModal.length > 0 ) {
-		
+
 		$listModal.dialog({                   
 			dialogClass   : 'wp-dialog',           
 			modal         : true,
 			autoOpen      : false, 
 			closeOnEscape : false,
-			maxWidth		: 700,
-			width			: 'auto',
-			maxHeight		: 400,
+			width			: (aloEM(window).width()) * 0.8,
+			height			: (aloEM(window).height()) * 0.8,
 			title			: easymailJs.titleRecListModal,
 			resizable		: true,
 			buttons       : [{

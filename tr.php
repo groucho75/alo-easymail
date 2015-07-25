@@ -7,7 +7,9 @@
  * @subpackage ALO EasyMail plugin
  */
 
+define('WP_USE_THEMES', false);
 include('../../../wp-load.php');
+
 global $wpdb;
 
 /*
