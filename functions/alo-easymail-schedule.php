@@ -1,11 +1,11 @@
-<?php
+<?php if ( !defined('ABSPATH') ) die(); // If this file is called directly, abort.
+
 /**
  * Cron schedule related functions
  *
  * @package WordPress
  * @subpackage ALO EasyMail plugin
  */
-
 
 
 /**

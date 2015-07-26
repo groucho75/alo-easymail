@@ -22,6 +22,9 @@ Author URI: http://www.eventualo.net
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+// If this file is called directly, abort.
+if ( !defined('ABSPATH') ) die();
+
 
 /**
  * Cron interval in minutes (default: 5)

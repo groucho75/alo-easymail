@@ -1,12 +1,11 @@
-<?php
+<?php if ( !defined('ABSPATH') ) die(); // If this file is called directly, abort.
+
 /**
  * Functions about subscribers queries.
  *
  * @package WordPress
  * @subpackage ALO EasyMail plugin
  */
-
-
 
 
 /**

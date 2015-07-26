@@ -1,4 +1,4 @@
-<?php
+<?php if ( !defined('ABSPATH') ) die(); // If this file is called directly, abort.
 /**
  * Newsletter Custom Post Type related functions, including dashboard edit screens.
  *

@@ -1,4 +1,5 @@
-<?php
+<?php if ( !defined('ABSPATH') ) die(); // If this file is called directly, abort.
+
 /**
  * Dashboard related functions: enqueue files, plugin dashboard menu, plugin links...
  *

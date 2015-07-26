@@ -1,4 +1,5 @@
-<?php
+<?php if ( !defined('ABSPATH') ) die(); // If this file is called directly, abort.
+
 /**
  * Users related functions: on registration, on profile edit...
  *
@@ -62,16 +63,6 @@ function alo_em_user_profile_optin ( $user ) {
 			$html .= "    <td>\n";
 			// edit-by-alo: added next $input block
 
-			//$html .= sprintf( $value['edit_html'], $subscriber->ID, $subscriber->ID, format_to_edit( $subscriber->$key ) )."\n";
-			/*switch( $value['input_type'] )
-			{
-				case "text":	$tpl = "<input type=\"\">";
-			}
-			$input = str_replace( '[id]', 'id="'.$field_id.'"', $input);
-			$input = str_replace( '[name]', 'name="'.$field_id.'"', $input);
-			$input = str_replace( '[value]', $subscriber ? format_to_edit( $subscriber->$key ):'', $input);
-			$html .= $input ."\n";
-			*/
 			$prev = isset($subscriber->$key) ? format_to_edit( $subscriber->$key ) : '';
 			$html .= alo_easymail_custom_field_html ( $key, $value, $field_id, $prev, true );
 
@@ -126,7 +117,25 @@ function alo_em_save_profile_optin($user_id) {
 				foreach( $alo_em_cf as $key => $value ){
 					//check if custom fields have been changed
 					if ( isset( $_POST[ "alo_em_". $key] ) ) {
-						$fields[$key] = stripslashes( trim( $_POST[ "alo_em_". $key] ) );
+                        //$fields[$key] = stripslashes( trim( $_POST[ "alo_em_". $key] ) );
+
+						switch ( $value['input_type'] )	{
+							case "checkbox":
+								$fields[$key] = 1;
+								break;
+
+							default:
+								$fields[$key] = sanitize_text_field( trim ( $_POST[ "alo_em_". $key] ) );
+						}
+					} else {
+						switch ( $value['input_type'] )	{
+							case "checkbox":
+								$fields[$key] = 0;
+								break;
+
+							default:
+								$fields[$key] = false;
+						}
 					}
 				}
 			}
