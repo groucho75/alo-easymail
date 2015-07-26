@@ -91,6 +91,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 * Updated: the [LATEST-POSTS] placeholder now has loaded by default
 * Added: the checkbox type in custom field
 * Added: filter 'alo_easymail_clean_no_activated_after'
+* Fixed: the custom field validation in user profile
 * Fixed: the size in recipient list modal
 * Fixed: a bug of the inline edit buttons in subscriber table
 * Removed: the "predomain" language file

@@ -115,10 +115,8 @@ function alo_em_save_profile_optin($user_id) {
 			$alo_em_cf = alo_easymail_get_custom_fields();
 			if ($alo_em_cf) {
 				foreach( $alo_em_cf as $key => $value ){
-					//check if custom fields have been changed
-					if ( isset( $_POST[ "alo_em_". $key] ) ) {
-                        //$fields[$key] = stripslashes( trim( $_POST[ "alo_em_". $key] ) );
-
+					//check if custom field have been filled and match its validation rule
+					if ( !empty( $_POST[ "alo_em_". $key] ) && ( !empty($value['input_validation']) && function_exists($value['input_validation']) && call_user_func($value['input_validation'], $_POST[ "alo_em_". $key]) ) ) {
 						switch ( $value['input_type'] )	{
 							case "checkbox":
 								$fields[$key] = 1;
@@ -128,14 +126,18 @@ function alo_em_save_profile_optin($user_id) {
 								$fields[$key] = sanitize_text_field( trim ( $_POST[ "alo_em_". $key] ) );
 						}
 					} else {
-						switch ( $value['input_type'] )	{
-							case "checkbox":
-								$fields[$key] = 0;
-								break;
+						// if custom field is empty and it's not mandatory
+						if ( !$value['input_mandatory'] ) {
+							switch ( $value['input_type'] )	{
+								case "checkbox":
+									$fields[$key] = 0;
+									break;
 
-							default:
-								$fields[$key] = false;
+								default:
+									$fields[$key] = false;
+							}
 						}
+
 					}
 				}
 			}
@@ -182,6 +184,46 @@ function alo_em_save_profile_optin($user_id) {
 }
 add_action( 'personal_options_update', 'alo_em_save_profile_optin' );
 add_action( 'edit_user_profile_update', 'alo_em_save_profile_optin' );
+
+
+/**
+ * Show validation errors in Profile/eEdit user screen.
+ *
+ * @param $errors
+ * @param $update
+ * @param $user
+ */
+function alo_em_add_profile_field_errors ( $errors, $update, $user ) {
+
+	$alo_em_cf = alo_easymail_get_custom_fields();
+	if ($alo_em_cf) {
+		foreach( $alo_em_cf as $key => $value ){
+			//check if custom field have been filled and match its validation rule
+			if ( !empty( $_POST[ "alo_em_". $key] ) ) {
+
+				if ( !empty($value['input_validation']) && function_exists($value['input_validation']) && call_user_func($value['input_validation'], $_POST[ "alo_em_". $key]) == false ) {
+					$errors->add($key.'_error',
+						alo_em___( sprintf(__("The %s field is not correct", "alo-easymail"),
+								'<strong>'.__($value['humans_name'],"alo-easymail").'</strong>' .
+								' (&quot;<em>'. esc_html(sanitize_text_field($_POST[ "alo_em_". $key])) .'</em>&quot;)'
+							)
+						)
+					);
+				}
+
+			} else {
+				// if custom field is empty and it's not mandatory
+				if ( $value['input_mandatory'] == true ) {
+					$errors->add($key.'_error',
+						alo_em___( sprintf(__("The %s field is empty", "alo-easymail"), '<strong>'.__($value['humans_name'],"alo-easymail").'</strong>') )
+					);
+				}
+
+			}
+		}
+	}
+}
+add_filter('user_profile_update_errors', 'alo_em_add_profile_field_errors', 10, 3);
 
 
 /**
