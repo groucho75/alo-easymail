@@ -10,9 +10,9 @@
 
 /**
  * Count subscribers reading the selected language
- * param	lang		if false return no langs or no longer available langs
- * param	active		if only activated subscribers or all subscribers
- * return int
+ * @param	lang		if false return no langs or no longer available langs
+ * @param	active		if only activated subscribers or all subscribers
+ * @return int
  */
 function alo_em_count_subscribers_by_lang ( $lang=false, $only_activated=false ) {
 	global $wpdb;
@@ -38,7 +38,8 @@ function alo_em_count_subscribers_by_lang ( $lang=false, $only_activated=false )
 
 /**
  * Check if there is a multiplanguage enabled plugin
- * return the name of plugin, or false
+ *
+ * @return the name of plugin, or false
  */
 function alo_em_multilang_enabled_plugin () {
 	// Choice by custom filters
@@ -117,7 +118,7 @@ function alo_em_translate_text ( $lang, $text, $post=false, $prop="post_title" )
 
 /**
  * Return a text of the requested lang from a saved option or default option
- * param	fallback	if requested lang not exists and fallback true returns a lang default
+ * @param	fallback	if requested lang not exists and fallback true returns a lang default
  */
 function alo_em_translate_option ( $lang, $key , $fallback=true ) {
 	$default_lang = alo_em_short_langcode ( get_locale() ); // default lang
@@ -159,7 +160,7 @@ function alo_em_translate_option ( $lang, $key , $fallback=true ) {
 
 /**
  * Return a text of the requested lang from an array with same text in several langs ( "en" => "hi", "es" => "hola"...)
- * param	fallback	if requested lang not exists and fallback true returns a lang default
+ * @param	fallback	if requested lang not exists and fallback true returns a lang default
  */
 function alo_em_translate_multilangs_array ( $lang, $array, $fallback=true ) {
 	if ( !is_array($array) ) return $array; // if not array, return the text
@@ -184,8 +185,8 @@ function alo_em_translate_multilangs_array ( $lang, $array, $fallback=true ) {
 /**
  * Return the url localised for the requested lang
  *
- * param	$post	int		the post/page ID
- * param	$lang	str		two-letter language codes, e.g.: "it"
+ * @param	$post	int		the post/page ID
+ * @param	$lang	str		two-letter language codes, e.g.: "it"
  */
 function alo_em_translate_url ( $post, $lang ) {
 	// if blank lang or not installed on blog, get default lang
@@ -215,7 +216,7 @@ function alo_em_translate_url ( $post, $lang ) {
 /**
  * Return the homepage url localised for the requested lang
  *
- * param	$lang	str		two-letter language codes, e.g.: "it"
+ * @param	$lang	str		two-letter language codes, e.g.: "it"
  */
 function alo_em_translate_home_url ( $lang ) {
 	// if blank lang or not installed on blog, get default lang
@@ -268,7 +269,7 @@ function alo_em_get_subscrpage_id ( $lang=false ) {
 /**
  * Return the current language
  *
- * param	bol		try lang detection form browser (eg. useful for subscription if multilang plugin not installed)
+ * @param	bol		try lang detection form browser (eg. useful for subscription if multilang plugin not installed)
  */
 function alo_em_get_language ( $detect_from_browser=false ) {
 	// Choice by custom filters
@@ -325,7 +326,7 @@ function alo_em_get_lang_name ( $lang_code ) {
 
 /**
  * Return the lang flag
- * param 	fallback	if there is not the image, return the lang code ('code') or lang name ('name') or nothing
+ * @param 	fallback	if there is not the image, return the lang code ('code') or lang name ('name') or nothing
  */
 function alo_em_get_lang_flag ( $lang_code, $fallback=false ) {
 	global $q_config;
@@ -349,7 +350,7 @@ function alo_em_get_lang_flag ( $lang_code, $fallback=false ) {
 
 /**
  * Return an array with availables languages
- * param 	by_users	if true and no other translation plugins get all langs chosen by users, if not only langs installed on blog
+ * @param 	by_users	if true and no other translation plugins get all langs chosen by users, if not only langs installed on blog
  */
 function alo_em_get_all_languages ( $fallback_by_users=false ) {
 	global $wp_version, $alo_em_all_languages;
