@@ -49,7 +49,9 @@ define( "ALO_EM_PLUGIN_URL", untrailingslashit( plugin_dir_url(__FILE__) ) );
 define( "ALO_EM_PLUGIN_ABS", untrailingslashit( plugin_dir_path(__FILE__) ) );
 
 
-if ( !defined( 'WPML_LOAD_API_SUPPORT' ) ) define ( 'WPML_LOAD_API_SUPPORT', true );	// be sure to load WPML API
+if ( do_action('wpml_loaded') ) {
+	if ( !defined( 'WPML_LOAD_API_SUPPORT' ) ) define ( 'WPML_LOAD_API_SUPPORT', true );	// be sure to load WPML API
+}
 
 /**
  * Required files
