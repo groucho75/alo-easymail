@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, widget, subscription, mailing list, subscribe, cron, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.3
-Stable tag: 2.6.00
+Stable tag: 2.6.01
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -30,7 +30,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 * **manage capabilities**: choose the roles that can send newsletter, manage subscribers and settings
 * **view sending report**: how many subscribers have opened the newsletter and clicked on links inside it
 * **bounce management**: the bounced email addresses are automatically unsubscribed
-* **multilanguage**: set all texts and options, you can write multilanguage newsletters - full integration with [WPML](http://wpml.org/), [qTranslate](http://wordpress.org/plugins/qtranslate/), [Polylang](http://wordpress.org/plugins/polylang/)
+* **multilanguage**: set all texts and options, you can write multilanguage newsletters - full integration with [WPML](http://wpml.org/), [qTranslate-X](http://wordpress.org/plugins/qtranslate-x/), [Polylang](http://wordpress.org/plugins/polylang/)
 * **debug tool**: rather than the recipients, you can send all emails of a newsletter to the author or you can have them recorded into a log file
 
 **Internationalization**
@@ -82,6 +82,11 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 5. The list of subscribers in administration
 
 == Changelog ==
+
+= 2.6.01 =
+* Fixed: a CRSF/XSS vulnerability: [more info](https://packetstormsecurity.com/files/133594/)
+* Fixed: a short php open tag
+* Updated: some improvements to WPML integration (more tests needed)
 
 = 2.6.00 =
 * Updated: refactoring of php files to clean and organize the code in a better way, including several minor fixes
@@ -587,3 +592,6 @@ The Name field now can be disabled in subscription form.
 
 = 2.6.00 =
 General refactoring to improve code organization.
+
+= 2.6.01 =
+Fixed a CRSF/XSS vulnerability.

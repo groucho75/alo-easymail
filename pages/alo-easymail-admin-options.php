@@ -140,7 +140,7 @@ if ( isset($_POST['submit']) ) {
 		// Tab NEWSLETTER
 		if ( isset($_REQUEST['task']) && $_REQUEST['task'] == "tab_newsletter" ) {
 		
-			if(isset($_POST['sender_email'])) update_option('alo_em_sender_email', trim($_POST['sender_email']));
+			if(isset($_POST['sender_email'])) update_option('alo_em_sender_email', sanitize_email($_POST['sender_email']));
 			if(isset($_POST['sender_name'])) update_option('alo_em_sender_name', stripslashes( trim($_POST['sender_name'])) );
 			if(isset($_POST['lastposts']) && (int)$_POST['lastposts'] > 0) update_option('alo_em_lastposts', trim($_POST['lastposts']));	
 		
@@ -475,13 +475,13 @@ NEWSLETTER
 <table class="form-table"><tbody>
 <tr valign="top">
 <th scope="row"><label for="lastposts"><?php _e("Number of last posts to display", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="lastposts" value="<?php echo get_option('alo_em_lastposts') ?>" id="lastposts" size="2" maxlength="2" />
+<td><input type="text" name="lastposts" value="<?php esc_attr_e( get_option('alo_em_lastposts') ) ?>" id="lastposts" size="2" maxlength="2" />
 <span class="description"><?php _e("Number of recent posts to show in the dropdown list of the newsletter sending form", "alo-easymail");?></span></td>
 </tr>
 
 <tr valign="top">
 <th scope="row"><label for="sender_email"><?php _e("Sender's email address", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="sender_email" value="<?php echo get_option('alo_em_sender_email') ?>" id="sender_email" size="30" maxlength="100" /></td>
+<td><input type="text" name="sender_email" value="<?php esc_attr_e( get_option('alo_em_sender_email') ) ?>" id="sender_email" size="30" maxlength="100" /></td>
 </tr>
 
 <tr valign="top">
@@ -491,14 +491,6 @@ NEWSLETTER
 
 
 <?php
-/*
-// maybe useless in v.2...
-if ( get_option('alo_em_filter_br') != "no" ) {
-	$checked_filter_br = 'checked="checked"';
-} else {
-	$checked_filter_br = "";
-}
-*/
 if ( get_option('alo_em_filter_the_content') != "no" ) {
 	$checked_filter_the_content = 'checked="checked"';
 } else {
@@ -960,7 +952,7 @@ echo '</td></tr>';
 
 <tr valign="top">
 <th scope="row"><label for="dayrate"><?php _e("Maximum number of emails that can be sent in a 24-hr period", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="dayrate" value="<?php echo get_option('alo_em_dayrate') ?>" id="dayrate" size="5" maxlength="5" />
+<td><input type="text" name="dayrate" value="<?php esc_attr_e( get_option('alo_em_dayrate') ) ?>" id="dayrate" size="5" maxlength="5" />
 <span class="description">(100 - 10000)</span></td>
 </tr>
 
@@ -969,13 +961,13 @@ echo '</td></tr>';
 	<?php _e("Maximum number of emails that can be sent per batch", "alo-easymail"); ?>
 	<?php echo " (". sprintf( __('every %s minutes', "alo-easymail"), ALO_EM_INTERVAL_MIN ) ."):"; ?>
 	</label></th>
-<td><input type="text" name="batchrate" value="<?php echo get_option('alo_em_batchrate') ?>" id="batchrate" size="5" maxlength="3" />
+<td><input type="text" name="batchrate" value="<?php esc_attr_e( get_option('alo_em_batchrate') ) ?>" id="batchrate" size="5" maxlength="3" />
 <span class="description">(5 - 200) <?php _e("Recommended", "alo-easymail") ?>: &le; 30.</span></td>
 </tr>
 
 <tr valign="top">
 <th scope="row"><label for="sleepvalue"><?php _e("Interval between emails in a single batch, in milliseconds", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="sleepvalue" value="<?php echo (int)get_option('alo_em_sleepvalue') ?>" id="sleepvalue" size="5" maxlength="4" />
+<td><input type="text" name="sleepvalue" value="<?php esc_attr_e( (int)get_option('alo_em_sleepvalue') ) ?>" id="sleepvalue" size="5" maxlength="4" />
 <span class="description">(0 - 5000) <?php _e("Default", "alo-easymail") ?>: 0.<br /><?php _e("Usually you do not have to modify this value", "alo-easymail") ?>.<br /><?php _e("It is useful if your provider allows a maximum number of emails that can be sent per second or minute", "alo-easymail") ?>.<br /><?php _e("The higher this value, the lower the number of emails sent for each batch", "alo-easymail") ?>. </span></td>
 </tr>
 
@@ -1440,7 +1432,7 @@ else if ( isset( $_POST['check_bounces_now'] ) )
 
 <tr valign="top">
 <th scope="row"><label for="bounce_email"><?php _e("Email address", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="bounce_email" value="<?php echo $bounce_settings['bounce_email'] ?>" id="bounce_email" size="30" maxlength="100" />
+<td><input type="text" name="bounce_email" value="<?php esc_attr_e( $bounce_settings['bounce_email'] ) ?>" id="bounce_email" size="30" maxlength="100" />
 <span class="description"><?php _e("The email address to which bounce messages are delivered", "alo-easymail");?>
 </span></td>
 </tr>
@@ -1454,7 +1446,7 @@ else if ( isset( $_POST['check_bounces_now'] ) )
 
 <tr valign="top">
 <th scope="row"><label for="bounce_host"><?php _e("Server host", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="bounce_host" value="<?php echo $bounce_settings['bounce_host'] ?>" id="bounce_host" size="30" maxlength="100" />
+<td><input type="text" name="bounce_host" value="<?php esc_attr_e( $bounce_settings['bounce_host'] ) ?>" id="bounce_host" size="30" maxlength="100" />
 <span class="description"><?php _e("The host remote server", "alo-easymail");?>.
 <?php echo __("E.g.", "alo-easymail").': imap.example.com' ;?>
 </span></td>
@@ -1462,7 +1454,7 @@ else if ( isset( $_POST['check_bounces_now'] ) )
 
 <tr valign="top">
 <th scope="row"><label for="bounce_port"><?php _e("Port number", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="bounce_port" value="<?php echo $bounce_settings['bounce_port'] ?>" id="bounce_port"  size="5" maxlength="5" /></td>
+<td><input type="text" name="bounce_port" value="<?php esc_attr_e( $bounce_settings['bounce_port'] ) ?>" id="bounce_port"  size="5" maxlength="5" /></td>
 </tr>
 
 <tr valign="top">
@@ -1481,7 +1473,7 @@ endforeach; ?>
 
 <tr valign="top">
 <th scope="row"><label for="bounce_folder"><?php _e("Folder", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="bounce_folder" value="<?php echo $bounce_settings['bounce_folder'] ?>" id="bounce_folder" size="30" maxlength="100" />
+<td><input type="text" name="bounce_folder" value="<?php esc_attr_e( $bounce_settings['bounce_folder'] ) ?>" id="bounce_folder" size="30" maxlength="100" />
 <span class="description"><?php _e("The host remote folder", "alo-easymail");?>.
 <?php echo __("Default", "alo-easymail").': '.__("empty", "alo-easymail");?>
 </span></td>
@@ -1489,19 +1481,19 @@ endforeach; ?>
 
 <tr valign="top">
 <th scope="row"><label for="bounce_username"><?php _e("Username") ?>:</label></th>
-<td><input type="text" name="bounce_username" value="<?php echo $bounce_settings['bounce_username'] ?>" id="bounce_username" size="30" maxlength="100" />
+<td><input type="text" name="bounce_username" value="<?php esc_attr_e( $bounce_settings['bounce_username'] ) ?>" id="bounce_username" size="30" maxlength="100" />
 </td>
 </tr>
 
 <tr valign="top">
 <th scope="row"><label for="bounce_password"><?php _e("Password") ?>:</label></th>
-<td><input type="password" name="bounce_password" value="<?php echo $bounce_settings['bounce_password'] ?>" id="bounce_password" size="30" maxlength="100" />
+<td><input type="password" name="bounce_password" value="<?php esc_attr_e( $bounce_settings['bounce_password'] ) ?>" id="bounce_password" size="30" maxlength="100" />
 </td>
 </tr>
 
 <tr valign="top">
 <th scope="row"><label for="bounce_flags"><?php _e("Optional flags", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="bounce_flags" value="<?php echo $bounce_settings['bounce_flags'] ?>" id="bounce_flags" size="30" maxlength="100" />
+<td><input type="text" name="bounce_flags" value="<?php esc_attr_e( $bounce_settings['bounce_flags'] ) ?>" id="bounce_flags" size="30" maxlength="100" />
 <span class="description"><?php echo __("Default", "alo-easymail").': '.__("empty", "alo-easymail");?>.
 <?php echo __("E.g.", "alo-easymail").': /ssl/novalidate-cert' ;?>
 </span>
@@ -1552,7 +1544,7 @@ endforeach; ?>
 
 <tr valign="top">
 <th scope="row"><label for="bounce_maxmsg"><?php _e("Maximum number of emails that can be check per bounce batch", "alo-easymail") ?>:</label></th>
-<td><input type="text" name="bounce_maxmsg" value="<?php echo $bounce_settings['bounce_maxmsg'] ?>" id="bounce_maxmsg"  size="3" maxlength="3" />
+<td><input type="text" name="bounce_maxmsg" value="<?php esc_attr_e( $bounce_settings['bounce_maxmsg'] ) ?>" id="bounce_maxmsg"  size="3" maxlength="3" />
 </td>
 </tr>
 

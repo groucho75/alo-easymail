@@ -1,4 +1,4 @@
-<?
+<?php
 #
 # Mapping of bounce responses to RFC1893 codes
 #
@@ -239,4 +239,3 @@ $autorespondlist = array(
 #    }
 #  }
 #}
-?>
