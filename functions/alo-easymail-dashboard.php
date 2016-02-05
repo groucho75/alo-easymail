@@ -342,7 +342,7 @@ add_action('wp_dashboard_setup', 'alo_em_add_dashboard_widgets' );
  */
 function alo_em_add_menu_toolbar( $wp_admin_bar ) {
 	if ( current_user_can('edit_newsletters') ) {
-		$ico = '<span class="alo-easymail-toolbar-ico">&nbsp;</span>';
+		$ico = '<span class="ab-icon dashicons dashicons-email"> </span>';
 		$args = array('id' => 'alo_easymail', 'title' => $ico. __( 'Newsletters', "alo-easymail" ), 'parent' => false, 'href' => admin_url('edit.php')."?post_type=newsletter" );
 		$wp_admin_bar->add_node($args);
 
@@ -357,7 +357,7 @@ function alo_em_add_menu_toolbar( $wp_admin_bar ) {
 			$wp_admin_bar->add_node($args);
 		}
 		if ( current_user_can('manage_newsletter_options') ) {
-			$args = array('id' => 'alo_easymail-settings', 'title' => __( 'Options', "alo-easymail" ), 'parent' => 'alo_easymail', 'href' => admin_url('edit.php')."?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-options.php" );
+			$args = array('id' => 'alo_easymail-settings', 'title' => __( "Settings" ), 'parent' => 'alo_easymail', 'href' => admin_url('edit.php')."?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-options.php" );
 			$wp_admin_bar->add_node($args);
 		}
 

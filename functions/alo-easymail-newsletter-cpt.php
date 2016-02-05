@@ -59,7 +59,7 @@ function alo_em_register_newsletter_type () {
 		'has_archive' => true,
 		'hierarchical' => false,
 		'menu_position' => false,
-		'menu_icon' => ALO_EM_PLUGIN_URL.'/images/16-email-letter.png',
+		'menu_icon' => 'dashicons-email',
 		'can_export' => true,
 		'supports' => array( 'title' , 'editor', 'custom-fields', 'thumbnail' )
 	);
