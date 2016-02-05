@@ -197,18 +197,20 @@ add_filter ('manage_edit-newsletter_columns', 'alo_em_edit_table_columns');
  */
 function alo_em_table_column_value ( $columns ) {
 	global $post, $user_ID;
-	$count_recipients = alo_em_count_recipients_from_meta( $post->ID );
+	//$count_recipients = 0; //alo_em_count_recipients_from_meta( $post->ID ); // todo fix
 	$recipients = alo_em_get_recipients_from_meta( $post->ID );
 
+	$status = alo_em_get_newsletter_status($post->ID);
+
 	if ( $columns == "easymail_recipients" ) {
-		if ( $count_recipients == 0 ) {
+		if ( $status == '' && empty( $recipients['total'] ) && empty( $recipients['estimated_total'] ) ) {
 			if ( alo_em_user_can_edit_newsletter( $post->ID ) ) echo '<a href="'. get_edit_post_link( $post->ID ) . '">';
 			echo '<img src="'. ALO_EM_PLUGIN_URL. '/images/12-exclamation.png" alt="" /> <strong class="easymail-column-no-yet-recipients-'.$user_ID.'">' . __( 'No recipients selected yet', "alo-easymail").'</strong>';
 			if ( alo_em_user_can_edit_newsletter( $post->ID ) ) echo '</a>';
 		} else {
 			if ( alo_em_user_can_edit_newsletter( $post->ID ) ) echo "<a href='#' class='easymail-toggle-short-summary' rel='{$post->ID}'>";
 			echo __( 'Total recipients', "alo-easymail") .": ";
-			echo $count_recipients;
+			echo alo_em_count_recipients_from_meta( $post->ID );
 
 			if ( alo_em_user_can_edit_newsletter( $post->ID ) ) {
 				echo "</a><br />\n";
@@ -218,7 +220,7 @@ function alo_em_table_column_value ( $columns ) {
 	}
 
 	if ( $columns == "easymail_status" ) {
-		if ( $count_recipients > 0 ) {
+		if ( ! ( $status == '' && empty( $recipients['total'] ) && empty( $recipients['estimated_total'] ) ) ) {
 			echo '<img src="'. ALO_EM_PLUGIN_URL. '/images/wpspin_light.gif" style="display:none;vertical-align: middle;" id="easymail-refresh-column-status-loading-'. $post->ID.'" />';
 			echo "<span id=\"alo-easymail-column-status-{$post->ID}\">\n";
 			alo_em_update_column_status ( $post->ID );

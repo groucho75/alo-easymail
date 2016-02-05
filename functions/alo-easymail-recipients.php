@@ -82,10 +82,17 @@ function alo_em_count_recipients_from_meta ( $newsletter, $not_cached=false ) {
 	$recipients = alo_em_get_recipients_from_meta ( $newsletter );
 	// If exists, use cached value, otherwise count
 	if ( isset( $recipients['total'] ) && ! $not_cached ) {
-		return $recipients['total'];
+		$total = $recipients['total'];
+		unset( $recipients['estimated_total'] );
+		update_post_meta ( $newsletter, "_easymail_recipients", $recipients );
+	} else if ( !empty( $recipients['estimated_total'] ) && ! $not_cached ) {
+		$total = $recipients['estimated_total'];
 	} else {
-		return count( alo_em_get_all_recipients_from_meta ( $newsletter ) );
+		$total = count( alo_em_get_all_recipients_from_meta ( $newsletter ) );
+		$recipients['estimated_total'] = $total;
+		update_post_meta ( $newsletter, "_easymail_recipients", $recipients );
 	}
+	return $total;
 }
 
 
@@ -197,7 +204,7 @@ function alo_em_delete_cache_recipients ( $newsletter ) {
 
 
 /**
- * Add Recipients from db into cache
+ * Add Recipients from cache into db records.
  * @param	int		newsletter id
  * @param	int		limit: how many
  * @param	bol		if send now or add to queue
