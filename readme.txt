@@ -23,7 +23,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 * **select the recipients to send to**: registered users, subscribers, mailing lists
 * **batch sending using WP cron system**: it sends a number of emails every 5 minutes, until all recipients have been included
 * **collect subscribers**: on registration form and with an ajax widget/page
-* **import/export subscribers**: import from existing registered users or from a CSV file
+* **import/export subscribers**: import from existing registered users or from a CSV file, there is no limit to the number of subscribers
 * **create and manage mailing lists**: only admin can assign subscribers to them, or subscribers can freely choose them
 * **newsletter themes**: using html/php files in plugin or theme folder
 * **manage subscribers**: search, delete, edit subscription to mailing lists 
@@ -38,7 +38,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 *Available in more than 20 languages.*
 
 You can add or update the translation in your language. To make the plugin package lighter you can find only the .MO files inside it.
-You can visit [www.translators.hunstart.hu/projects/plugins/alo-easymail](http://www.translators.hunstart.hu/projects/plugins/alo-easymail) to look for the most updated language files (.MO and .PO files), you can download and share translation files.
+You can visit [translate.wordpress.org/projects/wp-plugins/alo-easymail](https://translate.wordpress.org/projects/wp-plugins/alo-easymail) to look for the most updated language files (.MO and .PO files), you can contribute to translate the plugin in your language
 
 
 **For developers** 
