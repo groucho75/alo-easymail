@@ -1125,7 +1125,7 @@ MAILING LISTS
 <?php 
 // If exists, get the id list to work on	
 if ( isset( $_REQUEST['list_id'] ) ) {
-	$list_id = stripslashes ( $wpdb->escape ( $_REQUEST['list_id'] ) );
+	$list_id = absint ( $_REQUEST['list_id'] );
 	if ( !is_numeric ( $list_id ) ) $list_id = false;
 } else {
 	$list_id = false;

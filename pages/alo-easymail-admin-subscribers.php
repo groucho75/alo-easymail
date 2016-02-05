@@ -470,17 +470,17 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 					exit;
 				}
 				
-				$email	= stripslashes ( $wpdb->escape ( trim( $_REQUEST['addsingle_email'] ) ) );
-				$name 	= ( isset( $_REQUEST['addsingle_name'] ) ) ? stripslashes ( $wpdb->escape ( trim( $_REQUEST['addsingle_name'] ) ) ) : "";
+				$email	= sanitize_email ( trim( $_REQUEST['addsingle_email'] ) );
+				$name 	= ( isset( $_REQUEST['addsingle_name'] ) ) ? sanitize_text_field ( trim( $_REQUEST['addsingle_name'] ) ) : "";
 				
 				//edit : added all this foreach
 				if( $alo_em_cf ) {
 					foreach( $alo_em_cf as $key => $value ){
-						$fields[$key] = ( isset( $_REQUEST['addsingle_'.$key] ) ) ? stripslashes ( $wpdb->escape ( trim( $_REQUEST['addsingle_'.$key] ) ) ) : "";
+						$fields[$key] = ( isset( $_REQUEST['addsingle_'.$key] ) ) ? sanitize_text_field ( trim( $_REQUEST['addsingle_'.$key] ) ) : "";
 					}
 				}
 				
-				$lang 	= ( isset( $_REQUEST['addsingle_name'] ) ) ? stripslashes ( $wpdb->escape ( trim( $_REQUEST['addsingle_lang'] ) ) ) : "";
+				$lang 	= ( isset( $_REQUEST['addsingle_name'] ) ) ? sanitize_text_field ( trim( $_REQUEST['addsingle_lang'] ) ) : "";
 				$fields['email'] = $email; //edit : added all this line
 				$fields['name'] = $name; //edit : added all this line
 				if ( $email && alo_em_add_subscriber( $fields, 1, $lang ) == "OK" ) { //edit : orig : if ( $email && alo_em_add_subscriber( $email , $name , 1, $lang ) == "OK" ) {
@@ -570,10 +570,10 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 						$row++;
 						// check data
 						$data = array_map( 'strip_tags', $data );
-						$email	= trim( $data[0] ); //stripslashes ( $wpdb->escape ( trim( $data[0] ) ) );
+						$email	= trim( $data[0] );
 						$email 	= ( is_email( $email )) ? $email : false;
-						$name 	= ( isset($data[1]) ) ? trim($data[1]) /*stripslashes ( $wpdb->escape ( trim($data[1]) ) )*/ : "";
-						$lang 	= ( isset($data[2]) ) ? trim($data[2]) /*stripslashes ( $wpdb->escape ( trim($data[2]) ) )*/ : "";
+						$name 	= ( isset($data[1]) ) ? trim($data[1]) : "";
+						$lang 	= ( isset($data[2]) ) ? trim($data[2]) : "";
 						if ( !empty( $lang ) ) {
 							$lang = alo_em_short_langcode ( $lang );
 							if ( !in_array ( $lang, alo_em_get_all_languages( false )) ) $lang = "";
@@ -584,7 +584,7 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 						$i = 3;
 						if( $alo_em_cf ) {
 							foreach( $alo_em_cf as $key => $value ){
-								  $fields[$key] 	= ( isset($data[$i]) ) ? trim($data[$i]) /*stripslashes ( $wpdb->escape ( trim($data[$i]) ) )*/ : "";
+								  $fields[$key] 	= ( isset($data[$i]) ) ? trim($data[$i]) : "";
 								  ++$i;
 							}
 						}
