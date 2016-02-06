@@ -52,14 +52,16 @@ if ( $newsletter ) {
 	
 	if ( !$newsletter ) {
 		die("The requested page doesn't exists.");
-	} else { 
+	} else {
+		wp_enqueue_style( 'dashicons' );
+		wp_print_styles();
 		?>
 		<link rel="stylesheet" href="<?php echo ALO_EM_PLUGIN_URL ?>/inc/jquery.ui.tabs.css" type="text/css" media="print, projection, screen" />
 		<link rel="stylesheet" href="<?php echo ALO_EM_PLUGIN_URL ?>/inc/alo-easymail-backend.css" type="text/css" media="print, projection, screen" />
 		
 		</head>
 		
-		<body>
+		<body class="easymail_report">
 		
 		<div class="wrap">
 			
@@ -294,12 +296,18 @@ elseif ( !alo_em_is_newsletter_recipients_archived ( $newsletter ) ) : 	?>
 					echo "</td>";
 
 					echo "<td class='center'>";
-					echo ( ( $recipient->result == "1" && alo_em_get_recipient_trackings_except_views ( $recipient->ID) ) ? __("Yes", "alo-easymail" ) : __("No", "alo-easymail" ) )." <img src='".ALO_EM_PLUGIN_URL."/images/".( ( $recipient->result == "1" && alo_em_get_recipient_trackings_except_views ( $recipient->ID) )? "yes.png":"no.png" ) ."' />";
-					if ( count( alo_em_get_recipient_trackings_except_views( $recipient->ID ) ) > 1 ) echo " ". count( alo_em_get_recipient_trackings_except_views( $recipient->ID ) );
+					$clicks = alo_em_get_recipient_trackings_except_views( $recipient->ID );
+					echo ( ( $recipient->result == "1" && $clicks ) ? __("Yes", "alo-easymail" ) : __("No", "alo-easymail" ) )." <img src='".ALO_EM_PLUGIN_URL."/images/".( ( $recipient->result == "1" && alo_em_get_recipient_trackings_except_views ( $recipient->ID) )? "yes.png":"no.png" ) ."' />";
+					if ( is_array( $clicks ) && !empty($clicks) ) {
+						echo " ". count( $clicks );
+						foreach( $clicks as $i => $click ) {
+							echo '<span class="clicked-links dashicons dashicons-admin-links" title="'.esc_url($click->request).'"></span>';
+						}
+					}
 					echo "</td>";
 					 
 					echo "</tr>";
-					//echo "<pre>"; print_r($recipient);echo "</pre>";
+					//echo "<pre>"; print_r($clicks);echo "</pre>";
 				}
 				?>
 			</tbody></table>

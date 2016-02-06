@@ -164,6 +164,12 @@ td.column-easymail_status .status-paused {
 
 .new-win-link { font-size:75%; float:right; }
 
+body.easymail_report .clicked-links {
+	font-size: 16px;
+	vertical-align: middle;
+	width: 18px;
+}
+
 #easymail_report_tabs { margin-top: 15px; font-weight: bold }
 
 .easymail-navbutton.button-archive {
