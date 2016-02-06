@@ -9,6 +9,27 @@
 
 
 /**
+ * Fix a type in English text: 'e-email' must become 'e-mail'.
+ *
+ * We cannot update the strings because in that case we should update all translation files.
+ *
+ * @param $translated_text
+ * @param $untranslated_text
+ * @param $domain
+ * @return mixed
+ */
+function alo_em_filter_gettext ( $translated_text, $untranslated_text, $domain ) {
+
+	if( $domain == 'alo-easymail' )  {
+		$translated_text = str_replace( 'e-email', 'e-mail', $translated_text );
+	}
+	return $translated_text;
+}
+
+add_filter('gettext', 'alo_em_filter_gettext', 20, 3 );
+
+
+/**
  * Count subscribers reading the selected language
  * @param	lang		if false return no langs or no longer available langs
  * @param	active		if only activated subscribers or all subscribers
