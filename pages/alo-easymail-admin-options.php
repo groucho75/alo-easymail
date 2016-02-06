@@ -26,7 +26,7 @@ if ( isset($_REQUEST['timeout_alert']) && $_REQUEST['timeout_alert'] == "stop" )
 
 // If updating languages list
 if ( isset($_POST['langs_list']) && current_user_can('manage_options') ) {
-	$new_langs = explode ( ",", stripslashes( trim($_POST['langs_list'])) );
+	$new_langs = explode ( ",", sanitize_text_field( $_POST['langs_list']) );
 	if ( !empty($new_langs[0]) ) {
 		for ( $i=0; $i < count($new_langs); $i++ ) {
 			if ( strlen( trim($new_langs[$i]) ) < 2 ) unset( $new_langs[$i] );
@@ -64,15 +64,15 @@ if ( isset($_POST['submit']) ) {
 		$preform_msg = array();
 		$viewonline_msg = array();
 		foreach ( $languages as $key => $lang ) {
-			if (isset($_POST['activamail_subj_'.$lang]) && trim( $_POST['activamail_subj_'.$lang] ) != "" ) $activamail_subj[$lang] = stripslashes(trim($_POST['activamail_subj_'.$lang]));
-			if (isset($_POST['activamail_mail_'.$lang]) && trim( $_POST['activamail_mail_'.$lang] ) != "" ) $activamail_mail[$lang] = stripslashes(trim($_POST['activamail_mail_'.$lang]));
-			if (isset($_POST['optin_msg_'.$lang]) )		$optin_msg[$lang] = stripslashes(trim($_POST['optin_msg_'.$lang]));
-			if (isset($_POST['optout_msg_'.$lang]) )	$optout_msg[$lang] = stripslashes(trim($_POST['optout_msg_'.$lang]));
-			if (isset($_POST['lists_msg_'.$lang]) )		$lists_msg[$lang] = stripslashes(trim($_POST['lists_msg_'.$lang]));
-			if (isset($_POST['disclaimer_msg_'.$lang]) ) $disclaimer_msg[$lang] = stripslashes(trim($_POST['disclaimer_msg_'.$lang]));
-			if (isset($_POST['unsub_footer_'.$lang]) )	$unsub_footer[$lang] = stripslashes(trim($_POST['unsub_footer_'.$lang]));
-			if (isset($_POST['preform_msg_'.$lang]) )	$preform_msg[$lang] = stripslashes(trim($_POST['preform_msg_'.$lang]));
-			if (isset($_POST['viewonline_msg_'.$lang]) ) $viewonline_msg[$lang] = stripslashes(trim($_POST['viewonline_msg_'.$lang]));
+			if (!empty($_POST['activamail_subj_'.$lang])) $activamail_subj[$lang] = stripslashes(sanitize_text_field($_POST['activamail_subj_'.$lang]));
+			if (!empty($_POST['activamail_mail_'.$lang])) $activamail_mail[$lang] = stripslashes(sanitize_text_field($_POST['activamail_mail_'.$lang]));
+			if (isset($_POST['optin_msg_'.$lang]) )		$optin_msg[$lang] = stripslashes(sanitize_text_field($_POST['optin_msg_'.$lang]));
+			if (isset($_POST['optout_msg_'.$lang]) )	$optout_msg[$lang] = stripslashes(sanitize_text_field($_POST['optout_msg_'.$lang]));
+			if (isset($_POST['lists_msg_'.$lang]) )		$lists_msg[$lang] = stripslashes(sanitize_text_field($_POST['lists_msg_'.$lang]));
+			if (isset($_POST['disclaimer_msg_'.$lang]) ) $disclaimer_msg[$lang] = stripslashes(sanitize_text_field($_POST['disclaimer_msg_'.$lang]));
+			if (isset($_POST['unsub_footer_'.$lang]) )	$unsub_footer[$lang] = stripslashes(sanitize_text_field($_POST['unsub_footer_'.$lang]));
+			if (isset($_POST['preform_msg_'.$lang]) )	$preform_msg[$lang] = stripslashes(sanitize_text_field($_POST['preform_msg_'.$lang]));
+			if (isset($_POST['viewonline_msg_'.$lang]) ) $viewonline_msg[$lang] = stripslashes(sanitize_text_field($_POST['viewonline_msg_'.$lang]));
 		}
 		if ( count ($activamail_subj) ) update_option('alo_em_txtpre_activationmail_subj', $activamail_subj );
 		if ( count ($activamail_mail) ) update_option('alo_em_txtpre_activationmail_mail', $activamail_mail );
@@ -141,7 +141,7 @@ if ( isset($_POST['submit']) ) {
 		if ( isset($_REQUEST['task']) && $_REQUEST['task'] == "tab_newsletter" ) {
 		
 			if(isset($_POST['sender_email'])) update_option('alo_em_sender_email', sanitize_email($_POST['sender_email']));
-			if(isset($_POST['sender_name'])) update_option('alo_em_sender_name', stripslashes( trim($_POST['sender_name'])) );
+			if(isset($_POST['sender_name'])) update_option('alo_em_sender_name', stripslashes( sanitize_text_field($_POST['sender_name'])) );
 			if(isset($_POST['lastposts']) && (int)$_POST['lastposts'] > 0) update_option('alo_em_lastposts', trim($_POST['lastposts']));	
 		
 			if(isset($_POST['debug_newsletters']) && in_array( $_POST['debug_newsletters'], array("","to_author","to_file") ) )
@@ -245,7 +245,7 @@ if ( isset($_POST['submit']) ) {
 			{
 				if ( !empty($_POST[$bounce_key]) ) 
 				{
-					$new_bounce_settings[$bounce_key] = stripslashes(trim(strip_tags($_POST[$bounce_key])));
+					$new_bounce_settings[$bounce_key] = stripslashes(sanitize_text_field($_POST[$bounce_key]));
 				}
 			}
 			update_option('alo_em_bounce_settings', $new_bounce_settings);
@@ -652,7 +652,7 @@ if ( alo_em_multilang_enabled_plugin() == false ) {
 		echo '<p>'. __('No multilanguage plugin is enabled, so you will only see texts in the main language of the site', 'alo-easymail') .'.</p>';
 		echo '<p>'. __('Recommended plugins, fully compatible with EasyMail, for a complete multilingual functionality', 'alo-easymail') .': ';
 		echo '<a href="http://wpml.org/" target="_blank">WPML</a>, ';
-		echo '<a href="http://wordpress.org/plugins/qtranslate/" target="_blank">qTranslate</a>, ';
+		echo '<a href="http://wordpress.org/plugins/qtranslate-x/" target="_blank">qTranslate-X</a>, ';
 		echo '<a href="http://wordpress.org/plugins/polylang/" target="_blank">Polylang</a>';	
 		echo '.</p>';
 		//echo '<p>'. sprintf( __('Type the texts in all available languages (they are found in %s)', 'alo-easymail'), '<em>'.WP_LANG_DIR.'</em>' ) .".</p>";
@@ -1151,11 +1151,11 @@ if ( isset( $_REQUEST['task'] ) ) {
 				// List name	
 				$list_name	= array();
 				foreach ( $languages as $key => $lang ) {
-					if (isset($_POST['listname_'.$lang]) )	$list_name[$lang] = stripslashes(trim($_POST['listname_'.$lang]));
+					if (isset($_POST['listname_'.$lang]) )	$list_name[$lang] = stripslashes(sanitize_text_field( $_POST['listname_'.$lang] ));
 				}
 				
-				$list_available = stripslashes( trim( $_POST['elp_list_available'] ) );
-				$list_order = stripslashes( trim( $_POST['elp_list_order'] ) );
+				$list_available = sanitize_text_field( $_POST['elp_list_available'] );
+				$list_order = absint( $_POST['elp_list_order'] );
 				if ( $list_name && $list_available && is_numeric($list_order) ) {
 					$mailinglists = alo_em_get_mailinglists ( 'hidden,admin,public' );
 					if ( $list_id )  { // update
