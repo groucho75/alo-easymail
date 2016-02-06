@@ -22,8 +22,8 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 * **write and send html/text newsletters, simple like writing posts**: newsletter is a custom post type, using the standard WordPress GUI and API
 * **select the recipients to send to**: registered users, subscribers, mailing lists
 * **batch sending using WP cron system**: it sends a number of emails every 5 minutes, until all recipients have been included
-* **collect subscribers**: on registration form and with an ajax widget/page
-* **import/export subscribers**: import from existing registered users or from a CSV file, there is no limit to the number of subscribers
+* **collect subscribers**: on registration form and with an ajax widget/page, there is no limit to the number of subscribers
+* **import/export subscribers**: import from existing registered users or from a CSV file
 * **create and manage mailing lists**: only admin can assign subscribers to them, or subscribers can freely choose them
 * **newsletter themes**: using html/php files in plugin or theme folder
 * **manage subscribers**: search, delete, edit subscription to mailing lists 
@@ -84,6 +84,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 == Changelog ==
 
 = 2.7.0 =
+* Added: export subscribers of a single mailing list
 * Added: an option to remove subscribers when the related users are deleted
 * Added: list of clicked urls in newsletter report
 * Fixed: a CRSF/XSS vulnerability in options page, credits to Mohsen Lotfi (fox_one_fox_one)
@@ -604,3 +605,6 @@ General refactoring to improve code organization.
 
 = 2.6.01 =
 Fixed a CRSF/XSS vulnerability.
+
+= 2.7.0 =
+Fixed a CRSF/XSS vulnerability. Add export by mailing list.

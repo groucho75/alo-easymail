@@ -413,7 +413,24 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 			 					
 			 	<h3 style="margin-top:20px"><?php _e("Export subscribers", "alo-easymail") ?></h3>
 			 	<p><?php _e("You can export newsletter subscribers: the plugin shows them on screen so you can copy and paste them into a text file or into any application", "alo-easymail") ?></p>
-			 	<form action="" method="get">			 	
+			 	<form action="" method="get">
+					<?php
+					if ( $mailinglists) {
+						echo "<p>". __("Optionally, you can export only subscribers of a single list", "alo-easymail") . ":</p>";
+						echo "<ul style='font-size:80%;margin-bottom:10px'>"; ?>
+						<li style="display:inline-block;margin-right:10px">
+							<input type="radio" name="check_export_list[]" id="export_list_0" value="" checked="checked" />
+							<label for="export_list_0">(<?php _e( 'All subscribers', 'alo-easymail' ) ?>)</label>
+						</li>
+						<?php foreach ( $mailinglists as $list => $val) {
+							if ( $val['available'] == "deleted" || $val['available'] == "hidden" ) {
+								//continue;
+							} ?>
+							<li style="display:inline-block;margin-right:10px"><input type="radio" name="check_export_list[]" id="export_list_<?php echo $list ?>" value="<?php echo $list ?>" /><label for="export_list_<?php echo $list ?>"><?php echo alo_em_translate_multilangs_array ( alo_em_get_language(), $val['name'], true ) ?></label></li>
+							<?php
+						} // end foreach
+						echo "</ul>";
+					} ?>
 			 		<input type="hidden" name="post_type"  value="newsletter" />
 					<input type="hidden" name="action"  value="export_step2" /> <?php // the action ?>
 					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
@@ -696,9 +713,17 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 						  $fields_name 	.= ", ".$key;
 					}
 				}
-				$all_subs = $wpdb->get_results( "SELECT email, name, lang{$fields_name} FROM {$wpdb->prefix}easymail_subscribers" );
+				if ( !empty($_REQUEST['check_export_list'][0]) && is_numeric($_REQUEST['check_export_list'][0]) ) {
+					$where_list = "WHERE lists LIKE '%|" . absint($_REQUEST['check_export_list'][0]) . "|%' ";
+				} else {
+					$where_list = '';
+				}
+
+				$all_subs = $wpdb->get_results( "SELECT email, name, lang{$fields_name} FROM {$wpdb->prefix}easymail_subscribers {$where_list}" );
+				echo '<h3>' . __("Export subscribers", "alo-easymail") .'</h3>';
 				if ( $all_subs ) {
 					echo '<p><a href="javascript:history.back()">'. __("Back", "alo-easymail"). '</a></p>';
+					echo '<p>'. __("Subscribers", "alo-easymail"). ': '. $wpdb->num_rows . '</p>';
 					echo "<pre style='font-family:Courier,Monospace;width:50%;height:300px;border:1px dotted grey;background-color:white;padding:5px 25px;list-style-type:none;overflow:auto;'>\r\n";
 					foreach ( $all_subs as $sub ) {
 						echo esc_html( $sub->email . ";" . $sub->name . ";" . $sub->lang ); //edit : splitted in two parts : orig : echo $sub->email . ";" . $sub->name . ";" . $sub->lang. "\r\n";
@@ -730,6 +755,7 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 					}
 				}
 				$unsubs = $wpdb->get_results( "SELECT email FROM {$wpdb->prefix}easymail_unsubscribed" );
+				echo '<h3>' . __("Export unsubscribed emails", "alo-easymail") .'</h3>';
 				if ( $unsubs ) {
 					echo '<p><a href="javascript:history.back()">'. __("Back", "alo-easymail"). '</a></p>';
 					echo "<pre style='font-family:Courier,Monospace;width:50%;height:300px;border:1px dotted grey;background-color:white;padding:5px 25px;list-style-type:none;overflow:auto;'>\r\n";
