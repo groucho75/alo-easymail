@@ -16,14 +16,16 @@ check_admin_referer( "alo-easymail" );
 
 $newsletter_id = ( isset( $_GET['newsletter'] ) && is_numeric( $_GET['newsletter'] ) ) ? (int) $_GET['newsletter'] : false;
 
-if ( !alo_em_user_can_edit_newsletter( $newsletter_id ) ) wp_die( __('Cheatin&#8217; uh?') );
+if ( !$newsletter_id || !alo_em_user_can_edit_newsletter( $newsletter_id ) ) wp_die( __('Cheatin&#8217; uh?') );
 
-// first, search latest autosave
-$newsletter = wp_get_post_autosave( $newsletter_id );
+// first, search latest autosave and the saved version
+$newsletter_autosave = wp_get_post_autosave( $newsletter_id );
+$newsletter = get_post($newsletter_id);
 
-// if not autosave, look for saved post
-if ( !$newsletter )
-	$newsletter = get_post( $newsletter_id );
+// look for the most recent version between autosaved and saved
+if($newsletter_autosave && strtotime($newsletter_autosave->post_modified_gmt) > strtotime($newsletter->post_modified_gmt)) {
+	$newsletter = $newsletter_autosave;
+}
 
 $content = $newsletter->post_content;
 

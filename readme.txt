@@ -83,6 +83,12 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Changelog ==
 
+= ....TRUNK.... =
+* Fixed: a CRSF/XSS vulnerability in options page, credits to Mohsen Lotfi (fox_one_fox_one)
+* Fixed: the preview-newsletter-in-theme now show the most recent between autosaved and saved versions
+* Updated: the deprecated $wpdb->escape()
+* Updated: now dashicon icon in the admin bar and dashboard side menu, settings label in admin bar
+
 = 2.6.01 =
 * Fixed: a CRSF/XSS vulnerability: [more info](https://packetstormsecurity.com/files/133594/)
 * Fixed: a short php open tag
