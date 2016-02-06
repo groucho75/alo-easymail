@@ -299,9 +299,16 @@ elseif ( !alo_em_is_newsletter_recipients_archived ( $newsletter ) ) : 	?>
 					$clicks = alo_em_get_recipient_trackings_except_views( $recipient->ID );
 					echo ( ( $recipient->result == "1" && $clicks ) ? __("Yes", "alo-easymail" ) : __("No", "alo-easymail" ) )." <img src='".ALO_EM_PLUGIN_URL."/images/".( ( $recipient->result == "1" && alo_em_get_recipient_trackings_except_views ( $recipient->ID) )? "yes.png":"no.png" ) ."' />";
 					if ( is_array( $clicks ) && !empty($clicks) ) {
-						echo " ". count( $clicks );
+						//echo " ". count( $clicks ).': ';
+						$unique_links = array();
 						foreach( $clicks as $i => $click ) {
-							echo '<span class="clicked-links dashicons dashicons-admin-links" title="'.esc_url($click->request).'"></span>';
+							if ( !isset( $unique_links[ $click->request ] ) ) {
+								$unique_links[ $click->request ] = 0;
+							}
+							$unique_links[ $click->request ] ++;
+						}
+						foreach( $unique_links as $link => $n_clicks ) {
+							echo $n_clicks.'<small>x</small><span class="clicked-links dashicons dashicons-admin-links" title="'.esc_url($link).'"></span>';
 						}
 					}
 					echo "</td>";

@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, widget, subscription, mailing list, subscribe, cron, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.4
-Stable tag: 2.6.01
+Stable tag: 2.7.0
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -85,6 +85,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 = 2.7.0 =
 * Added: an option to remove subscribers when the related users are deleted
+* Added: list of clicked urls in newsletter report
 * Fixed: a CRSF/XSS vulnerability in options page, credits to Mohsen Lotfi (fox_one_fox_one)
 * Fixed: a type in English strings: 'e-email' now become 'e-mail'
 * Fixed: the preview-newsletter-in-theme now show the most recent between autosaved and saved versions
