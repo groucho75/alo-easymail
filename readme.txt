@@ -87,6 +87,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 * Added: export subscribers of a single mailing list
 * Added: an option to remove subscribers when the related users are deleted
 * Added: list of clicked urls in newsletter report
+* Fixed: cache recipient counts to save resources especially on newsletter list screen
 * Fixed: a CRSF/XSS vulnerability in options page, credits to Mohsen Lotfi (fox_one_fox_one)
 * Fixed: a type in English strings: 'e-email' now become 'e-mail'
 * Fixed: the preview-newsletter-in-theme now show the most recent between autosaved and saved versions
