@@ -549,7 +549,7 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 	$html .= "&nbsp;</td>\n";
 
 
-	$html .= "<td class=\"subscriber-actions\">\n"; // Actions
+	$html .= "<td class=\"subscriber-actions row-important-column\">\n"; // Actions
 	$html .= "<img src=\"". ALO_EM_PLUGIN_URL. "/images/wpspin_light.gif\" style=\"display:none;vertical-align: middle;\" id=\"easymail-subscriber-". $subscriber_id ."-actions-loading\" />\n";
 	if ( $edit ) {
 		$html .= " <a href=\"\" title=\"". esc_attr( __("Cancel", "alo-easymail") )."\" class=\"easymail-subscriber-edit-inline-cancel\" id=\"easymail-subscriber-edit-inline-cancel_{$subscriber_id}\" rel=\"{$subscriber_id}\">";

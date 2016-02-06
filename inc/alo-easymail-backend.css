@@ -251,11 +251,37 @@ table#alo-easymailsubscriber-table select {
 	width: 80px;
 }
 
+table#alo-easymailsubscriber-table tbody tr:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+
 @media only screen and (max-width: 480px) {
 
-	/* phones */
+	/* small phones */
 	table#alo-easymailsubscriber-table th:not(.row-important-column),
 	table#alo-easymailsubscriber-table td:not(.row-important-column){
 		display: none;
 	}
+
+	table#alo-easymailsubscriber-table th.row-important-column img { display: none; }
+
+	table#alo-easymailsubscriber-table td.subscriber-email {
+		text-overflow: ellipsis;
+		max-width: 100px;
+		overflow: hidden;
+		white-space: nowrap;
+		display: block;
+	}
+}
+
+
+@media only screen and (max-width: 768px) {
+
+	/* phones or tablets */
+	table#alo-easymailsubscriber-table th:not(.row-important-column),
+	table#alo-easymailsubscriber-table td:not(.row-important-column){
+		display: none;
+	}
+
+	table#alo-easymailsubscriber-table th.row-important-column img { display: none; }
 }

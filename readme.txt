@@ -91,6 +91,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 * Fixed: a type in English strings: 'e-email' now become 'e-mail'
 * Fixed: the preview-newsletter-in-theme now show the most recent between autosaved and saved versions
 * Updated: the deprecated $wpdb->escape()
+* Updated: css in subscriber list page
 * Updated: now dashicon icon in the admin bar and dashboard side menu, settings label in admin bar
 
 = 2.6.01 =

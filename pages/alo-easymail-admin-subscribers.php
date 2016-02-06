@@ -658,16 +658,19 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 						if ( count($not_imported) ) {
 							echo '<p>'.__("Some records have not been imported", "alo-easymail").':</p>';
 							echo '<style type="text/css">';
+							echo '.import-report-wrapper { max-height: 250px; overflow-y: auto; }';
 							echo 'table.import-report { margin: 0 0 10px 20px; }';
 							echo 'table.import-report th { font-size:0.8em; color:#f00; text-align:left; font-weight:normal; padding:1px 5px }';
 							echo 'table.import-report td { font-size:0.8em; font-style:italic; padding:1px 5px }';
 							echo '</style>';
+							echo '<div class="import-report-wrapper">';
 							echo '<table class="import-report"><tbody>';
 							foreach ($not_imported as $email => $error ) {
 								echo '<tr><th scope="row">'.$email.'</th>';
 								echo '<td>'.$error.'</td></tr>';
 							}
 							echo '</tbody></table>';
+							echo '</div>';
 						}
 						echo '</p></div>';
 						break;
@@ -1035,7 +1038,7 @@ $total_items = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}easymail_subs
 		<th scope="col" class="row-important-column"><?php echo "<a href='".$link_string."&amp;sortby=active".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".esc_attr(__("Order by activation state", "alo-easymail"))."'>".__("Activated", "alo-easymail")."</a>" .alo_em_help_tooltip( __("For registered users the dafault state is activated. For public subscribers the default state is deactivated: it will be activated by clicking on the activation link in the e-mail.", "alo-easymail") ." ". __("A subscriber will be deleted if not activated in 5 days.", "alo-easymail") ); ?></th>
 		<th scope="col"><?php _e("Mailing Lists", "alo-easymail"); ?></th>
 		<th scope="col"><?php echo "<a href='".$link_string."&amp;sortby=lang".( ( isset($_GET['order']) && $_GET['order'] == 'ASC' )? "&amp;order=DESC": "&amp;order=ASC")."' title='".esc_attr(__("Order by language", "alo-easymail"))."'>".__("Language", "alo-easymail")."</a>"; ?></th>				
-		<th scope="col"><?php _e("Actions", "alo-easymail") ?></th>
+		<th scope="col" class="row-important-column"><?php _e("Actions", "alo-easymail") ?></th>
 	</tr>
 	</thead>
 
