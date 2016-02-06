@@ -285,4 +285,21 @@ function alo_em_save_registration_optin ( $user_id, $password="", $meta=array() 
 add_action( 'user_register', 'alo_em_save_registration_optin' );
 
 
+/**
+ * When users are deleted, maybe delete also their newsletter subscriptions.
+ *
+ * @param $user_id
+ */
+function alo_em_on_delete_user( $user_id ) {
+	if ( get_option( 'alo_em_unsubscribe_when_delete_user' ) == 'yes' ) {
+		$user_obj = get_userdata( $user_id );
+		$email = $user_obj->user_email;
+
+		if (  $subscriber_id = alo_em_is_subscriber( $email ) ) {
+			alo_em_delete_subscriber_by_id( $subscriber_id );
+		}
+	}
+}
+add_action( 'delete_user', 'alo_em_on_delete_user' );
+
 /* EOF */

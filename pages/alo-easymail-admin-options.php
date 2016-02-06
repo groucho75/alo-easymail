@@ -129,6 +129,11 @@ if ( isset($_POST['submit']) ) {
 			} else {
 				update_option('alo_em_hide_widget_users', "no") ;
 			}
+			if ( isset($_POST['unsubscribe_when_delete_user']) ) {
+				update_option('alo_em_unsubscribe_when_delete_user', "yes");
+			} else {
+				update_option('alo_em_unsubscribe_when_delete_user', "no") ;
+			}
 			if ( isset($_POST['hide_name_input']) ) {
 				update_option('alo_em_hide_name_input', "yes");
 			} else {
@@ -402,6 +407,21 @@ if ( get_option('alo_em_hide_widget_users') == "yes" ) {
 <tr valign="top">
 <th scope="row"><?php _e("Hide widget from users", "alo-easymail") ?>:</th>
 <td><input type="checkbox" name="hide_widget_users" id="hide_widget_users" value="yes" <?php echo $checked_hide_widget_users ?> /> <span class="description"><?php _e("If yes, the widget will be not shown to registered users", "alo-easymail") ?>. <?php _e("They can always edit newsletter subscription in profile page", "alo-easymail") ?>.</span></td>
+</tr>
+
+
+<?php
+if ( get_option('alo_em_unsubscribe_when_delete_user') == "yes" ) {
+	$checked_unsubscribe_when_delete_user = 'checked="checked"';
+} else {
+	$checked_unsubscribe_when_delete_user = "";
+}
+?>
+<tr valign="top">
+	<th scope="row"><?php _e("Unsubscribe when users are deleted", "alo-easymail") ?>:</th>
+	<td><input type="checkbox" name="unsubscribe_when_delete_user" id="unsubscribe_when_delete_user" value="yes" <?php echo $checked_unsubscribe_when_delete_user ?> />
+		<span class="description"><?php _e("If yes, when registered users are deleted, they are also unsubscribed", "alo-easymail") ?>.</span>
+	</td>
 </tr>
 
 
