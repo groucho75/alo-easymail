@@ -15,33 +15,14 @@ function alo_em_contextual_help_tabs() {
 	if ( !is_object($screen) ) return;
 	if ( $screen->post_type != 'newsletter' ) return;
 
-	// Main tab per page
-	$tab = false;
-	switch ( $screen->id ) {
-
-		case 'alo-easymail/pages/alo-easymail-admin-subscribers':
-			break;
-
-		case 'alo-easymail/pages/alo-easymail-admin-options':
-			break;
-
-		case 'edit-newsletter':
-		case 'newsletter':
-			$tab = array(
-				'id'      => 'alo-easymail_newsletter',
-				'title'   => __("Newsletter", "alo-easymail"),
-				'content' => '<iframe width="720" height="450" src="http://www.youtube.com/embed/juglGC28T2g?rel=0" frameborder="0" allowfullscreen></iframe>'
-			);
-			break;
-	}
-
-	if ( is_array($tab) ) $screen->add_help_tab( $tab );
-
 	// Common tab
 	$screen->add_help_tab( array(
 		'id'      => 'alo-easymail_links', // This should be unique for the screen.
 		'title'   => __("Links"),
-		'content' => '<p>'.__("Resources about EasyMail Newsletter", "alo-easymail") . ': '.
+		'content' => '<p>'. __('Here you are a short screencast', 'alo-easymail') .
+			': <a href="https://www.youtube.com/watch?v=juglGC28T2g" target="_blank">'.
+				__('How to create and send a newsletter', 'alo-easymail').'</a></p>' .
+			'<p>'.__("Resources about EasyMail Newsletter", "alo-easymail") . ': '.
 			'<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter/" target="_blank">homepage</a> |
 			<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/" target="_blank">guide</a> |
 			<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/" target="_blank">faq</a> |
