@@ -195,6 +195,8 @@ add_action( 'edit_user_profile_update', 'alo_em_save_profile_optin' );
  */
 function alo_em_add_profile_field_errors ( $errors, $update, $user ) {
 
+	if ( !$update ) return;
+
 	$alo_em_cf = alo_easymail_get_custom_fields();
 	if ($alo_em_cf) {
 		foreach( $alo_em_cf as $key => $value ){
