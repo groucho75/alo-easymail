@@ -85,6 +85,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 = 2.7.1 =
 * Fixed: now required custom fields don't give errors and don't block the add new user dashboard form
+* Updated: removed the iframe screencast in help tab and replaced with a link
 
 = 2.7.0 =
 * Added: export subscribers of a single mailing list
