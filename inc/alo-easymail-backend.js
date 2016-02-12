@@ -110,7 +110,9 @@ aloEM (document).ready ( function(){
 						
 					} else {
 
-						autosave();
+						if ( typeof autosave == 'function' ) {
+							autosave();
+						}
 
 						setTimeout(function(){
 							aloEM("#easymail-open-preview-loading").hide();

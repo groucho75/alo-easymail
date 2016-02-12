@@ -85,6 +85,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 = 2.7.1 =
 * Fixed: now required custom fields don't give errors and don't block the add new user dashboard form
+* Updated: autosave of the preview-newsletter-in-theme to avoid issues if autosave disabled (e.g. by qTranslate-x)
 * Updated: removed the iframe screencast in help tab and replaced with a link
 
 = 2.7.0 =
