@@ -110,8 +110,8 @@ aloEM (document).ready ( function(){
 						
 					} else {
 
-						if ( typeof autosave == 'function' ) {
-							autosave();
+						if ( typeof wp.autosave == 'object' ) {
+							wp.autosave.server.triggerSave();
 						}
 
 						setTimeout(function(){
