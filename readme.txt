@@ -1,10 +1,10 @@
 === ALO EasyMail Newsletter ===
 Contributors: eventualo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA
-Tags: send, mail, newsletter, widget, subscription, mailing list, subscribe, cron, batch sending, bounce, mail throttling, signup, multilanguage
+Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.4
-Stable tag: 2.8
+Stable tag: 2.8.0
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -83,12 +83,12 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Changelog ==
 
-= 2.8 =
-* Added: an option to enable/disable collection of subscriber IP addresses
-* Fixed: now required custom fields don't give errors and don't block the add new user dashboard form
+= 2.8.0 =
+* Added: stop collecting subscriber IP addresses, there is an option to enable/disable it
 * Updated: autosave of the preview-newsletter-in-theme to avoid issues if autosave disabled (e.g. by qTranslate-x)
 * Updated: removed the iframe screencast in help tab and replaced with a link
 * Updated: report popup size now is dynamic and is adjusted according to screen size
+* Fixed: now required custom fields don't give errors and don't block the add new user dashboard form
 
 = 2.7.0 =
 * Added: export subscribers of a single mailing list
@@ -621,5 +621,5 @@ Fixed a CRSF/XSS vulnerability. Add export by mailing list.
 = 2.7.1 =
 Fixed a bug on the add new user dashboard screen.
 
-= 2.8 =
-Added an option to enable/disable collection of subscriber IP addresses.
+= 2.8.0 =
+Stop collecting subscriber IP addresses: there is an option to enable it.
