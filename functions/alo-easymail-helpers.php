@@ -161,7 +161,11 @@ function alo_em_rate_on_total ( $number, $total, $float=1 ) {
  * Get IP address: useful if you like to filter it
  */
 function alo_em_ip_address() {
-	$ip_address = preg_replace( '/[^0-9a-fA-F:., ]/', '',$_SERVER['REMOTE_ADDR'] );
+	if ( get_option('alo_em_collect_ip_address') == 'yes' ){
+		$ip_address = preg_replace( '/[^0-9a-fA-F:., ]/', '',$_SERVER['REMOTE_ADDR'] );
+	} else {
+		$ip_address = '';
+	}
 	return apply_filters ( 'alo_easymail_ip_address', $ip_address );
 }
 

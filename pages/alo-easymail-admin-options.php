@@ -134,6 +134,11 @@ if ( isset($_POST['submit']) ) {
 			} else {
 				update_option('alo_em_unsubscribe_when_delete_user', "no") ;
 			}
+			if ( isset($_POST['collect_ip_address']) ) {
+				update_option('alo_em_collect_ip_address', "yes");
+			} else {
+				update_option('alo_em_collect_ip_address', "no") ;
+			}
 			if ( isset($_POST['hide_name_input']) ) {
 				update_option('alo_em_hide_name_input', "yes");
 			} else {
@@ -421,6 +426,21 @@ if ( get_option('alo_em_unsubscribe_when_delete_user') == "yes" ) {
 	<th scope="row"><?php _e("Unsubscribe when users are deleted", "alo-easymail") ?>:</th>
 	<td><input type="checkbox" name="unsubscribe_when_delete_user" id="unsubscribe_when_delete_user" value="yes" <?php echo $checked_unsubscribe_when_delete_user ?> />
 		<span class="description"><?php _e("If yes, when registered users are deleted, they are also unsubscribed", "alo-easymail") ?>.</span>
+	</td>
+</tr>
+
+
+<?php
+if ( get_option('alo_em_collect_ip_address') == "yes" ) {
+	$checked_collect_ip_address = 'checked="checked"';
+} else {
+	$checked_collect_ip_address = "";
+}
+?>
+<tr valign="top">
+	<th scope="row"><?php _e("Store IP address of subscribers", "alo-easymail") ?>:</th>
+	<td><input type="checkbox" name="collect_ip_address" id="collect_ip_address" value="yes" <?php echo $checked_collect_ip_address ?> />
+		<span class="description"><?php _e("If yes, you should declare it in your Privacy Policy / Terms Of Service page", "alo-easymail") ?>.</span>
 	</td>
 </tr>
 

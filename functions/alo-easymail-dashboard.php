@@ -495,12 +495,9 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 	$last_act = !empty($subscriber->last_act) ? $subscriber->last_act : $subscriber->join_date;
 	$last_act_datetime = date_i18n( __( "d/m/Y \h.H:i", "alo-easymail" ), strtotime( $last_act ) );
 	$last_act_diff = sprintf( __( "%s ago", "alo-easymail" ), human_time_diff( strtotime( $last_act ), current_time('timestamp') ) );
-	//$last_ip_addr = ' @ IP: '. ( !empty($subscriber->ip_address) ? $subscriber->ip_address : '?' );
-	//$html .= $last_act_diff ." <img src=\"".ALO_EM_PLUGIN_URL."/images/12-clock.png\" class=\"clock\" title=\"". esc_attr($last_act_datetime . $last_ip_addr) ."\" alt=\"(". $last_act_datetime .")\" />\n";
 	$html .= "<abbr title=\"". esc_attr($last_act_datetime) ."\" />". $last_act_diff ."</abbr>\n";
-	if ( !empty($subscriber->ip_address) ) {
-		$last_ip_addr = preg_replace( '/[^0-9a-fA-F:., ]/', '', $subscriber->ip_address );
-		$html .= "<br /><a href=\"http://www.whatismyipaddress.com/ip/$last_ip_addr\" title=\"". esc_attr( $last_ip_addr .' @ whatismyipaddress.com') ."\" target=\"_blank\" class=\"ip-address\"/>IP ". $last_ip_addr ."</abbr>\n";
+	if ( get_option('alo_em_collect_ip_address') == 'yes' && !empty($subscriber->ip_address) ) {
+		$html .= "<br /><a href=\"http://www.whatismyipaddress.com/ip/{$subscriber->ip_address}\" title=\"". esc_attr( $subscriber->ip_address .' @ whatismyipaddress.com') ."\" target=\"_blank\" class=\"ip-address\"/>IP ". $subscriber->ip_address ."</abbr>\n";
 	}
 	$html .= "</td>\n";
 
