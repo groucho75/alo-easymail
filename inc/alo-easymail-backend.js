@@ -401,7 +401,7 @@ aloEM (document).ready ( function(){
 	 */
 	
 	aloEM.fn.easymailReportPopup = function( url, newsletter, lang ) {
-		tb_show ( easymailJs.reportPopupTitle, url +"&newsletter=" + newsletter + "&lang=" + lang + "&TB_iframe=true&height=570&width=800", false );
+		tb_show ( easymailJs.reportPopupTitle, url +"&newsletter=" + newsletter + "&lang=" + lang + "&TB_iframe=true&height="+Math.round(aloEM(window).height()*0.9)+"&width="+Math.round(aloEM(window).width()*0.9), false );
 		return false;
 	}	
 

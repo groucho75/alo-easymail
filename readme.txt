@@ -17,7 +17,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 
 **Here you are a short screencast:** [How to create and send a newsletter](http://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/)
 
-**Features:** 
+**Features:**
 
 * **write and send html/text newsletters, simple like writing posts**: newsletter is a custom post type, using the standard WordPress GUI and API
 * **select the recipients to send to**: registered users, subscribers, mailing lists
@@ -26,7 +26,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 * **import/export subscribers**: import from existing registered users or from a CSV file
 * **create and manage mailing lists**: only admin can assign subscribers to them, or subscribers can freely choose them
 * **newsletter themes**: using html/php files in plugin or theme folder
-* **manage subscribers**: search, delete, edit subscription to mailing lists 
+* **manage subscribers**: search, delete, edit subscription to mailing lists
 * **manage capabilities**: choose the roles that can send newsletter, manage subscribers and settings
 * **view sending report**: how many subscribers have opened the newsletter and clicked on links inside it
 * **bounce management**: the bounced email addresses are automatically unsubscribed
@@ -41,10 +41,10 @@ You can add or update the translation in your language. To make the plugin packa
 You can visit [translate.wordpress.org/projects/wp-plugins/alo-easymail](https://translate.wordpress.org/projects/wp-plugins/alo-easymail) to look for the most updated language files (.MO and .PO files), you can contribute to translate the plugin in your language
 
 
-**For developers** 
+**For developers**
 
 Developers can easily add own code using plugin action and filter hooks.
-Inside plugin package there is a *mu-plugins* folders that contains some useful samples, e.g.: "latest posts" placeholder, "multiple posts" placeholder, include attachments, add custom fields in subscription form. 
+Inside plugin package there is a *mu-plugins* folders that contains some useful samples, e.g.: "latest posts" placeholder, "multiple posts" placeholder, include attachments, add custom fields in subscription form.
 You can move one or more of those files into *wp-content/mu-plugins* (if the directory doesn”t exist, simply create it) to activate them.
 You can use them as starting point for your development. Other samples at: [plugin developer page](http://www.eventualo.net/blog/easymail-newsletter-for-developers).
 
@@ -88,6 +88,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 * Fixed: now required custom fields don't give errors and don't block the add new user dashboard form
 * Updated: autosave of the preview-newsletter-in-theme to avoid issues if autosave disabled (e.g. by qTranslate-x)
 * Updated: removed the iframe screencast in help tab and replaced with a link
+* Updated: report popup size now is dynamic and is adjusted according to screen size
 
 = 2.7.0 =
 * Added: export subscribers of a single mailing list
