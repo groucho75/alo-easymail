@@ -65,14 +65,14 @@ if ( isset($_POST['submit']) ) {
 		$viewonline_msg = array();
 		foreach ( $languages as $key => $lang ) {
 			if (!empty($_POST['activamail_subj_'.$lang])) $activamail_subj[$lang] = stripslashes(sanitize_text_field($_POST['activamail_subj_'.$lang]));
-			if (!empty($_POST['activamail_mail_'.$lang])) $activamail_mail[$lang] = stripslashes(sanitize_text_field($_POST['activamail_mail_'.$lang]));
+			if (!empty($_POST['activamail_mail_'.$lang])) $activamail_mail[$lang] = stripslashes(wp_kses_post($_POST['activamail_mail_'.$lang]));
 			if (isset($_POST['optin_msg_'.$lang]) )		$optin_msg[$lang] = stripslashes(sanitize_text_field($_POST['optin_msg_'.$lang]));
 			if (isset($_POST['optout_msg_'.$lang]) )	$optout_msg[$lang] = stripslashes(sanitize_text_field($_POST['optout_msg_'.$lang]));
 			if (isset($_POST['lists_msg_'.$lang]) )		$lists_msg[$lang] = stripslashes(sanitize_text_field($_POST['lists_msg_'.$lang]));
-			if (isset($_POST['disclaimer_msg_'.$lang]) ) $disclaimer_msg[$lang] = stripslashes(sanitize_text_field($_POST['disclaimer_msg_'.$lang]));
-			if (isset($_POST['unsub_footer_'.$lang]) )	$unsub_footer[$lang] = stripslashes(sanitize_text_field($_POST['unsub_footer_'.$lang]));
+			if (isset($_POST['disclaimer_msg_'.$lang]) ) $disclaimer_msg[$lang] = stripslashes(wp_kses_post($_POST['disclaimer_msg_'.$lang]));
+			if (isset($_POST['unsub_footer_'.$lang]) )	$unsub_footer[$lang] = stripslashes(wp_kses_post($_POST['unsub_footer_'.$lang]));
 			if (isset($_POST['preform_msg_'.$lang]) )	$preform_msg[$lang] = stripslashes(sanitize_text_field($_POST['preform_msg_'.$lang]));
-			if (isset($_POST['viewonline_msg_'.$lang]) ) $viewonline_msg[$lang] = stripslashes(sanitize_text_field($_POST['viewonline_msg_'.$lang]));
+			if (isset($_POST['viewonline_msg_'.$lang]) ) $viewonline_msg[$lang] = stripslashes(wp_kses_post($_POST['viewonline_msg_'.$lang]));
 		}
 		if ( count ($activamail_subj) ) update_option('alo_em_txtpre_activationmail_subj', $activamail_subj );
 		if ( count ($activamail_mail) ) update_option('alo_em_txtpre_activationmail_mail', $activamail_mail );
