@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.4
-Stable tag: 2.8.0
+Stable tag: 2.8.1
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -26,6 +26,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 * **import/export subscribers**: import from existing registered users or from a CSV file
 * **create and manage mailing lists**: only admin can assign subscribers to them, or subscribers can freely choose them
 * **newsletter themes**: using html/php files in plugin or theme folder
+* **newsletter placeholders**: a lot of tags that in each message will be replaced with e.g. recipient name, latest posts...
 * **manage subscribers**: search, delete, edit subscription to mailing lists
 * **manage capabilities**: choose the roles that can send newsletter, manage subscribers and settings
 * **view sending report**: how many subscribers have opened the newsletter and clicked on links inside it
@@ -82,6 +83,9 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 5. The list of subscribers in administration
 
 == Changelog ==
+
+= 2.8.1 =
+* Fixed: update sanitization of html options that removed html instead of keep it
 
 = 2.8.0 =
 * Added: stop collecting subscriber IP addresses, there is an option to enable/disable it
@@ -623,3 +627,6 @@ Fixed a bug on the add new user dashboard screen.
 
 = 2.8.0 =
 Stop collecting subscriber IP addresses: there is an option to enable it.
+
+= 2.8.1 =
+Fixed: update sanitization of html options that removed html instead of keep it.
