@@ -20,7 +20,7 @@ $link_base = "edit.php?post_type=newsletter&page=alo-easymail/pages/alo-easymail
 
 // change state activity of subscriber
 if ( isset($_REQUEST['task']) && $_REQUEST['task'] == 'active' && is_numeric($_REQUEST['subscriber_id'])) {
-    if ( alo_em_edit_subscriber_state_by_id($_REQUEST['subscriber_id'], $_REQUEST['act']) ) {
+    if ( alo_em_edit_subscriber_state_by_id($_REQUEST['subscriber_id'], sanitize_text_field( $_REQUEST['act'] ) ) ) {
 	    print '<div id="message" class="updated fade"><p>'.__("Activation state updated", "alo-easymail").'.</p></div>';
 	} else {
 	    print '<div id="message" class="error"><p>'.__("Error during operation.", "alo-easymail") ." ". __("Not updated", "alo-easymail").'.</p></div>';
@@ -91,9 +91,9 @@ if( !isset($_GET['sortby']) ) {
 }
 
 // string to search
-$s = ( isset( $_GET[ 's' ] ) ) ? esc_html ( trim( $_GET[ 's' ] ) ) : "";
-$filter_list = ( isset( $_GET[ 'filter_list' ] ) ) ? (int)$_GET[ 'filter_list' ] : "";
-$filter_lang = ( isset( $_GET[ 'filter_lang' ] ) ) ? $_GET[ 'filter_lang' ] : "";
+$s = ( isset( $_GET[ 's' ] ) ) ? esc_sql ( trim( $_GET[ 's' ] ) ) : "";
+$filter_list = ( isset( $_GET[ 'filter_list' ] ) ) ? absint( $_GET[ 'filter_list' ] ) : "";
+$filter_lang = ( isset( $_GET[ 'filter_lang' ] ) ) ? sanitize_text_field( $_GET[ 'filter_lang' ] ) : "";
 ?>
 
 <?php 
@@ -104,6 +104,9 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 	check_admin_referer('alo-easymail_subscribers');
 	
 	if ( isset($_REQUEST['action']) && $_REQUEST['action'] != "" ) {
+		if ( !empty( $_REQUEST['subscribers'] ) && is_array( $_REQUEST['subscribers'] ) ) {
+			$_REQUEST['subscribers'] = array_map( 'absint', $_REQUEST['subscribers'] );
+		}
 		switch ( $_REQUEST['action'] ) { // go on with step 1!
 		 	case "lists":
 		 		if ( !isset($_REQUEST['subscribers'] ) || $_REQUEST['subscribers'] == "" )  {
@@ -123,7 +126,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input  type="hidden" name="paged"  value="<?php echo $page ?>" />
 					<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
-					<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />
+					<input  type="hidden" name="sortby" value="<?php esc_attr_e( $_GET['sortby'] ) ?>" />
 					<input  type="hidden" name="order"  value="<?php echo ( isset($_GET['order']) && $_GET['order'] == 'DESC' ) ? 'DESC' : 'ASC'; ?>" />
 					<input  type="hidden" name="filter_list"  value="<?php echo $filter_list ?>" />					
 					<input  type="hidden" name="filter_lang"  value="<?php echo $filter_lang ?>" />
@@ -186,7 +189,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input  type="hidden" name="paged"  value="<?php echo $page ?>" />
 					<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
-					<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />
+					<input  type="hidden" name="sortby" value="<?php esc_attr_e( $_GET['sortby'] ) ?>" />
 					<input  type="hidden" name="order"  value="<?php echo ( isset($_GET['order']) && $_GET['order'] == 'DESC' ) ? 'DESC' : 'ASC'; ?>" />
 					<input  type="hidden" name="filter_list"  value="<?php echo $filter_list ?>" />					
 					<input  type="hidden" name="filter_lang"  value="<?php echo $filter_lang ?>" />
@@ -478,7 +481,7 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 					echo '<p><a href="javascript:history.back()">'. __("Back", "alo-easymail"). '</a></p>';
 					exit;
 				}
-				else if ( alo_em_check_email_in_unsubscribed( $_REQUEST['addsingle_email']) ) {
+				else if ( alo_em_check_email_in_unsubscribed( sanitize_email( $_REQUEST['addsingle_email'] ) ) ) {
 					echo '<div id="message" class="error"><p>'.__("Error during operation.", "alo-easymail");
 					echo "<br />". __("The owner of the e-email address unsubscribed the newsletter", "alo-easymail");
 					echo " (". sprintf( __( "%s ago", "alo-easymail" ), human_time_diff( strtotime(alo_em_when_email_unsubscribed($_REQUEST['addsingle_email'])), current_time('timestamp') ) ).")";
@@ -504,7 +507,7 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 					if ( isset($_REQUEST['check_list']) ) {
 						$subscriber_id = alo_em_is_subscriber( $email );
 						foreach ( $_REQUEST['check_list'] as $list ) {
-							alo_em_add_subscriber_to_list ( $subscriber_id, $list );
+							alo_em_add_subscriber_to_list ( $subscriber_id, absint( $list ) );
 						}
 					}
 					print '<div id="message" class="updated fade"><p>'.__("New subscriber added", "alo-easymail").'.</p></div>';	
@@ -521,7 +524,8 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 					break;
 				}
 				$selected_subscribers = explode ( "," , $_REQUEST['subscribers'] );
-				
+				$selected_subscribers = array_map( 'absint', $selected_subscribers );
+
 				switch ( $_REQUEST['mode'] ) { // The requested mode
 					case "add_remove":	// Add to selected lists and remove from not selected lists
 						// TODO !		
@@ -529,14 +533,14 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 					case "add":			// Add to selected lists
 						foreach ($selected_subscribers as $subscriber ) {
 							foreach ( $_REQUEST['check_list'] as $list ) {
-								alo_em_add_subscriber_to_list ( $subscriber, $list );
+								alo_em_add_subscriber_to_list ( $subscriber, absint( $list ) );
 							}
 						}
 						break;
 					case "remove":		// Remove from selected lists 
 						foreach ($selected_subscribers as $subscriber ) {
 							foreach ( $_REQUEST['check_list'] as $list ) {
-								alo_em_delete_subscriber_from_list ( $subscriber, $list );
+								alo_em_delete_subscriber_from_list ( $subscriber, absint( $list ) );
 							}
 						}
 						break;											
@@ -555,8 +559,9 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 					break;
 				}
 				$selected_subscribers = explode ( "," , $_REQUEST['subscribers'] );
+				$selected_subscribers = array_map( 'absint', $selected_subscribers );
 				foreach ($selected_subscribers as $subscriber ) {
-					$lang = ( $_REQUEST['check_lang'] == "blank" ) ? "" : $_REQUEST['check_lang'] ; 
+					$lang = ( $_REQUEST['check_lang'] == "blank" ) ? "" : sanitize_text_field( $_REQUEST['check_lang'] );
 					alo_em_assign_subscriber_to_lang ( $subscriber, $lang );
 				}
 				print '<div id="message" class="updated fade"><p>'.__("Updated", "alo-easymail").'.</p></div>';
@@ -791,7 +796,7 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 	<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 	<input  type="hidden" name="paged"  value="1" />
 	<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
-	<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />
+	<input  type="hidden" name="sortby" value="<?php esc_html_e( $_GET['sortby'] ) ?>" />
 	<input  type="hidden" name="order"  value="<?php echo ( isset($_GET['order']) && $_GET['order'] == 'DESC' ) ? 'DESC' : 'ASC'; ?>" />
 	
 	<?php
@@ -939,7 +944,7 @@ function checkBulkForm (form, field) {
 		<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 		<input  type="hidden" name="paged"  value="<?php echo $page ?>" />
 		<input  type="hidden" name="num"    value="<?php echo $items_per_page ?>" />
-		<input  type="hidden" name="sortby" value="<?php echo $_GET['sortby'] ?>" />
+		<input  type="hidden" name="sortby" value="<?php esc_attr_e( $_GET['sortby'] ) ?>" />
 		<input  type="hidden" name="order"  value="<?php echo ( isset($_GET['order']) && $_GET['order'] == 'DESC' ) ? 'DESC' : 'ASC'; ?>" />
 		<input  type="hidden" name="filter_list"  value="<?php echo $filter_list ?>" />
 		<input  type="hidden" name="filter_lang"  value="<?php echo $filter_lang ?>" />
@@ -987,7 +992,7 @@ if ( isset($_GET['sortby']) ) {
 	} else if( $_GET['sortby'] == 'last_act' ) {
 		$query .= ' ORDER BY last_act ';		
 	} else if( $alo_em_cf && array_key_exists( $_GET['sortby'], $alo_em_cf )) {
-		$query .= ' ORDER BY '. $_GET['sortby']. ' ';
+		$query .= ' ORDER BY '. esc_sql( $_GET['sortby'] ). ' ';
 	} 
 }
 
