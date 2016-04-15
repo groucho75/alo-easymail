@@ -244,9 +244,7 @@ if ( isset($_POST['submit']) ) {
 				"bounce_protocol",
 				"bounce_folder",
 				"bounce_username",
-				"bounce_password",
 				"bounce_flags",
-				"bounce_interval",
 				"bounce_maxmsg",
 			);
 			
@@ -1419,12 +1417,13 @@ if ( ! $imap_installed ) {
 // Test bounce connection
 else if ( isset( $_POST['test_bounce_connection'] ) )
 {
-	$bounce_connection = alo_em_bounce_connect();
+	$bounce_connection = alo_em_bounce_connect( $_POST );
 
 	echo '<tr valign="top">';
 	echo '<td colspan="2">';	
 	if ( ! $bounce_connection ) { // connection error
 		echo '<div class="text-alert"><p><img src="'.ALO_EM_PLUGIN_URL.'/images/12-exclamation.png" /> ';
+		echo __('Error during connection test', 'alo-easymail') .'... ';
 		echo '<strong>' . @imap_last_error() .'.</strong><br />';
 		echo '</p></div>';
 	}
@@ -1439,12 +1438,13 @@ else if ( isset( $_POST['test_bounce_connection'] ) )
 // Manually check bounces now
 else if ( isset( $_POST['check_bounces_now'] ) )
 {
-	$bounce_connection = alo_em_bounce_connect();
+	$bounce_connection = alo_em_bounce_connect( $_POST );
 
 	echo '<tr valign="top">';
 	echo '<td colspan="2">';	
 	if ( ! $bounce_connection ) { // connection error
 		echo '<div class="text-alert"><p><img src="'.ALO_EM_PLUGIN_URL.'/images/12-exclamation.png" /> ';
+		echo __('Error during connection test', 'alo-easymail') .'... ';
 		echo '<strong>' . @imap_last_error() .'.</strong><br />';
 		echo '</p></div>';
 	}
@@ -1460,12 +1460,12 @@ else if ( isset( $_POST['check_bounces_now'] ) )
 		echo '</div>';		
 	}
 	echo '</td></tr>';	
-}	
+}
 ?>
 
 <tr valign="top">
-<th scope="row">
-	<h3 style="margin-bottom: 0"><?php _e("Email address", "alo-easymail");?></h3>
+	<th scope="row">
+		<h3 style="margin-bottom: 0"><?php _e("Connection settings", "alo-easymail");?></h3>
 	</th>
 	<td></td>
 </tr>
@@ -1477,12 +1477,6 @@ else if ( isset( $_POST['check_bounces_now'] ) )
 </span></td>
 </tr>
 
-<tr valign="top">
-<th scope="row">
-	<h3 style="margin-bottom: 0"><?php _e("Connection settings", "alo-easymail");?></h3>
-	</th>
-	<td></td>
-</tr>
 
 <tr valign="top">
 <th scope="row"><label for="bounce_host"><?php _e("Server host", "alo-easymail") ?>:</label></th>
@@ -1526,12 +1520,6 @@ endforeach; ?>
 </tr>
 
 <tr valign="top">
-<th scope="row"><label for="bounce_password"><?php _e("Password") ?>:</label></th>
-<td><input type="password" name="bounce_password" value="<?php esc_attr_e( $bounce_settings['bounce_password'] ) ?>" id="bounce_password" size="30" maxlength="100" />
-</td>
-</tr>
-
-<tr valign="top">
 <th scope="row"><label for="bounce_flags"><?php _e("Optional flags", "alo-easymail") ?>:</label></th>
 <td><input type="text" name="bounce_flags" value="<?php esc_attr_e( $bounce_settings['bounce_flags'] ) ?>" id="bounce_flags" size="30" maxlength="100" />
 <span class="description"><?php echo __("Default", "alo-easymail").': '.__("empty", "alo-easymail");?>.
@@ -1539,14 +1527,6 @@ endforeach; ?>
 </span>
 </td>
 </tr>
-
-<?php if ( $imap_installed ) : ?>
-<tr valign="top">
-<th scope="row"><label for=""><em><?php _e("Test the connection now", "alo-easymail") ?>:</em></label></th>
-<td><input type="submit" name="test_bounce_connection" class="button" value="<?php echo esc_attr(__("Save settings and test now", "alo-easymail") ); ?>" />
-</td>
-</tr>
-<?php endif; ?>
 
 
 <tr valign="top">
@@ -1556,55 +1536,60 @@ endforeach; ?>
 	<td></td>
 </tr>
 
-<?php if ( $imap_installed ) : ?>
-<tr valign="top">
-<th scope="row"><label for="bounce_interval"><?php _e("Handle automatically bounces", "alo-easymail") ?>:</label></th>
-<td>
-<select name='bounce_interval' id='bounce_interval'>
-	<?php $values_bounce_interval = array ( 
-		"" => __("never", "alo-easymail"),
-		1 => sprintf( __("every %s hour(s)", "alo-easymail"), 1 ),
-		2 => sprintf( __("every %s hour(s)", "alo-easymail"), 2 ),
-		3 => sprintf( __("every %s hour(s)", "alo-easymail"), 3 ),
-		4 => sprintf( __("every %s hour(s)", "alo-easymail"), 4 ),
-		6 => sprintf( __("every %s hour(s)", "alo-easymail"), 6 ),
-		8 => sprintf( __("every %s hour(s)", "alo-easymail"), 8 ),
-		12 => sprintf( __("every %s hour(s)", "alo-easymail"), 12 ),
-		24 => sprintf( __("every %s hour(s)", "alo-easymail"), 24 ),
-	);
-	foreach( $values_bounce_interval as $key => $label ) :
-		echo "<option value='$key' ". ( ( $key == $bounce_settings['bounce_interval'] )? " selected='selected'": "") .">". esc_html( $label ). "</option>";
-	endforeach; ?>
-</select>	
-<span class="description"><?php _e("If you select *never* you can handle bounces only manually", "alo-easymail"); ?>
-</span>
-</td>
-</tr>
-<?php endif; ?>
-
 <tr valign="top">
 <th scope="row"><label for="bounce_maxmsg"><?php _e("Maximum number of emails that can be check per bounce batch", "alo-easymail") ?>:</label></th>
 <td><input type="text" name="bounce_maxmsg" value="<?php esc_attr_e( $bounce_settings['bounce_maxmsg'] ) ?>" id="bounce_maxmsg"  size="3" maxlength="3" />
 </td>
 </tr>
 
-<?php if ( $imap_installed ) : ?>
-<tr valign="top">
-<th scope="row"><label for=""><em><?php _e("Handle manually bounces now", "alo-easymail") ?>:</em></label></th>
-<td><input type="submit" name="check_bounces_now" class="button" value="<?php echo esc_attr(__("Save settings and handle manually bounces now", "alo-easymail") ); ?>" />
-</td>
-</tr>
-<?php endif; ?>
 
+<tr valign="top">
+	<th scope="row">
+		<h3 style="margin-bottom: 0"><?php _e("Update", "alo-easymail");?></h3>
+	</th>
+	<td></td>
+</tr>
+
+<tr valign="top">
+	<th scope="row"><label for="bounce_password"><?php _e("Password") ?>:</label></th>
+	<?php
+	if ( ! empty( $_POST['bounce_password'] ) ) {
+		$bounce_password = esc_attr( $_POST['bounce_password'] );
+		$bounce_password_style = '';
+	} else {
+		$bounce_password = '';
+		$bounce_password_style = 'border: 1px solid #990000';
+	} ?>
+	<td><input type="password" name="bounce_password" value="<?php echo $bounce_password ?>"  style="<?php echo $bounce_password_style ?>" id="bounce_password" size="30" maxlength="100" />
+	<span class="description"><?php _e("You have to enter the password because for security reason it cannot be stored in database", "alo-easymail"); ?>
+	</span>
+	</td>
+</tr>
+
+
+	<?php if ( $imap_installed ) : ?>
+		<tr valign="top">
+			<th scope="row"><label for=""><em><?php _e("Test the connection now", "alo-easymail") ?>:</em></label></th>
+			<td><input type="submit" name="test_bounce_connection" class="button" value="<?php echo esc_attr(__("Save settings and test now", "alo-easymail") ); ?>" />
+			</td>
+		</tr>
+		<tr valign="top">
+			<th scope="row"><label for=""><em><?php _e("Handle manually bounces now", "alo-easymail") ?>:</em></label></th>
+			<td><input type="submit" name="check_bounces_now" class="button-primary" value="<?php echo esc_attr(__("Save settings and handle manually bounces now", "alo-easymail") ); ?>" />
+			</td>
+		</tr>
+	<?php else : ?>
+		<tr valign="top">
+			<th scope="row"><input type="submit" name="submit" value="<?php _e('Update', 'alo-easymail') ?>" class="button-primary" /></th>
+			<td></td>
+		</tr>
+
+	<?php endif; ?>
 
 </tbody> </table>
 
-<p class="submit">
-<input type="hidden" name="user_ID" value="<?php echo (int) $user_ID ?>" />
-<input type="hidden" name="task" value="tab_bounces" /> <?php // reset task ?>
-<!--<span id="autosave"></span>-->
-<input type="submit" name="submit" value="<?php _e('Update', 'alo-easymail') ?>" class="button-primary" />
-</p>
+	<input type="hidden" name="user_ID" value="<?php echo (int) $user_ID ?>" />
+	<input type="hidden" name="task" value="tab_bounces" /> <?php // reset task ?>
 </form>
 
 </div> <!-- end bounces -->

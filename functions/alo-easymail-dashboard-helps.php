@@ -61,13 +61,20 @@ function alo_em_tooltip_head_scripts() {
 	global $pagenow, $wp_version, $typenow;
 	if ( version_compare ( $wp_version, '3.3', '<' ) ) return; // old WP, exit
 
-	if ( 'newsletter' == $typenow ) {
-		// Available pointers
+	$has_old_bounce_settings = false;
+	if ( $bounce_settings = get_option('alo_em_bounce_settings') ) {
+		if ( isset( $bounce_settings['bounce_password'] ) || isset( $bounce_settings['bounce_interval'] ) ) {
+			$has_old_bounce_settings = true;
+		}
+	}
+
+	if ( $has_old_bounce_settings || 'newsletter' == $typenow ) {
+		$change_bounce_setup = get_user_setting( 'alo_em_pointer_changed_bounce_setup', 0 );
 		$add_users = get_user_setting( 'alo_em_pointer_add_users', 0 );
 		$no_yet_recipients = get_user_setting( 'alo_em_pointer_no_yet_recipients', 0 );
 		$required_list = get_user_setting( 'alo_em_pointer_required_list', 0 );
 
-		if ( ! $add_users || ! $no_yet_recipients || ! $required_list ) {
+		if ( ! $change_bounce_setup || ! $add_users || ! $no_yet_recipients || ! $required_list ) {
 			wp_enqueue_style( 'wp-pointer' );
 			wp_enqueue_script( 'wp-pointer' );
 			wp_enqueue_script( 'utils' ); // needed for setUserSetting in js
@@ -152,6 +159,33 @@ function alo_em_print_pointer_footer_scripts() {
 		<?php
 	endif; // In newsletter list screen
 
+	// In dashboard, anywhere
+	$has_old_bounce_settings = false;
+	if ( $bounce_settings = get_option('alo_em_bounce_settings') ) {
+		if ( isset( $bounce_settings['bounce_password'] ) || isset( $bounce_settings['bounce_interval'] ) ) {
+			$has_old_bounce_settings = true;
+		}
+	}
+	if ( $has_old_bounce_settings && ! get_user_setting( 'alo_em_pointer_changed_bounce_setup', 0 ) ) :
+		$pointer_content = '<h3>Easymail | '. esc_js( __( 'Only manual bounce management', "alo-easymail") ) .'</h3>';
+		$pointer_content .= '<p>'. esc_js( __('The cron-based bounce management has been removed', 'alo-easymail') ) .". ";
+		$pointer_content .= esc_js( __('Visit the option page of newsletter menu to check bounces manually.', 'alo-easymail') ) .'</p>';
+		?>
+		<script type="text/javascript">
+			//<![CDATA[
+			jQuery(document).ready( function($) {
+				$('li#menu-posts-newsletter').pointer({
+					content: '<?php echo $pointer_content; ?>',
+					position: 'top',
+					close: function() { // Once the close button is hit
+						setUserSetting( 'alo_em_pointer_changed_bounce_setup', '1' );
+					}
+				}).pointer('open');
+			});
+			//]]>
+		</script>
+		<?php
+	endif;
 }
 
 

@@ -17,16 +17,6 @@ function alo_em_more_reccurences( $schedules ) {
 		'display' => 'EasyMail every ' .ALO_EM_INTERVAL_MIN. ' minutes'
 	);
 
-	// Set bounce schedule only if some bounce options are set
-	$bounce_settings = alo_em_bounce_settings ();
-	$bounce_interval = (int)$bounce_settings['bounce_interval'];
-	if ( $bounce_interval > 0 && is_email($bounce_settings['bounce_email']) && !empty($bounce_settings['bounce_host']) )
-	{
-		$schedules['alo_em_bounce'] =	array(
-			'interval' => 59 * 60 * $bounce_interval,
-			'display' => 'EasyMail every ' .$bounce_interval. ' hours'
-		);
-	}
 	return $schedules;
 }
 add_filter('cron_schedules', 'alo_em_more_reccurences', 300);
@@ -42,22 +32,8 @@ function alo_em_check_cron_scheduled() {
 	if( !wp_next_scheduled( 'alo_em_schedule' ) ) {
 		wp_schedule_event(time(), 'twicedaily', 'alo_em_schedule');
 	}
-
-	// Schedule bounce events, if bounce schedule key exists
-	if ( array_key_exists( 'alo_em_bounce', wp_get_schedules() ) )
-	{
-		if( !wp_next_scheduled( 'alo_em_bounce_handle' ) ) {
-			wp_schedule_event(time()+60, 'alo_em_bounce', 'alo_em_bounce_handle');
-		}
-	}
-
 }
 add_action('wp', 'alo_em_check_cron_scheduled');
-
-
-// Schedule bounce events
-add_action('alo_em_bounce_handle', 'alo_em_handle_bounces');
-
 
 
 /**

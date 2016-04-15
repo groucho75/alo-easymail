@@ -25,7 +25,7 @@ function alo_em_bounce_settings () {
 		'bounce_password' 	=> '',
 		'bounce_flags' 		=> '', 	// optional: e.g.: /ssl/novalidate-cert
 		'bounce_maxmsg'		=> 30,	// max number of msgs will be examinated per batch
-		'bounce_interval'	=> 6,	// auto check bounces every N hours
+		'bounce_interval'	=> '',	// auto check bounces every N hours
 	);
 	$bounce_saved = get_option('alo_em_bounce_settings');
 
@@ -51,11 +51,17 @@ add_filter( 'alo_easymail_newsletter_headers', 'alo_em_add_custom_headers', 100,
 /**
  * Make an IMAP connection using settings
  *
+ * @param array the POST array
  * @return mix		the IMAP stream or FALSE if connection attempt fails
  */
-function alo_em_bounce_connect () {
+function alo_em_bounce_connect ( $_post=array() ) {
 	$bounce_settings = alo_em_bounce_settings ();
-	return @imap_open("{" . $bounce_settings['bounce_host'] .':'.$bounce_settings['bounce_port']. "/". $bounce_settings['bounce_protocol'] . $bounce_settings['bounce_flags'] . "}" . $bounce_settings['bounce_folder'], $bounce_settings['bounce_username'], $bounce_settings['bounce_password'] );
+
+	if ( ! empty( $_post['bounce_password'] ) ) {
+		$bounce_settings['bounce_password'] = sanitize_text_field( $_post['bounce_password'] );
+		return @imap_open("{" . $bounce_settings['bounce_host'] .':'.$bounce_settings['bounce_port']. "/". $bounce_settings['bounce_protocol'] . $bounce_settings['bounce_flags'] . "}" . $bounce_settings['bounce_folder'], $bounce_settings['bounce_username'], $bounce_settings['bounce_password'] );
+	}
+	return false;
 }
 
 
