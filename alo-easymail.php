@@ -452,9 +452,10 @@ function alo_em_init_method() {
 		wp_clear_scheduled_hook('alo_em_bounce_handle');
 	}
 	if ( $bounce_settings = get_option('alo_em_bounce_settings') ) {
-		if ( isset( $bounce_settings['bounce_password'], $bounce_settings['bounce_interval'] ) ) {
+		if ( isset( $bounce_settings['bounce_password'] ) || isset( $bounce_settings['bounce_interval'] ) ) {
 			unset( $bounce_settings['bounce_password'], $bounce_settings['bounce_interval'] );
 			update_option('alo_em_bounce_settings', $bounce_settings);
+			set_user_setting( 'alo_em_pointer_changed_bounce_setup', 0 );
 		}
 	}
 }
