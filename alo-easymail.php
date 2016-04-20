@@ -352,7 +352,7 @@ function alo_em_uninstall() {
     // delete cron batch sending
     wp_clear_scheduled_hook('alo_em_batch');
     wp_clear_scheduled_hook('ALO_em_batch'); // old versions
-    // delete optional bounce cron
+    // delete deprecated bounce cron
     wp_clear_scheduled_hook('alo_em_bounce_handle');
     
     // if required delete all plugin data (options, db tables, page)
