@@ -14,6 +14,11 @@ global $user_ID;
 
 <?php // action and feedback
 
+// order default
+if ( empty( $_GET["sortby"] ) ) {
+	$_GET["sortby"] = "join_date";
+}
+
 // Base link
 $link_base = "edit.php?post_type=newsletter&page=alo-easymail/pages/alo-easymail-admin-subscribers.php";
 
@@ -83,11 +88,6 @@ if ( (int)$items_per_page == 0 ) $items_per_page = 20;
 if(isset($_REQUEST['paged']) and $_REQUEST['paged']) {
 	$page = intval($_REQUEST['paged']);
 	$offset = ($page - 1) * $items_per_page;
-}
-
-// order default
-if( !isset($_GET['sortby']) ) {
-	$_GET['sortby'] = 'join_date'; //'ID';
 }
 
 // string to search

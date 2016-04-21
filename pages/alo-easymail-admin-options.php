@@ -219,14 +219,14 @@ if ( isset($_POST['submit']) ) {
 				foreach ( $roles as $key )
 				{
 					if ( $key == 'administrator' ) continue; // skip admin
-					
+
 					if ( $role_options && in_array( $key, $role_options ) )
 					{
-						foreach ( $caps as $cap ) 	${'role_'.$key}->add_cap( $cap );
+						foreach ( $caps as $cap ) ${'role_'.$key}->add_cap( $cap );
 					}
 					else
 					{
-						foreach ( $caps as $cap ) 	${'role_'.$key}->remove_cap( $cap );
+						foreach ( $caps as $cap ) ${'role_'.$key}->remove_cap( $cap );
 					}
 				}
 			
