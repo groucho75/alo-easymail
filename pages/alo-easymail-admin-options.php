@@ -1545,7 +1545,7 @@ endforeach; ?>
 
 <tr valign="top">
 	<th scope="row">
-		<h3 style="margin-bottom: 0"><?php _e("Update", "alo-easymail");?></h3>
+		<h3 style="margin-bottom: 0"><?php _e("Handle manually bounces now", "alo-easymail") ?></h3>
 	</th>
 	<td></td>
 </tr>
