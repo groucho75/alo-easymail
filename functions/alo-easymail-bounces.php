@@ -82,7 +82,9 @@ function alo_em_handle_bounces ( $report=false )
 
 	$bounce_settings = alo_em_bounce_settings ();
 
-	$conn = alo_em_bounce_connect();
+	if ( empty( $_POST['bounce_password'] ) ) return FALSE;
+	
+	$conn = alo_em_bounce_connect( $_POST );
 
 	if ( ! $conn ) return FALSE;
 
