@@ -97,7 +97,7 @@ msgstr "Tous les abonnés"
 #: alo-easymail-widget.php:181
 #@ alo-easymail
 msgid "Allow users to opt in/out of email"
-msgstr "Permettre aux utilisateurs de s'abonner ou d'annuler l'abonnement à la Lettre électronique"
+msgstr "Permettre aux utilisateurs de s'abonner ou d'annuler l'abonnement à l'infolettre"
 
 #: alo-easymail_subscribers.php:153
 #: alo-easymail_subscribers.php:200
@@ -392,7 +392,7 @@ msgstr "Fait apparaitre la page inscription le menu ou le widget qui liste toute
 #: alo-easymail.php:1978
 #@ alo-easymail
 msgid "If you did not ask for this subscription ignore this message."
-msgstr "Si vous n'avez pas demandé d'abonnement à notre Lettre électronique, veuillez simplement ignorer ce message."
+msgstr "Si vous n'avez pas demandé d'abonnement à notre infolettre, veuillez simplement ignorer ce message."
 
 #: alo-easymail_options.php:413
 #@ alo-easymail
@@ -507,19 +507,19 @@ msgstr "Nouvelle liste"
 #: alo-easymail_options.php:444
 #@ alo-easymail
 msgid "Newsletter"
-msgstr "Lettre électronique"
+msgstr "Infolettre"
 
 #: alo-easymail.php:1433
 #: alo-easymail_report.php:33
 #@ alo-easymail
 msgid "Newsletter report"
-msgstr "Rapport des Lettres électroniques"
+msgstr "Rapport des Infolettres"
 
 #: alo-easymail.php:1581
 #: alo-easymail_subscribers.php:356
 #@ alo-easymail
 msgid "Newsletter subscribers"
-msgstr "Abonnés à la Lettre électronique"
+msgstr "Abonnés à l'infolettre"
 
 #: alo-easymail.php:663
 #: alo-easymail.php:674
@@ -529,12 +529,12 @@ msgstr "Abonnés à la Lettre électronique"
 #: alo-easymail.php:2041
 #@ alo-easymail
 msgid "Newsletters"
-msgstr "Les Lettres électroniques"
+msgstr "Infolettre"
 
 #: alo-easymail.php:1808
 #@ alo-easymail
 msgid "Newsletters scheduled for sending"
-msgstr "Lettre électronique planifiés pour l'expédition"
+msgstr "Infolettres planifiés pour l'expédition"
 
 #: alo-easymail.php:1218
 #: alo-easymail.php:1654
@@ -615,12 +615,12 @@ msgstr "Nombre d'articles récents à afficher"
 #: alo-easymail_options.php:450
 #@ alo-easymail
 msgid "Number of recent posts to show in the dropdown list of the newsletter sending form"
-msgstr "Nombre de posts récents à afficher dans la liste déroulante du formulaire d'envoi de Lettre électronique"
+msgstr "Nombre de posts récents à afficher dans la liste déroulante du formulaire d'envoi d'infolettre"
 
 #: alo-easymail_options.php:413
 #@ alo-easymail
 msgid "On plugin deactivation, all plugin options, preferences and database tables (including all newsletters and subscribers data) will be definitely deleted"
-msgstr "En desactivant cette extension, toutes les options, préférences et tables de la base de données (incluant les Lettres électroniques et les données des abonnés) seront définitivement supprimés"
+msgstr "En desactivant cette extension, toutes les options, préférences et tables de la base de données (incluant les infolettres et les données des abonnés) seront définitivement supprimés"
 
 #: alo-easymail_options.php:656
 #@ alo-easymail
@@ -775,7 +775,7 @@ msgstr "Sujet"
 #: alo-easymail_functions.php:1268
 #@ alo-easymail
 msgid "Subscribe"
-msgstr "S&#39;abonner à la Lettre électronique"
+msgstr "S&#39;abonner"
 
 #: alo-easymail_subscribers.php:26
 #@ alo-easymail
@@ -888,7 +888,7 @@ msgstr "Un décompte du nombre de destinataires ayant ouvert le message sera ten
 #: alo-easymail_options.php:1006
 #@ alo-easymail
 msgid "The user with this capability can manage own newsletters (view the report, delete)"
-msgstr "L'utilisateur avec ces droits peut gérer ses propre Lettre électronique (voir les rapports, supprimer)"
+msgstr "L'utilisateur avec ces droits peut gérer ses propre infolettres (voir les rapports, supprimer)"
 
 #: alo-easymail_options.php:1047
 #@ alo-easymail
@@ -920,7 +920,7 @@ msgstr "Il n'y a pas de liste valide"
 #: alo-easymail.php:1819
 #@ alo-easymail
 msgid "There are no newsletters in queue"
-msgstr "Pas de Lettre électronique en attente"
+msgstr "Pas d'infolettre en attente"
 
 #: alo-easymail.php:1440
 #: alo-easymail_subscribers.php:590
@@ -952,12 +952,12 @@ msgstr "Si vous rencontrez des problèmes, essayer de changer l'extension de .cs
 #: alo-easymail_subscr-page.php:48
 #@ alo-easymail
 msgid "To modify your subscription to mailing lists use this form"
-msgstr "Pour modifier votre inscription à la Lettre électronique, utilisez ce formulaire"
+msgstr "Pour modifier votre inscription à l'infolettre, utilisez ce formulaire"
 
 #: alo-easymail_subscr-page.php:80
 #@ alo-easymail
 msgid "To unsubscribe the newsletter for good click this button"
-msgstr "Pour vous désabonner à la Lettre électronique, cliquer sur ce bouton"
+msgstr "Pour vous désabonner de l'infolettre, cliquer sur ce bouton"
 
 #: alo-easymail_subscr-page.php:96
 #@ alo-easymail
@@ -1059,7 +1059,7 @@ msgstr "Oui, Je comprends"
 #: alo-easymail_subscr-page.php:24
 #@ alo-easymail
 msgid "Yes, I would like to receive the Newsletter"
-msgstr "Oui, j'aimerais recevoir votre Lettre électronique"
+msgstr "Oui, j'aimerais recevoir votre infolettre"
 
 #: alo-easymail-widget.php:20
 #: alo-easymail.php:1878
@@ -1067,12 +1067,12 @@ msgstr "Oui, j'aimerais recevoir votre Lettre électronique"
 #: alo-easymail_options.php:669
 #@ alo-easymail
 msgid "You can also sign up for specific lists"
-msgstr "Vous pouvez également vous inscrire à des Lettres électroniques spécifiques"
+msgstr "Vous pouvez également vous inscrire à des infolettres spécifiques"
 
 #: alo-easymail_subscribers.php:408
 #@ alo-easymail
 msgid "You can export newsletter subscribers: the plugin shows them on screen so you can copy and paste them into a text file or into any application"
-msgstr "Vous pouvez exporter la liste des abonnés de la Lettre électronique : l'extension les affiche à l'écran de sorte qu'il devient possible de les copier/coller dans un fichier texte ou une application."
+msgstr "Vous pouvez exporter la liste des abonnés de l'infolettre : l'extension les affiche à l'écran de sorte qu'il devient possible de les copier/coller dans un fichier texte ou une application."
 
 #: alo-easymail_subscribers.php:354
 #@ alo-easymail
@@ -1094,18 +1094,18 @@ msgstr "Vous pouvez configurer les listes de diffusion. Pour chacune vous devez 
 #: alo-easymail_preview.php:120
 #@ alo-easymail
 msgid "You have received this message because you subscribed to our newsletter. If you want to unsubscribe: "
-msgstr "Vous avez reçu ce message parce que vous vous êtes abonné à notre Lettre électronique.  Si vous désirez annuler votre abonnement :"
+msgstr "Vous avez reçu ce message parce que vous vous êtes abonné à notre infolettre.  Si vous désirez annuler votre abonnement :"
 
 #: alo-easymail_subscr-page.php:132
 #@ alo-easymail
 msgid "Your subscription to mailing lists successfully updated"
-msgstr "Votre abonnement à nos Lettres électroniques a été mise à jour."
+msgstr "Votre abonnement à notre infolettre a été mise à jour."
 
 #: alo-easymail_functions.php:1266
 #: alo-easymail_subscr-page.php:37
 #@ alo-easymail
 msgid "Your subscription was successfully activated. You will receive the next newsletter. Thank you."
-msgstr "Votre abonnement a été enregistré avec succès. Vous recevrez notre prochain Lettre électronique par courriel. Merci!"
+msgstr "Votre abonnement a été enregistré avec succès. Vous recevrez notre prochain infolettre par courriel. Merci!"
 
 #: alo-easymail_subscr-page.php:93
 #@ alo-easymail
@@ -1230,61 +1230,61 @@ msgstr ""
 #: alo-easymail.php:2021
 #@ alo-easymail
 msgid "Add New Newsletter"
-msgstr "Ajouter une Lettre électronique"
+msgstr "Ajouter une infolettre"
 
 #: alo-easymail.php:667
 #@ alo-easymail
 msgid "Edit Newsletter"
-msgstr "Editer Lettre électronique"
+msgstr "Editer infolettre"
 
 #: alo-easymail.php:668
 #@ alo-easymail
 msgid "New Newsletter"
-msgstr "Nouvelle Lettre électronique"
+msgstr "Nouvelle infolettre"
 
 #: alo-easymail.php:669
 #@ alo-easymail
 msgid "View Newsletter"
-msgstr "Voir Lettre électronique"
+msgstr "Voir infolettre"
 
 #: alo-easymail.php:670
 #@ alo-easymail
 msgid "Search Newsletters"
-msgstr "Rechercher Lettre électronique"
+msgstr "Rechercher infolettre"
 
 #: alo-easymail.php:671
 #@ alo-easymail
 msgid "No Newsletters found"
-msgstr "Aucune Lettre électronique trouvée"
+msgstr "Aucune infolettre trouvée"
 
 #: alo-easymail.php:672
 #@ alo-easymail
 msgid "No Newsletters found in Trash"
-msgstr "Aucune Lettre électronique trouvé dans la corbeille"
+msgstr "Aucune infolettre trouvé dans la corbeille"
 
 #: alo-easymail.php:673
 #: alo-easymail.php:675
 #@ alo-easymail
 msgid "Parent Newsletter"
-msgstr "Lettre électronique parente"
+msgstr "infolettre parente"
 
 #: alo-easymail.php:788
 #, php-format
 #@ alo-easymail
 msgid " <a href=\"%s\">View Newsletter</a>"
-msgstr " <a href=\"%s\">Voir la Lettre électronique</a>"
+msgstr " <a href=\"%s\">Voir l'infolettre</a>"
 
 #: alo-easymail.php:789
 #, php-format
 #@ alo-easymail
 msgid " <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
-msgstr " <a target=\"_blank\" href=\"%s\">Prévisualiser la Lettre électronique</a>"
+msgstr " <a target=\"_blank\" href=\"%s\">Prévisualiser l'infolettre</a>"
 
 #: alo-easymail.php:794
 #: alo-easymail.php:797
 #@ alo-easymail
 msgid "Newsletter updated."
-msgstr "Lettre électronique mise à jour"
+msgstr "infolettre mise à jour"
 
 #: alo-easymail.php:795
 #@ alo-easymail
@@ -1301,29 +1301,29 @@ msgstr "Champ additionnel supprimé."
 #, php-format
 #@ alo-easymail
 msgid "Newsletter restored to revision from %s"
-msgstr "Lettre électronique restauré depuis la révision %s"
+msgstr "infolettre restauré depuis la révision %s"
 
 #: alo-easymail.php:800
 #@ alo-easymail
 msgid "Newsletter published."
-msgstr "Lettre électronique publiée."
+msgstr "infolettre publiée."
 
 #: alo-easymail.php:801
 #@ alo-easymail
 msgid "Newsletter saved."
-msgstr "Lettre électronique sauvegardée."
+msgstr "infolettre sauvegardée."
 
 #: alo-easymail.php:802
 #, php-format
 #@ alo-easymail
 msgid "Newsletter submitted. <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
-msgstr "Lettre électronique envoyée <a target=\"_blank\" href=\"%s\">Prévisualiser la Lettre électronique</a>"
+msgstr "infolettre envoyée <a target=\"_blank\" href=\"%s\">Prévisualiser l'infolettre</a>"
 
 #: alo-easymail.php:803
 #, php-format
 #@ alo-easymail
 msgid "Newsletter scheduled for: <strong>%1$s</strong>."
-msgstr "Lettre électronique envoi planifié pour: <strong>%1$s</strong>."
+msgstr "infolettre envoi planifié pour: <strong>%1$s</strong>."
 
 #: alo-easymail.php:805
 #: alo-easymail.php:1080
@@ -1350,7 +1350,7 @@ msgstr ""
 #: alo-easymail.php:851
 #@ alo-easymail
 msgid "Newsletter status"
-msgstr "Lettre électronique status"
+msgstr "infolettre status"
 
 #: alo-easymail.php:852
 #: alo-easymail_report.php:89
@@ -1458,12 +1458,12 @@ msgstr "Prêt à être envoyé par un administrateur"
 #: alo-easymail.php:1234
 #@ alo-easymail
 msgid "Newsletter fields"
-msgstr "Champs de la Lettre électronique"
+msgstr "Champs de l'infolettre"
 
 #: alo-easymail.php:1434
 #@ alo-easymail
 msgid "Newsletter subscribers creation"
-msgstr "Construction des destinataires de la Lettre électronique"
+msgstr "Construction des destinataires de l'infolettre"
 
 #: alo-easymail.php:1442
 #: alo-easymail_subscribers.php:869
@@ -1490,7 +1490,7 @@ msgstr "Destinataire ajouté"
 #: alo-easymail.php:1446
 #@ alo-easymail
 msgid "Newsletter successfully sent to recipients"
-msgstr "Lettre électronique envoyée correctement aux destinataires"
+msgstr "infolettre envoyée correctement aux destinataires"
 
 #: alo-easymail.php:1517
 #@ alo-easymail
@@ -1510,7 +1510,7 @@ msgstr "Destinataires sélectionnés"
 #: alo-easymail.php:1533
 #@ alo-easymail
 msgid "This newsletter was already sent"
-msgstr "Cette Lettre électronique à déjà été envoyée"
+msgstr "Cette infolettre à déjà été envoyée"
 
 #: alo-easymail.php:1539
 #@ alo-easymail
@@ -1583,7 +1583,7 @@ msgstr ""
 #, php-format
 #@ alo-easymail
 msgid "Confirm your subscription to %BLOGNAME% Newsletter"
-msgstr "Confirmer votre abonnement à la Lettre électronique de %BLOGNAME%"
+msgstr "Confirmer votre abonnement à l'infolettre de %BLOGNAME%"
 
 #: alo-easymail.php:1976
 #, php-format
@@ -1593,7 +1593,7 @@ msgid ""
 "to complete your subscription to %BLOGNAME% newsletter you need to click on the following link (or paste it in the address bar of your browser):\n"
 msgstr ""
 "Bonjour %NAME%\n"
-" pour valider votre abonnement à la Lettre électronique de %BLOGNAME% vous devez cliquer sur le lien suivant (ou copié collé l'url dans la barre d'adresse de votre navigateur):\n"
+" pour valider votre abonnement à l'infolettre de %BLOGNAME% vous devez cliquer sur le lien suivant (ou copié collé l'url dans la barre d'adresse de votre navigateur):\n"
 
 #: alo-easymail.php:2028
 #: alo-easymail.php:2052
@@ -1610,7 +1610,7 @@ msgstr ""
 #: alo-easymail_options.php:580
 #@ alo-easymail
 msgid "all messages will be sent to the newsletter author"
-msgstr "tous les messages ont été envoyés à l'auteur de la Lettre électronique"
+msgstr "tous les messages ont été envoyés à l'auteur de l'infolettre"
 
 #: alo-easymail.php:2114
 #: alo-easymail_options.php:581
@@ -1637,7 +1637,7 @@ msgstr ""
 #: alo-easymail.php:2442
 #@ alo-easymail
 msgid "Before sending the newsletter you have to select recipients."
-msgstr "Avant d'envoyer la Lettre électronique vous devez sélectionner vos destinataires."
+msgstr "Avant d'envoyer l'infolettre vous devez sélectionner vos destinataires."
 
 #: alo-easymail.php:2442
 #: alo-easymail.php:2464
@@ -1649,18 +1649,18 @@ msgstr "Cliquer sur le lien pour le faire maintenant."
 #: alo-easymail.php:2546
 #@ alo-easymail
 msgid "You have to prepare the list of recipients to send the newsletter to"
-msgstr "Il vous faut préparer une liste de destinataires pour envoyer la Lettre électronique à"
+msgstr "Il vous faut préparer une liste de destinataires pour envoyer l'infolettre à"
 
 #: alo-easymail.php:2499
 #: alo-easymail_preview.php:92
 #@ alo-easymail
 msgid "Preview in newsletter theme"
-msgstr "Prévisualiser dans le thème de la Lettre électronique"
+msgstr "Prévisualiser dans le thème de l'infolettre"
 
 #: alo-easymail.php:2547
 #@ alo-easymail
 msgid "You can add the recipients to the sending queue (best choice) or send them the newsletter immediately (suggested only if few recipients)"
-msgstr "Vous pouvez ajouter les destinataires à la liste d'envoi (conseillé) ou leur envoyer la Lettre électronique immédiatement (conseillé si peu de destinataires)"
+msgstr "Vous pouvez ajouter les destinataires à la liste d'envoi (conseillé) ou leur envoyer l'infolettre immédiatement (conseillé si peu de destinataires)"
 
 #: alo-easymail.php:2548
 #@ alo-easymail
@@ -1670,7 +1670,7 @@ msgstr "ATTENTION: ne pas fermer ou rafraichir cette fenêtre du navigateur dura
 #: alo-easymail.php:2550
 #@ alo-easymail
 msgid "You can send the newsletter as test to"
-msgstr "Vous pouvez la Lettre électronique en tant que test à "
+msgstr "Vous pouvez l'infolettre en tant que test à "
 
 #: alo-easymail.php:2567
 #@ alo-easymail
@@ -1771,12 +1771,12 @@ msgstr "Avant d'éditer d'autres champs, vous devez cliquer sur l'abonnement de 
 #: alo-easymail_functions.php:1745
 #@ alo-easymail
 msgid "This newsletter is available only in html"
-msgstr "Cette Lettre électronique n'est disponible qu'au format html"
+msgstr "Cette infolettre n'est disponible qu'au format html"
 
 #: alo-easymail_functions.php:1987
 #@ alo-easymail
 msgid "This tag now does not work because the online publication of newsletters is disabled"
-msgstr "Ce mot clé ne fonctionne pas car la publication en ligne des Lettre électronique est désactivée"
+msgstr "Ce mot clé ne fonctionne pas car la publication en ligne des infolettres est désactivée"
 
 #: alo-easymail_functions.php:1987
 #@ alo-easymail
@@ -1802,7 +1802,7 @@ msgstr "URL pour se désabonner."
 #: alo-easymail_functions.php:1992
 #@ alo-easymail
 msgid "Newsletter tags"
-msgstr "Mots clés de la Lettre électronique"
+msgstr "Mots clés de l'infolettre"
 
 #: alo-easymail_functions.php:1993
 #@ alo-easymail
@@ -1817,12 +1817,12 @@ msgstr "URL de la version publiée en ligne."
 #: alo-easymail_functions.php:1995
 #@ alo-easymail
 msgid "Title of the newsletter."
-msgstr "Titre de la Lettre électronique."
+msgstr "Titre de l'infolettre."
 
 #: alo-easymail_functions.php:1996
 #@ alo-easymail
 msgid "Date of the newsletter."
-msgstr "Date de la Lettre électronique."
+msgstr "Date de l'infolettre."
 
 #: alo-easymail_functions.php:1997
 #@ alo-easymail
@@ -1832,7 +1832,7 @@ msgstr ""
 #: alo-easymail_functions.php:1998
 #@ alo-easymail
 msgid "Image gallery of newsletter"
-msgstr "Gallerie d'image de la Lettre électronique"
+msgstr "Gallerie d'image de l'infolettre"
 
 #: alo-easymail_functions.php:2000
 #@ alo-easymail
@@ -1869,7 +1869,7 @@ msgstr "La gallerie image du post"
 #: alo-easymail_preview.php:131
 #@ alo-easymail
 msgid "To read the newsletter online you can visit this link:"
-msgstr "Pour lire la Lettre électronique en ligne cliquez sur ce lien:"
+msgstr "Pour lire l'infolettre en ligne cliquez sur ce lien:"
 
 #: alo-easymail_functions.php:2224
 #: alo-easymail_functions.php:2241
@@ -2011,22 +2011,22 @@ msgstr "Si coché, le widget ne sera pas visible par les utilisateurs enregistr�
 #: alo-easymail_options.php:375
 #@ alo-easymail
 msgid "They can always edit newsletter subscription in profile page"
-msgstr "Ils peuvent toujours modifier l'abonnement à la Lettre électronique dans leur page d'édition de profil"
+msgstr "Ils peuvent toujours modifier l'abonnement à l'infolettre dans leur page d'édition de profil"
 
 #: alo-easymail_options.php:387
 #@ alo-easymail
 msgid "Publish newsletters online"
-msgstr "Publier la Lettre électronique en ligne"
+msgstr "Publier l'infolettre en ligne"
 
 #: alo-easymail_options.php:388
 #@ alo-easymail
 msgid "If yes, newsletters automatically are published into your blog so they can be read online"
-msgstr "Si coché, les Lettres électroniques seront automatiquement publiée sur le site Internet et lisibles directement en ligne"
+msgstr "Si coché, les infolettres seront automatiquement publiée sur le site Internet et lisibles directement en ligne"
 
 #: alo-easymail_options.php:388
 #@ alo-easymail
 msgid "If no, newsletters are not available online"
-msgstr "Si pas coché, les Lettres électroniques ne seront pas disponibles en ligne"
+msgstr "Si pas coché, les infolettres ne seront pas disponibles en ligne"
 
 #: alo-easymail_options.php:400
 #@ alo-easymail
@@ -2046,12 +2046,12 @@ msgstr "Nom de l'expéditeur"
 #: alo-easymail_options.php:480
 #@ alo-easymail
 msgid "Filters to the newsletter text"
-msgstr "Filtre du texte de la Lettre électronique"
+msgstr "Filtre du texte de l'infolettre"
 
 #: alo-easymail_options.php:482
 #@ alo-easymail
 msgid "Apply 'the_content' filters and shortcodes to newsletter content"
-msgstr "Applique le filtre 'the_content' et les shortcodes au contenu de la Lettre électronique"
+msgstr "Applique le filtre 'the_content' et les shortcodes au contenu de l'infolettre"
 
 #: alo-easymail_options.php:495
 #@ alo-easymail
