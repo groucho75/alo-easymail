@@ -161,7 +161,7 @@ function alo_em_save_profile_optin($user_id) {
 				$fields['email'] = $user_email; //edit : added all this line
 				$fields['name'] = $fullname; //edit : added all this line
 				alo_em_add_subscriber( $fields, 1, alo_em_get_language(true) );//edit : orig: alo_em_add_subscriber( $user_email, $fullname, 1, alo_em_get_language(true) );
-				do_action ( 'alo_easymail_new_subscriber_added', alo_em_is_subscriber( $user_email ), $user_id );
+				do_action ( 'alo_easymail_new_subscriber_added', alo_em_get_subscriber( $user_email ), $user_id );
 			}
 
 			// if subscribing, save also lists
