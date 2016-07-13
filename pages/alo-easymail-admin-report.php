@@ -24,7 +24,7 @@ if ( isset( $_REQUEST['newsletter'] ) ) {
 	if ( get_post_type( $newsletter ) != "newsletter" ) wp_die( __('The required newsletter does not exist', "alo-easymail") ); 
 	if ( !get_post( $newsletter ) ) wp_die( __('The required newsletter does not exist', "alo-easymail") );
 	if ( !alo_em_user_can_edit_newsletter( $newsletter ) ) wp_die( __('Cheatin&#8217; uh?') );
-	$offset =  isset( $_REQUEST['offset'] ) ? $_REQUEST['offset'] : 0;
+	$offset =  ( isset( $_REQUEST['offset'] ) && is_numeric( $_REQUEST['offset'] ) ) ? (int)$_REQUEST['offset'] : 0;
 } else {
 	wp_die(__('Cheatin&#8217; uh?') );
 }
