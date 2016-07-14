@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.5
-Stable tag: 2.9.1
+Stable tag: 2.9.2
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -84,8 +84,12 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Changelog ==
 
+= 2.9.2 =
+* Fixed: now right param is passed to action hook on profile optin save
+* Fixed: properly escape a query var in report page
+
 = 2.9.1 =
-* Fixed: the bounce manuanl check now should work properly
+* Fixed: the bounce manual check now should work properly
 
 = 2.9.0 =
 * Updated: the cron-based bounce management is removed, now it works only manually
@@ -119,11 +123,5 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Upgrade Notice ==
 
-= 2.8.2 =
-Fixed a CRSF/XSS vulnerability.
-
-= 2.9.0 =
-For security reason the cron-based bounce management is removed, now it works only manually
-
-= 2.9.1 =
-Fixed the bounce management routine
+= 2.9.2 =
+Fixed a bug on profile optin save
