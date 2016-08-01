@@ -84,6 +84,9 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Changelog ==
 
+= 2.9.3 =
+* Fixed: a CSRF issue
+
 = 2.9.2 =
 * Fixed: now right param is passed to action hook on profile optin save
 * Fixed: properly escape a query var in report page
@@ -123,5 +126,5 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Upgrade Notice ==
 
-= 2.9.2 =
-Fixed a bug on profile optin save
+= 2.9.3 =
+Fixed a CSRF issue
