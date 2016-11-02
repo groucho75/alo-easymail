@@ -27,11 +27,18 @@ add_action('wp_enqueue_scripts', 'alo_em_load_scripts');
  * Exclude the easymail page from pages' list
  */
 function alo_em_exclude_page( $pages ) {
-	if ( !is_admin() ) {
-		for ( $i=0; $i<count($pages); $i++ ) {
-			$page = & $pages[$i];
-			if ($page->ID == get_option('alo_em_subsc_page')) unset ($pages[$i]);
+	if ( !is_admin() )
+	{
+		$indexes = array();
+		foreach ($pages as $index => $page) {
+			if ($page->ID == get_option('alo_em_subsc_page'))
+				$indexes[] = $index;
 		}
+		foreach ($indexes as $index) {
+			if (isset($pages[$index]))
+				unset($pages[$index]);
+		}
+		unset($indexes);
 	}
 	return $pages;
 }
