@@ -30,8 +30,9 @@ function alo_em_exclude_page( $pages ) {
 	if ( !is_admin() )
 	{
 		$indexes = array();
+		$opt = get_option('alo_em_subsc_page');
 		foreach ($pages as $index => $page) {
-			if ($page->ID == get_option('alo_em_subsc_page'))
+			if ($page->ID == $opt)
 				$indexes[] = $index;
 		}
 		foreach ($indexes as $index) {
