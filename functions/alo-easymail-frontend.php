@@ -30,9 +30,11 @@ function alo_em_exclude_page( $pages ) {
 	if ( !is_admin() )
 	{
 		$opt = get_option('alo_em_subsc_page');
-		foreach ($pages as $index => $page) {
-			if ( $opt && $page->ID == $opt ) {
-				unset ( $pages[$index] );
+		if ( $opt && is_array($pages) ) {
+			foreach ($pages as $index => $page) {
+				if ( $page->ID == $opt ) {
+					unset ( $pages[$index] );
+				}
 			}
 		}
 	}
