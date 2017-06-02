@@ -29,17 +29,12 @@ add_action('wp_enqueue_scripts', 'alo_em_load_scripts');
 function alo_em_exclude_page( $pages ) {
 	if ( !is_admin() )
 	{
-		$indexes = array();
 		$opt = get_option('alo_em_subsc_page');
 		foreach ($pages as $index => $page) {
-			if ($page->ID == $opt)
-				$indexes[] = $index;
+			if ( $opt && $page->ID == $opt ) {
+				unset ( $pages[$index] );
+			}
 		}
-		foreach ($indexes as $index) {
-			if (isset($pages[$index]))
-				unset($pages[$index]);
-		}
-		unset($indexes);
 	}
 	return $pages;
 }
