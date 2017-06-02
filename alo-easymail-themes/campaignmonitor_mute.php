@@ -32,6 +32,7 @@ if ( !defined('ABSPATH') ) include_once('../../../../wp-load.php');
 			.trxtshadow-2 {
 				text-shadow: #768296 0px -1px 0px;
 			}
+			img { max-width: 100%; height: auto }
 		</style>
 	</head>
 	<body marginheight="0" topmargin="0" marginwidth="0" leftmargin="0" background="" style="margin: 0px; background-color: #eee; background-image: url(''); background-repeat: repeat;" bgcolor="">
