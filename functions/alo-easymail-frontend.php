@@ -286,7 +286,6 @@ add_action('wp_ajax_nopriv_alo_em_pubblic_form_check', 'alo_em_pubblic_form_call
 // For logged-in users
 function alo_em_user_form_callback() {
 	global $wpdb, $user_ID, $user_email, $current_user;
-	get_currentuserinfo();
 	// Nonce error make exit now
 	if ( ! wp_verify_nonce($_POST['alo_em_nonce'], 'alo_em_form') ) {
 		$output = esc_js($_POST['alo_easymail_txt_generic_error']) . ".<br />";
