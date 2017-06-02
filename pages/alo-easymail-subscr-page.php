@@ -22,11 +22,13 @@ $email  = ( is_email($concat_email) ) ? $concat_email : false;
 $unikey = ( get_query_var('uk') ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', get_query_var('uk'))  : false;
 $action = ( get_query_var('ac') && in_array( get_query_var('ac'), $allowed_actions) ) ? get_query_var('ac') : false;
 
+$classfeedback_ok  = apply_filters ( 'alo_easymail_widget_ok_class', 'alo_easymail_widget_ok' );  // Hook
+$classfeedback_err = apply_filters ( 'alo_easymail_widget_error_class', 'alo_easymail_widget_error' );  // Hook
 
 // If there is not an activation/unsubscribe request
 if ( !$action || !$email || alo_em_can_access_subscrpage ($email, $unikey) == false ) : // if cannot
 	// if there is action show error msg
-	if(get_query_var('ac')) echo "<p>".__("Error during operation.", "alo-easymail") ."</p>";
+	if(get_query_var('ac')) echo "<p class=\"". $classfeedback_err ."\">".__("Error during operation.", "alo-easymail") ."</p>";
 	
 	$optin_txt = ( alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_optin_msg', false) !="") ? alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_optin_msg', false) : __("Yes, I would like to receive the Newsletter", "alo-easymail"); 
     echo "<div id='alo_easymail_page'>";
@@ -39,9 +41,9 @@ else: // if can go on
 // Activate
 if ($email && $action == 'activate') {
     if (alo_em_edit_subscriber_state_by_email($email, "1", $unikey) === FALSE) {
-        echo "<p>".__("Error during activation. Please check the activation link.", "alo-easymail")."</p>";
+        echo "<p class=\"". $classfeedback_err ."\">".__("Error during activation. Please check the activation link.", "alo-easymail")."</p>";
     } else {
-        echo "<p>".__("Your subscription was successfully activated. You will receive the next newsletter. Thank you.", "alo-easymail")."</p>";
+        echo "<p class=\"". $classfeedback_ok ."\">".__("Your subscription was successfully activated. You will receive the next newsletter. Thank you.", "alo-easymail")."</p>";
         do_action ( 'alo_easymail_subscriber_updated', $email, $email );
         do_action ( 'alo_easymail_subscriber_activated', $email );
     }
@@ -97,11 +99,11 @@ if ($email && $action == 'unsubscribe') {
 // Confirm unsubscribe and do it! (step #2a)
 if ($email && $action == 'do_unsubscribe' && isset($_POST['submit']) && wp_verify_nonce($_POST['alo_em_nonce'],'alo_em_subscpage') ) {
     if (alo_em_delete_subscriber_by_email($email, $unikey)) {
-        echo "<p>".__("Your subscription was successfully deleted. Bye bye.", "alo-easymail")."</p>";
+        echo "<p class=\"". $classfeedback_ok ."\">".__("Your subscription was successfully deleted. Bye bye.", "alo-easymail")."</p>";
         do_action ( 'alo_easymail_subscriber_deleted', $email, false );
     } else {
-        echo "<p>".__("Error during unsubscription.", "alo-easymail")." ". __("Try again.", "alo-easymail"). "</p>";
-        echo "<p>".__("If it fails again you can contact the administrator", "alo-easymail").": <a href='mailto:".get_option('admin_email')."?Subject=Unsubscribe'>".get_option('admin_email')."</a></p>";
+        echo "<p class=\"". $classfeedback_err ."\">".__("Error during unsubscription.", "alo-easymail")." ". __("Try again.", "alo-easymail"). "</p>";
+        echo "<p class=\"". $classfeedback_err ."\">".__("If it fails again you can contact the administrator", "alo-easymail").": <a href='mailto:".get_option('admin_email')."?Subject=Unsubscribe'>".get_option('admin_email')."</a></p>";
     }
 }
 
@@ -136,7 +138,7 @@ if ($email && $action == 'do_editlists' && isset($_POST['submit']) && wp_verify_
 
     alo_em_update_subscriber_last_act($email);
     
-	echo "<p>" . __("Your subscription to mailing lists successfully updated", "alo-easymail") . ".</p>";				
+	echo "<p class=\"". $classfeedback_ok ."\">" . __("Your subscription to mailing lists successfully updated", "alo-easymail") . ".</p>";
 }
 
 
