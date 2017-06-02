@@ -1,6 +1,12 @@
 ALO EasyMail Newsletter Changelog
 =================================
 
+= 2.9.4 =
+* Added: now unsubscribed emails are stored in md5, not plain yet
+* Updated: added max-width css rule for images in bundled newsletter themes
+* Updated: added some css classes to messages in subscription page
+* Fixed: a warning about Polylang function check
+
 = 2.9.3 =
 * Fixed: a CSRF issue
 
