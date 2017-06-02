@@ -40,7 +40,7 @@ function alo_easymail_get_newsletters ( $args=false ) {
  * Put [ALO-EASYMAIL-ARCHIVE] in a page or post
  * @param	arr		there are 3 custom args: 	"newsletter_status" (values: sent, sendable , paused),
  *												"ul_class",
- * 												"li_format" (values: 'title_date', 'date_title', 'title')
+ * 												"li_format" (values: 'title_date', 'date_title', 'title', 'date')
  * @link for other args see: http://codex.wordpress.org/Template_Tags/get_posts
  */
 function alo_easymail_print_archive ( $atts=false, $content="" ) {
@@ -52,6 +52,9 @@ function alo_easymail_print_archive ( $atts=false, $content="" ) {
 		$output = "<ul class='". $args['ul_class'] ."'>";
 		foreach( $newsletters as $post ) : setup_postdata( $post );
 			switch ( $args['li_format'] ) :
+				case "date":
+					$output .= "<li><a href='". alo_em_translate_url( $post->ID, alo_em_get_language() ) ."'>". get_the_date() ."</a></li>";
+					break;
 				case "date_title":
 					$output .= "<li><span>". get_the_date() ."</span> <a href='". alo_em_translate_url( $post->ID, alo_em_get_language() ) /*get_permalink()*/ . "'>" . get_the_title( $post->ID ) ."</a></li>";
 					break;
