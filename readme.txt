@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.8
-Stable tag: 2.9.4
+Stable tag: 2.9.5
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -84,6 +84,9 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Changelog ==
 
+= 2.9.5 =
+* Updated: now encrypting the unsubscribed emails is an option, default is clear text
+
 = 2.9.4 =
 * Updated: add only-date format for archive shortcode: [ALO-EASYMAIL-ARCHIVE li_format=date]
 * Updated: now unsubscribed emails are stored in md5, not plain yet
@@ -133,5 +136,5 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 
 == Upgrade Notice ==
 
-= 2.9.4 =
-Some little updates.
+= 2.9.5 =
+Encrypting the unsubscribed emails is an option, default is clear text

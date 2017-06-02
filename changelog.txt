@@ -1,6 +1,9 @@
 ALO EasyMail Newsletter Changelog
 =================================
 
+= 2.9.5 =
+* Updated: now encrypting the unsubscribed emails is an option, default is clear text
+
 = 2.9.4 =
 * Updated: add only-date format for archive shortcode: [ALO-EASYMAIL-ARCHIVE li_format=date]
 * Updated: now unsubscribed emails are stored in md5, not plain yet
