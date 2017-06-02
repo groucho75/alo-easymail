@@ -163,7 +163,6 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 			 			<input type="submit" class="button-primary" id="doaction_step2" name="doaction_step2" value="<?php _e('Apply') ?>" />
 			 			<a href="javascript:history.back()"><?php _e("Cancel", "alo-easymail"); ?></a>
 			 		</div>
-					<?php wp_nonce_field('alo-easymail_subscribers'); ?>
 					</form> <!-- end form -->
 					<?php 
 					exit();
@@ -211,7 +210,6 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 			 			<input type="submit" class="button-primary" id="doaction_step2" name="doaction_step2" value="<?php _e('Apply') ?>" />
 			 			<a href="javascript:history.back()"><?php _e("Cancel", "alo-easymail"); ?></a>
 			 		</div>
-					<?php wp_nonce_field('alo-easymail_subscribers'); ?>
 					</form> <!-- end form -->
 					<?php 
 					exit();
@@ -295,7 +293,11 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					}
 				</style>
 
-				<div class="updated" style="background-color:#fffefe"><p><?php _e("Note: the email addresses of who unsubscribed the newsletter are archivied in a database table, so you cannot add or import those addresses using the tools in this page", "alo-easymail") ?>. <a href="#easymail-export-unsubscribed"><?php _e("You can view and export these email addresses", "alo-easymail"); ?></a>.</p></div>
+				<div class="updated" style="background-color:#fffefe"><p><?php _e("Note: the email addresses of who unsubscribed the newsletter are archivied in a database table, so you cannot add or import those addresses using the tools in this page", "alo-easymail") ?>.
+					<?php if ( get_option('alo_em_encrypt_unsubscribed') != 'yes' ) : ?>
+						<a href="#easymail-export-unsubscribed"><?php _e("You can view and export these email addresses", "alo-easymail"); ?></a>.
+					<?php endif; ?>
+				</p></div>
 				
 				<hr class="break" />
 				<a href="javascript:history.back()"><?php _e("Cancel", "alo-easymail"); ?></a>
@@ -359,7 +361,6 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					<input type="hidden" name="action"  value="addsingle_step2" /> <?php // the action ?>
 					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input type="submit" value="<?php _e('Add', 'alo-easymail') ?>" class="button" name="doaction_step2" />
-				    <?php wp_nonce_field('alo-easymail_subscribers'); ?>
 				</form>					 	
 			 	<hr class="break" />
 			 					
@@ -373,7 +374,6 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					<input type="hidden" name="post_type"  value="newsletter" />
 					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input type="submit" value="<?php _e('Import from WP members', 'alo-easymail') ?>" class="button" name="doaction_step2" />
-				    <?php wp_nonce_field('alo-easymail_subscribers'); ?>
 				</form>			 	
 			 	<hr class="break" />
 			 				 	
@@ -415,7 +415,6 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					<input type="hidden" name="post_type"  value="newsletter" />
 					<input  type="hidden" name="action"  value="import_step2" /> <?php // the action ?>
 					<input type="submit" value="<?php _e('Upload CSV file', 'alo-easymail') ?>" class="button" name="doaction_step2" />
-				    <?php wp_nonce_field('alo-easymail_subscribers'); ?>
 				</form>
 				<hr class="break" />
 			 					
@@ -443,21 +442,21 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 					<input type="hidden" name="action"  value="export_step2" /> <?php // the action ?>
 					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
 					<input type="submit" value="<?php _e('Export', 'alo-easymail') ?>" class="button" name="doaction_step2" />
-				    <?php wp_nonce_field('alo-easymail_subscribers'); ?>
 				</form>		
 			 	<hr class="break" />
-			 					
-			 	<h3 style="margin-top:20px" id="easymail-export-unsubscribed"><?php _e("Export unsubscribed emails", "alo-easymail") ?></h3>
-			 	<p><?php _e("You can export email addresses of who unsubscribed the newsletter: the plugin shows them on screen so you can copy and paste them into a text file or into any application", "alo-easymail") ?></p>
-			 	<form action="" method="get">			 	
-			 		<input type="hidden" name="post_type"  value="newsletter" />
-					<input type="hidden" name="action"  value="export_unsubscribers_step2" /> <?php // the action ?>
-					<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
-					<input type="submit" value="<?php _e('Export', 'alo-easymail') ?>" class="button" name="doaction_step2" />
-			        <?php wp_nonce_field('alo-easymail_subscribers'); ?>
-				</form>		
-			 	<hr class="break" />
-			 				 					
+
+				<?php if ( get_option('alo_em_encrypt_unsubscribed') != 'yes' ) : ?>
+					<h3 style="margin-top:20px" id="easymail-export-unsubscribed"><?php _e("Export unsubscribed emails", "alo-easymail") ?></h3>
+					<p><?php _e("You can export email addresses of who unsubscribed the newsletter: the plugin shows them on screen so you can copy and paste them into a text file or into any application", "alo-easymail") ?></p>
+					<form action="" method="get">
+						<input type="hidden" name="post_type"  value="newsletter" />
+						<input type="hidden" name="action"  value="export_unsubscribers_step2" /> <?php // the action ?>
+						<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
+						<input type="submit" value="<?php _e('Export', 'alo-easymail') ?>" class="button" name="doaction_step2" />
+					</form>
+					<hr class="break" />
+			 	<?php endif; ?>
+
 		 		<a href="javascript:history.back()"><?php _e("Cancel", "alo-easymail"); ?></a>
 		 		<hr class="break" />
 		 				 		
@@ -476,7 +475,7 @@ if ( isset($_REQUEST['doaction_step1']) ) {
  * Bulk action: Step #2/2
  */
 if ( isset($_REQUEST['doaction_step2']) ) {
-	check_admin_referer('alo-easymail_subscribers');
+	//if($wp_version >= '2.6.5') check_admin_referer('alo-easymail_subscribers');
 	if ( isset($_REQUEST['action']) && $_REQUEST['action'] != "" ) {
 		switch ( $_REQUEST['action'] ) {
 			// Add a subscriber with simple form
@@ -761,7 +760,8 @@ if ( isset($_REQUEST['doaction_step2']) ) {
 
 			// Export unsubscribed: show emails on screen
 			case "export_unsubscribers_step2":
-				
+				if ( get_option('alo_em_encrypt_unsubscribed') == 'yes' ) break;
+
 				//edit : added all this foreach
 				if( $alo_em_cf ) {
 					$fields_name = "";

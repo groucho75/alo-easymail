@@ -270,10 +270,10 @@ function alo_em_when_email_unsubscribed ( $email) {
  */
 function alo_em_add_email_in_unsubscribed ( $email) {
 	global $wpdb;
-	if ( !alo_em_check_email_in_unsubscribed( $email ) )
-	{
+	if ( !alo_em_check_email_in_unsubscribed( $email ) ) {
+		$prepared_email = ( get_option('alo_em_encrypt_unsubscribed') == "yes" ? md5($email) : $email );
 		$wpdb->insert ( "{$wpdb->prefix}easymail_unsubscribed",
-			array( 'email' => md5($email),  'added_on' => current_time( 'mysql', 0 ) )
+			array( 'email' => $prepared_email,  'added_on' => current_time( 'mysql', 0 ) )
 		);
 	}
 }
