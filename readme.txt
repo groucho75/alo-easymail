@@ -85,6 +85,7 @@ Plugin links: [homepage](http://www.eventualo.net/blog/wp-alo-easymail-newslette
 == Changelog ==
 
 = 2.10.0 =
+* Added: now unsubscribed emails are stored in md5, not plain yet
 * Updated: added max-width css rule for images in bundled newsletter themes
 * Updated: added some css classes to messages in subscription page
 * Fixed: a warning about Polylang function check

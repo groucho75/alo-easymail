@@ -224,7 +224,7 @@ function alo_em_update_subscriber_last_act($email) {
  */
 function alo_em_get_subscriber ( $email ) {
 	global $wpdb;
-	return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}easymail_subscribers WHERE email = '%s'", $email ) );
+	return $wpdb->get_row( $wpdb->prepare( "SELECT * FROM {$wpdb->prefix}easymail_subscribers WHERE email = %s", $email ) );
 }
 
 
@@ -246,7 +246,7 @@ function alo_em_get_subscriber_by_id ( $ID ) {
  */
 function alo_em_check_email_in_unsubscribed ( $email) {
 	global $wpdb;
-	$exists = $wpdb->get_var( $wpdb->prepare("SELECT email FROM {$wpdb->prefix}easymail_unsubscribed WHERE email='%s'", $email) );
+	$exists = $wpdb->get_var( $wpdb->prepare("SELECT email FROM {$wpdb->prefix}easymail_unsubscribed WHERE email=%s OR email = MD5(%s)", $email, $email) );
 	return ( $exists ) ? true : false;
 }
 
@@ -259,7 +259,7 @@ function alo_em_check_email_in_unsubscribed ( $email) {
  */
 function alo_em_when_email_unsubscribed ( $email) {
 	global $wpdb;
-	return $wpdb->get_var( $wpdb->prepare("SELECT added_on FROM {$wpdb->prefix}easymail_unsubscribed WHERE email='%s'", $email) );
+	return $wpdb->get_var( $wpdb->prepare("SELECT added_on FROM {$wpdb->prefix}easymail_unsubscribed WHERE email=%s OR email = MD5(%s) LIMIT 1", $email, $email) );
 }
 
 
@@ -273,7 +273,7 @@ function alo_em_add_email_in_unsubscribed ( $email) {
 	if ( !alo_em_check_email_in_unsubscribed( $email ) )
 	{
 		$wpdb->insert ( "{$wpdb->prefix}easymail_unsubscribed",
-			array( 'email' => $email,  'added_on' => current_time( 'mysql', 0 ) )
+			array( 'email' => md5($email),  'added_on' => current_time( 'mysql', 0 ) )
 		);
 	}
 }
@@ -286,7 +286,7 @@ function alo_em_add_email_in_unsubscribed ( $email) {
  */
 function alo_em_delete_email_from_unsubscribed ( $email) {
 	global $wpdb;
-	$wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->prefix}easymail_unsubscribed WHERE email = '%s'", $email ) );
+	$wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->prefix}easymail_unsubscribed WHERE email=%s OR email = MD5(%s)", $email, $email ) );
 }
 
 
