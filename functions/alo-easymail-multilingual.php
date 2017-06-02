@@ -569,17 +569,16 @@ add_filter ( 'alo_easymail_multilang_get_language', 'alo_em_polylang_get_languag
 
 function alo_em_polylang_get_all_languages( $langs, $fallback_by_users  ){
 
-	if ( function_exists('pll_the_languages') )
-	{
-		global $polylang;
-		if (isset($polylang))
-		{
-			$pl_languages = $polylang->get_languages_list();
-			if ( is_array($pl_languages) ) foreach( $pl_languages as $i =>$pl_lang )
-				$langs[] = $pl_lang->slug;
-		}
-	}
-	return $langs;
+    if (function_exists('PLL'))
+    {
+        $pl_languages = PLL()->model->get_languages_list();
+        if (is_array($pl_languages)) {
+            foreach($pl_languages as $i => $pl_lang) {
+                $langs[] = $pl_lang->slug;
+            }
+        }
+    }
+    return $langs;
 }
 add_filter ( 'alo_easymail_multilang_get_all_languages', 'alo_em_polylang_get_all_languages', 10, 2 );
 
