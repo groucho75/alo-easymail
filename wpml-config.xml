@@ -2,5 +2,9 @@
 <wpml-config>
     <custom-types>
         <custom-type translate="1">newsletter</custom-type>
-    </custom-types>    
+    </custom-types>
+    <admin-texts>
+        <key name="blogname" />
+        <key name="blogdescription" />
+    </admin-texts>
 </wpml-config>
