@@ -59,6 +59,12 @@ function alo_em_add_admin_script () {
 		wp_enqueue_script( 'alo-easymail-backend', ALO_EM_PLUGIN_URL . '/inc/alo-easymail-backend.js', array( 'jquery' ) );
 		wp_localize_script( 'alo-easymail-backend', 'easymailJs', alo_em_localize_admin_script() );
 	}
+	if ( $pagenow == "index.php" ) {
+		wp_enqueue_script( 'alo-easymail-backend-index', ALO_EM_PLUGIN_URL . '/inc/alo-easymail-backend-index.js', array( 'jquery' ) );
+		wp_localize_script( 'alo-easymail-backend-index', 'easymailJsIndex', array(
+			'errGeneric' => esc_js( __("Error during operation.", "alo-easymail") )
+		) );
+	}
 }
 add_action('admin_print_scripts', 'alo_em_add_admin_script' );
 
@@ -298,33 +304,10 @@ function alo_em_dashboard_widget_function() {
 	}
 
 	if ( current_user_can('administrator') ) {
-		echo "<h5 style='margin-bottom:0.4em'>". __("Updates from plugin developer", "alo-easymail") ."</h5>";
-		$rss = fetch_feed( 'http://www.eventualo.net/blog/category/alo-easymail-newsletter/feed/' );
-		if ( !is_wp_error( $rss ) ) {
-			$maxitems = $rss->get_item_quantity( 3 );
-			$rss_items = $rss->get_items(0, $maxitems);
-			echo "<ul style='padding-top: 0.5em'>";
-			if ( $maxitems == 0 ) {
-				echo '<li>No items.</li>';
-			} else {
-				// Loop through each feed item and display each item as a hyperlink.
-				foreach ( $rss_items as $item ) :
-					$content = $item->get_content();
-					$content = esc_attr( wp_html_excerpt( $content, 350 ) ) . ' [...]'; ?>
-					<li>
-						<a href='<?php echo $item->get_permalink(); ?>'
-						   title='<?php echo $content; ?>'>
-							<?php echo $item->get_title(); ?></a>
-						<?php echo date_i18n( __('j F Y', "alo-easymail" ), strtotime( $item->get_date() ) ); ?>
-					</li>
-				<?php endforeach;
-			}
-			echo "</ul>";
-		} else {
-			echo '<p>';
-			printf(__('<strong>RSS Error</strong>: %s'), $rss->get_error_message());
-			echo '</p>';
-		}
+		echo "<h5 style='margin-bottom: 0.5em;'>". __("Updates from plugin developer", "alo-easymail") ."</h5>";
+		echo '<ul id="alo-easymail-widget-latest-news" style="margin-top: 0">';
+		echo '<li><img src="'. ALO_EM_PLUGIN_URL . '/images/wpspin_light.gif" /></li>';
+		echo '</ul>';
 	}
 }
 
