@@ -13,7 +13,7 @@ To send newsletters. Features: collect subscribers on registration or with an aj
 
 ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send newsletters, and to gather and manage the subscribers. It supports internationalization and multilanguage.
 
-*Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newsletter/) | [guide](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/) | [faq](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/) | [for developers](https://www.eventualo.net/blog/easymail-newsletter-for-developers/) | [forum](https://www.eventualo.net/forum/) | [news](https://www.eventualo.net/blog/category/alo-easymail-newsletter/)*
+*Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newsletter/) | [guide](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/) | [faq](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/) | [for developers](https://www.eventualo.net/blog/easymail-newsletter-for-developers/) | [forum](https://wordpress.org/support/plugin/alo-easymail) | [news](https://www.eventualo.net/blog/category/alo-easymail-newsletter/)*
 
 **Here you are a short screencast:** [How to create and send a newsletter](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/)
 
@@ -68,11 +68,11 @@ You can use them as starting point for your development. Other samples at: [plug
 1. Go to `Newsletters > Subscribers` to manage subscribers
 1. Go to `Pages > All Pages` to customize the Newsletter page
 
-Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newsletter/) | [guide](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/) | [faq](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/) | [for developers](https://www.eventualo.net/blog/easymail-newsletter-for-developers/) | [forum](https://www.eventualo.net/forum/) | [news](https://www.eventualo.net/blog/category/alo-easymail-newsletter/)
+Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newsletter/) | [guide](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/) | [faq](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/) | [for developers](https://www.eventualo.net/blog/easymail-newsletter-for-developers/) | [forum](https://wordpress.org/support/plugin/alo-easymail) | [news](https://www.eventualo.net/blog/category/alo-easymail-newsletter/)
 
 == Frequently Asked Questions ==
 
-Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newsletter/) | [guide](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/) | [faq](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/) | [for developers](https://www.eventualo.net/blog/easymail-newsletter-for-developers/) | [forum](https://www.eventualo.net/forum/) | [news](https://www.eventualo.net/blog/category/alo-easymail-newsletter/)
+Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newsletter/) | [guide](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/) | [faq](https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/) | [for developers](https://www.eventualo.net/blog/easymail-newsletter-for-developers/) | [forum](https://wordpress.org/support/plugin/alo-easymail) | [news](https://www.eventualo.net/blog/category/alo-easymail-newsletter/)
 
 == Screenshots ==
 
