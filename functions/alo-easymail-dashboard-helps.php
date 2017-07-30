@@ -23,11 +23,11 @@ function alo_em_contextual_help_tabs() {
 			': <a href="https://www.youtube.com/watch?v=juglGC28T2g" target="_blank">'.
 				__('How to create and send a newsletter', 'alo-easymail').'</a></p>' .
 			'<p>'.__("Resources about EasyMail Newsletter", "alo-easymail") . ': '.
-			'<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter/" target="_blank">homepage</a> |
-			<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/" target="_blank">guide</a> |
-			<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/" target="_blank">faq</a> |
-			<a href="http://www.eventualo.net/blog/easymail-newsletter-for-developers/" target="_blank">for developers</a> |
-			<a href="http://www.eventualo.net/blog/category/alo-easymail-newsletter/" target="_blank">news</a> |
+			'<a href="https://www.eventualo.net/blog/wp-alo-easymail-newsletter/" target="_blank">homepage</a> |
+			<a href="https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/" target="_blank">guide</a> |
+			<a href="https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/" target="_blank">faq</a> |
+			<a href="https://www.eventualo.net/blog/easymail-newsletter-for-developers/" target="_blank">for developers</a> |
+			<a href="https://www.eventualo.net/blog/category/alo-easymail-newsletter/" target="_blank">news</a> |
 			<a href="http://wordpress.org/support/plugin/alo-easymail" target="_blank" title="tag alo-easymail @ wordpress.org support forum">forum</a>'. '</p>'
 	) );
 

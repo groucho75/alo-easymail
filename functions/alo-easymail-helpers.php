@@ -124,7 +124,7 @@ function alo_em_show_credit_banners ( $all=false ) {
 					<?php if ( function_exists('add_contextual_help') ) : ?>
 						<?php _e("For more links you can use the Help button", "alo-easymail") ?>.
 					<?php endif; ?>
-					<br /><a href='http://www.eventualo.net/blog/wp-alo-easymail-newsletter/' target='_blank'>www.eventualo.net</a>
+					<br /><a href='https://www.eventualo.net/blog/wp-alo-easymail-newsletter/' target='_blank'>www.eventualo.net</a>
 				</em></p>
 
 			<p><em><?php _e("If you use this plugin consider the idea of donating and supporting its development", "alo-easymail") ?>:</em></p><form action='https://www.paypal.com/cgi-bin/webscr' method='post' style='display:inline'>

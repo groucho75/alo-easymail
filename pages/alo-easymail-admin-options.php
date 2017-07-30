@@ -981,7 +981,7 @@ if ( ! is_wp_error( $response ) && $response['response']['code'] != '200' ) {
 		echo '<div class="text-alert"><p><img src="'.ALO_EM_PLUGIN_URL.'/images/12-exclamation.png" /> <strong>' . __('WP-Cron is not working properly', 'alo-easymail') .':</strong> ';
 		echo sprintf( __( '%s is returning a %s response which could mean cron jobs aren\'t getting fired properly', 'alo-easymail' ), '<code>wp-cron.php</code>', '<code>' . $response['response']['code'] .': ' . $response['response']['message'] . '</code>' ). '.<br />';
 		echo __('The file seems to be not accessible: is your blog behind some kind of authentication, maintenance plugin, .htpasswd protection?', 'alo-easymail');
-		echo ' <a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/#faq-3" target="_blank">'. __('For more info, visit the FAQ of the site.', 'alo-easymail').'</a> ';
+		echo ' <a href="https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/#faq-3" target="_blank">'. __('For more info, visit the FAQ of the site.', 'alo-easymail').'</a> ';
 		echo '<br /><em>('. __('If you are using an external cron job ignore this piece of information', 'alo-easymail').').</em>';
 		echo '</p></div>';
 	echo '</td></tr>';	
@@ -1002,7 +1002,7 @@ echo '<td colspan="2">';
 	} else {
 		echo '<div class="text-alert"><p><img src="'.ALO_EM_PLUGIN_URL.'/images/12-exclamation.png" /> <strong>' . __('There is not any next scheduled sending in WP-Cron', 'alo-easymail') .':</strong> ';
 		echo __('you can try to deactivate and activate the plugin', 'alo-easymail'). '. ';
-		echo ' <a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/#faq-3" target="_blank">'. __('For more info, visit the FAQ of the site.', 'alo-easymail').'</a> ';
+		echo ' <a href="https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/#faq-3" target="_blank">'. __('For more info, visit the FAQ of the site.', 'alo-easymail').'</a> ';
 		echo '<br /><em>('. __('If you are using an external cron job ignore this piece of information', 'alo-easymail').').</em>';
 		echo '</p></div>';
 	}

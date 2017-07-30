@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: ALO EasyMail Newsletter
-Plugin URI: http://www.eventualo.net/blog/wp-alo-easymail-newsletter/
+Plugin URI: https://www.eventualo.net/blog/wp-alo-easymail-newsletter/
 Description: To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilingual.
 Version: 2.9.5
 Author: Alessandro Massasso
-Author URI: http://www.eventualo.net
+Author URI: https://www.eventualo.net
 Text Domain: alo-easymail
 Domain Path: /languages
 @contributor Wojtek Szałkiewicz (wojtek@szalkiewicz.pl)

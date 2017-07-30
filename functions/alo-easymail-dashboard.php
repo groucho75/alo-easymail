@@ -132,9 +132,9 @@ add_action('admin_menu', 'alo_em_add_admin_menu');
  */
 function alo_em_add_plugin_links($links, $file) {
 	if ( $file == 'alo-easymail/alo-easymail.php' ) {
-		$links[] = '<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/" target="_blank">Guide</a>';
-		$links[] = '<a href="http://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/" target="_blank">Faq</a>';
-		$links[] = '<a href="http://www.eventualo.net/blog/category/alo-easymail-newsletter/" target="_blank">News</a>';
+		$links[] = '<a href="https://www.eventualo.net/blog/wp-alo-easymail-newsletter-guide/" target="_blank">Guide</a>';
+		$links[] = '<a href="https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/" target="_blank">Faq</a>';
+		$links[] = '<a href="https://www.eventualo.net/blog/category/alo-easymail-newsletter/" target="_blank">News</a>';
 		$links[] = '<a href="http://wordpress.org/support/plugin/alo-easymail" target="_blank" title="tag alo-easymail @ wordpress.org support forum">Forum</a>';
 	}
 	return $links;
@@ -370,7 +370,7 @@ function alo_em_admin_notice() {
 		echo '<div class="error">';
 		echo '<p><img src="'.ALO_EM_PLUGIN_URL.'/images/12-exclamation.png" /> <strong><em>'. __("ALO Easymail Newsletter needs attention", "alo-easymail") ."!</em></strong><br />";
 		echo __("The plugin database tables have not properly installed", "alo-easymail") .": <strong>" . __("you can try to deactivate and activate the plugin", "alo-easymail")."</strong>.";
-		echo "<br /><a href=\"http://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/\" target=\"_blank\">". __("For more info, visit the FAQ of the site.", "alo-easymail")."</a>";
+		echo "<br /><a href=\"https://www.eventualo.net/blog/wp-alo-easymail-newsletter-faq/\" target=\"_blank\">". __("For more info, visit the FAQ of the site.", "alo-easymail")."</a>";
 		echo ".</p>";
 		echo '</div>';
 	}
