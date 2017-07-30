@@ -118,6 +118,7 @@ function alo_em_zirkuss_custom_easymail_placeholders( $placeholders ) {
 	$placeholders['easymail_site']['tags']['[SITE-URL]'] = __ ( 'URL to the site.', 'alo-easymail' ).". ".__('The visit to this url will be tracked.', 'alo-easymail');
 	$placeholders['easymail_site']['tags']['[SITE-NAME]'] = __('Site Title');
 	$placeholders['easymail_site']['tags']['[SITE-DESCRIPTION]'] = __('Tagline');
+	if ( current_theme_supports( 'custom-logo' ) ) $placeholders['easymail_site']['tags']['[SITE-LOGO]'] = __('Logo');
 
 	if ( current_theme_supports( 'post-thumbnails' ) ) $placeholders['easymail_post']['tags']['[POST-THUMB]'] = __("Post Thumbnail", "alo-easymail");
 	$placeholders['easymail_post']['tags']['[POST-GALLERY]'] = __("The image gallery of the post", "alo-easymail")	;
@@ -296,6 +297,11 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 	$blogname = esc_html( get_option('blogname') );
 	$blogdescription = esc_html( get_option('blogdescription') );
 
+	$site_logo = '';
+	if ( current_theme_supports( 'custom-logo' ) && function_exists( 'the_custom_logo' ) ) {
+		$site_logo = get_custom_logo();
+	}
+
 	// newsletter
 	$date = date_i18n( get_option('date_format')/*__( 'j / n / Y', "alo-easymail" )*/, strtotime( $newsletter->post_date ) );
 
@@ -309,6 +315,7 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 	$html = str_replace('[GALLERY]', $gallery, $html);
 	$html = str_replace('[SITE-URL]', $trackable_site_url, $html);
 	$html = str_replace('[SITE-NAME]', $blogname, $html);
+	$html = str_replace('[SITE-LOGO]', $site_logo, $html);
 	$html = str_replace('[SITE-DESCRIPTION]', $blogdescription, $html);
 	$html = str_replace('[DATE]', $date, $html);
 	$html = str_replace('[POST-THUMB]', $post_thumb, $html);
