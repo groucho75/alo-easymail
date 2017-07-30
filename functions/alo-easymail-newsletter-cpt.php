@@ -572,7 +572,10 @@ function alo_em_meta_placeholders ( $post ) {
 function alo_em_save_newsletter_placeholders_easymail_post ( $post_id ) {
 	if ( isset( $_POST['placeholder_easymail_post'] ) && is_numeric( $_POST['placeholder_easymail_post'] ) ) {
 		update_post_meta ( $post_id, '_placeholder_easymail_post', $_POST['placeholder_easymail_post'] );
+	} else {
+		update_post_meta ( $post_id, '_placeholder_easymail_post', 0 );
 	}
+
 }
 add_action('alo_easymail_save_newsletter_meta_extra',  'alo_em_save_newsletter_placeholders_easymail_post' );
 

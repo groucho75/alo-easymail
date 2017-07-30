@@ -83,6 +83,7 @@ function alo_em_placeholders_title_easymail_post ( $post_id ) {
 	if ( $get_posts ) {
 		echo esc_html( __("Choose a post", "alo-easymail") ). ": ";
 		echo '<select name="placeholder_easymail_post" id="placeholder_easymail_post" >';
+		echo '<option value=""></option>';
 		foreach($get_posts as $post) :
 			$select_post_selected = ( get_post_meta ( $post_id, '_placeholder_easymail_post', true) == $post->ID ) ? 'selected="selected"': '';
 			echo '<option value="'.$post->ID.'" '. $select_post_selected .'>['. date_i18n( __( 'j M Y', "alo-easymail" ), strtotime( $post->post_date ) ) .'] '. get_the_title( $post->ID ).' </option>';
@@ -243,6 +244,7 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 		$size = ( $size = get_post_meta ( $newsletter->ID, '_placeholder_newsletter_imgsize', true ) ) ? $size : 'thumbnail';
 
 		foreach( $attachments as $index => $attachment ) {
+			if ( get_post_thumbnail_id( $newsletter->ID ) == $attachment->ID ) continue; // Do not include the post thumbnail
 			$src = wp_get_attachment_image_src( $attachment->ID, $size );
 			$gallery .= '<img class="alo-easymail-gallery-newsletter" src="' . $src[0] . '" width="' . $src[1] . '" height="' . $src[2] . '" border="0" alt="" />'."\n";
 		}
@@ -255,7 +257,9 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 	if ( current_theme_supports( 'post-thumbnails' ) ) {
 		if ( has_post_thumbnail( $newsletter->ID ) ) {
 			$size = ( $size = get_post_meta ( $newsletter->ID, '_placeholder_newsletter_imgsize', true ) ) ? $size : 'thumbnail';
-			$thumb = get_the_post_thumbnail( $newsletter->ID, $size, array( 'class'	=> "alo-easymail-thumb-newsletter" ) );
+			$thumb = get_the_post_thumbnail( $newsletter->ID, $size, array(
+				'class'	=> "alo-easymail-thumb-newsletter", 'style' => 'max-width: 100%; height: auto;' )
+			);
 			$thumb = apply_filters( 'alo_easymail_placeholder_newsletter_thumb', $thumb,  $size, $newsletter->ID );
 		}
 	}
