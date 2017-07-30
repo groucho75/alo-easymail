@@ -152,28 +152,6 @@ function alo_em_print_pointer_footer_scripts() {
 		</script>
 		<?php
 	endif; // In newsletter list screen
-
-	// In dashboard, anywhere
-	if ( ! get_user_setting( 'alo_em_pointer_changed_bounce_setup', 0 ) ) :
-		$pointer_content = '<h3>Easymail | '. esc_js( __( 'Only manual bounce management', "alo-easymail") ) .'</h3>';
-		$pointer_content .= '<p><span style="color: red">'. esc_js( __('The cron-based bounce management has been removed', 'alo-easymail') ) .". </span>";
-		$pointer_content .= esc_js( __('Visit the option page of newsletters to check bounces manually.', 'alo-easymail') ) .'</p>';
-		?>
-		<script type="text/javascript">
-			//<![CDATA[
-			jQuery(document).ready( function($) {
-				$('li#menu-posts-newsletter').pointer({
-					content: '<?php echo $pointer_content; ?>',
-					position: 'top',
-					close: function() { // Once the close button is hit
-						setUserSetting( 'alo_em_pointer_changed_bounce_setup', '1' );
-					}
-				}).pointer('open');
-			});
-			//]]>
-		</script>
-		<?php
-	endif;
 }
 
 

@@ -303,7 +303,7 @@ function alo_em_dashboard_widget_function() {
 		echo "<p>". __("No subscribers", "alo-easymail") . ".</p>";
 	}
 
-	if ( current_user_can('administrator') ) {
+	if ( current_user_can('manage_options') ) {
 		echo "<h5 style='margin-bottom: 0.5em;'>". __("Updates from plugin developer", "alo-easymail") ."</h5>";
 		echo '<ul id="alo-easymail-widget-latest-news" style="margin-top: 0">';
 		echo '<li><img src="'. ALO_EM_PLUGIN_URL . '/images/wpspin_light.gif" /></li>';
