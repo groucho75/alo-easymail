@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
 Tested up to: 4.8
-Stable tag: 2.9.5
+Stable tag: 2.9.6
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -48,6 +48,7 @@ Developers can easily add own code using plugin action and filter hooks.
 Inside plugin package there is a *mu-plugins* folders that contains some useful samples, e.g.: "latest posts" placeholder, "multiple posts" placeholder, include attachments, add custom fields in subscription form.
 You can move one or more of those files into *wp-content/mu-plugins* (if the directory doesn”t exist, simply create it) to activate them.
 You can use them as starting point for your development. Other samples at: [plugin developer page](https://www.eventualo.net/blog/easymail-newsletter-for-developers).
+The plugin includes a dozen of ready-to-use newsletter themes. Of course, you can create your own themes and, if you like, you can share them with the plugin author and other users. You can send them to me or make pull requests in plugin repository.
 
 *On Github you can find a repository with latest plugin version: [github.com/groucho75/alo-easymail](https://github.com/groucho75/alo-easymail)*
 
@@ -81,8 +82,16 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 3. You can add recipients to sending queue or you can send newsletter immediately
 4. The ajax engine to generate list of recipients
 5. The list of subscribers in administration
+5. The newsletter report
 
 == Changelog ==
+
+= 2.9.6 =
+* Added: new newsletter themes based on [Cerberus responsive template](https://github.com/TedGoas/Cerberus)
+* Added: new [SITE-LOGO] placeholder
+* Updated: dashboard widget that loads news from developer site
+* Updated: in newsletter edit now it's possible to not select a post for placeholder
+* Deleted: a admin help pointer about bounces
 
 = 2.9.5 =
 * Updated: now encrypting the unsubscribed emails is an option, default is clear text
@@ -120,21 +129,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 * Updated: report popup size now is dynamic and is adjusted according to screen size
 * Fixed: now required custom fields don't give errors and don't block the add new user dashboard form
 
-= 2.7.0 =
-* Added: export subscribers of a single mailing list
-* Added: an option to remove subscribers when the related users are deleted
-* Added: list of clicked urls in newsletter report
-* Fixed: cache recipient counts to save resources especially on newsletter list screen
-* Fixed: a CRSF/XSS vulnerability in options page, credits to Mohsen Lotfi (fox_one_fox_one)
-* Fixed: a type in English strings: 'e-email' now become 'e-mail'
-* Fixed: the preview-newsletter-in-theme now show the most recent between autosaved and saved versions
-* Updated: the deprecated $wpdb->escape()
-* Updated: css in subscriber list page
-* Updated: now dashicon icon in the admin bar and dashboard side menu, settings label in admin bar
-
 *The full changelog is in changelog.txt inside plugin folder*
 
 == Upgrade Notice ==
 
-= 2.9.5 =
-Encrypting the unsubscribed emails is an option, default is clear text
+= 2.9.6 =
+New newsletter themes and other minor fixes.

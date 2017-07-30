@@ -1,6 +1,13 @@
 ALO EasyMail Newsletter Changelog
 =================================
 
+= 2.9.6 =
+* Added: new newsletter themes based on [Cerberus responsive template](https://github.com/TedGoas/Cerberus)
+* Added: new [SITE-LOGO] placeholder
+* Updated: dashboard widget that loads news from developer site
+* Updated: in newsletter edit now it's possible to not select a post for placeholder
+* Deleted: a admin help pointer about bounces
+
 = 2.9.5 =
 * Updated: now encrypting the unsubscribed emails is an option, default is clear text
 
