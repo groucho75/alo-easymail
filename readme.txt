@@ -88,6 +88,7 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 = 2.9.7 =
 * Fixed: the subscribe button now is properly escaped
+* Fixed: now the title attribute in [CUSTOM-LINK] placeholder is properly replaced
 
 = 2.9.6 =
 * Added: new newsletter themes based on [Cerberus responsive template](https://github.com/TedGoas/Cerberus)
