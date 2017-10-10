@@ -1,6 +1,9 @@
 ALO EasyMail Newsletter Changelog
 =================================
 
+= 2.9.7 =
+* Fixed: the subscribe button now is properly escaped
+
 = 2.9.6 =
 * Added: new newsletter themes based on [Cerberus responsive template](https://github.com/TedGoas/Cerberus)
 * Added: new [SITE-LOGO] placeholder

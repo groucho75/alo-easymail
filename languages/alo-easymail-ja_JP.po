@@ -1,674 +1,2016 @@
+# Translation of Plugins - ALO EasyMail Newsletter - Stable (latest release) in Japanese
+# This file is distributed under the same license as the Plugins - ALO EasyMail Newsletter - Stable (latest release) package.
 msgid ""
 msgstr ""
-"Project-Id-Version: ALO EasyMail Newsletter v2.4.12\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: \n"
-"PO-Revision-Date: 2012-10-09 07:13:09+0200\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"PO-Revision-Date: 2017-07-11 23:44:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-Language: \n"
-"X-Poedit-Country: \n"
-"X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
-"X-Poedit-Basepath: \n"
-"X-Poedit-Bookmarks: \n"
-"X-Poedit-SearchPath-0: .\n"
-"X-Textdomain-Support: yes"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: ja_JP\n"
+"Project-Id-Version: Plugins - ALO EasyMail Newsletter - Stable (latest release)\n"
 
-#: alo-easymail.php:1300
-#: alo-easymail_subscribers.php:869
-#@ alo-easymail
-msgid "The email address will be added to the list of who unsubscribed"
+#: functions/alo-easymail-placeholders.php:122
+msgid "Logo"
 msgstr ""
 
-#: alo-easymail.php:1300
-#: alo-easymail_subscribers.php:869
-#@ alo-easymail
-msgid "so you cannot add or import these email addresses using the tools in admin pages"
+#: pages/alo-easymail-admin-options.php:462
+msgid "Otherwise, if you need more privacy you can encrypt them, but you cannot view or export them anymore"
 msgstr ""
 
-#: alo-easymail_functions.php:2397
-#@ alo-easymail
-msgid "Custom links"
+#: pages/alo-easymail-admin-options.php:461
+msgid "By default the email addresses of who unsubscribed are stored as clear text, so you can view and export them"
 msgstr ""
 
-#: alo-easymail_functions.php:2399
-#@ alo-easymail
-msgid "This placeholder produces a link (html &lt;a&gt; tag) and has the following parameters"
+#: pages/alo-easymail-admin-options.php:459
+msgid "Encrypt emails of who unsubscribed"
+msgstr "登録を解除したユーザーのメールを暗号化する"
+
+#: pages/alo-easymail-admin-options.php:1586
+msgid "You have to enter the password because for security reason it cannot be stored in database"
+msgstr "セキュリティ上の理由から、データベースに格納することはできないため、パスワードを入力する必要があります"
+
+#: pages/alo-easymail-admin-options.php:1448
+#: pages/alo-easymail-admin-options.php:1469
+msgid "Error during connection test"
+msgstr "接続テスト中のエラー"
+
+#: pages/alo-easymail-admin-options.php:446
+msgid "If yes, you should declare it in your Privacy Policy / Terms Of Service page"
+msgstr "はいの場合は、プライバシーポリシー / 利用規約ページで宣言する必要があります"
+
+#: pages/alo-easymail-admin-options.php:444
+msgid "Store IP address of subscribers"
+msgstr "購読者の IP アドレスを保管"
+
+#: functions/alo-easymail-dashboard-helps.php:24
+msgid "How to create and send a newsletter"
+msgstr "ニュースレターの作成・送信方法"
+
+#: functions/alo-easymail-dashboard-helps.php:22
+msgid "Here you are a short screencast"
+msgstr "短いスクリーンキャストを見る"
+
+#: pages/alo-easymail-admin-subscribers.php:426
+msgid "Optionally, you can export only subscribers of a single list"
+msgstr "必要に応じて、単一のリスト購読者のみをエクスポートすることもできます"
+
+#: pages/alo-easymail-admin-options.php:431
+msgid "If yes, when registered users are deleted, they are also unsubscribed"
+msgstr "「はい」の場合、登録ユーザーが削除されると、購読状態も解除されます"
+
+#: pages/alo-easymail-admin-options.php:429
+msgid "Unsubscribe when users are deleted"
+msgstr "ユーザーが削除されたときに購読を解除する"
+
+#. Author URI of the plugin/theme
+msgid "https://www.eventualo.net"
 msgstr ""
 
-#: alo-easymail_functions.php:2401
-#@ alo-easymail
-msgid "the ID of a post or a full web address"
+#. Author of the plugin/theme
+msgid "Alessandro Massasso"
+msgstr "Alessandro Massasso"
+
+#. Description of the plugin/theme
+msgid "To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilingual."
+msgstr "ニュースレターを送ります。機能: ユーザー登録時または Ajax ウィジェットを使って購読者を集める、メーリングリスト、cron バッチ送信、多言語対応。"
+
+#. Plugin URI of the plugin/theme
+msgid "https://www.eventualo.net/blog/wp-alo-easymail-newsletter/"
 msgstr ""
 
-#: alo-easymail_functions.php:2403
-#@ alo-easymail
-msgid "the text of the link"
-msgstr ""
+#. Plugin Name of the plugin/theme
+msgid "ALO EasyMail Newsletter"
+msgstr "ALO EasyMail ニュースレター"
 
-#: alo-easymail_functions.php:2403
-#@ alo-easymail
-msgid "the title of the post (if &#39;href&#39; is a post ID) or the &#39;href&#39; itself"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:141
+msgid "Your subscription to mailing lists successfully updated"
+msgstr "メーリングリストの購読状況が更新されました"
 
-#: alo-easymail_functions.php:2405
-#@ alo-easymail
-msgid "the click on the link by the recipient will be tracked (1) or not (0)"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:106
+msgid "If it fails again you can contact the administrator"
+msgstr "もう一度失敗する場合は、管理者に問い合わせてください"
 
-#: alo-easymail_functions.php:2407
-#@ alo-easymail
-msgid "the class tag attribute"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:105
+msgid "Try again."
+msgstr "もう一度お試しください"
 
-#: alo-easymail_functions.php:2409
-#@ alo-easymail
-msgid "the style tag attribute"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:105
+msgid "Error during unsubscription."
+msgstr "購読解除中にエラーが発生しました。"
 
-#: alo-easymail_functions.php:2411
-#@ alo-easymail
-msgid "a link to blog post with ID 1, with custom css style, without tracking"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:102
+msgid "Your subscription was successfully deleted. Bye bye."
+msgstr "購読登録は解除されました。またのご利用をお待ちしています。"
 
-#: alo-easymail_functions.php:2413
-#@ alo-easymail
-msgid "a link to Wordress.org, with custom title"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:95
+msgid "Unsubscribe me"
+msgstr "購読解除します"
 
-#: alo-easymail_functions.php:2423
-#@ alo-easymail
-msgid "You can insert customised links to blog posts or external web addresses"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:89
+msgid "To unsubscribe the newsletter for good click this button"
+msgstr "ニュースレターの購読解除をするにはこのボタンをクリックしてください"
 
-#: alo-easymail_functions.php:3606
-#: alo-easymail_functions.php:3607
-#@ alo-easymail
-msgid "Delete subscriber and add the email to the list of who unsubscribed"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:84
+msgid "Edit"
+msgstr "編集"
 
-#: alo-easymail_subscribers.php:238
-#@ alo-easymail
-msgid "Subscribers deleted and added to list of who unsubscribed"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:65
+msgid "You can modify your subscription details"
+msgstr "購読の詳細を修正できます。"
 
-#: alo-easymail_subscribers.php:286
-#@ alo-easymail
-msgid "You can view and export these email addresses"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:57
+msgid "To modify your subscription to mailing lists use this form"
+msgstr "メーリングリストの購読状況を修正するには、このフォームを使ってください。"
 
-#: alo-easymail_subscribers.php:417
-#@ alo-easymail
-msgid "Export unsubscribed emails"
-msgstr ""
+#: pages/alo-easymail-subscr-page.php:44
+msgid "Error during activation. Please check the activation link."
+msgstr "有効化の際にエラーが発生しました。有効化リンクをチェックしてください。"
 
-#: alo-easymail_subscribers.php:418
-#@ alo-easymail
+#: pages/alo-easymail-admin-subscribers.php:1053
+msgid "Actions"
+msgstr "アクション"
+
+#: pages/alo-easymail-admin-subscribers.php:1052
+msgid "Order by language"
+msgstr "言語順"
+
+#: pages/alo-easymail-admin-subscribers.php:1050
+msgid "A subscriber will be deleted if not activated in 5 days."
+msgstr "5日間有効化されなかった購読者は削除されます"
+
+#: pages/alo-easymail-admin-subscribers.php:1050
+msgid "For registered users the dafault state is activated. For public subscribers the default state is deactivated: it will be activated by clicking on the activation link in the e-mail."
+msgstr "登録ユーザーの初期値は有効、購読者の初期値は無効です：メールアドレスの有効化URLをクリックすることで有効になります"
+
+#: pages/alo-easymail-admin-subscribers.php:1050
+msgid "Activated"
+msgstr "有効"
+
+#: pages/alo-easymail-admin-subscribers.php:1050
+msgid "Order by activation state"
+msgstr "有効化ステータス順"
+
+#: pages/alo-easymail-admin-subscribers.php:1049
+msgid "e.g. open a newsletter, click a newsletter link, update info in subscription form"
+msgstr "例：ニュースレターを開封、ニュースレターのリンクをクリック、購読者フォームから情報を更新"
+
+#: pages/alo-easymail-admin-subscribers.php:1049
+msgid "The most recent date when the subcriber made an action"
+msgstr "購読者がなんらかのアクションを起こした最新日"
+
+#: pages/alo-easymail-admin-subscribers.php:1049
+msgid "Last activity"
+msgstr "最後のアクション"
+
+#: pages/alo-easymail-admin-subscribers.php:1049
+msgid "Order by date of last activity"
+msgstr "最後にアクションした日付順"
+
+#: pages/alo-easymail-admin-subscribers.php:1048
+msgid "Join date"
+msgstr "登録日"
+
+#: pages/alo-easymail-admin-subscribers.php:1048
+msgid "Order by join date"
+msgstr "登録日順"
+
+#: pages/alo-easymail-admin-subscribers.php:1047
+msgid "The username of registered users. It is blank for public subscribers."
+msgstr "登録されたユーザーの名前。購読者の場合は空白です"
+
+#: pages/alo-easymail-admin-subscribers.php:1039
+msgid "Order by %s"
+msgstr "%s順"
+
+#: pages/alo-easymail-admin-subscribers.php:1029
+msgid "Order by e-mail"
+msgstr "Eメール順"
+
+#: pages/alo-easymail-admin-subscribers.php:1017
+msgid "items"
+msgstr "アイテム"
+
+#: pages/alo-easymail-admin-subscribers.php:946
+msgid "Delete and add to list of who unsubscribed"
+msgstr "削除して、購読解除者リストに追加する"
+
+#: pages/alo-easymail-admin-subscribers.php:945
+msgid "Delete"
+msgstr "削除"
+
+#: pages/alo-easymail-admin-subscribers.php:944
+msgid "Deactivate"
+msgstr "無効化"
+
+#: pages/alo-easymail-admin-subscribers.php:943
+msgid "Activate"
+msgstr "有効化"
+
+#: pages/alo-easymail-admin-subscribers.php:940
+msgid "Bulk Actions"
+msgstr "一括操作"
+
+#: pages/alo-easymail-admin-subscribers.php:914
+#: pages/alo-easymail-admin-subscribers.php:917
+msgid "Do you really want to DELETE these subscribers?"
+msgstr "これらの購読者を削除しますか？"
+
+#: pages/alo-easymail-admin-subscribers.php:853
+msgid "Do not show it again"
+msgstr "表示しない"
+
+#: pages/alo-easymail-admin-subscribers.php:834
+msgid "Show all"
+msgstr "すべて表示"
+
+#: pages/alo-easymail-admin-subscribers.php:832
+msgid "Search"
+msgstr "検索"
+
+#: pages/alo-easymail-admin-subscribers.php:812
+msgid "Select a mailing list"
+msgstr "メーリングリストを選択"
+
+#: pages/alo-easymail-admin-subscribers.php:782
+msgid "No unsubscribed emails"
+msgstr "購読を解除したメールアドレスはありません"
+
+#: pages/alo-easymail-admin-subscribers.php:716
+msgid "No subscribers added from blog members"
+msgstr "ブログ会員から追加された購読者はいませんでした"
+
+#: pages/alo-easymail-admin-subscribers.php:714
+msgid "%d new subscribers successfully added from blog members"
+msgstr "%d 名の購読者がブログ会員から追加されました"
+
+#: pages/alo-easymail-admin-subscribers.php:690
+msgid "Not valid CSV file uploaded"
+msgstr "不正な CSV がアップロードされました"
+
+#: pages/alo-easymail-admin-subscribers.php:670
+msgid "Some records have not been imported"
+msgstr "幾つかのレコードがインポートされませんでした"
+
+#: pages/alo-easymail-admin-subscribers.php:668
+msgid "Successfully import: %d records out of %d total"
+msgstr "インポート成功: %dレコード / 全 %d "
+
+#: pages/alo-easymail-admin-subscribers.php:663
+msgid "Check the Error column to modify records that otherwise will not be imported"
+msgstr "エラーのあるカラムを修正しなければインポートされません"
+
+#: pages/alo-easymail-admin-subscribers.php:662
+msgid "Found %d records"
+msgstr "%dレコードが見つかりました"
+
+#: pages/alo-easymail-admin-subscribers.php:651
+msgid "Subscriber has been added to selected mailing lists"
+msgstr "購読者が選択されたメーリングリストに追加されました"
+
+#: pages/alo-easymail-admin-subscribers.php:594
+msgid "Error"
+msgstr "エラー"
+
+#: pages/alo-easymail-admin-subscribers.php:519
+msgid "New subscriber added"
+msgstr "新しい購読者が追加されました"
+
+#: pages/alo-easymail-admin-subscribers.php:492
+#: pages/alo-easymail-admin-subscribers.php:623
+msgid "The owner of the e-email address unsubscribed the newsletter"
+msgstr "メールアドレスの所有者はニュースレターを購読解除しています"
+
+#: pages/alo-easymail-admin-subscribers.php:487
+#: pages/alo-easymail-admin-subscribers.php:495
+#: pages/alo-easymail-admin-subscribers.php:584
+#: pages/alo-easymail-admin-subscribers.php:665
+#: pages/alo-easymail-admin-subscribers.php:739
+#: pages/alo-easymail-admin-subscribers.php:756
+#: pages/alo-easymail-admin-subscribers.php:775
+#: pages/alo-easymail-admin-subscribers.php:784
+msgid "Back"
+msgstr "戻る"
+
+#: pages/alo-easymail-admin-subscribers.php:468
+#: pages/alo-easymail-admin-subscribers.php:790
+#: pages/alo-easymail-admin-subscribers.php:910
+msgid "No action selected"
+msgstr "アクションが選択されていません"
+
+#: pages/alo-easymail-admin-subscribers.php:450
 msgid "You can export email addresses of who unsubscribed the newsletter: the plugin shows them on screen so you can copy and paste them into a text file or into any application"
 msgstr ""
 
-#: alo-easymail_subscribers.php:734
-#@ alo-easymail
-msgid "No unsubscribed emails"
+#: pages/alo-easymail-admin-subscribers.php:449
+#: pages/alo-easymail-admin-subscribers.php:773
+msgid "Export unsubscribed emails"
 msgstr ""
 
-#: alo-easymail_subscribers.php:898
-#@ alo-easymail
-msgid "Delete and add to list of who unsubscribed"
+#: pages/alo-easymail-admin-subscribers.php:444
+#: pages/alo-easymail-admin-subscribers.php:455
+msgid "Export"
+msgstr "エクスポート"
+
+#: pages/alo-easymail-admin-subscribers.php:422
+msgid "You can export newsletter subscribers: the plugin shows them on screen so you can copy and paste them into a text file or into any application"
+msgstr "ニュースレター購読者をエクスポートできます： プラグインは購読者を画面に表示します。テキストファイルやその他アプリケーションにコピー＆ペーストしてください"
+
+#: pages/alo-easymail-admin-subscribers.php:421
+#: pages/alo-easymail-admin-subscribers.php:737
+msgid "Export subscribers"
+msgstr "購読者をエクスポート"
+
+#: pages/alo-easymail-admin-subscribers.php:417
+msgid "Upload CSV file"
+msgstr "CSVファイルをアップロード"
+
+#: pages/alo-easymail-admin-subscribers.php:398
+msgid "Test mode (no importation, show records on screen)"
+msgstr "テストモード（インポートを行わず、結果を画面に表示します）"
+
+#: pages/alo-easymail-admin-subscribers.php:396
+msgid "try using a different browser"
+msgstr "別のブラウザで試してください"
+
+#: pages/alo-easymail-admin-subscribers.php:396
+msgid "Tips if you have problems: you can try changing the file extension from .csv to .txt; use double quotes to delimit each field (&quot;email_address1@domain.ltd&quot;;&quot;name1 surname1&quot;)"
+msgstr "問題がおきたら：ファイル拡張子を.csvから.txtに変更してください。各フィールドをクオートで囲ってください（&quot;email_address1@domain.ltd&quot;;&quot;name1 surname1&quot;）"
+
+#: pages/alo-easymail-admin-subscribers.php:383
+msgid "Language codes"
+msgstr "言語コード"
+
+#: pages/alo-easymail-admin-subscribers.php:383
+msgid "you can set them up in Settings &gt; Newsletter"
+msgstr "設定 &gt; ニュースレターで設定できます"
+
+#: pages/alo-easymail-admin-subscribers.php:383
+msgid "You can list only languages available in the blog"
+msgstr "ブログで有効になっている言語のみ登録できます"
+
+#: pages/alo-easymail-admin-subscribers.php:382
+msgid "For each line you have to specify: e-mail address (mandatory), name (optional), language code (optional). Use semicolon (;) to separate the fields."
+msgstr "それぞれの行に次の情報を指定：メールアドレス（必須）、名前（オプション）、言語コード（オプション）。フィールド区切りにはセミコロン (;) を使ってください。"
+
+#: pages/alo-easymail-admin-subscribers.php:381
+msgid "You can import new subscribers from a CSV file."
+msgstr "CSVファイルから新規購読者をインポートできます。"
+
+#: pages/alo-easymail-admin-subscribers.php:380
+msgid "Import from uploaded CSV file"
+msgstr "アップロードされたCSVファイルからインポート"
+
+#: pages/alo-easymail-admin-subscribers.php:376
+msgid "Import from WP members"
+msgstr "WP会員からインポート"
+
+#: pages/alo-easymail-admin-subscribers.php:371
+msgid "Blog registered users"
+msgstr "ブログに登録済みのユーザー"
+
+#: pages/alo-easymail-admin-subscribers.php:369
+msgid "This feature is useful if you have just installed the plugin and you would like to automatically subscribe existing users."
+msgstr "この機能はプラグインをインストールしたばかりで、既存のユーザーを自動的に購読者としたい場合に役立ちます。"
+
+#: pages/alo-easymail-admin-subscribers.php:368
+msgid "You can import new subscribers from WordPress registered users. Each member will be subscribed to the newsletter."
+msgstr "WordPressに登録しているユーザーから購読者をインポートできます。それぞれの会員がニュースレターを購読します。"
+
+#: pages/alo-easymail-admin-subscribers.php:367
+msgid "Import from WP registered users"
+msgstr "WPの登録済みユーザーからインポート"
+
+#: pages/alo-easymail-admin-subscribers.php:363
+msgid "Add"
+msgstr "追加"
+
+#: pages/alo-easymail-admin-subscribers.php:306
+msgid "Add a subscriber"
+msgstr "購読者を追加"
+
+#: pages/alo-easymail-admin-subscribers.php:298
+msgid "You can view and export these email addresses"
 msgstr ""
 
-#: alo-easymail.php:1414
-#@ alo-easymail
-msgid "Filter users according to roles"
-msgstr "役割によってユーザーを絞り込み"
+#: pages/alo-easymail-admin-subscribers.php:296
+msgid "Note: the email addresses of who unsubscribed the newsletter are archivied in a database table, so you cannot add or import those addresses using the tools in this page"
+msgstr "注意：ニュースレターの購読を解除したメールアドレスはデータベースにアーカイブされているため、それらのアドレスをこのページのツールを使って追加／インポートすることはできません"
 
-#: alo-easymail_functions.php:318
-#@ default
-msgid "User Roles"
-msgstr "ユーザー役割"
+#: pages/alo-easymail-admin-subscribers.php:274
+msgid "Subscribers deactivated"
+msgstr "購読者が無効になりました"
 
-#: alo-easymail_options.php:847
-#@ alo-easymail
-msgid "WP-Cron is not working properly"
-msgstr "WP-Cronは適切に動いていません"
+#: pages/alo-easymail-admin-subscribers.php:261
+msgid "Subscribers activated"
+msgstr "購読者が有効化されました"
 
-#: alo-easymail_options.php:848
-#, php-format
-#@ alo-easymail
-msgid "%s is returning a %s response which could mean cron jobs aren't getting fired properly"
-msgstr "%s件が%s件のレスポンスを返しました。これはCronジョブが適切に動いていないことを意味します"
-
-#: alo-easymail_options.php:849
-#@ alo-easymail
-msgid "The file seems to be not accessible: is your blog behind some kind of authentication, maintenance plugin, .htpasswd protection?"
+#: pages/alo-easymail-admin-subscribers.php:248
+msgid "Subscribers deleted and added to list of who unsubscribed"
 msgstr ""
 
-#: alo-easymail_options.php:851
-#: alo-easymail_options.php:872
-#@ alo-easymail
-msgid "If you are using an external cron job ignore this piece of information"
-msgstr "外部のCronジョブを使っている場合はここを設定する必要はありません"
+#: pages/alo-easymail-admin-subscribers.php:231
+msgid "Subscribers deleted"
+msgstr "購読者が削除されました"
 
-#: alo-easymail_options.php:867
-#, php-format
-#@ alo-easymail
-msgid "The cron is scheduled to launch a batch every %s minutes"
+#: pages/alo-easymail-admin-subscribers.php:217
+msgid "No language available"
+msgstr "利用できる言語がありません"
+
+#: pages/alo-easymail-admin-subscribers.php:198
+msgid "No language"
+msgstr "言語なし"
+
+#: pages/alo-easymail-admin-subscribers.php:197
+#: pages/alo-easymail-admin-subscribers.php:823
+msgid "Choose a language"
+msgstr "言語を選択"
+
+#: pages/alo-easymail-admin-subscribers.php:184
+#: pages/alo-easymail-admin-subscribers.php:942
+msgid "Change language ascribed to subscribers"
+msgstr "購読者に属する言語を変更"
+
+#: pages/alo-easymail-admin-subscribers.php:178
+#: pages/alo-easymail-admin-subscribers.php:563
+msgid "No language option selected"
+msgstr "言語オプションが選択されていません"
+
+#: pages/alo-easymail-admin-subscribers.php:163
+#: pages/alo-easymail-admin-subscribers.php:210
+#: pages/alo-easymail-admin-subscribers.php:960
+msgid "Apply"
+msgstr "適用"
+
+#: pages/alo-easymail-admin-subscribers.php:155
+msgid "Add to selected lists and remove from not selected lists"
+msgstr "選択されたリストに追加し、選択されていないリストから削除"
+
+#: pages/alo-easymail-admin-subscribers.php:151
+msgid "Remove from selected lists"
+msgstr "選択されたリストから削除"
+
+#: pages/alo-easymail-admin-subscribers.php:148
+#: pages/alo-easymail-admin-subscribers.php:151
+msgid "ignore not selected lists"
+msgstr "選択されていないリストを無視"
+
+#: pages/alo-easymail-admin-subscribers.php:148
+#: pages/alo-easymail-admin-subscribers.php:402
+msgid "Add to selected lists"
+msgstr "選択されたリストに追加"
+
+#: pages/alo-easymail-admin-subscribers.php:146
+msgid "Choose an action"
+msgstr "アクションを選択"
+
+#: pages/alo-easymail-admin-subscribers.php:135
+msgid "Choose mailing lists"
+msgstr "メーリングリストを選択"
+
+#: pages/alo-easymail-admin-subscribers.php:122
+#: pages/alo-easymail-admin-subscribers.php:185
+msgid "Selected subscribers"
+msgstr "選択された購読者"
+
+#: pages/alo-easymail-admin-subscribers.php:121
+#: pages/alo-easymail-admin-subscribers.php:941
+msgid "Edit subscription to mailing lists"
+msgstr "メーリングリストの購読を編集"
+
+#: pages/alo-easymail-admin-subscribers.php:115
+#: pages/alo-easymail-admin-subscribers.php:528
+msgid "No list selected"
+msgstr "リストが選択されていません"
+
+#: pages/alo-easymail-admin-subscribers.php:114
+#: pages/alo-easymail-admin-subscribers.php:177
+#: pages/alo-easymail-admin-subscribers.php:224
+#: pages/alo-easymail-admin-subscribers.php:237
+#: pages/alo-easymail-admin-subscribers.php:254
+#: pages/alo-easymail-admin-subscribers.php:267
+#: pages/alo-easymail-admin-subscribers.php:469
+#: pages/alo-easymail-admin-subscribers.php:527
+#: pages/alo-easymail-admin-subscribers.php:562
+#: pages/alo-easymail-admin-subscribers.php:906
+msgid "No subscriber selected"
+msgstr "購読者が選択されていません"
+
+#: pages/alo-easymail-admin-subscribers.php:41
+msgid "Not deleted"
+msgstr "削除されませんでした"
+
+#: pages/alo-easymail-admin-subscribers.php:38
+msgid "Subscriber deleted"
+msgstr "購読者を削除しました"
+
+#: pages/alo-easymail-admin-subscribers.php:31
+msgid "Not updated"
+msgstr "更新されませんでした"
+
+#: pages/alo-easymail-admin-subscribers.php:29
+msgid "Activation state updated"
+msgstr "有効状態が更新されました"
+
+#: pages/alo-easymail-admin-report.php:290
+msgid "the message was rejected by recipient mail server"
 msgstr ""
 
-#: alo-easymail_options.php:867
-#@ alo-easymail
-msgid "Next possible sending"
+#: pages/alo-easymail-admin-report.php:290
+msgid "Bounced"
+msgstr "バウンス数"
+
+#: pages/alo-easymail-admin-report.php:272
+msgid "Viewed"
+msgstr "閲覧数"
+
+#: pages/alo-easymail-admin-report.php:270
+#: pages/alo-easymail-admin-subscribers.php:330
+#: pages/alo-easymail-admin-subscribers.php:586
+#: pages/alo-easymail-admin-subscribers.php:1052
+msgid "Language"
+msgstr "言語"
+
+#: pages/alo-easymail-admin-report.php:238
+msgid "Visit %s"
+msgstr "%s を訪問"
+
+#: pages/alo-easymail-admin-report.php:222
+msgid "Visits"
+msgstr "訪問数"
+
+#: pages/alo-easymail-admin-report.php:221
+msgid "Requested URL"
+msgstr "要求されたURL"
+
+#: pages/alo-easymail-admin-report.php:216
+msgid "Back to list of recipients"
+msgstr "受信者リストへ戻る"
+
+#: pages/alo-easymail-admin-report.php:207
+msgid "It reduces the data in database tables and make the plugin queries and actions faster"
+msgstr "これはデータベースへのクエリを減らし、プラグインの動作を速くします"
+
+#: pages/alo-easymail-admin-report.php:207
+msgid "This action deletes the detailed info about recipients (see below) and keeps only the summary (see above)"
+msgstr "このアクションは受信者に関する詳細情報（下記を参照）を削除し、サマリー（上記参照）だけを保存します"
+
+#: pages/alo-easymail-admin-report.php:206
+msgid "Delete the detailed report of recipients"
+msgstr "受信者の詳細なリポートを削除"
+
+#: pages/alo-easymail-admin-report.php:205
+msgid "This action cannot be undone"
+msgstr "このアクションは取り消せません"
+
+#: pages/alo-easymail-admin-report.php:205
+#: pages/alo-easymail-admin-report.php:207
+msgid "You are about to DELETE the detailed info about recipients"
+msgstr "受信者の詳細情報を削除しようとしています"
+
+#: pages/alo-easymail-admin-report.php:205
+msgid "Are you sure?"
+msgstr "ほんとうによろしいですか？"
+
+#: pages/alo-easymail-admin-report.php:170
+#: pages/alo-easymail-admin-report.php:273
+msgid "Clicks"
+msgstr "クリック"
+
+#: pages/alo-easymail-admin-report.php:166
+#: pages/alo-easymail-admin-report.php:172
+msgid "The number includes max a view per recipient"
+msgstr "受信者ごとに最大1ビューを含む数"
+
+#: pages/alo-easymail-admin-report.php:163
+msgid "Unique views"
+msgstr "ユニークビュー"
+
+#: pages/alo-easymail-admin-report.php:161
+msgid "Sendings failed"
+msgstr "送信失敗"
+
+#: pages/alo-easymail-admin-report.php:160
+msgid "Sendings succesful"
+msgstr "送信成功"
+
+#: pages/alo-easymail-admin-report.php:159
+msgid "Sendings done"
+msgstr "送信完了"
+
+#: pages/alo-easymail-admin-report.php:153
+#: pages/alo-easymail-admin-report.php:202
+msgid "Detailed report was archived"
+msgstr "詳細リポートはアーカイブされました"
+
+#: pages/alo-easymail-admin-report.php:109
+msgid "without formatting"
+msgstr "フォーマットなし"
+
+#: pages/alo-easymail-admin-report.php:70
+msgid "open in a new window"
+msgstr "新規ウィンドウで開く"
+
+#: pages/alo-easymail-admin-options.php:1600
+msgid "Save settings and handle manually bounces now"
 msgstr ""
 
-#: alo-easymail_options.php:869
-#@ alo-easymail
+#: pages/alo-easymail-admin-options.php:1570
+#: pages/alo-easymail-admin-options.php:1599
+msgid "Handle manually bounces now"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1562
+msgid "Maximum number of emails that can be check per bounce batch"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1556
+msgid "Bounce policy"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1595
+msgid "Save settings and test now"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1594
+msgid "Test the connection now"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1545
+msgid "Optional flags"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1576
+msgid "Password"
+msgstr "パスワード"
+
+#: pages/alo-easymail-admin-options.php:1539
+#: pages/alo-easymail-admin-subscribers.php:1047
+msgid "Username"
+msgstr "ユーザー名"
+
+#: pages/alo-easymail-admin-options.php:1533
+msgid "The host remote folder"
+msgstr "ホストのリモートフォルダー"
+
+#: pages/alo-easymail-admin-options.php:1531
+msgid "Folder"
+msgstr "フォルダー"
+
+#: pages/alo-easymail-admin-options.php:1517
+msgid "Protocol"
+msgstr "プロトコル"
+
+#: pages/alo-easymail-admin-options.php:1512
+msgid "Port number"
+msgstr "ポート番号"
+
+#: pages/alo-easymail-admin-options.php:1506
+msgid "The host remote server"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1504
+msgid "Server host"
+msgstr "サーバーホスト"
+
+#: pages/alo-easymail-admin-options.php:1490
+msgid "Connection settings"
+msgstr "接続設定"
+
+#: pages/alo-easymail-admin-options.php:1498
+msgid "The email address to which bounce messages are delivered"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1496
+msgid "Email address"
+msgstr "メールアドレス"
+
+#: pages/alo-easymail-admin-options.php:1478
+msgid "The bounces has been successfully handled"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:1456
+msgid "The connection test has been successfully completed"
+msgstr "接続テストが正常に完了しました"
+
+#: pages/alo-easymail-admin-options.php:1435
+msgid "Ask your hosting provider to enable %s for PHP"
+msgstr "PHP %s を有効にするようにホスティングプロバイダに依頼してください"
+
+#: pages/alo-easymail-admin-options.php:1434
+msgid "This plugin feature can not work now."
+msgstr "このプラグイン機能は今動作しません。"
+
+#: pages/alo-easymail-admin-options.php:1433
+msgid "PHP %s extension was not detected"
+msgstr "PHP %s の拡張子が検出されませんでした"
+
+#: pages/alo-easymail-admin-options.php:1399
+#: pages/alo-easymail-admin-subscribers.php:170
+msgid "There are no available lists"
+msgstr "利用できるリストはありません"
+
+#: pages/alo-easymail-admin-options.php:1391
+msgid "Do you really want to DELETE this list?"
+msgstr "このリストを削除しますか？"
+
+#: pages/alo-easymail-admin-options.php:1390
+#: pages/alo-easymail-admin-options.php:1392
+msgid "Delete list"
+msgstr "リストを削除"
+
+#: pages/alo-easymail-admin-options.php:1351
+msgid "Action"
+msgstr "アクション"
+
+#: pages/alo-easymail-admin-options.php:1346
+msgid "ID"
+msgstr "ID"
+
+#: pages/alo-easymail-admin-options.php:1299
+msgid "no translation for this language, yet"
+msgstr "この言語の翻訳がありません"
+
+#: pages/alo-easymail-admin-options.php:1281
+#: pages/alo-easymail-admin-options.php:1349
+msgid "Order"
+msgstr "順序"
+
+#: pages/alo-easymail-admin-options.php:1280
+#: pages/alo-easymail-admin-options.php:1348
+msgid "Availability"
+msgstr "利用形態"
+
+#: pages/alo-easymail-admin-options.php:1279
+#: pages/alo-easymail-admin-options.php:1347
+msgid "List name"
+msgstr "リスト名"
+
+#: pages/alo-easymail-admin-options.php:1274
+msgid "New list"
+msgstr "新規リスト"
+
+#: pages/alo-easymail-admin-options.php:1274
+#: pages/alo-easymail-admin-options.php:1387
+#: pages/alo-easymail-admin-options.php:1388
+msgid "Edit list"
+msgstr "リストを編集"
+
+#: pages/alo-easymail-admin-options.php:1270
+msgid "the list is available in the whole site, so subscribers can see it"
+msgstr "リストはサイトに表示されるため、購読者は見ることができます"
+
+#: pages/alo-easymail-admin-options.php:1270
+#: pages/alo-easymail-admin-options.php:1322
+#: pages/alo-easymail-admin-options.php:1373
+msgid "entire site"
+msgstr "サイト全体"
+
+#: pages/alo-easymail-admin-options.php:1269
+msgid "the list is available only for administratrion use (settings, sending page, subscribers), so subscribers cannot see it"
+msgstr "リストは管理画面からのみ利用（設定、送信、購読者管理）でき、購読者からは見ることができません"
+
+#: pages/alo-easymail-admin-options.php:1269
+#: pages/alo-easymail-admin-options.php:1321
+#: pages/alo-easymail-admin-options.php:1370
+msgid "admin side only"
+msgstr "管理画面のみ"
+
+#: pages/alo-easymail-admin-options.php:1268
+msgid "the list can be shown only here in settings and nowhere in the site"
+msgstr "リストはこの画面にだけ表示され、サイトのその他の部分では表示されません"
+
+#: pages/alo-easymail-admin-options.php:1268
+#: pages/alo-easymail-admin-options.php:1320
+#: pages/alo-easymail-admin-options.php:1367
+msgid "hidden"
+msgstr "非表示"
+
+#: pages/alo-easymail-admin-options.php:1266
+msgid "You can setup mailing lists. For each you have to specify the name, the order (the lowest appear at top) and the availability"
+msgstr "メーリングリストを設定できます。それぞれに対して名称、順序（低いほど上に表示）、利用形態を指定してください"
+
+#: pages/alo-easymail-admin-options.php:1239
+msgid "Inputs are incompled or wrong. Please check and try again."
+msgstr "入力値が不正です。もう一度確認してやりなおしてください"
+
+#: pages/alo-easymail-admin-options.php:1157
+msgid "Other sections can be modified only by administrators"
+msgstr "その他のセクションは管理者のみが修正できます"
+
+#: pages/alo-easymail-admin-options.php:1154
+msgid "The user with this capability can set up these setting sections"
+msgstr "この権限を持つユーザーは設定を行えます"
+
+#: pages/alo-easymail-admin-options.php:1147
+msgid "Can manage newsletter options"
+msgstr "ニュースレターのオプションを管理できます"
+
+#: pages/alo-easymail-admin-options.php:1141
+msgid "The user with this capability can manage subscribers (add, delete, assign to mailing lists...)"
+msgstr "この権限を持つユーザーは購読者を管理（追加、削除、メーリングリストへ割当）できます"
+
+#: pages/alo-easymail-admin-options.php:1134
+msgid "Can manage newsletter subscribers"
+msgstr "ニュースレターの購読者を管理できます"
+
+#: pages/alo-easymail-admin-options.php:1128
+msgid "The user with this capability can send and publish newsletters"
+msgstr "この権限を持つユーザーは、ニュースレターを送信して公開することができます"
+
+#: pages/alo-easymail-admin-options.php:1121
+msgid "Can publish and send newsletters"
+msgstr "ニュースレターを公開して送信することができます"
+
+#: pages/alo-easymail-admin-options.php:1114
+msgid "The user with this capability can manage newsletters of all users (view the report, delete)"
+msgstr "この権限を持つユーザーはすべてのユーザーのニュースレターを管理（リポート閲覧、削除）できます。"
+
+#: pages/alo-easymail-admin-options.php:1107
+msgid "Can edit newsletters of other users"
+msgstr "他のユーザーのニュースレターを編集できます"
+
+#: pages/alo-easymail-admin-options.php:1101
+#: pages/alo-easymail-admin-options.php:1115
+msgid "This user cannot publish and send newsletters"
+msgstr "このユーザーはニュースレターを公開したり送信したりすることはできません"
+
+#: pages/alo-easymail-admin-options.php:1100
+msgid "The user with this capability can manage own newsletters (view the report, delete)"
+msgstr "この権限を持つユーザーは自分のニュースレターを管理（リポートの閲覧、削除）ができます"
+
+#: pages/alo-easymail-admin-options.php:1093
+msgid "Can create and edit own newsletters"
+msgstr "自分のニュースレターを作成、編集することができます"
+
+#: pages/alo-easymail-admin-options.php:1057
+msgid "Important advice to calculate the best limit"
+msgstr "最大送信数を計算するための重要なアドバイス"
+
+#: pages/alo-easymail-admin-options.php:1050
+msgid "If your blog gets a few visitors a day or you like to have an accurate batch sending, you have to set up an external cron job"
+msgstr "あなたのブログへの訪問者が少ないか、正確なバッチ処理を行いたい場合は、外部のCRonジョブを利用してください"
+
+#: pages/alo-easymail-admin-options.php:1040
+msgid "Let&#39;s speak clearly: the WP cron system is a pseudo-cron and it's not accurate by definition"
+msgstr "わかりやすく言うと、WP Cronシステムは仮想クーロンであり、厳密には正確ではありません"
+
+#: pages/alo-easymail-admin-options.php:1038
+msgid "What about the batch sending based on WP cron system?"
+msgstr "WP Cronシステムでバッチ送信を行うとはどういうことですか？"
+
+#: pages/alo-easymail-admin-options.php:1031
+msgid "The higher this value, the lower the number of emails sent for each batch"
+msgstr "この値が高いほど、バッチごとに送信できるメールの数は少なくなります"
+
+#: pages/alo-easymail-admin-options.php:1031
+msgid "It is useful if your provider allows a maximum number of emails that can be sent per second or minute"
+msgstr "あなたの利用するプロバイダが分ごとや秒ごとに送信できるメール数を制限しているときに役立ちます"
+
+#: pages/alo-easymail-admin-options.php:1031
+msgid "Usually you do not have to modify this value"
+msgstr "この値は通常変更する必要はありません"
+
+#: pages/alo-easymail-admin-options.php:1029
+msgid "Interval between emails in a single batch, in milliseconds"
+msgstr "それぞれのメール送信バッチの間隔（ミリ秒）"
+
+#: pages/alo-easymail-admin-options.php:1025
+msgid "Recommended"
+msgstr "推奨"
+
+#: pages/alo-easymail-admin-options.php:1022
+msgid "every %s minutes"
+msgstr "%s分ごと"
+
+#: pages/alo-easymail-admin-options.php:1021
+msgid "Maximum number of emails that can be sent per batch"
+msgstr "バッチごとに送信できるメールの最大数"
+
+#: pages/alo-easymail-admin-options.php:1014
+msgid "Maximum number of emails that can be sent in a 24-hr period"
+msgstr "24時間に送信できるメールの最大数"
+
+#: pages/alo-easymail-admin-options.php:1003
 msgid "There is not any next scheduled sending in WP-Cron"
 msgstr "WP-Cronに予約された送信はありません"
 
-#: alo-easymail.php:414
-#: alo-easymail.php:1674
-#: alo-easymail.php:1878
-#: alo-easymail.php:1901
-#: alo-easymail_options.php:1258
-#: alo-easymail_subscribers.php:54
-#@ alo-easymail
-msgid "Subscribers"
-msgstr "購読者"
+#: pages/alo-easymail-admin-options.php:1001
+msgid "Next possible sending"
+msgstr "次の送信可能"
 
-#: alo-easymail.php:418
-#@ default
-msgid "Settings"
-msgstr "設定"
+#: pages/alo-easymail-admin-options.php:1001
+msgid "The cron is scheduled to launch a batch every %s minutes"
+msgstr "cron は%s分ごとにバッチを起動する予定です"
 
-#: alo-easymail.php:475
-#: alo-easymail.php:516
-#@ alo-easymail
-msgid "Resources about EasyMail Newsletter"
-msgstr "EasyMail ニュースレターに関する情報"
+#: pages/alo-easymail-admin-options.php:985
+#: pages/alo-easymail-admin-options.php:1006
+msgid "If you are using an external cron job ignore this piece of information"
+msgstr "外部のCronジョブを使っている場合はここを設定する必要はありません"
 
-#: alo-easymail.php:617
-#: alo-easymail.php:628
-#: alo-easymail.php:1872
-#: alo-easymail.php:1873
-#: alo-easymail.php:1891
-#: alo-easymail.php:1894
-#@ alo-easymail
-msgid "Newsletters"
-msgstr "ニュースレター"
+#: pages/alo-easymail-admin-options.php:983
+msgid "The file seems to be not accessible: is your blog behind some kind of authentication, maintenance plugin, .htpasswd protection?"
+msgstr "ファイルにアクセスできないようです: ブログに認証がかかっていないか、メンテナンスプラグインが有効でないか、.htpasswd による保護がされていないか確認してください。"
 
-#: alo-easymail-widget.php:251
-#: alo-easymail.php:463
-#: alo-easymail.php:618
-#: alo-easymail.php:1080
-#: alo-easymail_options.php:246
-#: alo-easymail_options.php:401
-#@ alo-easymail
-msgid "Newsletter"
-msgstr "ニュースレター"
+#: pages/alo-easymail-admin-options.php:982
+msgid "%s is returning a %s response which could mean cron jobs aren't getting fired properly"
+msgstr "%s件が%s件のレスポンスを返しました。これはCronジョブが適切に動いていないことを意味します"
 
-#: alo-easymail.php:619
-#: alo-easymail.php:1897
-#@ alo-easymail
-msgid "Add New"
-msgstr "新規追加"
+#: pages/alo-easymail-admin-options.php:981
+msgid "WP-Cron is not working properly"
+msgstr "WP-Cronは適切に動いていません"
 
-#: alo-easymail.php:620
-#: alo-easymail.php:1874
-#@ alo-easymail
-msgid "Add New Newsletter"
-msgstr "新規ニュースレター"
+#: pages/alo-easymail-admin-options.php:971
+msgid "Some parameters are already setted up in %s, so the values below could be ignored"
+msgstr "いくつかのパラメータは%sで設定済みのため、以下の設定は無視されます"
 
-#: alo-easymail.php:621
-#@ alo-easymail
-msgid "Edit Newsletter"
-msgstr "ニュースレターを編集"
+#: pages/alo-easymail-admin-options.php:931
+msgid "plain url to the newsletter web url"
+msgstr "ニュースレターのWeb URL"
 
-#: alo-easymail.php:622
-#@ alo-easymail
-msgid "New Newsletter"
-msgstr "新規ニュースレター"
+#: pages/alo-easymail-admin-options.php:930
+msgid "html link to the newsletter web url"
+msgstr "ニュースレターのWeb URLを示すHTMLリンク"
 
-#: alo-easymail.php:623
-#@ alo-easymail
-msgid "View Newsletter"
-msgstr "ニュースレターを表示"
+#: pages/alo-easymail-admin-options.php:901
+msgid "Read newsletter online"
+msgstr "ニュースレターをオンラインで読む"
 
-#: alo-easymail.php:624
-#@ alo-easymail
-msgid "Search Newsletters"
-msgstr "ニュースレターを検索"
+#: pages/alo-easymail-admin-options.php:893
+#: pages/alo-easymail-admin-options.php:932
+msgid "It's a plain url, you have to compose the link"
+msgstr "ただのURLであるため、リンクを作成する必要があります"
 
-#: alo-easymail.php:625
-#@ alo-easymail
-msgid "No Newsletters found"
-msgstr "ニュースレターが見つかりませんでした"
+#: pages/alo-easymail-admin-options.php:892
+msgid "the plain url that the new subscriber must click/visit to unsubscribe the newsletter"
+msgstr "ニュースレターを購読解除するために購読者がクリック／訪問しなくてはならないプレーンURL"
 
-#: alo-easymail.php:626
-#@ alo-easymail
-msgid "No Newsletters found in Trash"
-msgstr "ニュースレターはゴミ箱にありません"
+#: pages/alo-easymail-admin-options.php:891
+msgid "the html link that the new subscriber must click/visit to unsubscribe the newsletter"
+msgstr "ニュースレターを購読解除するために購読者がクリック／訪問しなくてはならないHTMLリンク"
 
-#: alo-easymail.php:627
-#: alo-easymail.php:629
-#@ alo-easymail
-msgid "Parent Newsletter"
-msgstr "親ニュースレター"
+#: pages/alo-easymail-admin-options.php:863
+msgid "visit this link"
+msgstr "リンクへ移動"
 
-#: alo-easymail.php:681
-#@ alo-easymail
-msgid "Custom field updated."
-msgstr "カスタムフィールドが更新されました。"
+#: pages/alo-easymail-admin-options.php:859
+msgid "Unsubscription disclaimer"
+msgstr "購読解除時の断り書き"
 
-#: alo-easymail.php:682
-#@ alo-easymail
-msgid "Custom field deleted."
-msgstr "カスタムフィールドが削除されました。"
+#: pages/alo-easymail-admin-options.php:853
+msgid "the url that the new subscriber must click/visit to confirm the subscription"
+msgstr "購読者が購読申込を完了するためにクリック／訪問しなくてはならないURL"
 
-#: alo-easymail.php:680
-#: alo-easymail.php:683
-#@ alo-easymail
-msgid "Newsletter updated."
-msgstr "ニュースレターが更新されました。"
+#: pages/alo-easymail-admin-options.php:852
+msgid "the subscriber name"
+msgstr "購読者名"
 
-#. translators: %s: date and time of the revision 
-#: alo-easymail.php:685
-#, php-format
-#@ alo-easymail
-msgid "Newsletter restored to revision from %s"
-msgstr "ニュースレターがリビジョン%sから復元されました。"
+#: pages/alo-easymail-admin-options.php:851
+#: pages/alo-easymail-admin-options.php:890
+msgid "the blog name"
+msgstr "ブログ名"
 
-#: alo-easymail.php:687
-#@ alo-easymail
-msgid "Newsletter saved."
-msgstr "ニュースレターが保存されました。"
+#: pages/alo-easymail-admin-options.php:849
+#: pages/alo-easymail-admin-options.php:888
+#: pages/alo-easymail-admin-options.php:928
+msgid "You can use the following tags"
+msgstr "次のタグを利用できます"
 
-#: alo-easymail.php:688
-#, php-format
-#@ alo-easymail
-msgid "Newsletter submitted. <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
-msgstr "ニュースレターが送信されました。<a target=\"_blank\" href=\"%s\">ニュースレターをプレビュー</a>"
+#: pages/alo-easymail-admin-options.php:837
+#: pages/alo-easymail-admin-report.php:109
+msgid "Main body"
+msgstr "本文"
 
-#: alo-easymail.php:691
-#: alo-easymail.php:966
-#: alo-easymail.php:1668
-#: alo-easymail_functions.php:1827
-#: alo-easymail_options.php:867
-#: alo-easymail_report.php:90
-#: alo-easymail_report.php:96
-#@ alo-easymail
-#@ default
-msgid "j M Y @ G:i"
-msgstr "Y/m/d H:i"
+#: pages/alo-easymail-admin-options.php:820
+msgid "Activation e-mail"
+msgstr "有効化メール"
 
-#: alo-easymail.php:735
-#@ default
-msgid "Title"
-msgstr "タイトル"
+#: pages/alo-easymail-admin-options.php:815
+msgid "Communications"
+msgstr "コミュニケーション"
 
-#: alo-easymail.php:735
-#: alo-easymail_options.php:699
-#: alo-easymail_report.php:67
-#@ alo-easymail
-msgid "Subject"
-msgstr "件名"
+#: pages/alo-easymail-admin-options.php:770
+msgid "If filled in it will appear at the top of widget/page. Useful to invite to subscribe"
+msgstr "ウィジェット／ページのトップに表示されます。購読勧誘に役立ちます。"
 
-#: alo-easymail.php:736
-#: alo-easymail.php:1370
-#: alo-easymail_report.php:250
-#@ alo-easymail
-msgid "Recipients"
-msgstr "受信者"
+#: pages/alo-easymail-admin-options.php:766
+msgid "If filled in it will appear at the bottom of widget/page. Useful to show/link more info about privacy"
+msgstr "ウィジェットやページの最後に表示されます。プライバシーに関する情報を表示／リンクするのに役立ちます。"
 
-#: alo-easymail.php:737
-#@ alo-easymail
-msgid "Newsletter status"
-msgstr "ニュースレター状態"
+#: pages/alo-easymail-admin-options.php:765
+#: pages/alo-easymail-admin-options.php:769
+#: pages/alo-easymail-admin-options.php:1534
+#: pages/alo-easymail-admin-options.php:1547
+msgid "empty"
+msgstr "空白"
 
-#: alo-easymail.php:738
-#: alo-easymail_report.php:89
-#@ alo-easymail
-msgid "Start"
-msgstr "開始"
+#: pages/alo-easymail-admin-options.php:758
+#: pages/alo-easymail-admin-options.php:821
+#: pages/alo-easymail-admin-options.php:860
+#: pages/alo-easymail-admin-options.php:902
+msgid "Leave blank to use default text"
+msgstr "デフォルトのテキストを使う場合は空にしてください"
 
-#: alo-easymail.php:739
-#@ default
-msgid "Author"
-msgstr "作成者"
+#: pages/alo-easymail-admin-options.php:754
+msgid "Top claim"
+msgstr "キャッチコピー"
 
-#: alo-easymail.php:756
-#: alo-easymail.php:2294
-#: alo-easymail_recipients-list.php:72
-#@ alo-easymail
-msgid "No recipients selected yet"
-msgstr "受信者が選択されていません"
+#: pages/alo-easymail-admin-options.php:753
+msgid "Policy claim"
+msgstr "プライバシーポリシー"
 
-#: alo-easymail.php:760
-#: alo-easymail_report.php:149
-#@ alo-easymail
-msgid "Total recipients"
-msgstr "全受信者"
+#: pages/alo-easymail-admin-options.php:752
+msgid "Invite to join mailing lists"
+msgstr "メーリングリストへ誘う"
 
-#: alo-easymail.php:957
-#: alo-easymail.php:958
-#@ alo-easymail
-msgid "Report"
-msgstr "リポート"
+#: pages/alo-easymail-admin-options.php:751
+msgid "Optout message"
+msgstr "オプトアウトメッセージ"
 
-#: alo-easymail.php:964
-#: alo-easymail_report.php:93
-#@ alo-easymail
-msgid "Completed"
-msgstr "完了"
+#: pages/alo-easymail-admin-options.php:750
+msgid "Optin message"
+msgstr "オプトインメッセージ"
 
-#: alo-easymail.php:974
-#@ alo-easymail
-msgid "On sending queue"
-msgstr "送信キュー"
+#: pages/alo-easymail-admin-options.php:736
+msgid "Widget/Page Texts"
+msgstr "ウィジェット/ページテキスト"
 
-#: alo-easymail.php:975
-#: alo-easymail.php:1004
-#: alo-easymail.php:1667
-#@ alo-easymail
-msgid "Progress"
-msgstr "進捗"
+#: pages/alo-easymail-admin-options.php:726
+msgid "If you are not using a multilanguage site ignore this piece of information"
+msgstr "多言語サイトを運営していない場合は設定する必要はありません"
 
-#: alo-easymail.php:977
-#: alo-easymail.php:990
-#@ alo-easymail
-msgid "refresh"
+#: pages/alo-easymail-admin-options.php:725
+msgid "The plugin looks for the subscriber&#39;s language in the browser setting and sends the e-mail accordingly"
+msgstr "プラグインはブラウザ設定から購読者の言語を検索し、それに応じたメールを送信します"
+
+#: pages/alo-easymail-admin-options.php:723
+#: pages/alo-easymail-admin-subscribers.php:383
+msgid "iso 639-1 codes"
+msgstr "iso 639-1 コード"
+
+#: pages/alo-easymail-admin-options.php:723
+msgid "List of two-letter language codes separated by commas"
+msgstr "2文字の言語コードをカンマ区切りで登録"
+
+#: pages/alo-easymail-admin-options.php:719
+msgid "If you like here you can list the languages available"
+msgstr "お好みでここに利用可能な言語を登録できます"
+
+#: pages/alo-easymail-admin-options.php:713
+msgid "Recommended plugins, fully compatible with EasyMail, for a complete multilingual functionality"
+msgstr "EasyMailと互換性があり、多言語化機能を備えたおすすめプラグイン"
+
+#: pages/alo-easymail-admin-options.php:712
+msgid "No multilanguage plugin is enabled, so you will only see texts in the main language of the site"
+msgstr "多言語プラグインが有効化されていないため、サイトの主言語だけが表示されます"
+
+#: pages/alo-easymail-admin-options.php:676
+msgid "the log file is accessible on your server and contains personal information so you have to delete it as soon as possible!"
+msgstr "ログファイルはサーバ上のアクセス可能領域にあり、個人情報を含んでいます。できる限り速やかに削除してください。"
+
+#: pages/alo-easymail-admin-options.php:676
+msgid "called %s and saved in %s"
+msgstr "called %s and saved in %s"
+
+#: pages/alo-easymail-admin-options.php:672
+msgid "If you choose a debug mode the newsletters won&#39;t be sent to the selected recipients"
+msgstr "デバッグモードを選択した場合、選択した受信者にニュースレターは送信されません"
+
+#: pages/alo-easymail-admin-options.php:667
+#: pages/alo-easymail-admin-options.php:675
+msgid "put all emails into a log file"
+msgstr "すべてのメールをログファイルに記録"
+
+#: pages/alo-easymail-admin-options.php:667
+#: pages/alo-easymail-admin-options.php:674
+msgid "send all emails to the author"
+msgstr "すべてのメールを作成者に送信"
+
+#: pages/alo-easymail-admin-options.php:663
+msgid "Debug newsletters"
+msgstr "ニュースレターをデバッグ"
+
+#: pages/alo-easymail-admin-options.php:650
+msgid "this is the quickest and safest mode, but it could not work if case of several thousands of recipients"
+msgstr "これは安全でもっとも手っ取り早い方法です。ただし、数千人の受信者がいるときは動作しない場合もあります。"
+
+#: pages/alo-easymail-admin-options.php:649
+msgid "Otherwise, you can create the list directly when the newsletter is saved, without use of ajax"
+msgstr "もしくは、Ajax を使わず、ニュースレターが保存されたときに送信者リストを作成することもできます。"
+
+#: pages/alo-easymail-admin-options.php:648
+msgid "If the standard and cool method does not work for you, you can try another option"
+msgstr "標準の方法が動かないときは別のオプションを選択できます"
+
+#: pages/alo-easymail-admin-options.php:642
+msgid "creation when newsletter is saved"
+msgstr "ニュースレターが保存されたときに作成"
+
+#: pages/alo-easymail-admin-options.php:642
+msgid "no ajax"
+msgstr "Ajax なし"
+
+#: pages/alo-easymail-admin-options.php:641
+msgid "ajax"
+msgstr "Ajax"
+
+#: pages/alo-easymail-admin-options.php:637
+msgid "Method of creation of the recipient list"
+msgstr "受信者リストの作成方法"
+
+#: pages/alo-easymail-admin-options.php:624
+msgid "Tip: copy &#39;alo-easymail-themes&#39; folder to your theme directory and edit your themes there. Useful to prevent the loss of themes when you upgrade the plugin"
+msgstr "ティップス: &#39;alo-easymail-themes&#39; フォルダーをテーマディレクトリにコピーし、テーマを編集してください。プラグインアップデート時にファイルがなくなるのを防ぐことができます。"
+
+#: pages/alo-easymail-admin-options.php:621
+msgid "but always use"
+msgstr "ただし、常に次のものを使用"
+
+#: pages/alo-easymail-admin-options.php:617
+msgid " free choice for authors"
+msgstr "作成者が自由に選択"
+
+#: pages/alo-easymail-admin-options.php:613
+msgid "Use themes"
+msgstr "テーマ使用"
+
+#: pages/alo-easymail-admin-options.php:601
+msgid "Please keep in mind that the tracking pixel is not accurate."
+msgstr "トラッキングピクセルは正確ではありません。"
+
+#: pages/alo-easymail-admin-options.php:601
+#: pages/alo-easymail-admin-report.php:165
+msgid "The plugin tries to count how many recipients open the newsletter"
+msgstr "プラグインは何人の受信者がニュースレターを開いたかをカウントしようとします"
+
+#: pages/alo-easymail-admin-options.php:601
+msgid "If yes, the plugin inserts a 1x1 pixel at the end of the newsletters to track views."
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:600
+msgid "Use a tracking pixel"
+msgstr "トラッキング・ピクセルを使用する"
+
+#: pages/alo-easymail-admin-options.php:587
+#: pages/alo-easymail-admin-options.php:1507
+#: pages/alo-easymail-admin-options.php:1548
+msgid "E.g."
+msgstr "例: "
+
+#: pages/alo-easymail-admin-options.php:586
+msgid "The plugin appends campagin variables to links"
+msgstr "プラグインはリンクにキャンペーン変数を含めます"
+
+#: pages/alo-easymail-admin-options.php:580
+msgid "you need an account"
+msgstr "アカウント必須"
+
+#: pages/alo-easymail-admin-options.php:580
+#: pages/alo-easymail-admin-options.php:587
+msgid "Google Analytics"
+msgstr "Google アナリティクス"
+
+#: pages/alo-easymail-admin-options.php:576
+msgid "Appends campaign variables to links"
+msgstr "リンクにキャンペーン変数を追加"
+
+#: pages/alo-easymail-admin-options.php:561
+msgid "Filters to the newsletter text"
+msgstr "ニュースレターのテキストへのフィルター"
+
+#: pages/alo-easymail-admin-options.php:548
+msgid "Sender's name"
+msgstr "送信者名"
+
+#: pages/alo-easymail-admin-options.php:543
+msgid "Sender's email address"
+msgstr "送信者メールアドレス"
+
+#: pages/alo-easymail-admin-options.php:539
+msgid "Number of recent posts to show in the dropdown list of the newsletter sending form"
+msgstr "ニュースレター送信フォームに表示するドロップダウンリスト内の最新投稿数"
+
+#: pages/alo-easymail-admin-options.php:537
+msgid "Number of last posts to display"
+msgstr "表示する最新投稿数"
+
+#: pages/alo-easymail-admin-options.php:514
+#: pages/alo-easymail-admin-options.php:687
+#: pages/alo-easymail-admin-options.php:722
+#: pages/alo-easymail-admin-options.php:945
+#: pages/alo-easymail-admin-options.php:1071
+#: pages/alo-easymail-admin-options.php:1168
+#: pages/alo-easymail-admin-options.php:1605
+msgid "Update"
 msgstr "更新"
 
-#: alo-easymail.php:979
-#: alo-easymail_recipients-list.php:199
-#@ alo-easymail
-msgid "pause"
-msgstr "停止"
+#: pages/alo-easymail-admin-options.php:504
+msgid "Yes, I understand"
+msgstr "はい、理解しました"
 
-#: alo-easymail.php:979
-#@ alo-easymail
-msgid "pause the sending"
-msgstr "送信を停止"
+#: pages/alo-easymail-admin-options.php:502
+msgid "If you need these data make sure you do a database backup before plugin deactivation"
+msgstr "これらのデータが必要な場合は、プラグインを無効する前にバックアップを取って下さい。"
 
-#: alo-easymail.php:985
-#@ default
-msgid "Pending Review"
-msgstr "承認待ち"
+#: pages/alo-easymail-admin-options.php:502
+msgid "On plugin deactivation, all plugin options, preferences and database tables (including all newsletters and subscribers data) will be definitely deleted"
+msgstr "プラグインを無効化する場合、すべてのプラグイン設定、データベース（ニュースレターと購読者データを含む）を完全に削除します。"
 
-#: alo-easymail.php:988
-#@ default
-msgid "Scheduled"
-msgstr "スケジュール"
+#: pages/alo-easymail-admin-options.php:501
+#: pages/alo-easymail-admin-options.php:503
+#: pages/alo-easymail-admin-options.php:504
+msgid "Delete all plugin data on deactivation"
+msgstr "無効化時にプラグインデータを削除"
 
-#: alo-easymail.php:994
-#@ default
-msgid "Draft"
-msgstr "下書き"
+#: pages/alo-easymail-admin-options.php:490
+msgid "You are free to hide the credits, but in that case it's a common practice to make a small donatation via Paypal to the plugin author"
+msgstr "クレジットを隠すことはできますが、その場合はプラグイン作者に対してPayPalで少額の寄付をいただけると助かります。"
 
-#: alo-easymail.php:997
-#@ default
-msgid "Pending"
-msgstr "承認待ち"
+#: pages/alo-easymail-admin-options.php:489
+msgid "Show credit banners in back-end"
+msgstr "バックエンドにクレジットを表示"
 
-#: alo-easymail.php:1003
-#@ alo-easymail
-msgid "Paused"
-msgstr "停止中"
+#: pages/alo-easymail-admin-options.php:477
+msgid "If no, newsletters are not available online"
+msgstr "いいえにした場合、ニュースレターはオンラインでアクセスできません"
 
-#: alo-easymail.php:1008
-#: alo-easymail_recipients-list.php:200
-#@ alo-easymail
-msgid "continue"
-msgstr "続ける"
+#: pages/alo-easymail-admin-options.php:477
+msgid "If yes, newsletters automatically are published into your blog so they can be read online"
+msgstr "はいにした場合、ニュースレターはブログ上で公開され、オンラインで読めるようになります。"
 
-#: alo-easymail.php:1008
-#@ alo-easymail
-msgid "continue the sending"
-msgstr "送信を続ける"
+#: pages/alo-easymail-admin-options.php:476
+msgid "Publish newsletters online"
+msgstr "ニュースレターをオンラインで公開"
 
-#: alo-easymail.php:1019
-#@ alo-easymail
-msgid "Required"
-msgstr "必須"
+#: pages/alo-easymail-admin-options.php:417
+msgid "They can always edit newsletter subscription in profile page"
+msgstr ""
 
-#: alo-easymail.php:1019
-#: alo-easymail.php:2316
-#: alo-easymail_recipients-list.php:174
-#@ alo-easymail
-msgid "Create list of recipients"
-msgstr "受信者のリストを作成"
+#: pages/alo-easymail-admin-options.php:417
+msgid "If yes, the widget will be not shown to registered users"
+msgstr ""
 
-#: alo-easymail.php:1034
-#: alo-easymail_report.php:263
-#@ alo-easymail
-msgid "Sent"
-msgstr "送信済み"
+#: pages/alo-easymail-admin-options.php:416
+msgid "Hide widget from users"
+msgstr ""
 
-#: alo-easymail-widget.php:57
-#: alo-easymail.php:1083
-#: alo-easymail.php:1725
-#: alo-easymail_options.php:627
-#: alo-easymail_subscr-page.php:24
-#@ alo-easymail
+#: pages/alo-easymail-admin-options.php:404
+msgid "If yes, the Name input will be not shown in subscription form"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:403
+msgid "Hide Name input in form"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:391
+msgid "If yes, a new subscriber is automatically activated without confirmation e-mail"
+msgstr "はいにした場合、新規購読者は確認メールなしで有効化されます"
+
+#: pages/alo-easymail-admin-options.php:390
+msgid "Disable activation e-mail"
+msgstr "有効化メールを停止"
+
+#: pages/alo-easymail-admin-options.php:379
+msgid "Tip: copy &#39;alo-easymail.css&#39; to your theme directory and edit it there. Useful to prevent the loss of styles when you upgrade the plugin"
+msgstr "ティップス: &#39;alo-easymail.css&#39;をテーマディレクトリにコピーしてください。プラグインアップデートのときにCSSが削除されるのを防ぐことができます。"
+
+#: pages/alo-easymail-admin-options.php:379
+msgid "If yes, the plugin loads the CSS styles from a file in its directory"
+msgstr "はいにした場合、プラグインは同梱のCSSを読み込みます"
+
+#: pages/alo-easymail-admin-options.php:378
+msgid "Embed CSS file"
+msgstr "CSSを埋め込む"
+
+#: pages/alo-easymail-admin-options.php:367
+msgid "If yes, the subscription page appears in menu or widget that list all blog pages"
+msgstr "はいにした場合、ブログページのリストを表示するメニューやウィジェットの中に購読ページが含まれます"
+
+#: pages/alo-easymail-admin-options.php:366
+msgid "Show subscription page"
+msgstr "購読ページを表示"
+
+#: pages/alo-easymail-admin-options.php:353
+msgid "This should be the page that includes the [ALO-EASYMAIL-PAGE] shortcode. By default, this page is titled &#39;Newsletter&#39;"
+msgstr "この固定ページは [ALO-EASYMAIL-PAGE] ショートコートを含んでいなくてはなりません。デフォルトだと、タイトルは&#39;ニュースレター&#39;になります。"
+
+#: pages/alo-easymail-admin-options.php:334
+msgid "Subscription page"
+msgstr "購読ページ"
+
+#: pages/alo-easymail-admin-options.php:309
+#: pages/alo-easymail-admin-options.php:1420
+msgid "Bounces"
+msgstr ""
+
+#: pages/alo-easymail-admin-options.php:307
+#: pages/alo-easymail-admin-options.php:1088
+msgid "Permissions"
+msgstr "許可"
+
+#: pages/alo-easymail-admin-options.php:306
+#: pages/alo-easymail-admin-options.php:961
+msgid "Batch sending"
+msgstr "バッチ送信"
+
+#: pages/alo-easymail-admin-options.php:305
+#: pages/alo-easymail-admin-options.php:703
+#: pages/alo-easymail-admin-options.php:1155
+msgid "Texts"
+msgstr "テキスト"
+
+#: pages/alo-easymail-admin-options.php:303
+#: pages/alo-easymail-admin-options.php:322
+msgid "General"
+msgstr "全般"
+
+#: pages/alo-easymail-admin-options.php:270
+#: pages/alo-easymail-admin-options.php:1234
+#: pages/alo-easymail-admin-options.php:1253
+#: pages/alo-easymail-admin-subscribers.php:555
+#: pages/alo-easymail-admin-subscribers.php:573
+msgid "Updated"
+msgstr "更新されました"
+
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:394
+msgid "Use as %s in your theme"
+msgstr ""
+
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:101
+msgid "use this link in your theme or content as [ACTION-LINK]"
+msgstr ""
+
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:84
+msgid "Add Post"
+msgstr "投稿を追加"
+
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:70
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:198
+msgid "remove"
+msgstr "削除"
+
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:45
+msgid "Action Link"
+msgstr ""
+
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:44
+msgid "Post Placeholders"
+msgstr ""
+
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:43
+msgid "Secondary Content"
+msgstr ""
+
+#: functions/alo-easymail-widget.php:168
+msgid "ALO Easymail Widget"
+msgstr "ALO Easymail ウィジェット"
+
+#: functions/alo-easymail-widget.php:162
+msgid "Allow users to opt in/out of email"
+msgstr "ユーザーにメールのオプトイン／オプトアウトを許可する"
+
+#: functions/alo-easymail-widget.php:122
+#: pages/alo-easymail-admin-report.php:268
+#: pages/alo-easymail-admin-subscribers.php:309
+#: pages/alo-easymail-admin-subscribers.php:586
+#: pages/alo-easymail-admin-subscribers.php:1029
+msgid "E-mail"
+msgstr "Eメール"
+
+#: functions/alo-easymail-widget.php:115
+#: pages/alo-easymail-admin-report.php:269
+#: pages/alo-easymail-admin-subscribers.php:311
+#: pages/alo-easymail-admin-subscribers.php:586
+#: pages/alo-easymail-admin-subscribers.php:1030
+msgid "Name"
+msgstr "名前"
+
+#: functions/alo-easymail-widget.php:61
+msgid "Updating..."
+msgstr "更新中..."
+
+#: functions/alo-easymail-widget.php:59
+#: pages/alo-easymail-admin-options.php:762
+msgid "No, please do not email me"
+msgstr "いいえ、メールを送らないでください"
+
+#: functions/alo-easymail-users.php:52
+msgid "Newsletter fields"
+msgstr "ニュースレターフィールド"
+
+#: functions/alo-easymail-users.php:31 functions/alo-easymail-users.php:235
+#: functions/alo-easymail-widget.php:58
+#: pages/alo-easymail-admin-options.php:761
+#: pages/alo-easymail-subscr-page.php:33
 msgid "Yes, I would like to receive the Newsletter"
 msgstr "はい、ニュースレターを受け取ります"
 
-#: alo-easymail.php:1087
-#: alo-easymail_functions.php:2405
-#: alo-easymail_recipients-list.php:187
-#: alo-easymail_report.php:280
-#@ alo-easymail
-msgid "Yes"
-msgstr "はい"
+#: functions/alo-easymail-recipients.php:132
+msgid "Languages"
+msgstr "言語"
 
-#: alo-easymail.php:1088
-#: alo-easymail.php:1508
-#: alo-easymail_recipients-list.php:188
-#: alo-easymail_report.php:96
-#: alo-easymail_report.php:280
-#@ alo-easymail
-msgid "No"
-msgstr "いいえ"
+#: functions/alo-easymail-recipients.php:125
+#: pages/alo-easymail-admin-options.php:308
+#: pages/alo-easymail-admin-options.php:1156
+#: pages/alo-easymail-admin-options.php:1181
+#: pages/alo-easymail-admin-options.php:1343
+#: pages/alo-easymail-admin-subscribers.php:345
+#: pages/alo-easymail-admin-subscribers.php:1051
+msgid "Mailing Lists"
+msgstr "メーリングリスト"
 
-#: alo-easymail.php:1292
-#: alo-easymail_report.php:33
-#@ alo-easymail
-msgid "Newsletter report"
-msgstr "ニュースレターリポート"
+#: functions/alo-easymail-recipients.php:110
+msgid "User Roles"
+msgstr "ユーザー権限"
 
-#: alo-easymail.php:1293
-#: alo-easymail_recipients-list.php:78
-#@ alo-easymail
-msgid "Newsletter subscribers creation"
-msgstr "ニュースレター購読者の作成"
+#: functions/alo-easymail-placeholders.php:732
+#: mu-plugins/alo-easymail_latest-posts-placeholder.php:56
+msgid "Filter by category"
+msgstr "カテゴリーで絞り込み"
 
-#: alo-easymail.php:1296
-#: alo-easymail_functions.php:1208
-#: alo-easymail_subscribers.php:452
-#: alo-easymail_subscribers.php:586
-#@ alo-easymail
-msgid "The e-email address is not correct"
-msgstr "メールアドレスが不正です。"
+#: functions/alo-easymail-placeholders.php:717
+#: mu-plugins/alo-easymail_latest-posts-placeholder.php:41
+msgid "Select how many posts"
+msgstr "投稿数を選んでください"
 
-#: alo-easymail.php:1297
-#: alo-easymail_functions.php:1209
-#@ alo-easymail
-msgid "The name field is empty"
-msgstr "名前欄が空白です"
+#: functions/alo-easymail-placeholders.php:699
+#: mu-plugins/alo-easymail_latest-posts-placeholder.php:23
+msgid "A list with the latest published posts"
+msgstr "公開された最新の投稿リスト"
 
-#: alo-easymail.php:1298
-#: alo-easymail_subscribers.php:590
-#: alo-easymail_subscribers.php:616
-#@ alo-easymail
-msgid "There is already a subscriber with this e-email address"
-msgstr "このメールアドレスの購読者は登録済みです"
+#: functions/alo-easymail-placeholders.php:697
+#: mu-plugins/alo-easymail_latest-posts-placeholder.php:21
+msgid "Latest posts"
+msgstr "最新の投稿"
 
-#: alo-easymail.php:1299
-#: alo-easymail.php:1300
-#@ alo-easymail
-msgid "Do you really want to DELETE this subscriber?"
-msgstr "この購読者をほんとうに削除しますか？"
+#: functions/alo-easymail-placeholders.php:652
+msgid "Subscriber custom field"
+msgstr ""
 
-#: alo-easymail.php:1371
-#@ alo-easymail
-msgid "Themes"
-msgstr "テーマ"
+#: functions/alo-easymail-placeholders.php:576
+msgid "You can insert customised links to blog posts or external web addresses"
+msgstr ""
 
-#: alo-easymail.php:1372
-#@ alo-easymail
-msgid "Placeholders"
-msgstr "プレースホルダー"
+#: functions/alo-easymail-placeholders.php:566
+msgid "a link to Wordress.org, with custom title"
+msgstr ""
 
-#: alo-easymail.php:1384
-#@ alo-easymail
-msgid "Selected recipients"
-msgstr "選択された受信者"
+#: functions/alo-easymail-placeholders.php:564
+msgid "a link to blog post with ID 1, with custom css style, without tracking"
+msgstr "トラッキングを行わず、カスタム CSS スタイルを使った ID 1のブログ投稿へのリンク"
 
-#: alo-easymail.php:1387
-#@ alo-easymail
-msgid "This newsletter was already sent"
-msgstr "このニュースレターは送信済みです"
+#: functions/alo-easymail-placeholders.php:564
+#: functions/alo-easymail-placeholders.php:566
+#: pages/alo-easymail-admin-options.php:723
+msgid "Sample:"
+msgstr "例: "
 
-#: alo-easymail.php:1393
-#@ alo-easymail
-msgid "The creation of the recipients list has already started"
-msgstr "受信者リストの生成はすでに開始されています"
+#: functions/alo-easymail-placeholders.php:562
+msgid "the style tag attribute"
+msgstr "スタイルタグ属性"
 
-#: alo-easymail.php:1395
-#@ alo-easymail
-msgid "Check this flag to delete the existing list and save new recipients now"
-msgstr "既存のリストを削除して新しいリストを作るにはこのフラグをチェックしてください"
+#: functions/alo-easymail-placeholders.php:560
+msgid "the class tag attribute"
+msgstr "クラスタグ属性"
 
-#: alo-easymail.php:1403
-#@ default
-msgid "Users"
-msgstr "ユーザー"
+#: functions/alo-easymail-placeholders.php:558
+msgid "the click on the link by the recipient will be tracked (1) or not (0)"
+msgstr "受信者によるリンクのクリックは、 (1) 追跡されます、または  (0) 追跡されません"
 
-#: alo-easymail.php:1406
-#: alo-easymail_functions.php:314
-#@ alo-easymail
-msgid "All registered users"
-msgstr "全ての登録済みユーザー"
+#: functions/alo-easymail-placeholders.php:556
+msgid "the title of the post (if &#39;href&#39; is a post ID) or the &#39;href&#39; itself"
+msgstr "投稿のタイトル (&#39;href&#39; が投稿 ID の場合) または &#39;href&#39; 自身"
 
-#: alo-easymail.php:1435
-#: alo-easymail_subscribers.php:356
-#@ alo-easymail
-msgid "Newsletter subscribers"
-msgstr "ニュースレター購読者"
+#: functions/alo-easymail-placeholders.php:556
+#: functions/alo-easymail-placeholders.php:558
+#: functions/alo-easymail-placeholders.php:560
+#: pages/alo-easymail-admin-options.php:641
+#: pages/alo-easymail-admin-options.php:1031
+#: pages/alo-easymail-admin-options.php:1534
+#: pages/alo-easymail-admin-options.php:1547
+msgid "Default"
+msgstr "デフォルト"
 
-#: alo-easymail.php:1438
-#: alo-easymail_functions.php:323
-#@ alo-easymail
-msgid "All subscribers"
-msgstr "すべての購読者"
+#: functions/alo-easymail-placeholders.php:556
+msgid "the text of the link"
+msgstr "リンクのテキスト"
 
-#: alo-easymail.php:1445
-#@ alo-easymail
-msgid "Filter subscribers according to lists"
-msgstr "リストによって購読者を絞り込み"
+#: functions/alo-easymail-placeholders.php:554
+#: pages/alo-easymail-admin-subscribers.php:309
+msgid "mandatory"
+msgstr "強制"
 
-#: alo-easymail.php:1465
-#@ alo-easymail
-msgid "Filter subscribers according to languages"
-msgstr "言語によって購読者を絞り込み"
+#: functions/alo-easymail-placeholders.php:554
+msgid "the ID of a post or a full web address"
+msgstr "投稿の ID または完全なウェブアドレス"
 
-#: alo-easymail.php:1480
-#: alo-easymail_functions.php:339
-#@ alo-easymail
-msgid "Not specified / others"
-msgstr "指定無し / その他"
+#: functions/alo-easymail-placeholders.php:552
+msgid "This placeholder produces a link (html &lt;a&gt; tag) and has the following parameters"
+msgstr "このプレースホルダはリンク (HTML の&lt;a&gt; タグ) を生成し、次のパラメーターを持ちます"
 
-#: alo-easymail.php:1514
-#: alo-easymail_options.php:1291
-#@ default
-msgid "View"
-msgstr "表示"
+#: functions/alo-easymail-placeholders.php:550
+msgid "Custom links"
+msgstr "カスタムリンク"
 
-#: alo-easymail.php:1553
-#@ alo-easymail
-msgid "Choose a post"
-msgstr "投稿を選択"
+#: functions/alo-easymail-placeholders.php:345
+#: functions/alo-easymail-placeholders.php:362
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:146
+msgid "Select the image size"
+msgstr "画像サイズを選択"
 
-#: alo-easymail.php:1557
-#@ alo-easymail
-msgid "j M Y"
-msgstr "Y/m/d"
+#: functions/alo-easymail-placeholders.php:180
+#: pages/alo-easymail-admin-options.php:862
+#: pages/alo-easymail-admin-preview.php:129
+msgid "You have received this message because you subscribed to our newsletter. If you want to unsubscribe: "
+msgstr "購読の解除が申請されたため、メッセージを送信しました。購読解除："
 
-#: alo-easymail.php:1561
-#@ alo-easymail
+#: functions/alo-easymail-placeholders.php:161
+#: pages/alo-easymail-admin-options.php:904
+#: pages/alo-easymail-admin-preview.php:140
+msgid "To read the newsletter online you can visit this link:"
+msgstr "ニュースレターをオンラインで読むには、次のリンクを訪問してください: "
+
+#: functions/alo-easymail-placeholders.php:125
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:109
+msgid "The image gallery of the post"
+msgstr "投稿のイメージギャラリー"
+
+#: functions/alo-easymail-placeholders.php:124
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:108
+msgid "Post Thumbnail"
+msgstr "投稿サムネイル"
+
+#: functions/alo-easymail-placeholders.php:121
+msgid "Tagline"
+msgstr "キャッチフレーズ"
+
+#: functions/alo-easymail-placeholders.php:120
+msgid "Site Title"
+msgstr "サイトタイトル"
+
+#: functions/alo-easymail-placeholders.php:119
+msgid "URL to the site."
+msgstr "サイトへのURL"
+
+#: functions/alo-easymail-placeholders.php:117
+msgid "Site tags"
+msgstr "サイトタグ"
+
+#: functions/alo-easymail-placeholders.php:115
+msgid "Image gallery of newsletter"
+msgstr "ニュースレターのイメージギャラリー"
+
+#: functions/alo-easymail-placeholders.php:114
+msgid "Post Thumbnail of newsletter"
+msgstr "ニュースレターの投稿サムネイル"
+
+#: functions/alo-easymail-placeholders.php:113
+msgid "Date of the newsletter."
+msgstr "ニュースレターの日付"
+
+#: functions/alo-easymail-placeholders.php:112
+msgid "Title of the newsletter."
+msgstr "ニュースレターのタイトル"
+
+#: functions/alo-easymail-placeholders.php:111
+msgid "URL to the online version."
+msgstr "オンラインバージョンへのURL"
+
+#: functions/alo-easymail-placeholders.php:110
+msgid "Text and URL to the online version."
+msgstr "オンラインバージョンへのリンクとテキスト"
+
+#: functions/alo-easymail-placeholders.php:109
+msgid "Newsletter tags"
+msgstr "ニュースレタータグ"
+
+#: functions/alo-easymail-placeholders.php:107
+msgid "URL to unsubscribe."
+msgstr "購読解除用URL"
+
+#: functions/alo-easymail-placeholders.php:106
+#: functions/alo-easymail-placeholders.php:110
+msgid "You can customise this text in settings"
+msgstr "設定ページでこのテキストをカスタマイズできます"
+
+#: functions/alo-easymail-placeholders.php:106
+msgid "Text and URL to unsubscribe."
+msgstr "購読解除の文字とURL"
+
+#: functions/alo-easymail-placeholders.php:104
+msgid "you can set it up in settings"
+msgstr "設定ページで設定してください"
+
+#: functions/alo-easymail-placeholders.php:104
+msgid "This tag now does not work because the online publication of newsletters is disabled"
+msgstr "ニュースレターのオンライン公開が無効になっているため、このタグは動きません"
+
+#: functions/alo-easymail-placeholders.php:93
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:136
 msgid "There are no posts"
 msgstr "投稿がありません"
 
-#: alo-easymail.php:1661
-#@ alo-easymail
-msgid "Newsletters scheduled for sending"
-msgstr "送信予約されたニュースレター"
-
-#: alo-easymail.php:1665
-#@ alo-easymail
-msgid "now sending"
-msgstr "送信中"
-
-#: alo-easymail.php:1668
-#@ alo-easymail
-msgid "Added on"
-msgstr "追加日時"
-
-#: alo-easymail.php:1669
-#: alo-easymail_report.php:86
-#@ alo-easymail
-msgid "Scheduled by"
-msgstr "予約日時"
-
-#: alo-easymail.php:1672
-#@ alo-easymail
-msgid "There are no newsletters in queue"
-msgstr "キューにニュースレターはありません"
-
-#: alo-easymail.php:1677
-#, php-format
-#@ alo-easymail
-msgid "There are %d subscribers: %d activated, %d not activated"
-msgstr "%d人の購読者: 有効%d人、無効%d人"
-
-#: alo-easymail.php:1679
-#: alo-easymail_subscribers.php:708
-#: alo-easymail_subscribers.php:1035
-#@ alo-easymail
-msgid "No subscribers"
-msgstr "購読者なし"
-
-#: alo-easymail.php:1683
-#@ alo-easymail
-msgid "Updates from plugin developer"
-msgstr "プラグイン開発者からのお知らせ"
-
-#: alo-easymail.php:1700
-#@ alo-easymail
-msgid "j F Y"
+#: functions/alo-easymail-placeholders.php:89
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:132
+msgid "j M Y"
 msgstr "Y/m/d"
 
-#: alo-easymail-widget.php:20
-#: alo-easymail.php:1731
-#: alo-easymail_functions.php:2696
-#: alo-easymail_options.php:629
-#@ alo-easymail
-msgid "You can also sign up for specific lists"
-msgstr "指定したリストへの登録もできます"
+#: functions/alo-easymail-placeholders.php:84
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:128
+msgid "Choose a post"
+msgstr "投稿を選択"
 
-#: alo-easymail.php:1819
-#, php-format
-#@ alo-easymail
-msgid "Confirm your subscription to %BLOGNAME% Newsletter"
-msgstr "%BLOGNAME% ニュースレターの購読を確認してください。"
+#: functions/alo-easymail-placeholders.php:30
+msgid "Email address of subscriber"
+msgstr "購読者のメールアドレス"
 
-#: alo-easymail.php:1829
-#, php-format
-#@ alo-easymail
+#: functions/alo-easymail-placeholders.php:29
+msgid "First name of registered user."
+msgstr "登録ユーザーのファーストネーム"
+
+#: functions/alo-easymail-placeholders.php:28
+#: functions/alo-easymail-placeholders.php:29
+msgid "For subscribers: the name used for registration"
+msgstr "購読者向け：登録に使われた名前"
+
+#: functions/alo-easymail-placeholders.php:28
+msgid "Name and surname of registered user."
+msgstr "登録ユーザーの名前と名字"
+
+#: functions/alo-easymail-placeholders.php:26
+msgid "Subscriber tags"
+msgstr "購読者タグ"
+
+#: functions/alo-easymail-placeholders.php:22
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:94
+msgid "The main content of the post."
+msgstr "投稿の本文"
+
+#: functions/alo-easymail-placeholders.php:21
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:93
+msgid "If it is empty, the beginning of post content will be used."
+msgstr "空白の場合、投稿の最初の文字が使われます。"
+
+#: functions/alo-easymail-placeholders.php:21
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:93
+msgid "The excerpt (if any) of the post."
+msgstr "投稿の抜粋（あれば）"
+
+#: functions/alo-easymail-placeholders.php:20
+#: functions/alo-easymail-placeholders.php:110
+#: functions/alo-easymail-placeholders.php:111
+#: functions/alo-easymail-placeholders.php:118
+#: functions/alo-easymail-placeholders.php:119
+#: functions/alo-easymail-placeholders.php:699
+#: mu-plugins/alo-easymail_latest-posts-placeholder.php:23
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:92
+msgid "The visit to this url will be tracked."
+msgstr "このURLへの訪問をトラックします"
+
+#: functions/alo-easymail-placeholders.php:20
+#: functions/alo-easymail-placeholders.php:28
+#: functions/alo-easymail-placeholders.php:29
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:92
+msgid "This tag works also in the <strong>subject</strong>"
+msgstr "このタグは<strong>件名</strong>でも有効です"
+
+#: functions/alo-easymail-placeholders.php:20
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:92
+msgid "The link to the title of the selected post."
+msgstr "選択された投稿のタイトルリンク"
+
+#: functions/alo-easymail-placeholders.php:18
+msgid "Post tags"
+msgstr "投稿タグ"
+
+#: functions/alo-easymail-newsletter-cpt.php:770
+#: functions/alo-easymail-newsletter-cpt.php:775
+#: pages/alo-easymail-admin-options.php:9
+#: pages/alo-easymail-admin-preview.php:13
+#: pages/alo-easymail-admin-preview.php:19
+#: pages/alo-easymail-admin-report.php:12
+#: pages/alo-easymail-admin-report.php:26
+#: pages/alo-easymail-admin-report.php:29
+#: pages/alo-easymail-admin-subscribers.php:10
+msgid "Cheatin&#8217; uh?"
+msgstr "間違えましたか?"
+
+#: functions/alo-easymail-newsletter-cpt.php:768
+#: functions/alo-easymail-newsletter-cpt.php:769
+#: pages/alo-easymail-admin-report.php:24
+#: pages/alo-easymail-admin-report.php:25
+msgid "The required newsletter does not exist"
+msgstr "指定されたニュースレターは存在しません"
+
+#: functions/alo-easymail-newsletter-cpt.php:743
+msgid "Send now"
+msgstr "いますぐ送信"
+
+#: functions/alo-easymail-newsletter-cpt.php:741
+msgid "Add to sending queue"
+msgstr "送信キューに追加"
+
+#: functions/alo-easymail-newsletter-cpt.php:730
+#: functions/alo-easymail-placeholders.php:558
+#: functions/alo-easymail-users.php:35 pages/alo-easymail-admin-report.php:289
+#: pages/alo-easymail-admin-report.php:294
+#: pages/alo-easymail-admin-report.php:300
+msgid "Yes"
+msgstr "はい"
+
+#: functions/alo-easymail-newsletter-cpt.php:728
+msgid "Send"
+msgstr "送信"
+
+#: functions/alo-easymail-newsletter-cpt.php:726
+msgid "You can send the newsletter as test to"
+msgstr "次のアドレスにニュースレターをテスト送信"
+
+#: functions/alo-easymail-newsletter-cpt.php:725
+msgid "Warning: do not close or reload the browser window during process"
+msgstr "警告：処理中にブラウザを閉じたり移動しないでください"
+
+#: functions/alo-easymail-newsletter-cpt.php:724
+msgid "You can add the recipients to the sending queue (best choice) or send them the newsletter immediately (suggested only if few recipients)"
+msgstr "受信者を送信キューに追加（推奨）、または、すぐにニュースレターを送信（受信者が少ないときのみ）"
+
+#: functions/alo-easymail-newsletter-cpt.php:672
+#: pages/alo-easymail-admin-preview.php:101
+msgid "Preview in newsletter theme"
+msgstr "ニュースレターのテーマを使ってプレビュー"
+
+#: functions/alo-easymail-newsletter-cpt.php:542
+#: pages/alo-easymail-admin-options.php:1383
+msgid "View"
+msgstr "表示"
+
+#: functions/alo-easymail-newsletter-cpt.php:536
+#: functions/alo-easymail-newsletter-cpt.php:731
+#: functions/alo-easymail-users.php:36 pages/alo-easymail-admin-report.php:105
+#: pages/alo-easymail-admin-report.php:289
+#: pages/alo-easymail-admin-report.php:294
+#: pages/alo-easymail-admin-report.php:300
+msgid "No"
+msgstr "いいえ"
+
+#: functions/alo-easymail-newsletter-cpt.php:508
+#: functions/alo-easymail-recipients.php:131
+msgid "Not specified / others"
+msgstr "指定無し / その他"
+
+#: functions/alo-easymail-newsletter-cpt.php:493
+msgid "Filter subscribers according to languages"
+msgstr "言語によって購読者を絞り込み"
+
+#: functions/alo-easymail-newsletter-cpt.php:473
+msgid "Filter subscribers according to lists"
+msgstr "リストによって購読者を絞り込み"
+
+#: functions/alo-easymail-newsletter-cpt.php:466
+#: functions/alo-easymail-recipients.php:115
+#: pages/alo-easymail-admin-subscribers.php:430
+msgid "All subscribers"
+msgstr "すべての購読者"
+
+#: functions/alo-easymail-newsletter-cpt.php:463
+#: pages/alo-easymail-admin-subscribers.php:370
+msgid "Newsletter subscribers"
+msgstr "ニュースレター購読者"
+
+#: functions/alo-easymail-newsletter-cpt.php:442
+msgid "Filter users according to roles"
+msgstr "役割によってユーザーを絞り込み"
+
+#: functions/alo-easymail-newsletter-cpt.php:434
+#: functions/alo-easymail-recipients.php:106
+msgid "All registered users"
+msgstr "全ての登録済みユーザー"
+
+#: functions/alo-easymail-newsletter-cpt.php:431
+msgid "Users"
+msgstr "ユーザー"
+
+#: functions/alo-easymail-newsletter-cpt.php:423
+msgid "Check this flag to delete the existing list and save new recipients now"
+msgstr "既存のリストを削除して新しいリストを作るにはこのフラグをチェックしてください"
+
+#: functions/alo-easymail-newsletter-cpt.php:421
+msgid "The creation of the recipients list has already started"
+msgstr "受信者リストの生成はすでに開始されています"
+
+#: functions/alo-easymail-newsletter-cpt.php:415
+msgid "This newsletter was already sent"
+msgstr "このニュースレターは送信済みです"
+
+#: functions/alo-easymail-newsletter-cpt.php:412
+msgid "Selected recipients"
+msgstr "選択された受信者"
+
+#: functions/alo-easymail-newsletter-cpt.php:373
+#: pages/alo-easymail-admin-report.php:271
+msgid "Sent"
+msgstr "送信済み"
+
+#: functions/alo-easymail-newsletter-cpt.php:355
+msgid "Ready to be sent by an administrator"
+msgstr "管理者によって送信される準備ができています"
+
+#: functions/alo-easymail-newsletter-cpt.php:352
+msgid "Required"
+msgstr "必須"
+
+#: functions/alo-easymail-newsletter-cpt.php:343
+#: functions/alo-easymail-newsletter-cpt.php:773
+msgid "A newsletter cannot be sent if its status is draft or pending review"
+msgstr "ステータスが下書きまたは審査待ちの場合、ニュースレターは送信できません"
+
+#: functions/alo-easymail-newsletter-cpt.php:331
+msgid "continue the sending"
+msgstr "送信を続ける"
+
+#: functions/alo-easymail-newsletter-cpt.php:331
+#: functions/alo-easymail-newsletter-cpt.php:745
+msgid "continue"
+msgstr "続ける"
+
+#: functions/alo-easymail-newsletter-cpt.php:326
+msgid "Paused"
+msgstr "停止中"
+
+#: functions/alo-easymail-newsletter-cpt.php:320
+msgid "Pending"
+msgstr "保留"
+
+#: functions/alo-easymail-newsletter-cpt.php:317
+msgid "Draft"
+msgstr "下書き"
+
+#: functions/alo-easymail-newsletter-cpt.php:311
+msgid "Scheduled"
+msgstr "予約済み"
+
+#: functions/alo-easymail-newsletter-cpt.php:308
+msgid "Pending Review"
+msgstr "審査待ち"
+
+#: functions/alo-easymail-newsletter-cpt.php:302
+msgid "pause the sending"
+msgstr "送信を停止"
+
+#: functions/alo-easymail-newsletter-cpt.php:302
+#: functions/alo-easymail-newsletter-cpt.php:744
+msgid "pause"
+msgstr "停止"
+
+#: functions/alo-easymail-newsletter-cpt.php:300
+#: functions/alo-easymail-newsletter-cpt.php:313
+msgid "refresh"
+msgstr "更新"
+
+#: functions/alo-easymail-newsletter-cpt.php:297
+msgid "On sending queue"
+msgstr "送信キュー"
+
+#: functions/alo-easymail-newsletter-cpt.php:287
+#: pages/alo-easymail-admin-report.php:102
+msgid "Completed"
+msgstr "完了"
+
+#: functions/alo-easymail-newsletter-cpt.php:282
+msgid "archived"
+msgstr "アーカイブ"
+
+#: functions/alo-easymail-newsletter-cpt.php:280
+#: functions/alo-easymail-newsletter-cpt.php:281
+msgid "Report"
+msgstr "リポート"
+
+#: functions/alo-easymail-newsletter-cpt.php:212
+#: pages/alo-easymail-admin-report.php:158
+msgid "Total recipients"
+msgstr "全受信者"
+
+#: functions/alo-easymail-newsletter-cpt.php:189
+msgid "Author"
+msgstr "登録者"
+
+#: functions/alo-easymail-newsletter-cpt.php:188
+#: pages/alo-easymail-admin-report.php:98
+msgid "Start"
+msgstr "開始"
+
+#: functions/alo-easymail-newsletter-cpt.php:187
+msgid "Newsletter status"
+msgstr "ニュースレター状態"
+
+#: functions/alo-easymail-newsletter-cpt.php:185
+#: pages/alo-easymail-admin-options.php:833
+#: pages/alo-easymail-admin-report.php:76
+msgid "Subject"
+msgstr "件名"
+
+#: functions/alo-easymail-newsletter-cpt.php:185
+msgid "Title"
+msgstr "タイトル"
+
+#: functions/alo-easymail-newsletter-cpt.php:159
+msgid "Newsletter draft updated."
+msgstr "ニュースレターの下書きが更新されました。"
+
+#: functions/alo-easymail-newsletter-cpt.php:156
+msgid "Newsletter scheduled for: <strong>%1$s</strong>."
+msgstr "ニュースレターのスケジュール: <strong>%1$s</strong>."
+
+#: functions/alo-easymail-newsletter-cpt.php:155
+msgid "Newsletter submitted. <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
+msgstr "ニュースレターが送信されました。<a target=\"_blank\" href=\"%s\">ニュースレターをプレビュー</a>"
+
+#: functions/alo-easymail-newsletter-cpt.php:154
+msgid "Newsletter saved."
+msgstr "ニュースレターが保存されました。"
+
+#: functions/alo-easymail-newsletter-cpt.php:153
+msgid "Newsletter published."
+msgstr "ニュースレターが公開されました。"
+
+#. translators: %s: date and time of the revision
+#: functions/alo-easymail-newsletter-cpt.php:152
+msgid "Newsletter restored to revision from %s"
+msgstr "ニュースレターがリビジョン%sから復元されました。"
+
+#: functions/alo-easymail-newsletter-cpt.php:149
+msgid "Custom field deleted."
+msgstr "カスタムフィールドが削除されました。"
+
+#: functions/alo-easymail-newsletter-cpt.php:148
+msgid "Custom field updated."
+msgstr "カスタムフィールドが更新されました。"
+
+#: functions/alo-easymail-newsletter-cpt.php:147
+#: functions/alo-easymail-newsletter-cpt.php:150
+msgid "Newsletter updated."
+msgstr "ニュースレターが更新されました。"
+
+#: functions/alo-easymail-newsletter-cpt.php:142
+msgid " <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
+msgstr " <a target=\"_blank\" href=\"%s\">ニュースレターをプレビュー</a>"
+
+#: functions/alo-easymail-newsletter-cpt.php:141
+msgid " <a href=\"%s\">View Newsletter</a>"
+msgstr " <a href=\"%s\">ニュースレターを表示</a>"
+
+#: functions/alo-easymail-newsletter-cpt.php:27
+#: functions/alo-easymail-newsletter-cpt.php:29
+msgid "Parent Newsletter"
+msgstr "親ニュースレター"
+
+#: functions/alo-easymail-newsletter-cpt.php:26
+msgid "No Newsletters found in Trash"
+msgstr "ニュースレターはゴミ箱にありません"
+
+#: functions/alo-easymail-newsletter-cpt.php:25
+msgid "No Newsletters found"
+msgstr "ニュースレターが見つかりませんでした"
+
+#: functions/alo-easymail-newsletter-cpt.php:24
+msgid "Search Newsletters"
+msgstr "ニュースレターを検索"
+
+#: functions/alo-easymail-newsletter-cpt.php:23
+msgid "View Newsletter"
+msgstr "ニュースレターを表示"
+
+#: functions/alo-easymail-newsletter-cpt.php:22
+msgid "New Newsletter"
+msgstr "新規ニュースレター"
+
+#: functions/alo-easymail-newsletter-cpt.php:21
+msgid "Edit Newsletter"
+msgstr "ニュースレターを編集"
+
+#: functions/alo-easymail-newsletter-cpt.php:20
+msgid "Add New Newsletter"
+msgstr "新規ニュースレター"
+
+#: functions/alo-easymail-mailer.php:150
+#: functions/alo-easymail-placeholders.php:118
+msgid "The link to the site"
+msgstr "サイトへのリンク"
+
+#: functions/alo-easymail-mailer.php:149
+msgid "This newsletter is available only in html"
+msgstr "ニュースレターはHTMLでのみ利用可能です"
+
+#: functions/alo-easymail-mailer.php:118
+msgid "Thank you"
+msgstr "ありがとうございました"
+
+#: functions/alo-easymail-mailer.php:117
+msgid "If you did not ask for this subscription ignore this message."
+msgstr "購読申込をした覚えがない場合は、このメッセ—ジを無視してください。"
+
+#: functions/alo-easymail-mailer.php:115
 msgid ""
 "Hi %NAME%\n"
 "to complete your subscription to %BLOGNAME% newsletter you need to click on the following link (or paste it in the address bar of your browser):\n"
@@ -676,2018 +2018,397 @@ msgstr ""
 "こんにちは、%NAME%さん\n"
 "to complete your subscription to %BLOGNAME% ニュースレターの購読申込を完了するには、次のリンクをクリックするか、ブラウザのアドレスバーに貼付けてください。\n"
 
-#: alo-easymail.php:1831
-#@ alo-easymail
-msgid "If you did not ask for this subscription ignore this message."
-msgstr "購読申込をした覚えがない場合は、このメッセ—ジを無視してください。"
-
-#: alo-easymail.php:1832
-#@ alo-easymail
-msgid "Thank you"
-msgstr "ありがとうございました"
-
-#: alo-easymail.php:1875
-#: alo-easymail_subscribers.php:786
-#@ alo-easymail
-msgid "Show all"
-msgstr "すべて表示"
-
-#: alo-easymail.php:1881
-#: alo-easymail.php:1905
-#@ alo-easymail
-msgid "Options"
-msgstr "オプション"
-
-#: alo-easymail.php:1965
-#@ alo-easymail
-msgid "Debug mode is activated"
-msgstr "デバッグモードが有効になりました"
-
-#: alo-easymail.php:1966
-#: alo-easymail_options.php:541
-#@ alo-easymail
-msgid "all messages will be sent to the newsletter author"
-msgstr "すべてのメッセージをニュースレター作成者に送信する"
-
-#: alo-easymail.php:1967
-#: alo-easymail_options.php:542
-#@ alo-easymail
-msgid "all messages will be recorded into a log file"
-msgstr "すべてのメッセージをログファイルに記録する"
-
-#: alo-easymail.php:1974
-#@ alo-easymail
-msgid "ALO Easymail Newsletter needs attention"
-msgstr "ALO Easymail Newsletterからの警告"
-
-#: alo-easymail.php:1975
-#@ alo-easymail
-msgid "The plugin database tables have not properly installed"
-msgstr "プラグインのデータベーステーブルが適切にインストールされていません"
-
-#: alo-easymail.php:1975
-#: alo-easymail_options.php:870
-#@ alo-easymail
-msgid "you can try to deactivate and activate the plugin"
-msgstr "プラグインを一度無効にしてから再度有効化してください"
-
-#: alo-easymail.php:1976
-#: alo-easymail_options.php:850
-#: alo-easymail_options.php:871
-#@ alo-easymail
-msgid "For more info, visit the FAQ of the site."
-msgstr "詳細はサイトのFAQをご覧下さい。"
-
-#: alo-easymail-widget.php:58
-#: alo-easymail_options.php:628
-#@ alo-easymail
-msgid "No, please do not email me"
-msgstr "いいえ、メールを送らないでください"
-
-#: alo-easymail-widget.php:60
-#@ alo-easymail
-msgid "Updating..."
-msgstr "更新中..."
-
-#: alo-easymail-widget.php:106
-#: alo-easymail_functions.php:1228
-#@ alo-easymail
-msgid "sending..."
-msgstr "送信中..."
-
-#: alo-easymail-widget.php:112
-#: alo-easymail_report.php:261
-#: alo-easymail_subscribers.php:297
-#: alo-easymail_subscribers.php:551
-#: alo-easymail_subscribers.php:982
-#@ alo-easymail
-msgid "Name"
-msgstr "名前"
-
-#: alo-easymail-widget.php:116
-#: alo-easymail_report.php:260
-#: alo-easymail_subscribers.php:295
-#: alo-easymail_subscribers.php:551
-#: alo-easymail_subscribers.php:981
-#@ alo-easymail
-msgid "E-mail"
-msgstr "Eメール"
-
-#: alo-easymail-widget.php:140
-#: alo-easymail_functions.php:1227
-#@ alo-easymail
-msgid "Subscribe"
-msgstr "購読"
-
-#: alo-easymail-widget.php:154
-#@ alo-easymail
-msgid "Allow users to opt in/out of email"
-msgstr "ユーザーにメールのオプトイン／オプトアウトを許可する"
-
-#: alo-easymail-widget.php:160
-#@ alo-easymail
-msgid "ALO Easymail Widget"
-msgstr "ALO Easymail ウィジェット"
-
-#: alo-easymail_functions.php:1138
-#: alo-easymail_functions.php:1207
-#: alo-easymail_options.php:1112
-#: alo-easymail_options.php:1144
-#: alo-easymail_options.php:1163
-#: alo-easymail_options.php:1166
-#: alo-easymail_subscr-page.php:22
-#: alo-easymail_subscribers.php:19
-#: alo-easymail_subscribers.php:29
-#: alo-easymail_subscribers.php:103
-#: alo-easymail_subscribers.php:166
-#: alo-easymail_subscribers.php:213
-#: alo-easymail_subscribers.php:226
-#: alo-easymail_subscribers.php:243
-#: alo-easymail_subscribers.php:256
-#: alo-easymail_subscribers.php:434
-#: alo-easymail_subscribers.php:451
-#: alo-easymail_subscribers.php:458
-#: alo-easymail_subscribers.php:493
-#: alo-easymail_subscribers.php:527
-#@ alo-easymail
-msgid "Error during operation."
-msgstr "処理中にエラーが発生しました"
-
-#: alo-easymail_subscr-page.php:35
-#@ alo-easymail
-msgid "Error during activation. Please check the activation link."
-msgstr "有効化の際にエラーが発生しました。有効化リンクをチェックしてください。"
-
-#: alo-easymail_functions.php:1225
-#: alo-easymail_subscr-page.php:37
-#@ alo-easymail
-msgid "Your subscription was successfully activated. You will receive the next newsletter. Thank you."
-msgstr "購読申込は有効になりました。次のニュースレターを受け取ることができます。ありがとうございました。"
-
-#: alo-easymail_subscr-page.php:48
-#@ alo-easymail
-msgid "To modify your subscription to mailing lists use this form"
-msgstr "メーリングリストの購読状況を修正するには、このフォームを使ってください。"
-
-#: alo-easymail_subscr-page.php:75
-#@ alo-easymail
-msgid "Edit"
-msgstr "編集"
-
-#: alo-easymail_subscr-page.php:80
-#@ alo-easymail
-msgid "To unsubscribe the newsletter for good click this button"
-msgstr "ニュースレターの購読解除をするにはこのボタンをクリックしてください"
-
-#: alo-easymail_subscr-page.php:86
-#@ alo-easymail
-msgid "Unsubscribe me"
-msgstr "購読解除します"
-
-#: alo-easymail_subscr-page.php:93
-#@ alo-easymail
-msgid "Your subscription was successfully deleted. Bye bye."
-msgstr "購読登録は解除されました。またのご利用をお待ちしています。"
-
-#: alo-easymail_subscr-page.php:96
-#@ alo-easymail
-msgid "Error during unsubscription."
-msgstr "購読解除中にエラーが発生しました。"
-
-#: alo-easymail_subscr-page.php:96
-#@ alo-easymail
-msgid "Try again."
-msgstr "もう一度お試しください"
-
-#: alo-easymail_subscr-page.php:97
-#@ alo-easymail
-msgid "If it fails again you can contact the administrator"
-msgstr "もう一度失敗する場合は、管理者に問い合わせてください"
-
-#: alo-easymail_subscr-page.php:132
-#@ alo-easymail
-msgid "Your subscription to mailing lists successfully updated"
-msgstr "メーリングリストの購読状況が更新されました"
-
-#: alo-easymail_options.php:3
-#: alo-easymail_recipients-list.php:6
-#: alo-easymail_recipients-list.php:17
-#: alo-easymail_recipients-list.php:23
-#: alo-easymail_recipients-list.php:25
-#: alo-easymail_report.php:5
-#: alo-easymail_report.php:19
-#: alo-easymail_report.php:22
-#: alo-easymail_subscribers.php:3
-#@ default
-msgid "Cheatin&#8217; uh?"
-msgstr "なにかおかしなことをしましたか&#8217;？"
-
-#: alo-easymail_recipients-list.php:21
-#: alo-easymail_recipients-list.php:22
-#: alo-easymail_report.php:17
-#: alo-easymail_report.php:18
-#@ alo-easymail
-msgid "The required newsletter does not exist"
-msgstr "指定されたニュースレターは存在しません"
-
-#: alo-easymail_report.php:61
-#@ alo-easymail
-msgid "open in a new window"
-msgstr "新規ウィンドウで開く"
-
-#: alo-easymail_options.php:703
-#: alo-easymail_report.php:100
-#@ alo-easymail
-msgid "Main body"
-msgstr "本文"
-
-#: alo-easymail_report.php:100
-#@ alo-easymail
-msgid "without formatting"
-msgstr "フォーマットなし"
-
-#: alo-easymail_report.php:150
-#@ alo-easymail
-msgid "Sendings done"
-msgstr "送信完了"
-
-#: alo-easymail_report.php:151
-#@ alo-easymail
-msgid "Sendings succesful"
-msgstr "送信成功"
-
-#: alo-easymail_report.php:152
-#@ alo-easymail
-msgid "Sendings failed"
-msgstr "送信失敗"
-
-#: alo-easymail_report.php:154
-#@ alo-easymail
-msgid "Unique views"
-msgstr "ユニークビュー"
-
-#: alo-easymail_report.php:156
-#@ alo-easymail
-msgid "The plugin tries to count how many recipients open the newsletter"
-msgstr "プラグインは何人の受信者がニュースレターを開いたかをカウントしようとします"
-
-#: alo-easymail_report.php:157
-#: alo-easymail_report.php:163
-#@ alo-easymail
-msgid "The number includes max a view per recipient"
-msgstr "受信者ごとに最大1ビューを含む数"
-
-#: alo-easymail_report.php:161
-#: alo-easymail_report.php:265
-#@ alo-easymail
-msgid "Clicks"
-msgstr "クリック"
-
-#: alo-easymail_report.php:262
-#: alo-easymail_subscribers.php:316
-#: alo-easymail_subscribers.php:551
-#: alo-easymail_subscribers.php:1004
-#@ alo-easymail
-msgid "Language"
-msgstr "言語"
-
-#: alo-easymail_report.php:264
-#@ alo-easymail
-msgid "Viewed"
-msgstr "閲覧数"
-
-#: alo-easymail_custom-hooks-sample.php:35
-#@ alo-easymail
-msgid "Latest posts"
-msgstr "最新の投稿"
-
-#: alo-easymail_custom-hooks-sample.php:37
-#@ alo-easymail
-msgid "A list with the latest published posts"
-msgstr "公開された最新の投稿リスト"
-
-#: alo-easymail_custom-hooks-sample.php:55
-#@ alo-easymail
-msgid "Select how many posts"
-msgstr "投稿数を選んでください"
-
-#: alo-easymail_options.php:214
-#: alo-easymail_options.php:1142
-#: alo-easymail_options.php:1161
-#: alo-easymail_subscribers.php:521
-#: alo-easymail_subscribers.php:538
-#@ alo-easymail
-msgid "Updated"
-msgstr "更新されました"
-
-#: alo-easymail_options.php:245
-#: alo-easymail_options.php:263
-#@ alo-easymail
-msgid "General"
-msgstr "全般"
-
-#: alo-easymail_options.php:247
-#: alo-easymail_options.php:570
-#: alo-easymail_options.php:1064
-#@ alo-easymail
-msgid "Texts"
-msgstr "テキスト"
-
-#: alo-easymail_options.php:248
-#: alo-easymail_options.php:827
-#@ alo-easymail
-msgid "Batch sending"
-msgstr "バッチ送信"
-
-#: alo-easymail_options.php:249
-#: alo-easymail_options.php:960
-#@ alo-easymail
-msgid "Permissions"
-msgstr "許可"
-
-#: alo-easymail_functions.php:334
-#: alo-easymail_options.php:250
-#: alo-easymail_options.php:1065
-#: alo-easymail_options.php:1089
-#: alo-easymail_options.php:1251
-#: alo-easymail_subscribers.php:331
-#: alo-easymail_subscribers.php:1003
-#@ alo-easymail
-msgid "Mailing Lists"
-msgstr "メーリングリスト"
-
-#: alo-easymail_options.php:275
-#@ alo-easymail
-msgid "Subscription page"
-msgstr "購読ページ"
-
-#: alo-easymail_options.php:294
-#@ alo-easymail
-msgid "This should be the page that includes the [ALO-EASYMAIL-PAGE] shortcode. By default, this page is titled &#39;Newsletter&#39;"
-msgstr "この固定ページは [ALO-EASYMAIL-PAGE] ショートコートを含んでいなくてはなりません。デフォルトだと、タイトルは&#39;ニュースレター&#39;になります。"
-
-#: alo-easymail_options.php:307
-#@ alo-easymail
-msgid "Show subscription page"
-msgstr "購読ページを表示"
-
-#: alo-easymail_options.php:308
-#@ alo-easymail
-msgid "If yes, the subscription page appears in menu or widget that list all blog pages"
-msgstr "はいにした場合、ブログページのリストを表示するメニューやウィジェットの中に購読ページが含まれます"
-
-#: alo-easymail_options.php:319
-#@ alo-easymail
-msgid "Embed CSS file"
-msgstr "CSSを埋め込む"
-
-#: alo-easymail_options.php:320
-#@ alo-easymail
-msgid "If yes, the plugin loads the CSS styles from a file in its directory"
-msgstr "はいにした場合、プラグインは同梱のCSSを読み込みます"
-
-#: alo-easymail_options.php:320
-#@ alo-easymail
-msgid "Tip: copy &#39;alo-easymail.css&#39; to your theme directory and edit it there. Useful to prevent the loss of styles when you upgrade the plugin"
-msgstr "ティップス: &#39;alo-easymail.css&#39;をテーマディレクトリにコピーしてください。プラグインアップデートのときにCSSが削除されるのを防ぐことができます。"
-
-#: alo-easymail_options.php:331
-#@ alo-easymail
-msgid "Disable activation e-mail"
-msgstr "有効化メールを停止"
-
-#: alo-easymail_options.php:332
-#@ alo-easymail
-msgid "If yes, a new subscriber is automatically activated without confirmation e-mail"
-msgstr "はいにした場合、新規購読者は確認メールなしで有効化されます"
-
-#: alo-easymail_options.php:357
-#@ alo-easymail
-msgid "Show credit banners in back-end"
-msgstr "バックエンドにクレジットを表示"
-
-#: alo-easymail_options.php:358
-#@ alo-easymail
-msgid "You are free to hide the credits, but in that case it's a common practice to make a small donatation via Paypal to the plugin author"
-msgstr "クレジットを隠すことはできますが、その場合はプラグイン作者に対してPayPalで少額の寄付をいただけると助かります。"
-
-#: alo-easymail_options.php:369
-#: alo-easymail_options.php:371
-#: alo-easymail_options.php:372
-#@ alo-easymail
-msgid "Delete all plugin data on deactivation"
-msgstr "無効化時にプラグインデータを削除"
-
-#: alo-easymail_options.php:370
-#@ alo-easymail
-msgid "On plugin deactivation, all plugin options, preferences and database tables (including all newsletters and subscribers data) will be definitely deleted"
-msgstr "プラグインを無効化する場合、すべてのプラグイン設定、データベース（ニュースレターと購読者データを含む）を完全に削除します。"
-
-#: alo-easymail_options.php:370
-#@ alo-easymail
-msgid "If you need these data make sure you do a database backup before plugin deactivation"
-msgstr "これらのデータが必要な場合は、プラグインを無効する前にバックアップを取って下さい。"
-
-#: alo-easymail_options.php:372
-#@ alo-easymail
-msgid "Yes, I understand"
-msgstr "はい、理解しました"
-
-#: alo-easymail_options.php:382
-#: alo-easymail_options.php:554
-#: alo-easymail_options.php:588
-#: alo-easymail_options.php:811
-#: alo-easymail_options.php:937
-#: alo-easymail_options.php:1076
-#@ alo-easymail
-msgid "Update"
-msgstr "更新"
-
-#: alo-easymail_options.php:405
-#@ alo-easymail
-msgid "Number of last posts to display"
-msgstr "表示する最新投稿数"
-
-#: alo-easymail_options.php:407
-#@ alo-easymail
-msgid "Number of recent posts to show in the dropdown list of the newsletter sending form"
-msgstr "ニュースレター送信フォームに表示するドロップダウンリスト内の最新投稿数"
-
-#: alo-easymail_options.php:411
-#@ alo-easymail
-msgid "Sender's email address"
-msgstr "送信者メールアドレス"
-
-#: alo-easymail_options.php:416
-#@ alo-easymail
-msgid "Sender's name"
-msgstr "送信者名"
-
-#: alo-easymail_options.php:437
-#@ alo-easymail
-msgid "Filters to the newsletter text"
-msgstr "ニュースレターのテキストへのフィルター"
-
-#: alo-easymail_options.php:439
-#@ alo-easymail
-msgid "Apply 'the_content' filters and shortcodes to newsletter content"
-msgstr "'the_content'とショートコードフィルターをニュースレターに適用する"
-
-#: alo-easymail_options.php:476
-#@ alo-easymail
-msgid "Use themes"
-msgstr "テーマ使用"
-
-#: alo-easymail_options.php:455
-#: alo-easymail_options.php:479
-#: alo-easymail_options.php:533
-#@ alo-easymail
-msgid "no"
-msgstr "いいえ"
-
-#: alo-easymail_options.php:480
-#: alo-easymail_options.php:484
-#@ alo-easymail
-msgid "yes"
-msgstr "はい"
-
-#: alo-easymail_options.php:480
-#@ alo-easymail
-msgid " free choice for authors"
-msgstr "作成者が自由に選択"
-
-#: alo-easymail_options.php:484
-#@ alo-easymail
-msgid "but always use"
-msgstr "ただし、常に次のものを使用"
-
-#: alo-easymail_options.php:487
-#@ alo-easymail
-msgid "Tip: copy &#39;alo-easymail-themes&#39; folder to your theme directory and edit your themes there. Useful to prevent the loss of themes when you upgrade the plugin"
-msgstr "ティップス: &#39;alo-easymail-themes&#39; フォルダーをテーマディレクトリにコピーし、テーマを編集してください。プラグインアップデート時にファイルがなくなるのを防ぐことができます。"
-
-#: alo-easymail_options.php:500
-#@ alo-easymail
-msgid "Method of creation of the recipient list"
-msgstr "受信者リストの作成方法"
-
-#: alo-easymail_options.php:504
-#: alo-easymail_options.php:505
-#: alo-easymail_options.php:506
-#@ alo-easymail
-msgid "ajax"
-msgstr "Ajax"
-
-#: alo-easymail_functions.php:2403
-#: alo-easymail_functions.php:2405
-#: alo-easymail_functions.php:2407
-#: alo-easymail_options.php:504
-#: alo-easymail_options.php:897
-#@ alo-easymail
-msgid "Default"
-msgstr "デフォルト"
-
-#: alo-easymail_options.php:505
-#@ alo-easymail
-msgid "loading only javascript of the plugin"
-msgstr "プラグインのJavascriptだけを読み込む"
-
-#: alo-easymail_options.php:507
-#@ alo-easymail
-msgid "no ajax"
-msgstr "Ajaxなし"
-
-#: alo-easymail_options.php:507
-#@ alo-easymail
-msgid "creation when newsletter is saved"
-msgstr "ニュースレターが保存されたときに作成"
-
-#: alo-easymail_options.php:513
-#@ alo-easymail
-msgid "If the standard and cool method does not work for you, you can try another option"
-msgstr "標準の方法が動かないときは別のオプションを選択できます"
-
-#: alo-easymail_options.php:514
-#@ alo-easymail
-msgid "You can load only javascript of the plugin, useful to prevent conflicts with javascripts of other plugins"
-msgstr "プラグインのJavascriptだけを読み込むと、他のプラグインとのJavascriptの摩擦を防ぐことができます"
-
-#: alo-easymail_options.php:516
-#@ alo-easymail
-msgid "Otherwise, you can create the list directly when the newsletter is saved, without use of ajax"
-msgstr "もしくは、Ajaxを使わず、ニュースレターが保存されたときに送信者リストを作成することもできます。"
-
-#: alo-easymail_options.php:517
-#@ alo-easymail
-msgid "this is the quickest and safest mode, but it could not work if case of several thousands of recipients"
-msgstr "これは安全でもっとも手っ取り早い方法です。ただし、数千人の受信者がいるときは動作しない場合もあります。"
-
-#: alo-easymail_options.php:530
-#@ alo-easymail
-msgid "Debug newsletters"
-msgstr "ニュースレターをデバッグ"
-
-#: alo-easymail_options.php:534
-#: alo-easymail_options.php:541
-#@ alo-easymail
-msgid "send all emails to the author"
-msgstr "すべてのメールを作成者に送信"
-
-#: alo-easymail_options.php:534
-#: alo-easymail_options.php:542
-#@ alo-easymail
-msgid "put all emails into a log file"
-msgstr "すべてのメールをログファイルに記録"
-
-#: alo-easymail_options.php:539
-#@ alo-easymail
-msgid "If you choose a debug mode the newsletters won&#39;t be sent to the selected recipients"
-msgstr "デバッグモードを選択した場合、選択した受信者にニュースレターは送信されません"
-
-#: alo-easymail_options.php:543
-#, php-format
-#@ alo-easymail
-msgid "called %s and saved in %s"
-msgstr "called %s and saved in %s"
-
-#: alo-easymail_options.php:543
-#@ alo-easymail
-msgid "the log file is accessible on your server and contains personal information so you have to delete it as soon as possible!"
-msgstr "ログファイルはサーバ上のアクセス可能領域にあり、個人情報を含んでいます。できる限り速やかに削除してください。"
-
-#: alo-easymail_options.php:579
-#@ alo-easymail
-msgid "No multilanguage plugin is enabled, so you will only see texts in the main language of the site"
-msgstr "多言語プラグインが有効化されていないため、サイトの主言語だけが表示されます"
-
-#: alo-easymail_options.php:580
-#@ alo-easymail
-msgid "Recommended plugins, fully compatible with EasyMail, for a complete multilingual functionality"
-msgstr "EasyMailと互換性があり、多言語化機能を備えたおすすめプラグイン"
-
-#: alo-easymail_options.php:585
-#@ alo-easymail
-msgid "If you like here you can list the languages available"
-msgstr "お好みでここに利用可能な言語を登録できます"
-
-#: alo-easymail_options.php:589
-#@ alo-easymail
-msgid "List of two-letter language codes separated by commas"
-msgstr "2文字の言語コードをカンマ区切りで登録"
-
-#: alo-easymail_options.php:589
-#: alo-easymail_subscribers.php:369
-#@ alo-easymail
-msgid "iso 639-1 codes"
-msgstr "iso 639-1 コード"
-
-#: alo-easymail_functions.php:2411
-#: alo-easymail_functions.php:2413
-#: alo-easymail_options.php:589
-#@ alo-easymail
-msgid "Sample:"
-msgstr "例: "
-
-#: alo-easymail_options.php:591
-#@ alo-easymail
-msgid "The plugin looks for the subscriber&#39;s language in the browser setting and sends the e-mail accordingly"
-msgstr "プラグインはブラウザ設定から購読者の言語を検索し、それに応じたメールを送信します"
-
-#: alo-easymail_options.php:592
-#@ alo-easymail
-msgid "If you are not using a multilanguage site ignore this piece of information"
-msgstr "多言語サイトを運営していない場合は設定する必要はありません"
-
-#: alo-easymail_options.php:602
-#@ alo-easymail
-msgid "Widget/Page Texts"
-msgstr "ウィジェット/ページテキスト"
-
-#: alo-easymail_options.php:616
-#@ alo-easymail
-msgid "Optin message"
-msgstr "オプトインメッセージ"
-
-#: alo-easymail_options.php:617
-#@ alo-easymail
-msgid "Optout message"
-msgstr "オプトアウトメッセージ"
-
-#: alo-easymail_options.php:618
-#@ alo-easymail
-msgid "Invite to join mailing lists"
-msgstr "メーリングリストへ誘う"
-
-#: alo-easymail_options.php:619
-#@ alo-easymail
-msgid "Policy claim"
-msgstr "プライバシーポリシー"
-
-#: alo-easymail_options.php:620
-#@ alo-easymail
-msgid "Top claim"
-msgstr "キャッチコピー"
-
-#: alo-easymail_options.php:624
-#: alo-easymail_options.php:687
-#: alo-easymail_options.php:726
-#: alo-easymail_options.php:768
-#@ alo-easymail
-msgid "Leave blank to use default text"
-msgstr "デフォルトのテキストを使う場合は空にしてください"
-
-#: alo-easymail_options.php:631
-#: alo-easymail_options.php:635
-#@ alo-easymail
-msgid "empty"
-msgstr "空白"
-
-#: alo-easymail_options.php:632
-#@ alo-easymail
-msgid "If filled in it will appear at the bottom of widget/page. Useful to show/link more info about privacy"
-msgstr "ウィジェットやページの最後に表示されます。プライバシーに関する情報を表示／リンクするのに役立ちます。"
-
-#: alo-easymail_options.php:636
-#@ alo-easymail
-msgid "If filled in it will appear at the top of widget/page. Useful to invite to subscribe"
-msgstr "ウィジェット／ページのトップに表示されます。購読勧誘に役立ちます。"
-
-#: alo-easymail_options.php:681
-#@ alo-easymail
-msgid "Communications"
-msgstr "コミュニケーション"
-
-#: alo-easymail_options.php:686
-#@ alo-easymail
-msgid "Activation e-mail"
-msgstr "有効化メール"
-
-#: alo-easymail_options.php:715
-#: alo-easymail_options.php:754
-#: alo-easymail_options.php:794
-#@ alo-easymail
-msgid "You can use the following tags"
-msgstr "次のタグを利用できます"
-
-#: alo-easymail_options.php:717
-#: alo-easymail_options.php:756
-#@ alo-easymail
-msgid "the blog name"
-msgstr "ブログ名"
-
-#: alo-easymail_options.php:718
-#@ alo-easymail
-msgid "the subscriber name"
-msgstr "購読者名"
-
-#: alo-easymail_options.php:719
-#@ alo-easymail
-msgid "the url that the new subscriber must click/visit to confirm the subscription"
-msgstr "購読者が購読申込を完了するためにクリック／訪問しなくてはならないURL"
-
-#: alo-easymail_options.php:725
-#@ alo-easymail
-msgid "Unsubscription disclaimer"
-msgstr "購読解除時の断り書き"
-
-#: alo-easymail_functions.php:1998
-#: alo-easymail_options.php:728
-#@ alo-easymail
-msgid "You have received this message because you subscribed to our newsletter. If you want to unsubscribe: "
-msgstr "購読の解除が申請されたため、メッセージを送信しました。購読解除："
-
-#: alo-easymail_options.php:729
-#@ alo-easymail
-msgid "visit this link"
-msgstr "リンクへ移動"
-
-#: alo-easymail_options.php:767
-#@ alo-easymail
-msgid "Read newsletter online"
-msgstr "ニュースレターをオンラインで読む"
-
-#: alo-easymail_options.php:837
-#, php-format
-#@ alo-easymail
-msgid "Some parameters are already setted up in %s, so the values below could be ignored"
-msgstr "いくつかのパラメータは%sで設定済みのため、以下の設定は無視されます"
-
-#: alo-easymail_options.php:880
-#@ alo-easymail
-msgid "Maximum number of emails that can be sent in a 24-hr period"
-msgstr "24時間に送信できるメールの最大数"
-
-#: alo-easymail_options.php:887
-#@ alo-easymail
-msgid "Maximum number of emails that can be sent per batch"
-msgstr "バッチごとに送信できるメールの最大数"
-
-#: alo-easymail_options.php:895
-#@ alo-easymail
-msgid "Interval between emails in a single batch, in milliseconds"
-msgstr "それぞれのメール送信バッチの間隔（ミリ秒）"
-
-#: alo-easymail_options.php:897
-#@ alo-easymail
-msgid "Usually you do not have to modify this value"
-msgstr "この値は通常変更する必要はありません"
-
-#: alo-easymail_options.php:897
-#@ alo-easymail
-msgid "It is useful if your provider allows a maximum number of emails that can be sent per second or minute"
-msgstr "あなたの利用するプロバイダが分ごとや秒ごとに送信できるメール数を制限しているときに役立ちます"
-
-#: alo-easymail_options.php:897
-#@ alo-easymail
-msgid "The higher this value, the lower the number of emails sent for each batch"
-msgstr "この値が高いほど、バッチごとに送信できるメールの数は少なくなります"
-
-#: alo-easymail_options.php:923
-#@ alo-easymail
-msgid "Important advice to calculate the best limit"
-msgstr "最大送信数を計算するための重要なアドバイス"
-
-#: alo-easymail_options.php:925
-#@ alo-easymail
-msgid "Ask your provider the cut-off of emails you can send per day. Multiplying the hourly limit by 24 is not the right way to calculate it: very often the resulting number is much higher than the actual cut-off."
-msgstr "プロバイダーに一日に送信できるメールの数を訪ねてください。24で割って一時間ごとにの最大数を出すのはよくない方法です。実際の結果は理論上の値より少ないということはよくあります。"
-
-#: alo-easymail_options.php:926
-#@ alo-easymail
-msgid "Subtract from this cut-off the number of emails you want to send from your blog (e.g. registration procedures, activation and unsubscribing of EasyMail, notices from other plugins etc.)."
-msgstr "割った数から送信したいメールの数を引いてください（例：EasyMailの購読登録処理、有効化、購読解除のほか、その他プラグインのメッセージなど）"
-
-#: alo-easymail_options.php:927
-#@ alo-easymail
-msgid "If in doubt, just choose a number definitely lower than the cut-off: you'll have more chances to have your mail delivered, and less chances to end up in a blacklist..."
-msgstr "疑わしい場合は割った数よりも明らかに少ない数値を設定してください。それでメール送信の機会は増えますし、ブラックリストに載る可能性も減ります..."
-
-#: alo-easymail_options.php:964
-#@ alo-easymail
-msgid "The lowest role can send newsletters"
-msgstr "ニュースレターを送信できる最も低い役割"
-
-#: alo-easymail_options.php:991
-#: alo-easymail_options.php:1018
-#, php-format
-#@ alo-easymail
-msgid "The authorised roles are the same with the %s capability"
-msgstr "%s権限を持つ役割に認める"
-
-#: alo-easymail_options.php:992
-#@ alo-easymail
-msgid "The user with this capability can manage own newsletters (view the report, delete)"
-msgstr "この権限を持つユーザーは自分のニュースレターを管理（リポートの閲覧、削除）ができます"
-
-#: alo-easymail_options.php:998
-#@ alo-easymail
-msgid "The lowest role can manage newsletters"
-msgstr "ニュースレターを管理できる最も低い役割"
-
-#: alo-easymail_options.php:1019
-#@ alo-easymail
-msgid "The user with this capability can manage newsletters of all users (view the report, delete)"
-msgstr "この権限を持つユーザーはすべてのユーザーのニュースレターを管理（リポート閲覧、削除）できます。"
-
-#: alo-easymail_options.php:1026
-#@ alo-easymail
-msgid "The lowest role can manage subscribers"
-msgstr "購読者を管理できる最低の役割"
-
-#: alo-easymail_options.php:1042
-#@ alo-easymail
-msgid "The user with this capability can manage subscribers (add, delete, assign to mailing lists...)"
-msgstr "この権限を持つユーザーは購読者を管理（追加、削除、メーリングリストへ割当）できます"
-
-#: alo-easymail_options.php:1048
-#@ alo-easymail
-msgid "The lowest role can manage options"
-msgstr "オプションを設定できる最低の役割"
-
-#: alo-easymail_options.php:1063
-#@ alo-easymail
-msgid "The user with this capability can set up these setting sections"
-msgstr "この権限を持つユーザーは設定を行えます"
-
-#: alo-easymail_options.php:1066
-#@ alo-easymail
-msgid "Other sections can be modified only by administrators"
-msgstr "その他のセクションは管理者のみが修正できます"
-
-#: alo-easymail_options.php:1147
-#@ alo-easymail
-msgid "Inputs are incompled or wrong. Please check and try again."
-msgstr "入力値が不正です。もう一度確認してやりなおしてください"
-
-#: alo-easymail_options.php:1174
-#@ alo-easymail
-msgid "You can setup mailing lists. For each you have to specify the name, the order (the lowest appear at top) and the availability"
-msgstr "メーリングリストを設定できます。それぞれに対して名称、順序（低いほど上に表示）、利用形態を指定してください"
-
-#: alo-easymail_options.php:1176
-#: alo-easymail_options.php:1228
-#: alo-easymail_options.php:1275
-#@ alo-easymail
-msgid "hidden"
-msgstr "非表示"
-
-#: alo-easymail_options.php:1176
-#@ alo-easymail
-msgid "the list can be shown only here in settings and nowhere in the site"
-msgstr "リストはこの画面にだけ表示され、サイトのその他の部分では表示されません"
-
-#: alo-easymail_options.php:1177
-#: alo-easymail_options.php:1229
-#: alo-easymail_options.php:1278
-#@ alo-easymail
-msgid "admin side only"
-msgstr "管理画面のみ"
-
-#: alo-easymail_options.php:1177
-#@ alo-easymail
-msgid "the list is available only for administratrion use (settings, sending page, subscribers), so subscribers cannot see it"
-msgstr "リストは管理画面からのみ利用（設定、送信、購読者管理）でき、購読者からは見ることができません"
-
-#: alo-easymail_options.php:1178
-#: alo-easymail_options.php:1230
-#: alo-easymail_options.php:1281
-#@ alo-easymail
-msgid "entire site"
-msgstr "サイト全体"
-
-#: alo-easymail_options.php:1178
-#@ alo-easymail
-msgid "the list is available in the whole site, so subscribers can see it"
-msgstr "リストはサイトに表示されるため、購読者は見ることができます"
-
-#: alo-easymail_options.php:1182
-#: alo-easymail_options.php:1295
-#: alo-easymail_options.php:1296
-#@ alo-easymail
-msgid "Edit list"
-msgstr "リストを編集"
-
-#: alo-easymail_options.php:1182
-#@ alo-easymail
-msgid "New list"
-msgstr "新規リスト"
-
-#: alo-easymail_options.php:1187
-#: alo-easymail_options.php:1255
-#@ alo-easymail
-msgid "List name"
-msgstr "リスト名"
-
-#: alo-easymail_options.php:1188
-#: alo-easymail_options.php:1256
-#@ alo-easymail
-msgid "Availability"
-msgstr "利用形態"
-
-#: alo-easymail_options.php:1189
-#: alo-easymail_options.php:1257
-#@ alo-easymail
-msgid "Order"
-msgstr "順序"
-
-#: alo-easymail_options.php:1207
-#@ alo-easymail
-msgid "no translation for this language, yet"
-msgstr "この言語の翻訳がありません"
-
-#: alo-easymail_functions.php:3596
-#: alo-easymail_options.php:1241
-#@ alo-easymail
-msgid "Save"
-msgstr "保存"
-
-#: alo-easymail_functions.php:3593
-#: alo-easymail_options.php:1243
-#: alo-easymail_subscribers.php:154
-#: alo-easymail_subscribers.php:201
-#: alo-easymail_subscribers.php:289
-#: alo-easymail_subscribers.php:427
-#@ alo-easymail
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: alo-easymail_options.php:1259
-#@ alo-easymail
-msgid "Action"
-msgstr "アクション"
-
-#: alo-easymail_options.php:1298
-#: alo-easymail_options.php:1300
-#@ alo-easymail
-msgid "Delete list"
-msgstr "リストを削除"
-
-#: alo-easymail_options.php:1299
-#@ alo-easymail
-msgid "Do you really want to DELETE this list?"
-msgstr "このリストを削除しますか？"
-
-#: alo-easymail_options.php:1307
-#: alo-easymail_subscribers.php:160
-#@ alo-easymail
-msgid "There are no available lists"
-msgstr "利用できるリストはありません"
-
-#: alo-easymail_subscribers.php:17
-#@ alo-easymail
-msgid "Activation state updated"
-msgstr "有効状態が更新されました"
-
-#: alo-easymail_subscribers.php:19
-#@ alo-easymail
-msgid "Not updated"
-msgstr "更新されませんでした"
-
-#: alo-easymail_subscribers.php:26
-#@ alo-easymail
-msgid "Subscriber deleted"
-msgstr "購読者を削除しました"
-
-#: alo-easymail_subscribers.php:29
-#@ alo-easymail
-msgid "Not deleted"
-msgstr "削除されませんでした"
-
-#: alo-easymail_subscribers.php:104
-#: alo-easymail_subscribers.php:167
-#: alo-easymail_subscribers.php:214
-#: alo-easymail_subscribers.php:227
-#: alo-easymail_subscribers.php:244
-#: alo-easymail_subscribers.php:257
-#: alo-easymail_subscribers.php:436
-#: alo-easymail_subscribers.php:494
-#: alo-easymail_subscribers.php:528
-#: alo-easymail_subscribers.php:858
-#@ alo-easymail
-msgid "No subscriber selected"
-msgstr "購読者が選択されていません"
-
-#: alo-easymail_subscribers.php:105
-#: alo-easymail_subscribers.php:495
-#@ alo-easymail
-msgid "No list selected"
-msgstr "リストが選択されていません"
-
-#: alo-easymail_subscribers.php:111
-#: alo-easymail_subscribers.php:893
-#@ alo-easymail
-msgid "Edit subscription to mailing lists"
-msgstr "メーリングリストの購読を編集"
-
-#: alo-easymail_subscribers.php:112
-#: alo-easymail_subscribers.php:175
-#@ alo-easymail
-msgid "Selected subscribers"
-msgstr "選択された購読者"
-
-#: alo-easymail_subscribers.php:125
-#@ alo-easymail
-msgid "Choose mailing lists"
-msgstr "メーリングリストを選択"
-
-#: alo-easymail_subscribers.php:136
-#@ alo-easymail
-msgid "Choose an action"
-msgstr "アクションを選択"
-
-#: alo-easymail_subscribers.php:138
-#: alo-easymail_subscribers.php:388
-#@ alo-easymail
-msgid "Add to selected lists"
-msgstr "選択されたリストに追加"
-
-#: alo-easymail_subscribers.php:138
-#: alo-easymail_subscribers.php:141
-#@ alo-easymail
-msgid "ignore not selected lists"
-msgstr "選択されていないリストを無視"
-
-#: alo-easymail_subscribers.php:141
-#@ alo-easymail
-msgid "Remove from selected lists"
-msgstr "選択されたリストから削除"
-
-#: alo-easymail_subscribers.php:145
-#@ alo-easymail
-msgid "Add to selected lists and remove from not selected lists"
-msgstr "選択されたリストに追加し、選択されていないリストから削除"
-
-#: alo-easymail_subscribers.php:153
-#: alo-easymail_subscribers.php:200
-#: alo-easymail_subscribers.php:912
-#@ default
-msgid "Apply"
-msgstr "適用"
-
-#: alo-easymail_subscribers.php:168
-#: alo-easymail_subscribers.php:529
-#@ alo-easymail
-msgid "No language option selected"
-msgstr "言語オプションが選択されていません"
-
-#: alo-easymail_subscribers.php:174
-#: alo-easymail_subscribers.php:894
-#@ alo-easymail
-msgid "Change language ascribed to subscribers"
-msgstr "購読者に属する言語を変更"
-
-#: alo-easymail_subscribers.php:187
-#: alo-easymail_subscribers.php:775
-#@ alo-easymail
-msgid "Choose a language"
-msgstr "言語を選択"
-
-#: alo-easymail_subscribers.php:188
-#@ alo-easymail
-msgid "No language"
-msgstr "言語なし"
-
-#: alo-easymail_subscribers.php:207
-#@ alo-easymail
-msgid "No language available"
-msgstr "利用できる言語がありません"
-
-#: alo-easymail_subscribers.php:221
-#@ alo-easymail
-msgid "Subscribers deleted"
-msgstr "購読者が削除されました"
-
-#: alo-easymail_subscribers.php:251
-#@ alo-easymail
-msgid "Subscribers activated"
-msgstr "購読者が有効化されました"
-
-#: alo-easymail_subscribers.php:264
-#@ alo-easymail
-msgid "Subscribers deactivated"
-msgstr "購読者が無効になりました"
-
-#: alo-easymail_subscribers.php:292
-#@ alo-easymail
-msgid "Add a subscriber"
-msgstr "購読者を追加"
-
-#: alo-easymail_functions.php:2401
-#: alo-easymail_subscribers.php:295
-#@ alo-easymail
-msgid "mandatory"
-msgstr "強制"
-
-#: alo-easymail_subscribers.php:349
-#@ alo-easymail
-msgid "Add"
-msgstr "追加"
-
-#: alo-easymail_subscribers.php:353
-#@ alo-easymail
-msgid "Import from WP registered users"
-msgstr "WPの登録済みユーザーからインポート"
-
-#: alo-easymail_subscribers.php:354
-#@ alo-easymail
-msgid "You can import new subscribers from WordPress registered users. Each member will be subscribed to the newsletter."
-msgstr "WordPressに登録しているユーザーから購読者をインポートできます。それぞれの会員がニュースレターを購読します。"
-
-#: alo-easymail_subscribers.php:355
-#@ alo-easymail
-msgid "This feature is useful if you have just installed the plugin and you would like to automatically subscribe existing users."
-msgstr "この機能はプラグインをインストールしたばかりで、既存のユーザーを自動的に購読者としたい場合に役立ちます。"
-
-#: alo-easymail_subscribers.php:357
-#@ alo-easymail
-msgid "Blog registered users"
-msgstr "ブログに登録済みのユーザー"
-
-#: alo-easymail_subscribers.php:362
-#@ alo-easymail
-msgid "Import from WP members"
-msgstr "WP会員からインポート"
-
-#: alo-easymail_subscribers.php:366
-#@ alo-easymail
-msgid "Import from uploaded CSV file"
-msgstr "アップロードされたCSVファイルからインポート"
-
-#: alo-easymail_subscribers.php:367
-#@ alo-easymail
-msgid "You can import new subscribers from a CSV file."
-msgstr "CSVファイルから新規購読者をインポートできます。"
-
-#: alo-easymail_subscribers.php:368
-#@ alo-easymail
-msgid "For each line you have to specify: e-mail address (mandatory), name (optional), language code (optional). Use semicolon (;) to separate the fields."
-msgstr "それぞれの行に次の情報を指定：メールアドレス（必須）、名前（オプション）、言語コード（オプション）。フィールド区切りにはセミコロン (;) を使ってください。"
-
-#: alo-easymail_subscribers.php:369
-#@ alo-easymail
-msgid "You can list only languages available in the blog"
-msgstr "ブログで有効になっている言語のみ登録できます"
-
-#: alo-easymail_subscribers.php:369
-#@ alo-easymail
-msgid "you can set them up in Settings &gt; Newsletter"
-msgstr "設定 &gt; ニュースレターで設定できます"
-
-#: alo-easymail_subscribers.php:369
-#@ alo-easymail
-msgid "Language codes"
-msgstr "言語コード"
-
-#: alo-easymail_subscribers.php:382
-#@ alo-easymail
-msgid "Tips if you have problems: you can try changing the file extension from .csv to .txt; use double quotes to delimit each field (&quot;email_address1@domain.ltd&quot;;&quot;name1 surname1&quot;)"
-msgstr "問題がおきたら：ファイル拡張子を.csvから.txtに変更してください。各フィールドをクオートで囲ってください（&quot;email_address1@domain.ltd&quot;;&quot;name1 surname1&quot;）"
-
-#: alo-easymail_subscribers.php:382
-#@ alo-easymail
-msgid "try using a different browser"
-msgstr "別のブラウザで試してください"
-
-#: alo-easymail_subscribers.php:384
-#@ alo-easymail
-msgid "Test mode (no importation, show records on screen)"
-msgstr "テストモード（インポートを行わず、結果を画面に表示します）"
-
-#: alo-easymail_subscribers.php:403
-#@ alo-easymail
-msgid "Upload CSV file"
-msgstr "CSVファイルをアップロード"
-
-#: alo-easymail_subscribers.php:407
-#@ alo-easymail
-msgid "Export subscribers"
-msgstr "購読者をエクスポート"
-
-#: alo-easymail_subscribers.php:408
-#@ alo-easymail
-msgid "You can export newsletter subscribers: the plugin shows them on screen so you can copy and paste them into a text file or into any application"
-msgstr "ニュースレター購読者をエクスポートできます： プラグインは購読者を画面に表示します。テキストファイルやその他アプリケーションにコピー＆ペーストしてください"
-
-#: alo-easymail_subscribers.php:413
-#: alo-easymail_subscribers.php:423
-#@ alo-easymail
-msgid "Export"
-msgstr "エクスポート"
-
-#: alo-easymail_subscribers.php:435
-#: alo-easymail_subscribers.php:742
-#: alo-easymail_subscribers.php:862
-#@ alo-easymail
-msgid "No action selected"
-msgstr "アクションが選択されていません"
-
-#: alo-easymail_subscribers.php:454
-#: alo-easymail_subscribers.php:462
-#: alo-easymail_subscribers.php:549
-#: alo-easymail_subscribers.php:630
-#: alo-easymail_subscribers.php:694
-#: alo-easymail_subscribers.php:710
-#: alo-easymail_subscribers.php:727
-#: alo-easymail_subscribers.php:736
-#@ alo-easymail
-msgid "Back"
-msgstr "戻る"
-
-#: alo-easymail_subscribers.php:486
-#@ alo-easymail
-msgid "New subscriber added"
-msgstr "新しい購読者が追加されました"
-
-#: alo-easymail_subscribers.php:559
-#@ alo-easymail
-msgid "Error"
-msgstr "エラー"
-
-#: alo-easymail_subscribers.php:627
-#, php-format
-#@ alo-easymail
-msgid "Found %d records"
-msgstr "%dレコードが見つかりました"
-
-#: alo-easymail_subscribers.php:628
-#@ alo-easymail
-msgid "Check the Error column to modify records that otherwise will not be imported"
-msgstr "エラーのあるカラムを修正しなければインポートされません"
-
-#: alo-easymail_subscribers.php:633
-#, php-format
-#@ alo-easymail
-msgid "Successfully import: %d records out of %d total"
-msgstr "インポート成功： %dレコード / 全 %d "
-
-#: alo-easymail_subscribers.php:635
-#@ alo-easymail
-msgid "Some records have not been imported"
-msgstr "幾つかのレコードがインポートされませんでした"
-
-#: alo-easymail_subscribers.php:652
-#@ alo-easymail
-msgid "Not valid CSV file uploaded"
-msgstr "不正なCSVがアップロードされました"
-
-#: alo-easymail_subscribers.php:676
-#, php-format
-#@ alo-easymail
-msgid "%d new subscribers successfully added from blog members"
-msgstr "%d 名の購読者がブログ会員から追加されました"
-
-#: alo-easymail_subscribers.php:678
-#@ alo-easymail
-msgid "No subscribers added from blog members"
-msgstr "ブログ会員から追加された購読者はいませんでした"
-
-#: alo-easymail_subscribers.php:764
-#@ alo-easymail
-msgid "Select a mailing list"
-msgstr "メーリングリストを選択"
-
-#: alo-easymail_subscribers.php:784
-#@ default
-msgid "Search"
-msgstr "検索"
-
-#: alo-easymail.php:2272
-#: alo-easymail_subscribers.php:797
-#@ alo-easymail
-msgid "Import/export subscribers"
-msgstr "購読者のインポート / エクスポート"
-
-#: alo-easymail.php:2274
-#: alo-easymail_subscribers.php:804
-#, php-format
-#@ alo-easymail
-msgid "Maybe you would like to import subscribers from your blog registered members or an external archive (using CSV). Click the &#39;%s&#39; button"
-msgstr "ブログの登録ユーザーや外部のアーカイブ（CSV利用）から購読者をインポートしたい場合はボタンをクリックしてください &#39;%s&#39; "
-
-#: alo-easymail_subscribers.php:805
-#@ alo-easymail
-msgid "Do not show it again"
-msgstr "表示しない"
-
-#: alo-easymail_subscribers.php:866
-#: alo-easymail_subscribers.php:869
-#@ alo-easymail
-msgid "Do you really want to DELETE these subscribers?"
-msgstr "これらの購読者を削除しますか？"
-
-#: alo-easymail_subscribers.php:892
-#@ default
-msgid "Bulk Actions"
-msgstr "一括処理"
-
-#: alo-easymail_subscribers.php:895
-#@ alo-easymail
-msgid "Activate"
-msgstr "有効化"
-
-#: alo-easymail_subscribers.php:896
-#@ alo-easymail
-msgid "Deactivate"
-msgstr "無効化"
-
-#: alo-easymail_subscribers.php:897
-#@ default
-msgid "Delete"
-msgstr "削除"
-
-#: alo-easymail_subscribers.php:981
-#@ alo-easymail
-msgid "Order by e-mail"
-msgstr "Eメール順"
-
-#: alo-easymail_subscribers.php:999
-#@ alo-easymail
-msgid "Username"
-msgstr "ユーザー名"
-
-#: alo-easymail_subscribers.php:999
-#@ alo-easymail
-msgid "The username of registered users. It is blank for public subscribers."
-msgstr "登録されたユーザーの名前。購読者の場合は空白です"
-
-#: alo-easymail_subscribers.php:1000
-#@ alo-easymail
-msgid "Order by join date"
-msgstr "登録日順"
-
-#: alo-easymail_subscribers.php:1000
-#@ alo-easymail
-msgid "Join date"
-msgstr "登録日"
-
-#: alo-easymail_subscribers.php:1002
-#@ alo-easymail
-msgid "Order by activation state"
-msgstr "有効化ステータス順"
-
-#: alo-easymail_subscribers.php:1002
-#@ alo-easymail
-msgid "Activated"
-msgstr "有効"
-
-#: alo-easymail_subscribers.php:1002
-#@ alo-easymail
-msgid "For registered users the dafault state is activated. For public subscribers the default state is deactivated: it will be activated by clicking on the activation link in the e-mail."
-msgstr "登録ユーザーの初期値は有効、購読者の初期値は無効です：メールアドレスの有効化URLをクリックすることで有効になります"
-
-#: alo-easymail_subscribers.php:1002
-#@ alo-easymail
-msgid "A subscriber will be deleted if not activated in 5 days."
-msgstr "5日間有効化されなかった購読者は削除されます"
-
-#: alo-easymail_subscribers.php:1004
-#@ alo-easymail
-msgid "Order by language"
-msgstr "言語順"
-
-#: alo-easymail_subscribers.php:1005
-#@ alo-easymail
-msgid "Actions"
-msgstr "アクション"
-
-#: alo-easymail_recipients-list.php:5
-#: alo-easymail_recipients-list.php:202
-#@ alo-easymail
-msgid "close"
-msgstr "閉じる"
-
-#: alo-easymail_recipients-list.php:68
-#@ alo-easymail
-msgid "The required newsletter seems to already have a list"
-msgstr "指定されたニュースレターはすでにリストを持っています"
-
-#: alo-easymail_recipients-list.php:95
-#: alo-easymail_recipients-list.php:123
-#: alo-easymail_recipients-list.php:151
-#@ alo-easymail
-msgid "Recipients successfully added"
-msgstr "受信者が追加されました"
-
-#: alo-easymail_recipients-list.php:96
-#: alo-easymail_recipients-list.php:124
-#: alo-easymail_recipients-list.php:152
-#@ alo-easymail
-msgid "Newsletter successfully sent to recipients"
-msgstr "ニュースレターは無事送信されました"
-
-#: alo-easymail.php:2317
-#: alo-easymail_recipients-list.php:179
-#@ alo-easymail
-msgid "You have to prepare the list of recipients to send the newsletter to"
-msgstr "ニュースレターを送信するためには受信者リストを準備しなくてはなりません"
-
-#: alo-easymail_recipients-list.php:180
-#@ alo-easymail
-msgid "You can add the recipients to the sending queue (best choice) or send them the newsletter immediately (suggested only if few recipients)"
-msgstr "受信者を送信キューに追加（推奨）、または、すぐにニュースレターを送信（受信者が少ないときのみ）"
-
-#: alo-easymail_recipients-list.php:181
-#@ alo-easymail
-msgid "Warning: do not close or reload the browser window during process"
-msgstr "警告：処理中にブラウザを閉じたり移動しないでください"
-
-#: alo-easymail_recipients-list.php:183
-#@ alo-easymail
-msgid "You can send the newsletter as test to"
-msgstr "次のアドレスにニュースレターをテスト送信"
-
-#: alo-easymail_recipients-list.php:185
-#@ alo-easymail
-msgid "Send"
-msgstr "送信"
-
-#: alo-easymail_recipients-list.php:196
-#@ alo-easymail
-msgid "Add to sending queue"
-msgstr "送信キューに追加"
-
-#: alo-easymail_recipients-list.php:198
-#@ alo-easymail
-msgid "Send now"
-msgstr "いますぐ送信"
-
-#: alo-easymail_functions.php:125
-#@ alo-easymail
-msgid "Please visit the plugin site for more info and feedback"
-msgstr "さらなる情報やフィードバックはプラグインサイトを訪問してください"
-
-#: alo-easymail_functions.php:127
-#: alo-easymail_options.php:930
-#@ alo-easymail
+#: functions/alo-easymail-mailer.php:105
+msgid "Confirm your subscription to %BLOGNAME% Newsletter"
+msgstr "%BLOGNAME% ニュースレターの購読を確認してください。"
+
+#: functions/alo-easymail-lists.php:120 functions/alo-easymail-users.php:241
+#: functions/alo-easymail-widget.php:21
+#: pages/alo-easymail-admin-options.php:763
+msgid "You can also sign up for specific lists"
+msgstr "指定したリストへの登録もできます"
+
+#: functions/alo-easymail-helpers.php:125
+#: pages/alo-easymail-admin-options.php:1064
 msgid "For more links you can use the Help button"
 msgstr "より詳しくはヘルプボタンを押してください"
 
-#: alo-easymail.php:487
-#: alo-easymail_functions.php:132
-#@ alo-easymail
-msgid "If you use this plugin consider the idea of donating and supporting its development"
-msgstr "このプラグインを利用されている場合は、寄付または開発サポートをご検討ください。"
+#: functions/alo-easymail-helpers.php:123
+msgid "Please visit the plugin site for more info and feedback"
+msgstr "さらなる情報やフィードバックはプラグインサイトを訪問してください"
 
-#: alo-easymail_functions.php:340
-#@ alo-easymail
-msgid "Languages"
-msgstr "言語"
-
-#: alo-easymail_functions.php:1036
-#@ alo-easymail
-msgid "Post tags"
-msgstr "投稿タグ"
-
-#: alo-easymail_functions.php:1038
-#@ alo-easymail
-msgid "The link to the title of the selected post."
-msgstr "選択された投稿のタイトルリンク"
-
-#: alo-easymail_functions.php:1038
-#: alo-easymail_functions.php:1046
-#: alo-easymail_functions.php:1047
-#@ alo-easymail
-msgid "This tag works also in the <strong>subject</strong>"
-msgstr "このタグは<strong>件名</strong>でも有効です"
-
-#: alo-easymail_functions.php:1039
-#@ alo-easymail
-msgid "The excerpt (if any) of the post."
-msgstr "投稿の抜粋（あれば）"
-
-#: alo-easymail_functions.php:1040
-#@ alo-easymail
-msgid "The main content of the post."
-msgstr "投稿の本文"
-
-#: alo-easymail_functions.php:1044
-#@ alo-easymail
-msgid "Subscriber tags"
-msgstr "購読者タグ"
-
-#: alo-easymail_functions.php:1046
-#@ alo-easymail
-msgid "Name and surname of registered user."
-msgstr "登録ユーザーの名前と名字"
-
-#: alo-easymail_functions.php:1046
-#: alo-easymail_functions.php:1047
-#@ alo-easymail
-msgid "For subscribers: the name used for registration"
-msgstr "購読者向け：登録に使われた名前"
-
-#: alo-easymail_functions.php:1047
-#@ alo-easymail
-msgid "First name of registered user."
-msgstr "登録ユーザーのファーストネーム"
-
-#: alo-easymail_functions.php:1139
-#@ alo-easymail
-msgid "Successfully updated"
-msgstr "更新されました"
-
-#: alo-easymail_functions.php:1219
-#@ alo-easymail
-msgid "Warning: this email address has already been subscribed, but not activated. We are now sending another activation email"
-msgstr "警告：このメールアドレスはすでに購読申込済みですが、有効化されていません。もう一度有効化メールを送ります"
-
-#: alo-easymail_functions.php:1220
-#@ alo-easymail
-msgid "Warning: this email address has already been subscribed"
-msgstr "警告：このメールアドレスは購読済みです"
-
-#: alo-easymail_functions.php:1221
-#@ alo-easymail
-msgid "Error during sending: please try again"
-msgstr "送信エラー：やりなしてください"
-
-#: alo-easymail_functions.php:1223
-#@ alo-easymail
-msgid "Subscription successful. You will receive an e-mail with a link. You have to click on the link to activate your subscription."
-msgstr "購読が成功しました。リンクのついたメールを送信します。購読を完了するためにリンクをクリックしてください。"
-
-#: alo-easymail_functions.php:1925
-#@ alo-easymail
-msgid "Text and URL to unsubscribe."
-msgstr "購読解除の文字とURL"
-
-#: alo-easymail_functions.php:1925
-#: alo-easymail_functions.php:1929
-#@ alo-easymail
-msgid "You can customise this text in settings"
-msgstr "設定ページでこのテキストをカスタマイズできます"
-
-#: alo-easymail_functions.php:1926
-#@ alo-easymail
-msgid "URL to unsubscribe."
-msgstr "購読解除用URL"
-
-#: alo-easymail_functions.php:1928
-#@ alo-easymail
-msgid "Newsletter tags"
-msgstr "ニュースレタータグ"
-
-#: alo-easymail_functions.php:1929
-#@ alo-easymail
-msgid "Text and URL to the online version."
-msgstr "オンラインバージョンへのリンクとテキスト"
-
-#: alo-easymail_functions.php:1930
-#@ alo-easymail
-msgid "URL to the online version."
-msgstr "オンラインバージョンへのURL"
-
-#: alo-easymail_functions.php:1931
-#@ alo-easymail
-msgid "Title of the newsletter."
-msgstr "ニュースレターのタイトル"
-
-#: alo-easymail_functions.php:1932
-#@ alo-easymail
-msgid "Date of the newsletter."
-msgstr "ニュースレターの日付"
-
-#: alo-easymail_functions.php:1933
-#@ alo-easymail
-msgid "Post Thumbnail of newsletter"
-msgstr "ニュースレターの投稿サムネイル"
-
-#: alo-easymail_functions.php:1934
-#@ alo-easymail
-msgid "Image gallery of newsletter"
-msgstr "ニュースレターのイメージギャラリー"
-
-#: alo-easymail_functions.php:1936
-#@ alo-easymail
-msgid "Site tags"
-msgstr "サイトタグ"
-
-#: alo-easymail_functions.php:1705
-#: alo-easymail_functions.php:1937
-#@ alo-easymail
-msgid "The link to the site"
-msgstr "サイトへのリンク"
-
-#: alo-easymail_functions.php:1938
-#@ alo-easymail
-msgid "URL to the site."
-msgstr "サイトへのURL"
-
-#: alo-easymail_functions.php:1939
-#@ default
-msgid "Site Title"
-msgstr "サイトタイトル"
-
-#: alo-easymail_functions.php:1940
-#@ default
-msgid "Tagline"
-msgstr "タグライン"
-
-#: alo-easymail_functions.php:1942
-#@ alo-easymail
-msgid "Post Thumbnail"
-msgstr "投稿サムネイル"
-
-#: alo-easymail_functions.php:1943
-#@ alo-easymail
-msgid "The image gallery of the post"
-msgstr "投稿のイメージギャラリー"
-
-#: alo-easymail_functions.php:1979
-#: alo-easymail_options.php:770
-#@ alo-easymail
-msgid "To read the newsletter online you can visit this link:"
-msgstr "ニュースレターをオンラインで読むには、次のリンクを訪問してください: "
-
-#: alo-easymail_functions.php:2160
-#: alo-easymail_functions.php:2177
-#@ alo-easymail
-msgid "Select the image size"
-msgstr "画像サイズを選択"
-
-#: alo-easymail_functions.php:2353
-#@ alo-easymail
+#: functions/alo-easymail-frontend.php:523
+#: mu-plugins/alo-easymail_multiple-posts-placeholder.php:429
 msgid "Subscriber"
 msgstr "購読者"
 
-#: alo-easymail_functions.php:3520
-#@ alo-easymail
-msgid "View user profile"
-msgstr "ユーザーのプロフィールを表示"
+#: functions/alo-easymail-frontend.php:207
+#: functions/alo-easymail-widget.php:107
+msgid "sending..."
+msgstr "送信中..."
 
-#: alo-easymail_functions.php:3525
-#: alo-easymail_functions.php:3534
-#@ alo-easymail
-msgid "d/m/Y \\h.H:i"
-msgstr "Y/m/d H:i"
+#: functions/alo-easymail-frontend.php:206
+#: functions/alo-easymail-widget.php:146
+msgid "Subscribe"
+msgstr "購読"
 
-#: alo-easymail_functions.php:3600
-#: alo-easymail_functions.php:3601
-#@ alo-easymail
-msgid "Quick edit"
-msgstr "クイック編集"
+#: functions/alo-easymail-frontend.php:204
+#: pages/alo-easymail-subscr-page.php:46
+msgid "Your subscription was successfully activated. You will receive the next newsletter. Thank you."
+msgstr "購読申込は有効になりました。次のニュースレターを受け取ることができます。ありがとうございました。"
 
-#: alo-easymail_functions.php:3603
-#: alo-easymail_functions.php:3604
-#@ alo-easymail
-msgid "Delete subscriber"
-msgstr "購読者を削除"
+#: functions/alo-easymail-frontend.php:202
+msgid "Subscription successful. You will receive an e-mail with a link. You have to click on the link to activate your subscription."
+msgstr "購読が成功しました。リンクのついたメールを送信します。購読を完了するためにリンクをクリックしてください。"
 
-#: alo-easymail.php:1707
-#, php-format
-#@ default
-msgid "<strong>RSS Error</strong>: %s"
-msgstr "<strong>RSSエラー</strong>: %s"
+#: functions/alo-easymail-frontend.php:200
+msgid "Error during sending: please try again"
+msgstr "送信エラー：やりなしてください"
 
-#: alo-easymail_functions.php:1067
-#@ default
-msgid "title"
-msgstr ""
+#: functions/alo-easymail-frontend.php:199
+msgid "Warning: this email address has already been subscribed"
+msgstr "警告：このメールアドレスは購読済みです"
 
-#: alo-easymail_options.php:515
-#@ alo-easymail
-msgid "You can try an alternative javascript library"
-msgstr "他のJavascriptライブラリを選択することもできます"
+#: functions/alo-easymail-frontend.php:198
+msgid "Warning: this email address has already been subscribed, but not activated. We are now sending another activation email"
+msgstr "警告：このメールアドレスはすでに購読申込済みですが、有効化されていません。もう一度有効化メールを送ります"
 
-#: alo-easymail_subscribers.php:616
-#@ alo-easymail
-msgid "Subscriber has been added to selected mailing lists"
-msgstr "購読者が選択されたメーリングリストに追加されました"
+#: functions/alo-easymail-frontend.php:120
+#: functions/alo-easymail-frontend.php:195 functions/alo-easymail-users.php:208
+msgid "The %s field is not correct"
+msgstr "%sフィールドが正しくありません"
 
-#: alo-easymail.php:959
-#@ alo-easymail
-msgid "archived"
-msgstr "アーカイブ"
+#: functions/alo-easymail-frontend.php:118
+#: functions/alo-easymail-frontend.php:193 functions/alo-easymail-users.php:220
+msgid "The %s field is empty"
+msgstr "%s フィールドが空です"
 
-#: alo-easymail_functions.php:1704
-#@ alo-easymail
-msgid "This newsletter is available only in html"
-msgstr "ニュースレターはHTMLでのみ利用可能です"
-
-#: alo-easymail_functions.php:1923
-#@ alo-easymail
-msgid "This tag now does not work because the online publication of newsletters is disabled"
-msgstr "ニュースレターのオンライン公開が無効になっているため、このタグは動きません"
-
-#: alo-easymail_functions.php:1923
-#@ alo-easymail
-msgid "you can set it up in settings"
-msgstr "設定ページで設定してください"
-
-#: alo-easymail_options.php:344
-#@ alo-easymail
-msgid "Publish newsletters online"
-msgstr "ニュースレターをオンラインで公開"
-
-#: alo-easymail_options.php:345
-#@ alo-easymail
-msgid "If yes, newsletters automatically are published into your blog so they can be read online"
-msgstr "はいにした場合、ニュースレターはブログ上で公開され、オンラインで読めるようになります。"
-
-#: alo-easymail_options.php:345
-#@ alo-easymail
-msgid "If no, newsletters are not available online"
-msgstr "いいえにした場合、ニュースレターはオンラインでアクセスできません"
-
-#: alo-easymail_report.php:144
-#: alo-easymail_report.php:193
-#@ alo-easymail
-msgid "Detailed report was archived"
-msgstr "詳細リポートはアーカイブされました"
-
-#: alo-easymail_report.php:197
-#@ alo-easymail
-msgid "Are you sure?"
-msgstr "ほんとうによろしいですか？"
-
-#: alo-easymail_report.php:197
-#@ alo-easymail
-msgid "This action cannot be undone"
-msgstr "このアクションは取り消せません"
-
-#: alo-easymail_report.php:199
-#@ alo-easymail
-msgid "This action deletes the detailed info about recipients (see below) and keeps only the summary (see above)"
-msgstr "このアクションは受信者に関する詳細情報（下記を参照）を削除し、サマリー（上記参照）だけを保存します"
-
-#: alo-easymail_report.php:199
-#@ alo-easymail
-msgid "It reduces the data in database tables and make the plugin queries and actions faster"
-msgstr "これはデータベースへのクエリを減らし、プラグインの動作を速くします"
-
-#: alo-easymail-widget.php:127
-#: alo-easymail.php:1114
-#: alo-easymail_functions.php:1146
-#: alo-easymail_functions.php:1148
-#: alo-easymail_functions.php:1214
-#: alo-easymail_functions.php:1216
-#: alo-easymail_subscr-page.php:61
-#@ alo-easymail
-msgid "humans_name"
-msgstr ""
-
-#: alo-easymail.php:474
-#@ default
-msgid "Links"
-msgstr "リンク"
-
-#: alo-easymail.php:1104
-#@ alo-easymail
-msgid "Newsletter fields"
-msgstr "ニュースレターフィールド"
-
-#: alo-easymail_custom-hooks-sample.php:37
-#: alo-easymail_functions.php:1038
-#: alo-easymail_functions.php:1929
-#: alo-easymail_functions.php:1930
-#: alo-easymail_functions.php:1937
-#: alo-easymail_functions.php:1938
-#@ alo-easymail
-msgid "The visit to this url will be tracked."
-msgstr "このURLへの訪問をトラックします"
-
-#: alo-easymail_functions.php:1140
-#@ alo-easymail
+#: functions/alo-easymail-frontend.php:112
 msgid "Before editing other fields you have to click the subscription choice"
 msgstr "他のフィールドを編集する前に、購読者選択をクリックしてください"
 
-#: alo-easymail_functions.php:3527
-#: alo-easymail_functions.php:3535
-#: alo-easymail_subscribers.php:460
-#: alo-easymail_subscribers.php:588
-#, php-format
-#@ alo-easymail
+#: functions/alo-easymail-frontend.php:111
+msgid "Successfully updated"
+msgstr "更新されました"
+
+#: functions/alo-easymail-frontend.php:64
+msgid "Placeholders"
+msgstr "プレースホルダー"
+
+#: functions/alo-easymail-frontend.php:63
+msgid "Themes"
+msgstr "テーマ"
+
+#: functions/alo-easymail-frontend.php:62
+#: functions/alo-easymail-newsletter-cpt.php:186
+#: pages/alo-easymail-admin-report.php:258
+msgid "Recipients"
+msgstr "受信者"
+
+#: functions/alo-easymail-dashboard.php:548
+#: functions/alo-easymail-dashboard.php:549
+msgid "Delete subscriber and add the email to the list of who unsubscribed"
+msgstr "購読者を削除して、メールアドレスを購読解除者リストに追加する"
+
+#: functions/alo-easymail-dashboard.php:545
+#: functions/alo-easymail-dashboard.php:546
+msgid "Delete subscriber"
+msgstr "購読者を削除"
+
+#: functions/alo-easymail-dashboard.php:542
+#: functions/alo-easymail-dashboard.php:543
+msgid "Quick edit"
+msgstr "クイック編集"
+
+#: functions/alo-easymail-dashboard.php:538
+#: pages/alo-easymail-admin-options.php:1333
+msgid "Save"
+msgstr "保存"
+
+#: functions/alo-easymail-dashboard.php:535
+#: pages/alo-easymail-admin-options.php:1335
+#: pages/alo-easymail-admin-subscribers.php:164
+#: pages/alo-easymail-admin-subscribers.php:211
+#: pages/alo-easymail-admin-subscribers.php:303
+#: pages/alo-easymail-admin-subscribers.php:460
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: functions/alo-easymail-dashboard.php:472
+#: functions/alo-easymail-dashboard.php:480
+#: pages/alo-easymail-admin-subscribers.php:493
+#: pages/alo-easymail-admin-subscribers.php:623
 msgid "%s ago"
 msgstr "%s前"
 
-#: alo-easymail_options.php:888
-#, php-format
-#@ alo-easymail
-msgid "every %s minutes"
-msgstr "%s分ごと"
+#: functions/alo-easymail-dashboard.php:470
+#: functions/alo-easymail-dashboard.php:479
+msgid "d/m/Y \\h.H:i"
+msgstr "Y/m/d H:i"
 
-#: alo-easymail_subscr-page.php:56
-#@ alo-easymail
-msgid "You can modify your subscription details"
-msgstr "購読の詳細を修正できます。"
+#: functions/alo-easymail-dashboard.php:465
+msgid "View user profile"
+msgstr "ユーザーのプロフィールを表示"
 
-#: alo-easymail_subscribers.php:286
-#@ alo-easymail
-msgid "Note: the email addresses of who unsubscribed the newsletter are archivied in a database table, so you cannot add or import those addresses using the tools in this page"
-msgstr "注意：ニュースレターの購読を解除したメールアドレスはデータベースにアーカイブされているため、それらのアドレスをこのページのツールを使って追加／インポートすることはできません"
+#: functions/alo-easymail-dashboard.php:373
+#: pages/alo-easymail-admin-options.php:984
+#: pages/alo-easymail-admin-options.php:1005
+msgid "For more info, visit the FAQ of the site."
+msgstr "詳細はサイトのFAQをご覧下さい。"
 
-#: alo-easymail_subscribers.php:459
-#: alo-easymail_subscribers.php:588
-#@ alo-easymail
-msgid "The owner of the e-email address unsubscribed the newsletter"
-msgstr "メールアドレスの所有者はニュースレターを購読解除しています"
+#: functions/alo-easymail-dashboard.php:372
+#: pages/alo-easymail-admin-options.php:1004
+msgid "you can try to deactivate and activate the plugin"
+msgstr "プラグインを一度無効にしてから再度有効化してください"
 
-#: alo-easymail_subscribers.php:991
-#, php-format
-#@ alo-easymail
-msgid "Order by %s"
-msgstr "%s順"
+#: functions/alo-easymail-dashboard.php:372
+msgid "The plugin database tables have not properly installed"
+msgstr "プラグインのデータベーステーブルが適切にインストールされていません"
 
-#: alo-easymail_subscribers.php:1001
-#@ alo-easymail
-msgid "Order by date of last activity"
-msgstr "最後にアクションした日付順"
+#: functions/alo-easymail-dashboard.php:371
+msgid "ALO Easymail Newsletter needs attention"
+msgstr "ALO Easymail Newsletterからの警告"
 
-#: alo-easymail_subscribers.php:1001
-#@ alo-easymail
-msgid "Last activity"
-msgstr "最後のアクション"
+#: functions/alo-easymail-dashboard.php:364
+#: pages/alo-easymail-admin-options.php:675
+msgid "all messages will be recorded into a log file"
+msgstr "すべてのメッセージをログファイルに記録する"
 
-#: alo-easymail_subscribers.php:1001
-#@ alo-easymail
-msgid "The most recent date when the subcriber made an action"
-msgstr "購読者がなんらかのアクションを起こした最新日"
+#: functions/alo-easymail-dashboard.php:363
+#: pages/alo-easymail-admin-options.php:674
+msgid "all messages will be sent to the newsletter author"
+msgstr "すべてのメッセージをニュースレター作成者に送信する"
 
-#: alo-easymail_subscribers.php:1001
-#@ alo-easymail
-msgid "e.g. open a newsletter, click a newsletter link, update info in subscription form"
-msgstr "例：ニュースレターを開封、ニュースレターのリンクをクリック、購読者フォームから情報を更新"
+#: functions/alo-easymail-dashboard.php:362
+msgid "Debug mode is activated"
+msgstr "デバッグモードが有効になりました"
 
-#: alo-easymail.php:674
-#, php-format
-#@ alo-easymail
-msgid " <a href=\"%s\">View Newsletter</a>"
-msgstr " <a href=\"%s\">ニュースレターを表示</a>"
+#: functions/alo-easymail-dashboard.php:335
+#: functions/alo-easymail-newsletter-cpt.php:19
+msgid "Add New"
+msgstr "新規追加"
 
-#: alo-easymail.php:675
-#, php-format
-#@ alo-easymail
-msgid " <a target=\"_blank\" href=\"%s\">Preview Newsletter</a>"
-msgstr " <a target=\"_blank\" href=\"%s\">ニュースレターをプレビュー</a>"
+#: functions/alo-easymail-dashboard.php:329
+#: functions/alo-easymail-dashboard.php:332
+#: functions/alo-easymail-newsletter-cpt.php:17
+#: functions/alo-easymail-newsletter-cpt.php:28
+msgid "Newsletters"
+msgstr "ニュースレター"
 
-#: alo-easymail.php:686
-#@ alo-easymail
-msgid "Newsletter published."
-msgstr "ニュースレターが公開されました。"
+#: functions/alo-easymail-dashboard.php:307
+msgid "Updates from plugin developer"
+msgstr "プラグイン開発者からのお知らせ"
 
-#: alo-easymail.php:689
-#, php-format
-#@ alo-easymail
-msgid "Newsletter scheduled for: <strong>%1$s</strong>."
-msgstr "ニュースレターのスケジュール: <strong>%1$s</strong>."
+#: functions/alo-easymail-dashboard.php:303
+#: pages/alo-easymail-admin-subscribers.php:754
+#: pages/alo-easymail-admin-subscribers.php:1083
+msgid "No subscribers"
+msgstr "購読者なし"
 
-#: alo-easymail.php:692
-#@ alo-easymail
-msgid "Newsletter draft updated."
-msgstr "ニュースレターの下書きが更新されました。"
+#: functions/alo-easymail-dashboard.php:301
+msgid "There are %d subscribers: %d activated, %d not activated"
+msgstr "%d人の購読者: 有効%d人、無効%d人"
 
-#: alo-easymail_options.php:1254
-#@ default
-msgid "ID"
-msgstr "ID"
+#: functions/alo-easymail-dashboard.php:296
+msgid "There are no newsletters in queue"
+msgstr "キューにニュースレターはありません"
 
-#: alo-easymail_report.php:197
-#: alo-easymail_report.php:199
-#@ alo-easymail
-msgid "You are about to DELETE the detailed info about recipients"
-msgstr "受信者の詳細情報を削除しようとしています"
+#: functions/alo-easymail-dashboard.php:293
+#: pages/alo-easymail-admin-report.php:95
+msgid "Scheduled by"
+msgstr "予約日時"
 
-#: alo-easymail_custom-hooks-sample.php:70
-#@ alo-easymail
-msgid "Filter by category"
-msgstr "カテゴリーで絞り込み"
+#. translators: Publish box date format, see http://php.net/date
+#: functions/alo-easymail-dashboard.php:292
+#: functions/alo-easymail-mailer.php:243
+#: functions/alo-easymail-newsletter-cpt.php:158
+#: functions/alo-easymail-newsletter-cpt.php:289
+#: mu-plugins/alo-easymail_bounce-log.php:16
+#: pages/alo-easymail-admin-options.php:1001
+#: pages/alo-easymail-admin-report.php:99
+#: pages/alo-easymail-admin-report.php:105
+msgid "j M Y @ G:i"
+msgstr "Y/m/d H:i"
 
-#: alo-easymail_options.php:904
-#@ alo-easymail
-msgid "What about the batch sending based on WP cron system?"
-msgstr "WP Cronシステムでバッチ送信を行うとはどういうことですか？"
+#: functions/alo-easymail-dashboard.php:292
+msgid "Added on"
+msgstr "追加日時"
 
-#: alo-easymail_options.php:913
-#@ alo-easymail
-msgid "The number of recipients for each sending is calculated on the cut-off of emails you can send per day and on the time interval from the previous sending"
-msgstr "一度に送信される受信者の数は一日に送信できるメール数と前回の送信からの間隔から計算されます"
+#: functions/alo-easymail-dashboard.php:291
+#: functions/alo-easymail-newsletter-cpt.php:298
+#: functions/alo-easymail-newsletter-cpt.php:327
+msgid "Progress"
+msgstr "進捗"
 
-#: alo-easymail_options.php:916
-#@ alo-easymail
-msgid "If your blog gets a few visitors a day or you like to have an accurate batch sending, you have to set up an external cron job"
-msgstr "あなたのブログへの訪問者が少ないか、正確なバッチ処理を行いたい場合は、外部のCRonジョブを利用してください"
+#: functions/alo-easymail-dashboard.php:289
+msgid "now sending"
+msgstr "送信中"
 
-#: alo-easymail_options.php:919
-#@ alo-easymail
-msgid "You can ask your provider to setup a GET cron job that periodically hits the WP cron on your blog, e.g."
-msgstr "WP Cronを動かすためにGETを行うだけのCronジョブを設定するようプロバイダに頼むこともできます。例："
+#: functions/alo-easymail-dashboard.php:285
+msgid "Newsletters scheduled for sending"
+msgstr "送信予約されたニュースレター"
 
-#: alo-easymail.php:2295
-#@ alo-easymail
-msgid "Before sending the newsletter you have to select recipients."
-msgstr "ニュースレターを送信する前に受信者を選択してください。"
+#: functions/alo-easymail-dashboard.php:121
+#: functions/alo-easymail-dashboard.php:343
+msgid "Settings"
+msgstr "設定"
 
-#: alo-easymail.php:2295
-#: alo-easymail.php:2317
-#@ alo-easymail
+#: functions/alo-easymail-dashboard.php:117
+#: functions/alo-easymail-dashboard.php:298
+#: functions/alo-easymail-dashboard.php:339
+#: pages/alo-easymail-admin-options.php:1350
+#: pages/alo-easymail-admin-subscribers.php:66
+#: pages/alo-easymail-admin-subscribers.php:740
+msgid "Subscribers"
+msgstr "購読者"
+
+#: functions/alo-easymail-dashboard.php:94
+msgid "Newsletter successfully sent to recipients"
+msgstr "ニュースレターは無事送信されました"
+
+#: functions/alo-easymail-dashboard.php:93
+msgid "Recipients successfully added"
+msgstr "受信者が追加されました"
+
+#: functions/alo-easymail-dashboard.php:91
+msgid "close"
+msgstr "閉じる"
+
+#: functions/alo-easymail-dashboard.php:90
+#: pages/alo-easymail-admin-subscribers.php:917
+msgid "so you cannot add or import these email addresses using the tools in admin pages"
+msgstr ""
+
+#: functions/alo-easymail-dashboard.php:90
+#: pages/alo-easymail-admin-subscribers.php:917
+msgid "The email address will be added to the list of who unsubscribed"
+msgstr ""
+
+#: functions/alo-easymail-dashboard.php:89
+#: functions/alo-easymail-dashboard.php:90
+msgid "Do you really want to DELETE this subscriber?"
+msgstr "この購読者をほんとうに削除しますか？"
+
+#: functions/alo-easymail-dashboard.php:88
+#: pages/alo-easymail-admin-subscribers.php:625
+#: pages/alo-easymail-admin-subscribers.php:651
+msgid "There is already a subscriber with this e-email address"
+msgstr "このメールアドレスの購読者は登録済みです"
+
+#: functions/alo-easymail-dashboard.php:87
+#: functions/alo-easymail-frontend.php:188
+msgid "The name field is empty"
+msgstr "名前欄が空白です"
+
+#: functions/alo-easymail-dashboard.php:86
+#: functions/alo-easymail-frontend.php:187
+#: pages/alo-easymail-admin-subscribers.php:485
+#: pages/alo-easymail-admin-subscribers.php:621
+msgid "The e-email address is not correct"
+msgstr "メールアドレスが不正です。"
+
+#: functions/alo-easymail-dashboard.php:65
+#: functions/alo-easymail-dashboard.php:85
+#: functions/alo-easymail-frontend.php:110
+#: functions/alo-easymail-frontend.php:186
+#: pages/alo-easymail-admin-options.php:1204
+#: pages/alo-easymail-admin-options.php:1236
+#: pages/alo-easymail-admin-options.php:1255
+#: pages/alo-easymail-admin-options.php:1258
+#: pages/alo-easymail-admin-subscribers.php:31
+#: pages/alo-easymail-admin-subscribers.php:41
+#: pages/alo-easymail-admin-subscribers.php:113
+#: pages/alo-easymail-admin-subscribers.php:176
+#: pages/alo-easymail-admin-subscribers.php:223
+#: pages/alo-easymail-admin-subscribers.php:236
+#: pages/alo-easymail-admin-subscribers.php:253
+#: pages/alo-easymail-admin-subscribers.php:266
+#: pages/alo-easymail-admin-subscribers.php:467
+#: pages/alo-easymail-admin-subscribers.php:484
+#: pages/alo-easymail-admin-subscribers.php:491
+#: pages/alo-easymail-admin-subscribers.php:526
+#: pages/alo-easymail-admin-subscribers.php:561
+#: pages/alo-easymail-subscr-page.php:31
+msgid "Error during operation."
+msgstr "処理中にエラーが発生しました"
+
+#: functions/alo-easymail-dashboard.php:82
+msgid "Newsletter subscribers creation"
+msgstr "ニュースレター購読者の作成"
+
+#: functions/alo-easymail-dashboard.php:81
+#: pages/alo-easymail-admin-report.php:40
+msgid "Newsletter report"
+msgstr "ニュースレターリポート"
+
+#: functions/alo-easymail-dashboard-helps.php:136
+#: functions/alo-easymail-newsletter-cpt.php:723
+msgid "You have to prepare the list of recipients to send the newsletter to"
+msgstr "ニュースレターを送信するためには受信者リストを準備しなくてはなりません"
+
+#: functions/alo-easymail-dashboard-helps.php:135
+#: functions/alo-easymail-dashboard.php:92
+#: functions/alo-easymail-newsletter-cpt.php:352
+msgid "Create list of recipients"
+msgstr "受信者のリストを作成"
+
+#: functions/alo-easymail-dashboard-helps.php:114
+#: functions/alo-easymail-dashboard-helps.php:136
 msgid "Click the link to do it now."
 msgstr "そのためにはリンクをクリックして下さい。"
 
-#: alo-easymail_options.php:891
-#@ alo-easymail
-msgid "Recommended"
-msgstr "推奨"
+#: functions/alo-easymail-dashboard-helps.php:114
+msgid "Before sending the newsletter you have to select recipients."
+msgstr "ニュースレターを送信する前に受信者を選択してください。"
 
-#: alo-easymail_options.php:906
-#@ alo-easymail
-msgid "Let&#39;s speak clearly: the WP cron system is a pseudo-cron and it's not accurate by definition"
-msgstr "わかりやすく言うと、WP Cronシステムは仮想クーロンであり、厳密には正確ではありません"
+#: functions/alo-easymail-dashboard-helps.php:113
+#: functions/alo-easymail-newsletter-cpt.php:208
+msgid "No recipients selected yet"
+msgstr "受信者が選択されていません"
 
-#: alo-easymail.php:498
-#@ alo-easymail
+#: functions/alo-easymail-dashboard-helps.php:93
+#: pages/alo-easymail-admin-subscribers.php:852
+msgid "Maybe you would like to import subscribers from your blog registered members or an external archive (using CSV). Click the &#39;%s&#39; button"
+msgstr "ブログの登録ユーザーや外部のアーカイブ（CSV利用）から購読者をインポートしたい場合はボタンをクリックしてください &#39;%s&#39; "
+
+#: functions/alo-easymail-dashboard-helps.php:91
+#: pages/alo-easymail-admin-subscribers.php:845
+msgid "Import/export subscribers"
+msgstr "購読者のインポート / エクスポート"
+
+#: functions/alo-easymail-dashboard-helps.php:47
 msgid "subscribers per page"
 msgstr "ページごとの"
 
-#: alo-easymail_functions.php:1039
-#@ alo-easymail
-msgid "If it is empty, the beginning of post content will be used."
-msgstr "空白の場合、投稿の最初の文字が使われます。"
+#: functions/alo-easymail-dashboard-helps.php:36
+#: functions/alo-easymail-helpers.php:130
+msgid "If you use this plugin consider the idea of donating and supporting its development"
+msgstr "このプラグインを利用されている場合は、寄付または開発サポートをご検討ください。"
 
-#: alo-easymail_options.php:452
-#@ alo-easymail
-msgid "Appends campaign variables to links"
-msgstr "リンクにキャンペーン変数を追加"
+#: functions/alo-easymail-dashboard-helps.php:25
+msgid "Resources about EasyMail Newsletter"
+msgstr "EasyMail ニュースレターに関する情報"
 
-#: alo-easymail_options.php:456
-#: alo-easymail_options.php:463
-#@ alo-easymail
-msgid "Google Analytics"
-msgstr "Google Analytics"
+#: functions/alo-easymail-dashboard-helps.php:21
+msgid "Links"
+msgstr "リンク"
 
-#: alo-easymail_options.php:456
-#@ alo-easymail
-msgid "you need an account"
-msgstr "アカウント必須"
+#: functions/alo-easymail-custom-fields.php:144
+#: pages/alo-easymail-admin-options.php:579
+#: pages/alo-easymail-admin-options.php:616
+#: pages/alo-easymail-admin-options.php:666
+msgid "no"
+msgstr "いいえ"
 
-#: alo-easymail_options.php:462
-#@ alo-easymail
-msgid "The plugin appends campagin variables to links"
-msgstr "プラグインはリンクにキャンペーン変数を含めます"
+#: functions/alo-easymail-custom-fields.php:144
+#: pages/alo-easymail-admin-options.php:617
+#: pages/alo-easymail-admin-options.php:621
+msgid "yes"
+msgstr "はい"
 
-#: alo-easymail_options.php:463
-#@ alo-easymail
-msgid "E.g."
-msgstr "例: "
-
-#: alo-easymail_options.php:757
-#@ alo-easymail
-msgid "the html link that the new subscriber must click/visit to unsubscribe the newsletter"
-msgstr "ニュースレターを購読解除するために購読者がクリック／訪問しなくてはならないHTMLリンク"
-
-#: alo-easymail_options.php:758
-#@ alo-easymail
-msgid "the plain url that the new subscriber must click/visit to unsubscribe the newsletter"
-msgstr "ニュースレターを購読解除するために購読者がクリック／訪問しなくてはならないプレーンURL"
-
-#: alo-easymail_options.php:759
-#: alo-easymail_options.php:798
-#@ alo-easymail
-msgid "It's a plain url, you have to compose the link"
-msgstr "ただのURLであるため、リンクを作成する必要があります"
-
-#: alo-easymail_options.php:796
-#@ alo-easymail
-msgid "html link to the newsletter web url"
-msgstr "ニュースレターのWeb URLを示すHTMLリンク"
-
-#: alo-easymail_options.php:797
-#@ alo-easymail
-msgid "plain url to the newsletter web url"
-msgstr "ニュースレターのWeb URL"
-
-#: alo-easymail_report.php:175
-#@ alo-easymail
-msgid "click to view list of clicked links"
-msgstr "クリックされたリンクを表示するにはここをクリックしてください"
-
-#: alo-easymail_report.php:198
-#@ alo-easymail
-msgid "Delete the detailed report of recipients"
-msgstr "受信者の詳細なリポートを削除"
-
-#: alo-easymail_report.php:208
-#@ alo-easymail
-msgid "Back to list of recipients"
-msgstr "受信者リストへ戻る"
-
-#: alo-easymail_report.php:213
-#@ alo-easymail
-msgid "Requested URL"
-msgstr "要求されたURL"
-
-#: alo-easymail_report.php:214
-#@ alo-easymail
-msgid "Visits"
-msgstr "訪問数"
-
-#: alo-easymail_report.php:230
-#, php-format
-#@ default
-msgid "Visit %s"
-msgstr "%sを訪問"
-
-#: alo-easymail_subscribers.php:969
-#@ default
-msgid "items"
-msgstr ""
-
+#: alo-easymail.php:162 functions/alo-easymail-newsletter-cpt.php:18
+#: functions/alo-easymail-users.php:28 functions/alo-easymail-widget.php:225
+#: pages/alo-easymail-admin-options.php:304
+#: pages/alo-easymail-admin-options.php:533
+msgid "Newsletter"
+msgstr "ニュースレター"

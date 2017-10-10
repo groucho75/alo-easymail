@@ -3,8 +3,8 @@ Contributors: eventualo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA
 Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
-Tested up to: 4.8
-Stable tag: 2.9.6
+Tested up to: 4.9
+Stable tag: 2.9.7
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -85,6 +85,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 5. The newsletter report
 
 == Changelog ==
+
+= 2.9.7 =
+* Fixed: the subscribe button now is properly escaped
 
 = 2.9.6 =
 * Added: new newsletter themes based on [Cerberus responsive template](https://github.com/TedGoas/Cerberus)
