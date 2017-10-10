@@ -3,6 +3,7 @@ Contributors: eventualo
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA
 Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 3.6
+Requires PHP: 5.2
 Tested up to: 4.9
 Stable tag: 2.9.7
 License: GPLv2 or later
@@ -137,5 +138,5 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Upgrade Notice ==
 
-= 2.9.6 =
-New newsletter themes and other minor fixes.
+= 2.9.7 =
+Fix two minor bugs.
