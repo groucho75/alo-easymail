@@ -589,6 +589,9 @@ function alo_em_placeholders_replace_customlink_tag ( $content, $newsletter, $re
 			// Complete palceholder
 			$found = $match[0];
 
+			// Force strange quotes to be standard double quotes
+			$match[1] = str_replace( array( '”', '“', '&#8221;' ), '"', $match[1] );
+
 			// Placeholder attributes
 			$atts =  shortcode_parse_atts( trim($match[1]) );
 
