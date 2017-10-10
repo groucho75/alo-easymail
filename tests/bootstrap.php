@@ -6,6 +6,8 @@ if ( !$_tests_dir ) $_tests_dir = '/tmp/wordpress-tests-lib';
 require_once $_tests_dir . '/includes/functions.php';
 
 function _manually_load_plugin() {
+	require dirname( __FILE__ ) . '/../alo-easymail.php';
+
 	$plugins_to_active = array(
 		'alo-easymail/alo-easymail.php'
 	);
