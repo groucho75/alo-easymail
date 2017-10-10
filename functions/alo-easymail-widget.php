@@ -143,7 +143,7 @@ function alo_em_show_widget_form ( ) {
         $html .= "</tbody></table>\n";        
  		$html .= $lists_table; // add lists table     
  		$html .= $disclaimer_html;	
-        $html .= "<input type='submit' name='submit' value='".__("Subscribe", "alo-easymail")."' class='input-submit' />\n";
+        $html .= "<input type='submit' name='submit' value='".esc_attr(__("Subscribe", "alo-easymail"))."' class='input-submit' />\n";
         $html .= "</form>\n";    
     } 
     
