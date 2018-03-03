@@ -129,19 +129,6 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 = 2.9.0 =
 * Updated: the cron-based bounce management is removed, now it works only manually
 
-= 2.8.2 =
-* Fixed: a CRSF/XSS vulnerability
-
-= 2.8.1 =
-* Fixed: update sanitization of html options that removed html instead of keep it
-
-= 2.8.0 =
-* Added: stop collecting subscriber IP addresses, there is an option to enable/disable it
-* Updated: autosave of the preview-newsletter-in-theme to avoid issues if autosave disabled (e.g. by qTranslate-x)
-* Updated: removed the iframe screencast in help tab and replaced with a link
-* Updated: report popup size now is dynamic and is adjusted according to screen size
-* Fixed: now required custom fields don't give errors and don't block the add new user dashboard form
-
 *The full changelog is in changelog.txt inside plugin folder*
 
 == Upgrade Notice ==
