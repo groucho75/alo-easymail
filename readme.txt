@@ -88,6 +88,7 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 == Changelog ==
 
 = 2.9.8 =
+* Added: 2 text options for subscription page: "click to unsubscribe" and "subscription deleted" messages
 * Added: a filter for recipient number in newsletter report
 * Added: a couple of sample functions in attachment mu-plugins
 * Updated: move the "preview in newsletter theme" button inside theme metabox
