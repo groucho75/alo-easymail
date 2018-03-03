@@ -41,7 +41,7 @@ if ( isset($_POST['langs_list']) && current_user_can('manage_options') ) {
 // All available languages
 $languages = alo_em_get_all_languages( false );
 // Text fields for multilangual customization
-$text_fields = array ( "optin_msg", "optout_msg", "lists_msg", "preform_msg", "disclaimer_msg" );
+$text_fields = array ( "optin_msg", "optout_msg", "lists_msg", "preform_msg", "disclaimer_msg", "to_unsubscribe_msg" , "done_unsubscribe_msg" );
 
 
 // If require to check bounce connection or manually check bounces, first submit form and save options
@@ -63,6 +63,8 @@ if ( isset($_POST['submit']) ) {
 		$unsub_footer = array();
 		$preform_msg = array();
 		$viewonline_msg = array();
+		$to_unsubscribe_msg = array();
+		$done_unsubscribe_msg = array();
 		foreach ( $languages as $key => $lang ) {
 			if (!empty($_POST['activamail_subj_'.$lang])) $activamail_subj[$lang] = stripslashes(sanitize_text_field($_POST['activamail_subj_'.$lang]));
 			if (!empty($_POST['activamail_mail_'.$lang])) $activamail_mail[$lang] = stripslashes(wp_kses_post($_POST['activamail_mail_'.$lang]));
@@ -73,6 +75,8 @@ if ( isset($_POST['submit']) ) {
 			if (isset($_POST['unsub_footer_'.$lang]) )	$unsub_footer[$lang] = stripslashes(wp_kses_post($_POST['unsub_footer_'.$lang]));
 			if (isset($_POST['preform_msg_'.$lang]) )	$preform_msg[$lang] = stripslashes(sanitize_text_field($_POST['preform_msg_'.$lang]));
 			if (isset($_POST['viewonline_msg_'.$lang]) ) $viewonline_msg[$lang] = stripslashes(wp_kses_post($_POST['viewonline_msg_'.$lang]));
+			if (isset($_POST['to_unsubscribe_msg_'.$lang]) ) $to_unsubscribe_msg[$lang] = stripslashes(wp_kses_post($_POST['to_unsubscribe_msg_'.$lang]));
+			if (isset($_POST['done_unsubscribe_msg_'.$lang]) ) $done_unsubscribe_msg[$lang] = stripslashes(wp_kses_post($_POST['done_unsubscribe_msg_'.$lang]));
 		}
 		if ( count ($activamail_subj) ) update_option('alo_em_txtpre_activationmail_subj', $activamail_subj );
 		if ( count ($activamail_mail) ) update_option('alo_em_txtpre_activationmail_mail', $activamail_mail );
@@ -83,7 +87,9 @@ if ( isset($_POST['submit']) ) {
 		if ( count ($unsub_footer) ) 	update_option('alo_em_custom_unsub_footer', $unsub_footer );
 		if ( count ($preform_msg) ) 	update_option('alo_em_custom_preform_msg', $preform_msg );
 		if ( count ($viewonline_msg) ) 	update_option('alo_em_custom_viewonline_msg', $viewonline_msg );
-	
+		if ( count ($to_unsubscribe_msg) ) 	update_option('alo_em_custom_to_unsubscribe_msg', $to_unsubscribe_msg );
+		if ( count ($done_unsubscribe_msg) ) 	update_option('alo_em_custom_done_unsubscribe_msg', $done_unsubscribe_msg );
+
 	}
 	// --------
 	
@@ -752,6 +758,8 @@ foreach ( $text_fields as $text_field ) : ?>
 		case "lists_msg": 	_e("Invite to join mailing lists", "alo-easymail"); break;				
 		case "disclaimer_msg": 	_e("Policy claim", "alo-easymail"); break;	
 		case "preform_msg": 	_e("Top claim", "alo-easymail"); break;	
+		case "to_unsubscribe_msg": 	_e("To unsubscribe message", "alo-easymail"); break;
+		case "done_unsubscribe_msg": 	_e("Message after unsubscription", "alo-easymail"); break;
 	}
 	?>:
 	</th>
@@ -768,7 +776,13 @@ foreach ( $text_fields as $text_field ) : ?>
 		case "preform_msg": 
 			echo "(". __("empty", "alo-easymail"). ") ";
 			echo '<br /><span class="description">'. __("If filled in it will appear at the top of widget/page. Useful to invite to subscribe", "alo-easymail"). '.</span>';  
-			break;							
+			break;
+		case "to_unsubscribe_msg": _e("To unsubscribe the newsletter for good click this button", "alo-easymail");
+			echo '<br /><span class="description">'. __("It will appear in subscription page where subscribers can edit or remove their subscription", "alo-easymail"). '.</span>';
+			break;
+		case "done_unsubscribe_msg": _e("Your subscription was successfully deleted. Bye bye.", "alo-easymail");
+			echo '<br /><span class="description">'. __("It will appear in subscription page where subscribers can edit or remove their subscription", "alo-easymail"). '.</span>';
+			break;
 	}
 	?>
 	<div id="<?php echo $text_field ?>_container">

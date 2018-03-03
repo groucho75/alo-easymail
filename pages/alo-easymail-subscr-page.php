@@ -86,7 +86,9 @@ if ($email && $action == 'unsubscribe') {
     }
     
     echo '<form method="post" action="'. get_permalink() .'" class="alo_easymail_unsubscribe_form">';
-    echo "<p>".__("To unsubscribe the newsletter for good click this button", "alo-easymail") . "</p>";
+	$to_unsubscribe_txt = alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_to_unsubscribe_msg', false );
+	if ( empty( $to_unsubscribe_txt ) ) $to_unsubscribe_txt = __("To unsubscribe the newsletter for good click this button", "alo-easymail");
+	echo "<p>". $to_unsubscribe_txt . "</p>";
     wp_nonce_field('alo_em_subscpage','alo_em_nonce');
  	echo '<input type="hidden" name="ac" value="do_unsubscribe" />';
     echo '<input type="hidden" name="em1" value="'. esc_attr($em1) . '" />';
@@ -99,7 +101,9 @@ if ($email && $action == 'unsubscribe') {
 // Confirm unsubscribe and do it! (step #2a)
 if ($email && $action == 'do_unsubscribe' && isset($_POST['submit']) && wp_verify_nonce($_POST['alo_em_nonce'],'alo_em_subscpage') ) {
     if (alo_em_delete_subscriber_by_email($email, $unikey)) {
-        echo "<p class=\"". $classfeedback_ok ."\">".__("Your subscription was successfully deleted. Bye bye.", "alo-easymail")."</p>";
+		$done_unsubscribe_txt = alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_done_unsubscribe_msg', false );
+		if ( empty( $done_unsubscribe_txt ) ) $done_unsubscribe_txt = __("Your subscription was successfully deleted. Bye bye.", "alo-easymail");
+        echo "<p class=\"". $classfeedback_ok ."\">". $done_unsubscribe_txt ."</p>";
         do_action ( 'alo_easymail_subscriber_deleted', $email, false );
     } else {
         echo "<p class=\"". $classfeedback_err ."\">".__("Error during unsubscription.", "alo-easymail")." ". __("Try again.", "alo-easymail"). "</p>";
