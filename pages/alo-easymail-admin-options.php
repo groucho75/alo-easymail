@@ -1284,10 +1284,6 @@ if ( isset( $_REQUEST['task'] ) ) {
 <tr  valign="bottom">
 <td>
 
-<!--
-<input type="text" name="elp_list_name" value="<?php if ( isset ( $_REQUEST['task'] ) && $_REQUEST['task'] == 'edit_list' && $list_id ) echo $list_name; ?>" id="elp_list_name" size="30" maxlength="50" />
--->
-
 <div id="listname_container">
 	<?php 
 	// Set tabs and fields
