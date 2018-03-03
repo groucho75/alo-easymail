@@ -55,18 +55,6 @@ function alo_em_subscr_page ( $atts, $content = null ) {
 add_shortcode('ALO-EASYMAIL-PAGE', 'alo_em_subscr_page');
 
 
-/**
- * Boxes meta in Newsletter edit/new pages
- */
-function alo_em_newsletter_add_custom_box() {
-	add_meta_box( "alo_easymail_newsletter_recipients", __("Recipients", "alo-easymail"), "alo_em_meta_recipients", "newsletter", "side", "high" );
-	if ( get_option('alo_em_use_themes') == 'yes' || get_option('alo_em_use_themes') == '' ) add_meta_box( "alo_easymail_newsletter_themes", __("Themes", "alo-easymail"), "alo_em_meta_themes", "newsletter", "normal", "high" );
-	add_meta_box( "alo_easymail_newsletter_placeholders", __("Placeholders", "alo-easymail"), "alo_em_meta_placeholders", "newsletter", "normal", "high" );
-}
-add_action('add_meta_boxes', 'alo_em_newsletter_add_custom_box', 8);
-
-
-
 /*************************************************************************
  * AJAX 'SACK' FUNCTION
  *************************************************************************/

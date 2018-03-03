@@ -89,6 +89,7 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 = 2.9.8 =
 * Added: a filter for recipient number in newsletter report
+* Added: a couple of sample functions in attachment mu-plugins
 * Fixed: a warning on plugin activation/deactivation
 * Fixed: a warning in options page
 
