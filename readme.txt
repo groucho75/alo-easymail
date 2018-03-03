@@ -88,6 +88,7 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 == Changelog ==
 
 = 2.9.8 =
+* Added: a filter for recipient number in newsletter report
 * Fixed: a warning on plugin activation/deactivation
 * Fixed: a warning in options page
 
