@@ -82,7 +82,6 @@ function alo_em_ajax_js()
             $classfeedback = apply_filters ( 'alo_easymail_widget_error_class', 'alo_easymail_widget_error' );  // Hook
             ?>
 
-			// updating...
 			document.getElementById('alo_easymail_widget_feedback').innerHTML = '';
 			document.getElementById('alo_easymail_widget_feedback').className = '<?php echo $classfeedback ?>';
 			document.getElementById('alo_em_widget_loading').style.display = "inline";
@@ -149,7 +148,6 @@ function alo_em_ajax_js()
 			}
 			alo_em_sack.setVar( "alo_em_form_lists", lists );
 			alo_em_sack.setVar( "alo_em_nonce", '<?php echo wp_create_nonce('alo_em_form') ?>' );
-			//alo_em_sack.onError = function() { alert('Ajax error' )};
 			alo_em_sack.runAJAX();
 
 			return true;
@@ -210,10 +208,8 @@ function alo_em_ajax_js()
 			<?php endif; ?>
 			alo_em_sack.setVar( "alo_em_opt_email", document.alo_easymail_widget_form.alo_em_opt_email.value );
 			<?php
-            //edit : added all this foreach
             if( $alo_em_cf ) {
                 foreach( $alo_em_cf as $key => $value ){
-                   	//echo 'alo_em_sack.setVar( "alo_em_'.$key.'", document.getElementById(\'alo_em_'.$key.'\').value );'."\n";
                 	switch ( $value['input_type']) {
                 		case 'checkbox':
                 			echo 'alo_em_sack.setVar( "alo_em_'.$key.'", ( document.getElementById(\'alo_em_'.$key.'\').checked ? 1 : 0 ) );'."\n";
@@ -256,7 +252,6 @@ function alo_em_ajax_js()
 			}
 			alo_em_sack.setVar( "alo_em_form_lists", lists );
 			alo_em_sack.setVar( "alo_em_nonce", '<?php echo wp_create_nonce('alo_em_form') ?>' );
-			//alo_em_sack.onError = function() { alert('Ajax error' )};
 			alo_em_sack.runAJAX();
 
 			return true;

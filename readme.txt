@@ -87,8 +87,7 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
-= 2.10.0 =
-* Added: the newsletter post type has also 'show_in_rest' (thinking to Gutenberg editor)
+= 2.9.8 =
 * Added: a filter for recipient number in newsletter report
 * Added: a couple of sample functions in attachment mu-plugins
 * Updated: move the "preview in newsletter theme" button inside theme metabox
@@ -146,5 +145,5 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Upgrade Notice ==
 
-= 2.9.7 =
-Fix two minor bugs.
+= 2.9.8 =
+Some little improvements and fix some warnings.
