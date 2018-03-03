@@ -532,7 +532,6 @@ function alo_em_meta_recipients ( $post ) {
 }
 
 
-
 /**
  * Box meta: Themes
  */
@@ -548,7 +547,14 @@ function alo_em_meta_themes ( $post ) {
 			echo '<option value="'. $theme .'" '. $theme_selected .'>'. $theme.' </option>';
 		}
 		echo "</select>\n";
-		echo "<a href='' id='easymail-theme-select-preview' >". __("View") ."</a>";
+		echo "<a href='' id='easymail-theme-select-preview' >". __("View") ."</a>"; ?>
+
+		<a title="<?php esc_attr_e ('Preview in newsletter theme', 'alo-easymail') ?>" id="easymail-open-preview" class="button" href="#">
+			<img id="easymail-open-preview-loading" src="<?php echo ALO_EM_PLUGIN_URL ?>/images/wpspin_light.gif" alt="" style="vertical-align: text-bottom;display: none;margin-right: 0.5em" />
+			<?php echo __('Preview in newsletter theme', 'alo-easymail') ?>
+			<span class="dashicons dashicons-visibility" style="display: inline-block;margin-top: 0.2em"></span>
+		</a>
+		<?php
 	}
 }
 
@@ -665,24 +671,6 @@ function alo_em_newsletter_deleted ( $post_id ) {
 	alo_em_delete_newsletter_recipients( $post_id );
 }
 add_action( 'delete_post', 'alo_em_newsletter_deleted' );
-
-
-
-/**
- * Button to preview in newsletter theme
- */
-function alo_em_add_media_button() {
-	global $post;
-
-	if ( get_option('alo_em_use_themes') == 'no' ) return;
-
-	if (is_object($post) && $post->post_type == 'newsletter') :
-		?>
-		<a title="Newsletter preview"  id="easymail-open-preview" class="preview button" href="#"><img id="easymail-open-preview-loading" src="<?php echo ALO_EM_PLUGIN_URL ?>/images/wpspin_light.gif" alt="" style="vertical-align: text-bottom;display: none;margin-right: 0.5em" /><?php echo __('Preview in newsletter theme', 'alo-easymail') ?></a>
-		<?php
-	endif;
-}
-add_action('media_buttons', 'alo_em_add_media_button', 11);
 
 
 /**

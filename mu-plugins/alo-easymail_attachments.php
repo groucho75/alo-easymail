@@ -30,7 +30,7 @@ function custom_easymail_newsletter_attachment ( $attachs, $newsletter ) {
  * It automatically adds an attachment to newsletter if find a pdf file named
  * 'neswletter_YYYY_MM.pdf' inside uploads folder, e.g.: neswletter_2017_12.pdf
  *
- * @since: 2.9.8
+ * @since: 2.10.0
  *
  ******************************************************************************/
 
@@ -59,7 +59,7 @@ function custom_easymail_newsletter_monthly_attachment ( $attachs, $newsletter )
  * uploaded in other newsletters: you have to upload inside that newsletter
  * to attach the pdf to it.
  *
- * @since: 2.9.8
+ * @since: 2.10.0
  *
  ******************************************************************************/
 

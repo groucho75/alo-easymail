@@ -85,7 +85,6 @@ aloEM (document).ready ( function(){
 	// Preview in newsletter theme
 	if ( aloEM("#easymail-open-preview").length > 0 ) {
 		aloEM("#easymail-open-preview")
-			.insertAfter('a#post-preview')
 			.click(function(event) {
 				event.preventDefault();
 
