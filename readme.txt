@@ -87,6 +87,10 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
+= 2.9.8 =
+* Fixed: a warning on plugin activation/deactivation
+* Fixed: a warning in options page
+
 = 2.9.7 =
 * Fixed: the subscribe button now is properly escaped
 * Fixed: now the title attribute in [CUSTOM-LINK] placeholder is properly replaced

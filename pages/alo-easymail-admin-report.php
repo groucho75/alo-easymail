@@ -48,7 +48,7 @@ if ( $newsletter ) {
 
 	$newsletter_post = alo_em_get_newsletter( $newsletter );
 	
-	$per_page = 250;
+	$per_page = apply_filters ( 'alo_easymail_report_recipients_per_page', 250, $newsletter );
 	
 	if ( !$newsletter ) {
 		die("The requested page doesn't exists.");
