@@ -62,7 +62,7 @@ function alo_em_register_newsletter_type () {
 		'menu_icon' => 'dashicons-email',
 		'can_export' => true,
 		'supports' => array( 'title' , 'editor', 'custom-fields', 'thumbnail' ),
-		'show_in_rest' => true
+		// 'show_in_rest' => true // @todo: set true when ready for Gutenberg; for now disabled for issues with metaboxes
 	);
 	// If it doesn't allow newsletter publication online
 	if ( get_option('alo_em_publish_newsletters') == "no" ) {
