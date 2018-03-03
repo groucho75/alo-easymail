@@ -10,10 +10,12 @@
 	padding: 0.5em;
 	background-color: #EAF2FA;
 	margin-bottom: 0.5em;
+	list-style-type: none;
 }
 
 .easymail-edit-recipients ul.level-2st {
 	padding-left: 1em;
+	list-style-type: none;
 }
 
 .easymail-edit-recipients ul li input[type=checkbox] {
@@ -26,6 +28,11 @@
 }
 
 .easymail-edit-recipients ul li {
+}
+
+.easymail-edit-recipients input[type=checkbox] {
+	border: 1px solid #999;
+	background-color: #ffffff;
 }
 
 .easymail-alert {
