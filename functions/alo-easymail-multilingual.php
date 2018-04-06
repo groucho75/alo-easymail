@@ -512,7 +512,7 @@ function alo_em_create_wpml_subscrpage_translations( $settings ) {
 			// If the translated page doesn't exist, now create it
 			if ( icl_object_id( $original_page_id, 'page', false, $lang['code'] ) == null ) {
 
-				// Found at: http://wordpress.stackexchange.com/questions/20143/plugin-wpml-how-to-create-a-translation-of-a-post-using-the-wpml-api
+				// Found at: https://wpml.org/wpml-hook/wpml_set_element_language_details/
 
 				$post_translated_title = get_post( $original_page_id )->post_title . ' (' . $lang['code'] . ')';
 
