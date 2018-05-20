@@ -319,5 +319,21 @@ function alo_em_delete_unsubscribed_email_from_db_table ( $subscriber, $user_id=
 }
 add_action ( 'alo_easymail_new_subscriber_added',  'alo_em_delete_unsubscribed_email_from_db_table', 10, 2 );
 
+/**
+ * @param string
+ * @param int
+ * @param int
+ * @return array
+ */
+function alo_em_get_newsletter_received_by_subscriber ( $email, $offset = 0, $limit = 100 ) {
+	global $wpdb;
+	return $wpdb->get_results( $wpdb->prepare(
+		"SELECT r.ID AS recipient_id, r.newsletter, r.result, r.user_id, r.email, p.post_title AS newsletter_title
+		 FROM {$wpdb->prefix}easymail_recipients AS r
+		 LEFT JOIN {$wpdb->posts} AS p ON r.newsletter = p.ID
+		 WHERE r.result = '1' AND r.email = %s
+		 ORDER BY r.ID DESC LIMIT %d, %d",
+		$email, $offset, $limit ) );
+}
 
 /* EOF */
