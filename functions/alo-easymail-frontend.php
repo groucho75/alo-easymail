@@ -172,6 +172,7 @@ function alo_em_ajax_js()
             $error_txt_generic 		= esc_js( alo_em___(__("Error during operation.", "alo-easymail")) );
             $error_email_incorrect 	= esc_js( alo_em___(__("The e-email address is not correct", "alo-easymail")) );
             $error_name_empty 		= esc_js( alo_em___(__("The name field is empty", "alo-easymail")) );
+
             //edit : added all this foreach
             if( $alo_em_cf ) {
                 foreach( $alo_em_cf as $key => $value ){
@@ -181,6 +182,7 @@ function alo_em_ajax_js()
                     $$var_incorrect 	= esc_js( alo_em___( sprintf(__("The %s field is not correct", "alo-easymail"), __($value['humans_name'],"alo-easymail")) ) );
                 }
             }
+            $error_privacy_empty 	= esc_js( alo_em___( sprintf(__("The %s field is empty", "alo-easymail"), __('Privacy Policy'),"alo-easymail")) );
             $error_email_added		= esc_js( alo_em___(__("Warning: this email address has already been subscribed, but not activated. We are now sending another activation email", "alo-easymail")) );
             $error_email_activated	= esc_js( alo_em___(__("Warning: this email address has already been subscribed", "alo-easymail")) );
             $error_on_sending			= esc_js( alo_em___(__("Error during sending: please try again", "alo-easymail")) );
@@ -207,6 +209,9 @@ function alo_em_ajax_js()
 			alo_em_sack.setVar( "alo_em_opt_name", document.alo_easymail_widget_form.alo_em_opt_name.value );
 			<?php endif; ?>
 			alo_em_sack.setVar( "alo_em_opt_email", document.alo_easymail_widget_form.alo_em_opt_email.value );
+
+			alo_em_sack.setVar( "alo_em_privacy_agree", ( document.getElementById('alo_em_privacy_agree').checked ? 1 : 0 ) );
+
 			<?php
             if( $alo_em_cf ) {
                 foreach( $alo_em_cf as $key => $value ){
@@ -224,6 +229,7 @@ function alo_em_ajax_js()
 			alo_em_sack.setVar( "alo_easymail_txt_generic_error", '<?php echo $error_txt_generic ?>' );
 			alo_em_sack.setVar( "alo_em_error_email_incorrect", "<?php echo $error_email_incorrect ?>");
 			alo_em_sack.setVar( "alo_em_error_name_empty", "<?php echo $error_name_empty ?>");
+			alo_em_sack.setVar( "alo_em_error_privacy_empty", "<?php echo $error_privacy_empty ?>");
 			<?php
             //edit : added all this foreach
             if( $alo_em_cf ) {
@@ -412,7 +418,9 @@ function alo_em_pubblic_form_callback() {
 		if ( get_option('alo_em_hide_name_input') != 'yes' && $name == "") {
 			$error_on_adding .= esc_js($_POST['alo_em_error_name_empty']) . ".<br />";
 		}
-
+		if ( !isset($_POST['alo_em_privacy_agree']) || $_POST['alo_em_privacy_agree'] !== '1' ) {
+			$error_on_adding .= esc_js($_POST['alo_em_error_privacy_empty']). "<br />";
+		}
 		//edit : added all this foreach
 		if ( $alo_em_cf ) {
 			foreach( $alo_em_cf as $key => $value ){
@@ -474,11 +482,13 @@ function alo_em_pubblic_form_callback() {
 		// if just added, clean inputs, otherwise only sanitize them
 		$alo_em_opt_name = ( $just_added ) ? '' : esc_js(sanitize_text_field($_POST['alo_em_opt_name']));
 		$alo_em_opt_email = ( $just_added ) ? '' : esc_js(sanitize_text_field($_POST['alo_em_opt_email']));
+		$alo_em_privacy_agree = ( $just_added ) ? 0 : esc_js(sanitize_text_field($_POST['alo_em_privacy_agree']));
 
 		if( get_option('alo_em_hide_name_input') != 'yes' ) {
 			$feedback .= "document.alo_easymail_widget_form.alo_em_opt_name.value ='".$alo_em_opt_name."';";
 		}
 		$feedback .= "document.alo_easymail_widget_form.alo_em_opt_email.value ='".$alo_em_opt_email."';";
+		$feedback .= "document.alo_easymail_widget_form.alo_em_privacy_agree.checked =".$alo_em_privacy_agree.";";
 		if ( $alo_em_cf ) {
 			foreach( $alo_em_cf as $key => $value ){
 				${'alo_em_'.$key} = ( $just_added ) ? '' : esc_js(sanitize_text_field($_POST['alo_em_'.$key]));

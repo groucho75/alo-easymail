@@ -769,10 +769,9 @@ foreach ( $text_fields as $text_field ) : ?>
 		case "optin_msg": 	_e("Yes, I would like to receive the Newsletter", "alo-easymail"); break;
 		case "optout_msg": 	_e("No, please do not email me", "alo-easymail"); break;
 		case "lists_msg": 	_e("You can also sign up for specific lists", "alo-easymail"); break;
-		case "disclaimer_msg": 
-			echo "(". __("empty", "alo-easymail"). ") ";
-			echo '<br /><span class="description">'. __("If filled in it will appear at the bottom of widget/page. Useful to show/link more info about privacy", "alo-easymail"). '.</span>';  
-			break;			
+		case "disclaimer_msg":
+			_e("I agree to my submitted data being stored and used to receive newsletters", "alo-easymail");
+			break;
 		case "preform_msg": 
 			echo "(". __("empty", "alo-easymail"). ") ";
 			echo '<br /><span class="description">'. __("If filled in it will appear at the top of widget/page. Useful to invite to subscribe", "alo-easymail"). '.</span>';  

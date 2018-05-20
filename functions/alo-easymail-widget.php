@@ -42,8 +42,10 @@ function alo_em_show_widget_form ( ) {
 	$preform_msg	= ( alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_preform_msg',false) !="")? alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_preform_msg',false) : false; 
     $preform_html 	= ( $preform_msg ) ? "<div class='alo_easymail_preform_msg'>" . $preform_msg . "</div>\n" : ""; 
     	
-	$disclaimer_msg	= ( alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_disclaimer_msg',false) !="")? alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_disclaimer_msg',false) : false; 
-    $disclaimer_html = ( $disclaimer_msg ) ? "<div class='alo_easymail_disclaimer'>" . $disclaimer_msg . "</div>\n" : ""; 
+	$disclaimer_msg	= alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_disclaimer_msg',false);
+	if ( empty( $disclaimer_msg ) ) {
+		$disclaimer_msg = __("I agree to my submitted data being stored and used to receive newsletters", "alo-easymail");
+	}
     	
 	if (is_user_logged_in()) {
         // For REGISTERED USER
@@ -95,8 +97,9 @@ function alo_em_show_widget_form ( ) {
 		endif;
 		
         $html .= "</table>\n";      
-        $html .= $lists_table; // add lists table 
-        $html .= $disclaimer_html;
+        $html .= $lists_table; // add lists table
+		$html .= "<div class='alo_easymail_disclaimer'><label>";
+		$html .= $disclaimer_msg . "</label></div>\n";
         //$html .= "<input type='submit' name='submit' value='".__("Update", "alo-easymail")."' class='input-submit' onclick='alert(\"yes\");return false;' />\n";
         $html .= "</form>\n";
         
@@ -142,7 +145,9 @@ function alo_em_show_widget_form ( ) {
 		endif;
         $html .= "</tbody></table>\n";        
  		$html .= $lists_table; // add lists table     
- 		$html .= $disclaimer_html;	
+		$html .= "<div class='alo_easymail_disclaimer'><label for='alo_em_privacy_agree'>";
+		$html .= "<input type='checkbox' name='alo_em_privacy_agree' id='alo_em_privacy_agree' value='yes' class='input-checkbox' />";
+		$html .= $disclaimer_msg . "</label></div>\n";
         $html .= "<input type='submit' name='submit' value='".esc_attr(__("Subscribe", "alo-easymail"))."' class='input-submit' />\n";
         $html .= "</form>\n";    
     } 
