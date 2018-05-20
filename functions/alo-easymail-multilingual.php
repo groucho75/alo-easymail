@@ -500,51 +500,55 @@ function alo_em_assign_subscriber_to_lang ( $subscriber, $lang ) {
  * If WPML is used: Try to create automatically a Newsletter subscription page
  * for each language, when language list is changed
  */
-function alo_em_on_loaded_wpml () {
-	function alo_em_create_wpml_subscrpage_translations( $settings ) {
-		if ( !function_exists( 'wpml_get_active_languages' ) ) return; // if runs before WPML is completely loaded
-		$langs = wpml_get_active_languages();
+function alo_em_create_wpml_subscrpage_translations( $settings ) {
+	if ( !function_exists( 'wpml_get_active_languages' ) ) return; // if runs before WPML is completely loaded
+	$langs = wpml_get_active_languages();
 
-		if ( is_array( $langs ) ) {
-			foreach ( $langs as $lang ) {
-				// Original page ID
-				$original_page_id = get_option('alo_em_subsc_page');
+	if ( is_array( $langs ) ) {
+		foreach ( $langs as $lang ) {
+			// Original page ID
+			$original_page_id = get_option('alo_em_subsc_page');
 
-				// If the translated page doesn't exist, now create it
-				if ( icl_object_id( $original_page_id, 'page', false, $lang['code'] ) == null ) {
+			// If the translated page doesn't exist, now create it
+			if ( icl_object_id( $original_page_id, 'page', false, $lang['code'] ) == null ) {
 
-					// Found at: http://wordpress.stackexchange.com/questions/20143/plugin-wpml-how-to-create-a-translation-of-a-post-using-the-wpml-api
+				// Found at: https://wpml.org/wpml-hook/wpml_set_element_language_details/
 
-					$post_translated_title = get_post( $original_page_id )->post_title . ' (' . $lang['code'] . ')';
+				$post_translated_title = get_post( $original_page_id )->post_title . ' (' . $lang['code'] . ')';
 
-					// All page stuff
-					$my_page = array();
-					$my_page['post_title'] 		= $post_translated_title;
-					$my_page['post_content'] 	= '[ALO-EASYMAIL-PAGE]';
-					$my_page['post_status'] 	= 'publish';
-					$my_page['post_author'] 	= 1;
-					$my_page['comment_status'] 	= 'closed';
-					$my_page['post_type'] 		= 'page';
+				// All page stuff
+				$my_page = array();
+				$my_page['post_title'] 		= $post_translated_title;
+				$my_page['post_content'] 	= '[ALO-EASYMAIL-PAGE]';
+				$my_page['post_status'] 	= 'publish';
+				$my_page['post_author'] 	= get_current_user_id();
+				$my_page['comment_status'] 	= 'closed';
+				$my_page['post_type'] 		= 'page';
 
-					// Insert translated post
-					$post_translated_id = wp_insert_post( $my_page );
+				// Insert translated post
+				$post_translated_id = wp_insert_post( $my_page );
 
-					// Get trid of original post
-					$trid = wpml_get_content_trid( 'post_'.'page', $original_page_id );
+				// Get trid of original post
+				$trid = wpml_get_content_trid( 'post_page', $original_page_id );
 
-					// Get default language
-					$default_lang = wpml_get_default_language();
+				// Get default language
+				$default_lang = wpml_get_default_language();
 
-					// Associate original post and translated post
-					global $wpdb;
-					$wpdb->update( $wpdb->prefix.'icl_translations', array( 'trid' => $trid, 'language_code' => $lang['code'], 'source_language_code' => $default_lang ), array( 'element_id' => $post_translated_id ) );
-				}
+				// Associate original post and translated post
+				$set_language_args = array(
+					'element_id'    => $post_translated_id,
+					'element_type'  => 'post_page',
+					'trid'   => $trid,
+					'language_code'   => $lang['code'],
+					'source_language_code' => $default_lang
+				);
+
+				do_action( 'wpml_set_element_language_details', $set_language_args );
 			}
 		}
 	}
-	add_action('icl_save_settings', 'alo_em_create_wpml_subscrpage_translations' );
 }
-add_action('wpml_loaded', 'alo_em_on_loaded_wpml');
+add_action('wpml_setup_completed', 'alo_em_create_wpml_subscrpage_translations' );
 
 
 /**********************************************************************
