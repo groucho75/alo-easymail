@@ -83,6 +83,7 @@ require_once( ALO_EM_PLUGIN_ABS.'/functions/alo-easymail-frontend.php' );
 require_once( ALO_EM_PLUGIN_ABS.'/functions/alo-easymail-users.php' );
 require_once( ALO_EM_PLUGIN_ABS.'/functions/alo-easymail-mailer.php' );
 require_once( ALO_EM_PLUGIN_ABS.'/functions/alo-easymail-router.php' );
+require_once( ALO_EM_PLUGIN_ABS.'/functions/alo-easymail-privacy.php' );
 
 if ( is_admin() ) {
 	require_once(ALO_EM_PLUGIN_ABS . '/functions/alo-easymail-dashboard.php');
