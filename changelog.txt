@@ -1,6 +1,9 @@
 ALO EasyMail Newsletter Changelog
 =================================
 
+= 2.10.0 =
+* Fixed: better WPML integration - thanks to [dgwatkins](https://github.com/groucho75/alo-easymail/pull/16)
+
 = 2.9.8 =
 * Added: 2 text options for subscription page: "click to unsubscribe" and "subscription deleted" messages
 * Added: a filter for recipient number in newsletter report

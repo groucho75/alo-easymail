@@ -5,7 +5,7 @@ Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sendi
 Requires at least: 3.6
 Requires PHP: 5.2
 Tested up to: 4.9
-Stable tag: 2.9.8
+Stable tag: 2.10.0
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -87,6 +87,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
+= 2.10.0 =
+* Fixed: better WPML integration - thanks to [dgwatkins](https://github.com/groucho75/alo-easymail/pull/16)
+
 = 2.9.8 =
 * Added: 2 text options for subscription page: "click to unsubscribe" and "subscription deleted" messages
 * Added: a filter for recipient number in newsletter report
@@ -133,5 +136,5 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Upgrade Notice ==
 
-= 2.9.8 =
-Some little improvements and fix some warnings.
+= 2.10.0 =
+GDPR compliance, better WPML integration.
