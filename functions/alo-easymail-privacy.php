@@ -76,7 +76,7 @@ add_filter(	'wp_privacy_personal_data_exporters', 'alo_em_register_privacy_expor
  * @return array
  */
 function alo_em_privacy_exporter_subscriber( $email_address, $page = 1 ) {
-	$number = 500; // Limit us to avoid timing out
+	$number = 100; // Limit us to avoid timing out
 	$page = (int) $page;
 
 	$export_items = array();
@@ -293,6 +293,77 @@ function alo_em_privacy_exporter_actions( $email_address, $page = 1 ) {
 	return array(
 		'data' => $export_items,
 		'done' => $done,
+	);
+}
+
+
+/**
+ * Register plugin eraser for privacy
+ */
+function alo_em_register_privacy_eraser( $erasers ) {
+	$erasers['alo-easymail-eraser'] = array(
+		'eraser_friendly_name' => 'ALO EasyMail Newsletter: ',
+		'callback'             => 'alo_em_privacy_eraser',
+	);
+
+	return $erasers;
+}
+add_filter( 'wp_privacy_personal_data_erasers', 'alo_em_register_privacy_eraser', 10 );
+
+/**
+ * Register plugin eraser for privacy
+ *
+ * @param string
+ * @param string
+ * @return array
+ */
+function alo_em_privacy_eraser( $email_address, $page = 1 ) {
+
+	if ( empty( $email_address ) ) {
+		return array(
+			'items_removed'  => false,
+			'items_retained' => false,
+			'messages'       => array(),
+			'done'           => true,
+		);
+	}
+
+	$subscriber = alo_em_get_subscriber ( $email_address );
+
+	$messages = array();
+	$items_removed  = false;
+	$items_retained = false;
+
+	if ( $subscriber ) {
+		global $wpdb;
+
+		// Delete subscriber
+		alo_em_delete_subscriber_by_id( $subscriber->ID );
+		alo_em_add_email_in_unsubscribed ( $email_address );
+
+		$messages[] = __( 'Your subscription data was removed.', "alo-easymail" );
+
+		// Anonimize recipients
+		$updated = $wpdb->update( "{$wpdb->prefix}easymail_recipients",
+			array ( 'user_id' => 0, 'email' => '[ ' . __( 'email deleted on request', "alo-easymail" ) . ']' ),
+			array ( 'email' => $email_address )
+		);
+
+		if ( false === $updated ) {
+			$messages[] = __( 'Recipient data was unable to be removed at this time.', "alo-easymail" );
+			$items_retained = true;
+		} else {
+			$items_removed = count( $updated );
+			$messages[] = sprintf( __( 'Removed %s recipients data.', "alo-easymail" ), $items_removed );
+		}
+
+	}
+
+	return array(
+		'items_removed'  => $items_removed,
+		'items_retained' => $items_retained,
+		'messages'       => $messages,
+		'done'           => true,
 	);
 }
 
