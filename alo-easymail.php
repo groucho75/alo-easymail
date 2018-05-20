@@ -149,7 +149,6 @@ function alo_em_install() {
 	if (!get_option('alo_em_unsubscribe_when_delete_user')) add_option('alo_em_unsubscribe_when_delete_user', 'no');
 	if (!get_option('alo_em_hide_name_input')) add_option('alo_em_hide_name_input', 'no');
 	if (!get_option('alo_em_collect_ip_address')) add_option('alo_em_collect_ip_address', 'no');
-	if (!get_option('alo_em_encrypt_unsubscribed')) add_option('alo_em_encrypt_unsubscribed', 'no');
 
 	if ( alo_em_db_tables_need_update() ) alo_em_install_db_tables();
 	

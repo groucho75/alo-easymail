@@ -90,6 +90,7 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 = 2.10.0 =
 * Added: [GDPR] the privacy policy text inside subscription form now has a checkbox
 * Added: [GDPR] added a draft of suggesting text for the site privacy policy
+* Added: [GDPR] now the unsubscribed emails are stored always as MD5 string
 * Fixed: better WPML integration - thanks to [dgwatkins](https://github.com/groucho75/alo-easymail/pull/16)
 
 = 2.9.8 =

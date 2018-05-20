@@ -445,18 +445,6 @@ if ( isset($_REQUEST['doaction_step1']) ) {
 				</form>		
 			 	<hr class="break" />
 
-				<?php if ( get_option('alo_em_encrypt_unsubscribed') != 'yes' ) : ?>
-					<h3 style="margin-top:20px" id="easymail-export-unsubscribed"><?php _e("Export unsubscribed emails", "alo-easymail") ?></h3>
-					<p><?php _e("You can export email addresses of who unsubscribed the newsletter: the plugin shows them on screen so you can copy and paste them into a text file or into any application", "alo-easymail") ?></p>
-					<form action="" method="get">
-						<input type="hidden" name="post_type"  value="newsletter" />
-						<input type="hidden" name="action"  value="export_unsubscribers_step2" /> <?php // the action ?>
-						<input  type="hidden" name="page"   value="alo-easymail/pages/alo-easymail-admin-subscribers.php"/>
-						<input type="submit" value="<?php _e('Export', 'alo-easymail') ?>" class="button" name="doaction_step2" />
-					</form>
-					<hr class="break" />
-			 	<?php endif; ?>
-
 		 		<a href="javascript:history.back()"><?php _e("Cancel", "alo-easymail"); ?></a>
 		 		<hr class="break" />
 		 				 		

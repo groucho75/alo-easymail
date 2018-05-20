@@ -145,11 +145,6 @@ if ( isset($_POST['submit']) ) {
 			} else {
 				update_option('alo_em_collect_ip_address', "no") ;
 			}
-			if ( isset($_POST['encrypt_unsubscribed']) ) {
-				update_option('alo_em_encrypt_unsubscribed', "yes");
-			} else {
-				update_option('alo_em_encrypt_unsubscribed', "no") ;
-			}
 			if ( isset($_POST['hide_name_input']) ) {
 				update_option('alo_em_hide_name_input', "yes");
 			} else {
@@ -450,23 +445,6 @@ if ( get_option('alo_em_collect_ip_address') == "yes" ) {
 	<th scope="row"><?php _e("Store IP address of subscribers", "alo-easymail") ?>:</th>
 	<td><input type="checkbox" name="collect_ip_address" id="collect_ip_address" value="yes" <?php echo $checked_collect_ip_address ?> />
 		<span class="description"><?php _e("If yes, you should declare it in your Privacy Policy / Terms Of Service page", "alo-easymail") ?>.</span>
-	</td>
-</tr>
-
-
-<?php
-if ( get_option('alo_em_encrypt_unsubscribed') == "yes" ) {
-	$checked_encrypt_unsubscribed = 'checked="checked"';
-} else {
-	$checked_encrypt_unsubscribed = "";
-}
-?>
-<tr valign="top">
-	<th scope="row"><?php _e("Encrypt emails of who unsubscribed", "alo-easymail") ?>:</th>
-	<td><input type="checkbox" name="encrypt_unsubscribed" id="encrypt_unsubscribed" value="yes" <?php echo $checked_encrypt_unsubscribed ?> />
-		<span class="description"><?php _e("By default the email addresses of who unsubscribed are stored as clear text, so you can view and export them", "alo-easymail") ?>.
-			<?php _e("Otherwise, if you need more privacy you can encrypt them, but you cannot view or export them anymore", "alo-easymail") ?>.
-		</span>
 	</td>
 </tr>
 
