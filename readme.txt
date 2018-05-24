@@ -5,7 +5,7 @@ Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sendi
 Requires at least: 3.6
 Requires PHP: 5.2
 Tested up to: 4.9
-Stable tag: 2.10.0
+Stable tag: 2.10.1
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.

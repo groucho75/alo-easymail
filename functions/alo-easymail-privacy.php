@@ -96,7 +96,7 @@ function alo_em_privacy_exporter_subscriber( $email_address, $page = 1 ) {
 		// Subscriber standard data
 		$subscriber_data = (array)$subscriber;
 
-		$whitelist_subscriber_data = [ 'email', 'name', 'join_date', 'active', 'lang', 'last_act' ];
+		$whitelist_subscriber_data = array( 'email', 'name', 'join_date', 'active', 'lang', 'last_act' );
 
 		foreach ( $subscriber_data as $key => $value ) {
 			if ( in_array( $key, $whitelist_subscriber_data) ) {
@@ -124,7 +124,7 @@ function alo_em_privacy_exporter_subscriber( $email_address, $page = 1 ) {
 		$mailing_lists = alo_em_get_mailinglists( 'public' );
 		$subscriber_lists = alo_em_get_user_mailinglists ( $subscriber->ID );
 		if ( $subscriber_lists ) {
-			$list_labels = [];
+			$list_labels = array();
 			foreach( $subscriber_lists as $index => $key ) {
 				$list_labels[] = alo_em_translate_multilangs_array ( alo_em_get_language(), $mailing_lists[$key]['name'], true );
 			}
