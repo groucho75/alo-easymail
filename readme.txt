@@ -87,6 +87,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
+= 2.10.1 =
+* Fixed: remove error on php < 5.4
+
 = 2.10.0 =
 * Added: [GDPR] the privacy policy text inside subscription form now has a checkbox
 * Added: [GDPR] added a draft of suggesting text for the site privacy policy
@@ -139,6 +142,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 *The full changelog is in changelog.txt inside plugin folder*
 
 == Upgrade Notice ==
+
+= 2.10.1 =
+Fix error on php < 5.4.
 
 = 2.10.0 =
 GDPR compliance, better WPML integration.
