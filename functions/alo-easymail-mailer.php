@@ -264,6 +264,7 @@ function alo_em_send_newsletter_to ( $recip, $force_send=false ) {
 	}
 
 	// If it's a Re-permission newsletter, deactivate subscriber and reset the re-permission date
+	// todo: not working: it seems cause of not adding all subscribers
 	if ( $newsletter->ID && $recipient->subscriber && get_post_meta( $newsletter->ID, '_easymail_re_permission', true ) ) {
 		alo_em_edit_subscriber_state_by_id( $recipient->subscriber, "0" );
 		alo_em_set_re_permission_by_subscriber_id( $recipient->subscriber );
