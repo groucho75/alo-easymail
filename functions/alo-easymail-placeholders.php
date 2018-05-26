@@ -789,5 +789,49 @@ function alo_em_placeholders_get_latest ( $content, $newsletter, $recipient, $st
 add_filter ( 'alo_easymail_newsletter_content',  'alo_em_placeholders_get_latest', 10, 4 );
 
 
+/*******************************************************************************
+ *
+ * Placeholders of privacy page: [SITE-PRIVACY-LINK], [SITE-PRIVACY-URL]
+ *
+ * @since: 2.11
+ *
+ ******************************************************************************/
+
+function alo_em_privacy_placeholders ( $placeholders ) {
+
+	if ( function_exists( 'get_privacy_policy_url' ) ) {
+		$placeholders['easymail_site']['tags']['[SITE-PRIVACY-LINK]'] = __( 'Link to the Privacy Page', 'alo-easymail' ) . ". "
+			. __("The visit to this url will be tracked.", "alo-easymail");
+		$placeholders['easymail_site']['tags']['[SITE-PRIVACY-URL]'] = __( 'URL to the Privacy Page', 'alo-easymail' ) . ". "
+			. __("The visit to this url will be tracked.", "alo-easymail");
+	}
+
+	return $placeholders;
+}
+add_filter ( 'alo_easymail_newsletter_placeholders_table', 'alo_em_privacy_placeholders' );
+
+
+function alo_em_privacy_placeholders_replace_tags ( $content, $newsletter, $recipient, $stop_recursive_the_content=false ) {
+	if ( !is_object( $recipient ) ) $recipient = new stdClass();
+	if ( empty( $recipient->lang ) ) $recipient->lang = alo_em_short_langcode ( get_locale() );
+
+	$privacy_url  = "";
+	$privacy_link = "";
+
+	if ( function_exists( 'get_privacy_policy_url' ) ) {
+		$privacy_policy_url = get_privacy_policy_url();
+
+		if ( ! empty( $privacy_policy_url ) ) {
+			$privacy_url  = alo_em_make_url_trackable ( $recipient, $privacy_policy_url );
+			$privacy_link = "<a href='". $privacy_url . "'>". __( 'Privacy Policy' ) ."</a>";
+		}
+	}
+
+	$content = str_replace("[SITE-PRIVACY-URL]", $privacy_url, $content);
+	$content = str_replace("[SITE-PRIVACY-LINK]", $privacy_link, $content);
+
+	return $content;
+}
+add_filter ( 'alo_easymail_newsletter_content',  'alo_em_privacy_placeholders_replace_tags', 10, 4 );
 
 /* EOF */
