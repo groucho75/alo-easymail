@@ -86,6 +86,19 @@ function alo_em_edit_subscriber_state_by_email($email, $newstate="1", $unikey) {
 
 
 /**
+ * Deactivate subscriber and update the date of re-permission request (BY ADMIN)
+ */
+function alo_em_set_re_permission_by_subscriber_id( $id ) {
+	global $wpdb;
+	$output = $wpdb->update( "{$wpdb->prefix}easymail_subscribers",
+		array ( 'active' => '0', 'req_confirm_date' => get_date_from_gmt( date("Y-m-d H:i:s") ) ),
+		array ( 'ID' => $id )
+	);
+	return $output;
+}
+
+
+/**
  * Add a new subscriber
  * return bol/str:
  *		false					= generic error
@@ -111,7 +124,15 @@ function alo_em_add_subscriber( $fields, $newstate=0, $lang="" ) { //edit : orig
 
 		if ( $output ) {
 			$wpdb->insert ( "{$wpdb->prefix}easymail_subscribers",
-				array_merge( $fields, array( 'join_date' => get_date_from_gmt( date("Y-m-d H:i:s") ), 'active' => $newstate, 'unikey' => $unikey, 'lists' => "|", 'lang' => $lang, 'last_act' => get_date_from_gmt( date("Y-m-d H:i:s") ) ) ) //edit : orig : array( 'email' => $email, 'name' => $name, 'join_date' => get_date_from_gmt( date("Y-m-d H:i:s") ), 'active' => $newstate, 'unikey' => $unikey, 'lists' => "|", 'lang' => $lang )
+				array_merge( $fields, array(
+					'join_date' => get_date_from_gmt( date("Y-m-d H:i:s") ),
+					'active'    => $newstate,
+					'unikey'    => $unikey,
+					'lists'     => "|",
+					'lang'      => $lang,
+					'last_act'  => get_date_from_gmt( date("Y-m-d H:i:s") ),
+					'req_confirm_date' => get_date_from_gmt( date("Y-m-d H:i:s") ),
+				) )
 			);
 			$output = "OK"; //return true;
 		}
@@ -126,7 +147,13 @@ function alo_em_add_subscriber( $fields, $newstate=0, $lang="" ) { //edit : orig
 				// update join date to today
 				$ip_address = alo_em_ip_address();
 				$output = $wpdb->update(    "{$wpdb->prefix}easymail_subscribers",
-					array ( 'join_date' => get_date_from_gmt( date("Y-m-d H:i:s") ), 'lang' => $lang, 'last_act' => get_date_from_gmt( date("Y-m-d H:i:s") ), 'ip_address' => $ip_address ),
+					array (
+						'join_date'        => get_date_from_gmt( date("Y-m-d H:i:s") ),
+						'req_confirm_date' => get_date_from_gmt( date("Y-m-d H:i:s") ),
+						'lang'             => $lang,
+						'last_act'         => get_date_from_gmt( date("Y-m-d H:i:s") ),
+						'ip_address'       => $ip_address
+					),
 					array ( 'ID' => alo_em_is_subscriber($email) )
 				);
 				// tell that there is already added but not active: so it has sent another activation mail.......
@@ -166,7 +193,7 @@ function alo_em_update_subscriber_by_email ( $old_email, $fields, $newstate=0, $
 	if ( $update_lastact ) $fields['last_act'] = get_date_from_gmt( date("Y-m-d H:i:s") );
 
 	$output = $wpdb->update(    "{$wpdb->prefix}easymail_subscribers",
-		$fields, //edit : orig : array ( 'email' => $new_email, 'name' => $name, 'active' => $newstate, 'lang' => $lang ),
+		$fields,
 		array ( 'email' => $old_email )
 	);
 	return $output;

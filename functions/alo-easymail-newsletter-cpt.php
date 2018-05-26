@@ -408,6 +408,7 @@ function alo_em_newsletter_add_custom_box() {
 	add_meta_box( "alo_easymail_newsletter_recipients", __("Recipients", "alo-easymail"), "alo_em_meta_recipients", "newsletter", "side", "high" );
 	if ( get_option('alo_em_use_themes') == 'yes' || get_option('alo_em_use_themes') == '' ) add_meta_box( "alo_easymail_newsletter_themes", __("Themes", "alo-easymail"), "alo_em_meta_themes", "newsletter", "normal", "high" );
 	add_meta_box( "alo_easymail_newsletter_placeholders", __("Placeholders", "alo-easymail"), "alo_em_meta_placeholders", "newsletter", "normal", "high" );
+	add_meta_box( "alo_easymail_newsletter_re_permission", __("Re-permission campaign", "alo-easymail"), "alo_em_meta_re_permission", "newsletter", "normal", "default" );
 }
 add_action('add_meta_boxes', 'alo_em_newsletter_add_custom_box', 8);
 
@@ -594,6 +595,87 @@ function alo_em_save_newsletter_placeholders_easymail_post ( $post_id ) {
 }
 add_action('alo_easymail_save_newsletter_meta_extra',  'alo_em_save_newsletter_placeholders_easymail_post' );
 
+/**
+ * Box meta: Re-permission campaign
+ */
+function alo_em_meta_re_permission ( $post ) {
+	wp_nonce_field( ALO_EM_PLUGIN_DIR, "edit_newsletter" );
+
+	$is_re_permission = get_post_meta( $post->ID, '_easymail_re_permission', true );
+
+	$checked = ( $is_re_permission ) ? ' checked="checked" ' : '';
+
+	if ( alo_em_get_newsletter_status ( $post->ID ) == "sent" || alo_em_is_newsletter_recipients_archived ( $post->ID ) ) {
+		$disabled = 'disabled';
+	} else {
+		$disabled = '';
+	}
+	?>
+
+	<p>
+		<input type="checkbox" name="easymail-is-re-permission" id="easymail-is-re-permission" value="yes" <?php echo $checked ." " . $disabled ?> />
+		<strong>
+			<label for="easymail-is-re-permission"><?php _e("This is a re-permission campaign", "alo-easymail") ?></label>
+		</strong>
+	</p>
+
+	<p>
+		<?php _e("A re-pemission newsletter should be sent to ask the selected recipients to give you permission to send further newsletters", "alo-easymail") ?>.
+		<a href="#" id="alo-easymailread-more-about-re-pemission-btn"><?php _e( 'Read more...' ) ?></a>
+	</p>
+
+	<div id="alo-easymailread-more-about-re-pemission-text">
+		<p><?php _e("Note that", "alo-easymail") ?>:
+			<ul style="list-style-type: circle;list-style-position: inside;">
+				<li><?php _e("All the selected recipients of this newsletter will be automatically deactivated", "alo-easymail") ?>:
+					<?php _e("each subscriber will be deactivated exactly when this newsletter is sent to him/her.", "alo-easymail") ?></li>
+
+				<li><?php printf( __("You must include the %s in newsletter content to allow recipient to reactivate own subscription", "alo-easymail"), '<code>[CONFIRMATION-LINK] / [CONFIRMATION-URL]</code>' ) ?></li>
+				<li><?php _e("A subscriber will be deleted if not activated in 5 days.", "alo-easymail")?></li>
+			</ul>
+		</p>
+		<p>
+			<em><?php _e("So, please keep in mind that there is the risk you can loose a lot of subscribers: all recipients that ignore this newsletter", "alo-easymail") ?></em>
+		</p>
+	</div>
+
+	<table class="widefat" style="margin-top:10px">
+	<thead><tr><th scope="col" style="width:20%"><?php _e("Placeholders", "alo-easymail") ?></th>
+		<th scope="col"><?php printf( __("You must include the %s in newsletter content to allow recipient to reactivate own subscription", "alo-easymail"), '<code>[CONFIRMATION-LINK] / [CONFIRMATION-URL]</code>' ) ?></th></tr>
+	</thead>
+	<tbody>
+
+	<?php
+	$placeholders = array(
+		'[CONFIRMATION-LINK]'  => __("This placeholder produces a paragraph with the confirmation link (html &lt;p&gt; tag) and has the following parameters", "alo-easymail"). ":". "<ul style='margin-left: 2em;font-size: 90%'>".
+				"<li><code style='font-style:normal;'>". "title". "</code> ".
+				__("the text of the link", "alo-easymail").". ". __("Default", "alo-easymail") .": " . __("Yes, I would like to receive the Newsletter", "alo-easymail") . "</li>".
+				"<li><code style='font-style:normal;'>". "style". "</code> ".
+				__("the style tag attribute", "alo-easymail"). "</li>".
+				"</ul>".
+				__("Sample:", "alo-easymail") . ": " . "<code style='font-style:normal;'>". "[CONFIRMATION-LINK title=\"I agree\" style=\"color: #ffffff;background-color: #ff0000;\"]". "</code>",
+		'[CONFIRMATION-URL]' => __("The confirmation URL", "alo-easymail"),
+	);
+	foreach ( $placeholders as $tag => $desc ) : ?>
+		<tr><td><?php esc_html_e ( $tag ) ?></td><td style='font-size:80%'>
+				<span class="description"><?php echo $desc ?></span></td></tr>
+	<?php endforeach; ?>
+
+	</tbody></table>
+	<?php
+}
+
+/**
+ * Save Re-Permission
+ */
+function alo_em_save_newsletter_re_permission_meta ( $post_id ) {
+	if ( isset( $_POST['easymail-is-re-permission'] ) ) {
+		update_post_meta ( $post_id, '_easymail_re_permission', 'yes' );
+	} else {
+		delete_post_meta ( $post_id, '_easymail_re_permission' );
+	}
+}
+add_action('alo_easymail_save_newsletter_meta_extra',  'alo_em_save_newsletter_re_permission_meta' );
 
 /**
  * SAVE Boxes meta in Newsletter

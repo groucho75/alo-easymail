@@ -48,7 +48,7 @@ function alo_em_clean_no_actived() {
 		$days = $default;
 	}
 	$limitdate = date ("Y-m-d",mktime(0,0,0,date("m"),date("d")-$days,date("Y")));
-	$output = $wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->prefix}easymail_subscribers WHERE join_date <= %s AND active = '0'", $limitdate ) );
+	$output = $wpdb->query( $wpdb->prepare( "DELETE FROM {$wpdb->prefix}easymail_subscribers WHERE req_confirm_date <= %s AND active = '0'", $limitdate ) );
 }
 
 add_action('alo_em_schedule', 'alo_em_clean_no_actived');

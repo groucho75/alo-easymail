@@ -10,7 +10,8 @@ aloEM (document).ready ( function(){
 	 	aloEM( "#easymail-filter-ul-languages" ).hide();
 	 	aloEM( "#easymail-filter-ul-lists" ).hide(); 	
 	 	aloEM( "#easymail-filter-ul-roles" ).hide();
-	 	
+	 	aloEM( "#alo-easymailread-more-about-re-pemission-text" ).hide();
+
 		aloEM('.easymail-filter-subscribers-by-languages').on( "click", function() {
 			aloEM( "#easymail-filter-ul-languages" ).toggle(); 
 			return false;
@@ -22,8 +23,14 @@ aloEM (document).ready ( function(){
 		aloEM('.easymail-filter-regusers-by-roles').on( "click", function() {
 			aloEM( "#easymail-filter-ul-roles" ).toggle(); 
 			return false;		
-		});			
-		
+		});
+
+		aloEM('#alo-easymailread-more-about-re-pemission-btn').on( "click", function() {
+			aloEM( "#alo-easymailread-more-about-re-pemission-text" ).toggle();
+			return false;
+		});
+
+
 		aloEM( "#easymail-recipients-all-subscribers" ).on( "click", function() {
 			var status = aloEM( this ).is(':checked');
 			aloEM( ".check_list" ).prop( "checked", status );

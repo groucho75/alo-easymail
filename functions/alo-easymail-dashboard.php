@@ -470,7 +470,6 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 	$join_date_datetime = date_i18n( __( "d/m/Y \h.H:i", "alo-easymail" ), strtotime( $subscriber->join_date ) );
 
 	$join_time_diff  = sprintf( __( "%s ago", "alo-easymail" ), human_time_diff( strtotime( $subscriber->join_date ), current_time('timestamp') ) );
-	//$html .= $join_time_diff ." <img src=\"".ALO_EM_PLUGIN_URL."/images/12-clock.png\" class=\"clock\" title=\"". esc_attr($join_date_datetime) ."\" alt=\"". $join_date_datetime ."\" />\n";
 	$html .= "<abbr title=\"". esc_attr($join_date_datetime) ."\" />". $join_time_diff ."</abbr>\n";
 	$html .= "</td>\n";
 

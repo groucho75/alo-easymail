@@ -40,7 +40,7 @@ if ( !defined( 'ALO_EM_INTERVAL_MIN' ) ) define( "ALO_EM_INTERVAL_MIN", 5 );
 /**
  * Update when DB tables change
  */
-define( "ALO_EM_DB_VERSION", 2020 );
+define( "ALO_EM_DB_VERSION", 2021 );
 
 
 /**
@@ -235,6 +235,7 @@ function alo_em_install_db_tables() {
 				    lists varchar(255) DEFAULT '|' , 
 				    lang varchar(5) DEFAULT NULL , 
 				    last_act datetime NULL ,
+				    req_confirm_date datetime NULL ,
 				    ip_address varchar(50) NULL , 
 				    PRIMARY KEY  (ID) 
 				) $charset_collate;
@@ -289,6 +290,10 @@ function alo_em_install_db_tables() {
 		// v.2019: the new 'last_act' column if empty has the same value of the 'join_date'
 		if ( $installed_db < 2019 ) {
 			$wpdb->query("UPDATE ". $wpdb->prefix."easymail_subscribers SET last_act = join_date WHERE last_act IS NULL;");
+		}
+		// v.2021: the new 'last_act' column if empty has the same value of the 'join_date'
+		if ( $installed_db < 2021 ) {
+			$wpdb->query("UPDATE ". $wpdb->prefix."easymail_subscribers SET req_confirm_date = join_date WHERE req_confirm_date IS NULL;");
 		}
 		
 		
