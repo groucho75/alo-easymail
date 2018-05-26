@@ -11,9 +11,12 @@
 /**
  * Get all available themes
  *
- * First search in 'wp-content/themes/{active-theme}/alo-easymail-themes' folder;
- * if not exists search in 'wp-content/plugins/alo-easymail/alo-easymail-themes'
+ * Search the first available folder in this order:
+ * - wp-content/alo-easymail-themes
+ * - wp-content/themes/{active-theme}/alo-easymail-themes
+ * - wp-content/plugins/alo-easymail/alo-easymail-themes
  */
+if ( ! function_exists('alo_easymail_get_all_themes') ) :
 function alo_easymail_get_all_themes () {
 	if ( @file_exists( WP_CONTENT_DIR.'/alo-easymail-themes/' ) ) {
 		$dir = WP_CONTENT_DIR . '/alo-easymail-themes/';
@@ -38,7 +41,7 @@ function alo_easymail_get_all_themes () {
 	}
 	return $return;
 }
-
+endif;
 
 /**
  * Get url of themes (eg. for preview or for image url in themes)
@@ -46,6 +49,7 @@ function alo_easymail_get_all_themes () {
  * First search in 'wp-content/themes/{active-theme}/alo-easymail-themes' folder;
  * if not exists search in 'wp-content/plugins/alo-easymail/alo-easymail-themes'
  */
+if ( ! function_exists('alo_easymail_get_themes_url') ) :
 function alo_easymail_get_themes_url () {
 	if ( @file_exists( WP_CONTENT_DIR.'/alo-easymail-themes/' ) ) {
 		$url = content_url( '/alo-easymail-themes/' );
@@ -56,7 +60,7 @@ function alo_easymail_get_themes_url () {
 	}
 	return ( ! is_ssl() ) ? str_replace('https://', 'http://', $url) : $url;
 }
-
+endif;
 
 
 /* EOF */
