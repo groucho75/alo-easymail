@@ -88,6 +88,8 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 == Changelog ==
 
 = 2.11.0 =
+* Added: [GDPR] new placeholders for Privacy Page
+* Added: [GDPR] add Privacy Page link in all bundled newsletter themes
 * Updated: some newsletter theme functions are pluggable
 
 = 2.10.1 =

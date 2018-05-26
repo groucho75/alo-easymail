@@ -154,6 +154,7 @@ if ( !defined('ABSPATH') ) include_once('../../../../wp-load.php');
 													<td colspan="2" valign="middle" height="50" bgcolor="#e7eaee" style="vertical-align:middle; border-width: 1px; border-style: solid; border-color: #b6bec9; text-align: center;">
 														[READ-ONLINE]
 														[USER-UNSUBSCRIBE]
+														[SITE-PRIVACY-LINK]
 														<p>[SITE-LINK]</p>
 													</td>
 												</tr>
