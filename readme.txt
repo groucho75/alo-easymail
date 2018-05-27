@@ -33,6 +33,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 * **view sending report**: how many subscribers have opened the newsletter and clicked on links inside it
 * **bounce management**: you can check the bounced emails and keep your email list clean
 * **multilanguage**: set all texts and options, you can write multilanguage newsletters - full integration with [WPML](http://wpml.org/), [qTranslate-X](http://wordpress.org/plugins/qtranslate-x/), [Polylang](http://wordpress.org/plugins/polylang/)
+* **privacy**: privacy policy checkbox in subscription form, subscriber data in exporter/eraser tools, re-permission campaigns
 * **debug tool**: rather than the recipients, you can send all emails of a newsletter to the author or you can have them recorded into a log file
 
 **Internationalization**
@@ -88,6 +89,8 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 == Changelog ==
 
 = 2.11.0 =
+* Added: [GDPR] added a new "re-permission" newsletter type: each recipient is deactivated and he/she must click the confirmation-link to reactivate his/her subscription
+* Added: [GDPR] added confirmation-link placeholders for "re-permission" newsletter
 * Added: [GDPR] new placeholders for Privacy Page
 * Added: [GDPR] add Privacy Page link in all bundled newsletter themes
 * Updated: some newsletter theme functions are pluggable
@@ -147,6 +150,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 *The full changelog is in changelog.txt inside plugin folder*
 
 == Upgrade Notice ==
+
+= 2.10.1 =
+New "re-permission" newsletter type.
 
 = 2.10.1 =
 Fix error on php < 5.4.

@@ -1,6 +1,13 @@
 ALO EasyMail Newsletter Changelog
 =================================
 
+= 2.11.0 =
+* Added: [GDPR] added "re-permission" campaign newsletter: each recipient is deactivated and he/she must click the confirmation-link to reactivate his/her subscription
+* Added: [GDPR] added confirmation-link placeholders for "re-permission" newsletters
+* Added: [GDPR] new placeholders for Privacy Page url
+* Added: [GDPR] add Privacy Page link in all bundled newsletter themes
+* Updated: some newsletter theme functions are pluggable
+
 = 2.10.1 =
 * Fixed: remove error on php < 5.4
 
