@@ -67,7 +67,9 @@ function alo_em_check_get_vars () {
 		if ( ! empty($get[3]) ) {
 			$recipient = (int)$get[3];
 			$rec_info = alo_em_get_recipient_by_id( $recipient );
-			alo_em_tracking_recipient ( $recipient, $rec_info->newsletter, '[CONFIRMATION-URL]' );
+			if ( $rec_info ) {
+				alo_em_tracking_recipient ( $recipient, $rec_info->newsletter, '[CONFIRMATION-URL]' );
+			}
 		}
 
 		wp_redirect( $act_link );
