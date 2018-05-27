@@ -412,9 +412,13 @@ add_action('pre_get_posts', 'alo_em_filter_newsletter_table' );
  */
 function alo_em_newsletter_add_custom_box() {
 	add_meta_box( "alo_easymail_newsletter_recipients", __("Recipients", "alo-easymail"), "alo_em_meta_recipients", "newsletter", "side", "high" );
-	if ( get_option('alo_em_use_themes') == 'yes' || get_option('alo_em_use_themes') == '' ) add_meta_box( "alo_easymail_newsletter_themes", __("Themes", "alo-easymail"), "alo_em_meta_themes", "newsletter", "normal", "high" );
+	if ( get_option('alo_em_use_themes') == 'yes' || get_option('alo_em_use_themes') == '' ) {
+		add_meta_box( "alo_easymail_newsletter_themes", __("Themes", "alo-easymail"), "alo_em_meta_themes", "newsletter", "normal", "high" );
+	}
 	add_meta_box( "alo_easymail_newsletter_placeholders", __("Placeholders", "alo-easymail"), "alo_em_meta_placeholders", "newsletter", "normal", "high" );
-	add_meta_box( "alo_easymail_newsletter_re_permission", __("Re-permission campaign", "alo-easymail"), "alo_em_meta_re_permission", "newsletter", "normal", "default" );
+	if ( current_user_can('manage_newsletter_subscribers') ) {
+		add_meta_box( "alo_easymail_newsletter_re_permission", __("Re-permission campaign", "alo-easymail"), "alo_em_meta_re_permission", "newsletter", "normal", "default" );
+	}
 }
 add_action('add_meta_boxes', 'alo_em_newsletter_add_custom_box', 8);
 
