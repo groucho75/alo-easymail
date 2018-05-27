@@ -638,20 +638,20 @@ function alo_em_meta_re_permission ( $post ) {
 		<p><?php _e("Note that", "alo-easymail") ?>:
 			<ul style="list-style-type: circle;list-style-position: inside;">
 				<li><?php _e("All the selected recipients of this newsletter will be automatically deactivated", "alo-easymail") ?>:
-					<?php _e("each subscriber will be deactivated exactly when this newsletter is sent to him/her.", "alo-easymail") ?></li>
+					<?php _e("each subscriber will be deactivated the moment this newsletter is sent to him/her.", "alo-easymail") ?></li>
 
-				<li><?php printf( __("You must include the %s in newsletter content to allow recipient to reactivate own subscription", "alo-easymail"), '<code>[CONFIRMATION-LINK] / [CONFIRMATION-URL]</code>' ) ?></li>
+				<li><?php printf( __("You must include the %s placeholder in the newsletter content to allow recipients to reactivate subscription", "alo-easymail"), '<code>[CONFIRMATION-LINK] / [CONFIRMATION-URL]</code>' ) ?></li>
 				<li><?php _e("A subscriber will be deleted if not activated in 5 days.", "alo-easymail")?></li>
 			</ul>
 		</p>
 		<p>
-			<em><?php _e("So, please keep in mind that there is the risk you can loose a lot of subscribers: all recipients that ignore this newsletter", "alo-easymail") ?></em>
+			<em><?php _e("Therefore, please keep in mind there is the risk to loose all recipients that ignore this newsletter", "alo-easymail") ?></em>
 		</p>
 	</div>
 
 	<table class="widefat" style="margin-top:10px">
 	<thead><tr><th scope="col" style="width:20%"><?php _e("Placeholders", "alo-easymail") ?></th>
-		<th scope="col"><?php printf( __("You must include the %s in newsletter content to allow recipient to reactivate own subscription", "alo-easymail"), '<code>[CONFIRMATION-LINK] / [CONFIRMATION-URL]</code>' ) ?></th></tr>
+		<th scope="col"><?php printf( __("You must include the %s placeholder in the newsletter content to allow recipients to reactivate subscription", "alo-easymail"), '<code>[CONFIRMATION-LINK] / [CONFIRMATION-URL]</code>' ) ?></th></tr>
 	</thead>
 	<tbody>
 
