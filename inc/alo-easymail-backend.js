@@ -393,7 +393,11 @@ aloEM (document).ready ( function(){
 										aloEM('#alo-easymail-bar-inner').css( 'width', "0" );
 
 										aloEM('.easymail-recipients-start-loop').show();
-										aloEM('.easymail-recipients-start-loop-and-send').show();
+										if ( aloEM(this).data('disable-send-now') === 'yes' ) {
+											aloEM('.easymail-recipients-start-loop-and-send').hide();
+										} else {
+											aloEM('.easymail-recipients-start-loop-and-send').show();
+										}
 										aloEM('.easymail-recipients-pause-loop').hide();
 										aloEM('.easymail-recipients-restart-loop').hide();																
 									}
@@ -416,6 +420,7 @@ aloEM (document).ready ( function(){
 		event.preventDefault();
 		$listModal.data('previous-id', $listModal.data('current-id') );
 		$listModal.data('current-id', aloEM(this).attr('rel') );
+		$listModal.data('disable-send-now', aloEM(this).data('disable-send-now') );
 		$listModal.dialog('open');
 	});
     

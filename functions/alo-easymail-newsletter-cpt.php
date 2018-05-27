@@ -277,6 +277,9 @@ function alo_em_update_column_status ( $newsletter ) {
 		//Newsletter status
 		$status = alo_em_get_newsletter_status( $newsletter );
 
+		// Is it a Re-permission campaign?
+		$is_re_permission = get_post_meta( $newsletter, '_easymail_re_permission', true );
+
 		$report_url = wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?', 'alo-easymail_report');
 		$goto_report = "<a href=\"#\" onclick=\"aloEM(this).easymailReportPopup ( '$report_url', $newsletter, '". alo_em_get_language () ."' );\" title=\"". __( 'Report', "alo-easymail") ."\">";
 		$goto_report .= "<img src=\"". ALO_EM_PLUGIN_URL. "/images/16-report.png\" alt=\"\" /> ". __( 'Report', "alo-easymail") ."</a>";
@@ -349,7 +352,7 @@ function alo_em_update_column_status ( $newsletter ) {
 							//$rec_url = wp_nonce_url( ALO_EM_PLUGIN_URL . '/alo-easymail_recipients-list.php?', 'alo-easymail_recipients-list');
 							if ( alo_em_user_can_edit_newsletter( $newsletter ) && current_user_can( "publish_newsletters" ) ) {
 								//echo "<a href=\"#\" onclick=\"aloEM(this).easymailRecipientsGenPopup ( '$rec_url', $newsletter, '". alo_em_get_language () ."' );\">";
-								echo "<a href=\"#\" class=\"easymail-reciepient-list-open\"  rel=\"".$newsletter."\">";
+								echo "<a href=\"#\" class=\"easymail-reciepient-list-open\"  rel=\"".$newsletter."\" data-disable-send-now=\"". ( $is_re_permission ? 'yes' : 'no' ) ."\">";
 								echo "<img src=\"". ALO_EM_PLUGIN_URL. "/images/16-arrow-right.png\" alt=\"\" /> <strong class=\"easymail-column-status-required-list-".$user_ID."\">" . __( 'Required', "alo-easymail") .":</strong> " . __( 'Create list of recipients', "alo-easymail");
 								echo "</a>";
 							} else {
