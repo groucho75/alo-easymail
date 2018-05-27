@@ -141,17 +141,11 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 * Fixed: now right param is passed to action hook on profile optin save
 * Fixed: properly escape a query var in report page
 
-= 2.9.1 =
-* Fixed: the bounce manual check now should work properly
-
-= 2.9.0 =
-* Updated: the cron-based bounce management is removed, now it works only manually
-
 *The full changelog is in changelog.txt inside plugin folder*
 
 == Upgrade Notice ==
 
-= 2.10.1 =
+= 2.11.0 =
 New "re-permission" newsletter type.
 
 = 2.10.1 =
