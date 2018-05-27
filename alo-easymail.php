@@ -472,7 +472,7 @@ add_action( 'init', 'alo_em_init_method' );
  * If Duplicate Post is used: Do not duplicate EasyMail internal post meta
  */
 function alo_em_when_duplicate_post( $new_post_id, $old_post_object ) {
-	$exclude_meta = array( "_easymail_archived_recipients", "_easymail_completed", "_easymail_status", "_easymail_recipients" );
+	$exclude_meta = array( "_easymail_archived_recipients", "_easymail_completed", "_easymail_status", "_easymail_recipients", "_easymail_re_permission" );
 	foreach( $exclude_meta as $meta ) delete_post_meta ( $new_post_id, $meta );
 }
 add_action( "dp_duplicate_post", "alo_em_when_duplicate_post", 100, 2 );

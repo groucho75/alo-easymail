@@ -204,6 +204,9 @@ function alo_em_table_column_value ( $columns ) {
 	$status = alo_em_get_newsletter_status($post->ID);
 
 	if ( $columns == "easymail_recipients" ) {
+		if ( get_post_meta( $post->ID, '_easymail_re_permission', true ) ) {
+			echo '<em>' . __("Re-permission campaign", "alo-easymail") ."</em><br />\n";
+		}
 		if ( $status == '' && empty( $recipients['total'] ) && empty( $recipients['estimated_total'] ) ) {
 			if ( alo_em_user_can_edit_newsletter( $post->ID ) ) echo '<a href="'. get_edit_post_link( $post->ID ) . '">';
 			echo '<img src="'. ALO_EM_PLUGIN_URL. '/images/12-exclamation.png" alt="" /> <strong class="easymail-column-no-yet-recipients-'.$user_ID.'">' . __( 'No recipients selected yet', "alo-easymail").'</strong>';

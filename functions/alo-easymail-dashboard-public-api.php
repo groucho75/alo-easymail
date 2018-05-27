@@ -21,14 +21,11 @@ function alo_easymail_get_newsletters ( $args=false ) {
 	if ( !is_array( $args ) ) $args = array();
 	$args["post_type"] = "newsletter";
 	$status = ( isset( $args["newsletter_status"] ) && in_array( $args["newsletter_status"], array( 'sent', 'sendable', 'paused' ) ) ) ? $args["newsletter_status"] : 'sent';
-	if ( version_compare ( $wp_version, '3.1', '>=' ) ) {
-		$meta_1 = array( 'key' => '_easymail_status', 'value' => $status, 'compare' => '=' );
-		$args['meta_query'] = array( $meta_1 );
-	} else {
-		$args['meta_key'] = '_easymail_status';
-		$args['meta_value'] = $status;
-		$args['meta_compare'] = '=';
-	}
+
+	$meta_1 = array( 'key' => '_easymail_status', 'value' => $status, 'compare' => '=' );
+	$meta_2 = array( 'key' => '_easymail_re_permission', 'value' => 'no', 'compare' =>  'NOT EXISTS' );
+	$args['meta_query'] = array( $meta_1, $meta_2 );
+
 	return get_posts ( $args );
 }
 
