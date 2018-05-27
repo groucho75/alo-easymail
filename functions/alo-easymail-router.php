@@ -62,6 +62,14 @@ function alo_em_check_get_vars () {
 			$arr_params = array ('ac' => 'activate', 'em1' => urlencode($div_email[0]), 'em2' => urlencode($div_email[1]), 'uk' => preg_replace( '/[^a-zA-Z0-9]/i', '', $get[1]) );
 			$act_link = add_query_arg( $arr_params, alo_em_translate_url ( get_option('alo_em_subsc_page'), $get[2] ) );
 		}
+
+		// If it comes from a re-permission campaign
+		if ( ! empty($get[3]) ) {
+			$recipient = (int)$get[3];
+			$rec_info = alo_em_get_recipient_by_id( $recipient );
+			alo_em_tracking_recipient ( $recipient, $rec_info->newsletter, '[CONFIRMATION-URL]' );
+		}
+
 		wp_redirect( $act_link );
 		exit;
 	}

@@ -650,13 +650,13 @@ function alo_em_meta_re_permission ( $post ) {
 
 	<?php
 	$placeholders = array(
-		'[CONFIRMATION-LINK]'  => __("This placeholder produces a paragraph with the confirmation link (html &lt;p&gt; tag) and has the following parameters", "alo-easymail"). ":". "<ul style='margin-left: 2em;font-size: 90%'>".
+		'[CONFIRMATION-LINK]'  => __("This placeholder produces a link (html &lt;a&gt; tag) and has the following parameters", "alo-easymail"). ":". "<ul style='margin-left: 2em;font-size: 90%'>".
 				"<li><code style='font-style:normal;'>". "title". "</code> ".
 				__("the text of the link", "alo-easymail").". ". __("Default", "alo-easymail") .": " . __("Yes, I would like to receive the Newsletter", "alo-easymail") . "</li>".
 				"<li><code style='font-style:normal;'>". "style". "</code> ".
 				__("the style tag attribute", "alo-easymail"). "</li>".
 				"</ul>".
-				__("Sample:", "alo-easymail") . ": " . "<code style='font-style:normal;'>". "[CONFIRMATION-LINK title=\"I agree\" style=\"color: #ffffff;background-color: #ff0000;\"]". "</code>",
+				__("Sample:", "alo-easymail") . ": " . "<code style='font-style:normal;'>". "[CONFIRMATION-LINK title=\"I agree\" style=\"font-weight: bold;color: #ffffff;background-color: #ff0000;\"]". "</code>",
 		'[CONFIRMATION-URL]' => __("The confirmation URL", "alo-easymail"),
 	);
 	foreach ( $placeholders as $tag => $desc ) : ?>

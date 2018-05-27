@@ -834,4 +834,53 @@ function alo_em_privacy_placeholders_replace_tags ( $content, $newsletter, $reci
 }
 add_filter ( 'alo_easymail_newsletter_content',  'alo_em_privacy_placeholders_replace_tags', 10, 4 );
 
+
+/*******************************************************************************
+ *
+ * Placeholders of confirmation link: [CONFIRMATION-LINK], [CONFIRMATION-URL]
+ *
+ * They are not in main placeholder table, but defined inside specifc metabox.
+ *
+ * @since: 2.11
+ *
+ ******************************************************************************/
+
+function alo_em_placeholders_replace_confirmation_tags ( $content, $newsletter, $recipient, $stop_recursive_the_content=false ) {
+	if ( !is_object( $recipient ) ) $recipient = new stdClass();
+	if ( empty( $recipient->lang ) ) $recipient->lang = alo_em_short_langcode ( get_locale() );
+
+	// Prepare activation url
+	$act_vars = $recipient->email . "|"  . $recipient->unikey . "|" . $recipient->lang . "|" . $recipient->ID;
+	$act_vars = urlencode( base64_encode( $act_vars ) );
+	$act_url  = add_query_arg( 'emact', $act_vars, alo_em_translate_home_url ( $recipient->lang ) );
+
+	$content = str_replace("[CONFIRMATION-URL]", $act_url, $content);
+
+	if ( preg_match_all('/\[CONFIRMATION-LINK(.*)\]/i', $content, $matches, PREG_SET_ORDER)) {
+
+		if ( is_array($matches) ) : foreach($matches as $match) :
+
+			// Complete palceholder
+			$found = $match[0];
+
+			// Force strange quotes to be standard double quotes
+			$match[1] = str_replace( array( '”', '“', '&#8221;' ), '"', $match[1] );
+
+			// Placeholder attributes
+			$atts =  shortcode_parse_atts( trim($match[1]) );
+
+			$params = shortcode_atts( array(
+				'title' 	=> __("Yes, I would like to receive the Newsletter", "alo-easymail"),
+				'style'		=> '',
+			), $atts );
+
+			$content = str_replace( $found, '<a href="'. $act_url . '" style="'. esc_attr($params['style']) . '">'. esc_html( $params['title'] ) .'</a>', $content );
+
+		endforeach; endif;
+	}
+
+	return $content;
+}
+add_filter ( 'alo_easymail_newsletter_content',  'alo_em_placeholders_replace_confirmation_tags', 10, 4 );
+
 /* EOF */

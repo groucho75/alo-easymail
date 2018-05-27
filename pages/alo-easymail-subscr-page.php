@@ -46,6 +46,8 @@ if ($email && $action == 'activate') {
         echo "<p class=\"". $classfeedback_ok ."\">".__("Your subscription was successfully activated. You will receive the next newsletter. Thank you.", "alo-easymail")."</p>";
         do_action ( 'alo_easymail_subscriber_updated', $email, $email );
         do_action ( 'alo_easymail_subscriber_activated', $email );
+
+		alo_em_update_subscriber_last_act($email);
     }
 }
     
