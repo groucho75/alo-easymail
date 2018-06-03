@@ -989,6 +989,22 @@ msgstr ""
 msgid "You are free to hide the credits, but in that case it's a common practice to make a small donatation via Paypal to the plugin author"
 msgstr ""
 
+#: .././alo-easymail_options.php:409
+msgid "Hide Name input in form"
+msgstr ""
+
+#: .././alo-easymail_options.php:410
+msgid "If yes, the Name input will be not shown in subscription form"
+msgstr ""
+
+#: .././alo-easymail_options.php:422
+msgid "Compact form"
+msgstr ""
+
+#: .././alo-easymail_options.php:423
+msgid "If yes, the text fields will have placeholders instead of labels in the subscription form"
+msgstr ""
+
 #: .././alo-easymail_options.php:412
 #: .././alo-easymail_options.php:414
 #: .././alo-easymail_options.php:415

@@ -150,7 +150,12 @@ if ( isset($_POST['submit']) ) {
 			} else {
 				update_option('alo_em_hide_name_input', "no") ;
 			}
-			
+			if ( isset($_POST['compact_form']) ) {
+				update_option('alo_em_compact_form', "yes");
+			} else {
+				update_option('alo_em_compact_form', "no") ;
+			}
+
 		} // end Tab GENERAL
 
 		// Tab NEWSLETTER
@@ -406,7 +411,20 @@ if ( get_option('alo_em_hide_name_input') == "yes" ) {
 </tr>
 
 
-<?php 
+<?php
+if ( get_option('alo_em_compact_form') == "yes" ) {
+	$checked_compact_form = 'checked="checked"';
+} else {
+	$checked_compact_form = "";
+}
+?>
+<tr valign="top">
+	<th scope="row"><?php _e("Compact form", "alo-easymail") ?>:</th>
+	<td><input type="checkbox" name="compact_form" id="compact_form" value="yes" <?php echo $checked_compact_form ?> /> <span class="description"><?php _e("If yes, the text fields will have placeholders instead of labels in the subscription form", "alo-easymail") ?>.</span></td>
+</tr>
+
+
+<?php
 if ( get_option('alo_em_hide_widget_users') == "yes" ) {
 	$checked_hide_widget_users = 'checked="checked"';
 } else {
