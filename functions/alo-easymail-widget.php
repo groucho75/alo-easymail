@@ -234,7 +234,7 @@ class ALO_Easymail_Widget extends WP_Widget {
 		$html .= "\r\n";
 		$html .= "\r\n".'<p>';
 		$html .= "\r\n".'	<label for="'.$this->get_field_id( 'title' ).'">Title</label>';
-		$html .= "\r\n".'	<input id="'.$this->get_field_id( 'title' ).'" name="'.$this->get_field_name( 'title' ).'" value="'.esc_attr( $instance['title'] ).'" style="width:100%;" />';
+		$html .= "\r\n".'	<input type="text" id="'.$this->get_field_id( 'title' ).'" name="'.$this->get_field_name( 'title' ).'" value="'.esc_attr( $instance['title'] ).'" class="widefat" />';
 		$html .= "\r\n".'</p>';
 
 		echo $html;
