@@ -420,7 +420,7 @@ if ( get_option('alo_em_compact_form') == "yes" ) {
 ?>
 <tr valign="top">
 	<th scope="row"><?php _e("Compact form", "alo-easymail") ?>:</th>
-	<td><input type="checkbox" name="compact_form" id="compact_form" value="yes" <?php echo $checked_compact_form ?> /> <span class="description"><?php _e("If yes, the text fields will have placeholders instead of labels in the subscription form", "alo-easymail") ?>.</span></td>
+	<td><input type="checkbox" name="compact_form" id="compact_form" value="yes" <?php echo $checked_compact_form ?> /> <span class="description"><?php _e("If yes, the text field(s) will have placeholder(s) instead of label(s) in the subscription form", "alo-easymail") ?>.</span></td>
 </tr>
 
 
