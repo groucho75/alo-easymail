@@ -154,6 +154,11 @@ function alo_em_show_widget_form ( ) {
 		$html .= "<div class='alo_easymail_disclaimer'><label for='alo_em_privacy_agree'>";
 		$html .= "<input type='checkbox' name='alo_em_privacy_agree' id='alo_em_privacy_agree' value='yes' class='input-checkbox' />";
 		$html .= $disclaimer_msg . "</label></div>\n";
+		if ( get_option('alo_em_use_recaptcha') == 'yes' && get_option('alo_em_recaptcha_site_key') != '' && get_option('alo_em_recaptcha_secret_key') != '' )
+		{
+			$html .= '<script src="https://www.google.com/recaptcha/api.js" async defer></script>'."\n";
+			$html .= '<div style="margin: 10px 0;" class="g-recaptcha" data-sitekey="'.get_option('alo_em_recaptcha_site_key').'"></div>'."\n";
+		}
         $html .= "<input type='submit' name='submit' value='".esc_attr(__("Subscribe", "alo-easymail"))."' class='input-submit' />\n";
         $html .= "</form>\n";    
     } 

@@ -149,6 +149,9 @@ function alo_em_install() {
 	if (!get_option('alo_em_unsubscribe_when_delete_user')) add_option('alo_em_unsubscribe_when_delete_user', 'no');
 	if (!get_option('alo_em_hide_name_input')) add_option('alo_em_hide_name_input', 'no');
 	if (!get_option('alo_em_compact_form')) add_option('alo_em_compact_form', 'no');
+	if (!get_option('alo_em_use_recaptcha')) add_option('alo_em_use_recaptcha', 'no');
+	if (!get_option('alo_em_recaptcha_site_key')) add_option('alo_em_recaptcha_site_key', '');
+	if (!get_option('alo_em_recaptcha_secret_key')) add_option('alo_em_recaptcha_secret_key', '');
 	if (!get_option('alo_em_collect_ip_address')) add_option('alo_em_collect_ip_address', 'no');
 
 	if ( alo_em_db_tables_need_update() ) alo_em_install_db_tables();

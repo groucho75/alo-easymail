@@ -1002,7 +1002,11 @@ msgid "Compact form"
 msgstr ""
 
 #: .././alo-easymail_options.php:423
-msgid "If yes, the text fields will have placeholders instead of labels in the subscription form"
+msgid "If yes, the text field(s) will have placeholder(s) instead of label(s) in the subscription form"
+msgstr ""
+
+#: .././alo-easymail_options.php:444
+msgid "If yes, the subscription form for not-registered users will have reCAPTCHA. Keys are required for this to work. Get them at"
 msgstr ""
 
 #: .././alo-easymail_options.php:412

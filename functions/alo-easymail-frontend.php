@@ -183,6 +183,7 @@ function alo_em_ajax_js()
                 }
             }
             $error_privacy_empty 	= esc_js( alo_em___( sprintf(__("The %s field is empty", "alo-easymail"), __('Privacy Policy'),"alo-easymail")) );
+            $error_recaptcha 	= esc_js( alo_em___(__("reCAPTCHA verification failed: please try again", "alo-easymail")) );
             $error_email_added		= esc_js( alo_em___(__("Warning: this email address has already been subscribed, but not activated. We are now sending another activation email", "alo-easymail")) );
             $error_email_activated	= esc_js( alo_em___(__("Warning: this email address has already been subscribed", "alo-easymail")) );
             $error_on_sending			= esc_js( alo_em___(__("Error during sending: please try again", "alo-easymail")) );
@@ -212,6 +213,10 @@ function alo_em_ajax_js()
 
 			alo_em_sack.setVar( "alo_em_privacy_agree", ( document.getElementById('alo_em_privacy_agree').checked ? 1 : 0 ) );
 
+			<?php if ( get_option('alo_em_use_recaptcha') == 'yes' && get_option('alo_em_recaptcha_site_key') != '' && get_option('alo_em_recaptcha_secret_key') != '' ) : ?>
+			alo_em_sack.setVar( "g-recaptcha-response", document.getElementById('g-recaptcha-response').value );
+			<?php endif; ?>
+
 			<?php
             if( $alo_em_cf ) {
                 foreach( $alo_em_cf as $key => $value ){
@@ -230,6 +235,9 @@ function alo_em_ajax_js()
 			alo_em_sack.setVar( "alo_em_error_email_incorrect", "<?php echo $error_email_incorrect ?>");
 			alo_em_sack.setVar( "alo_em_error_name_empty", "<?php echo $error_name_empty ?>");
 			alo_em_sack.setVar( "alo_em_error_privacy_empty", "<?php echo $error_privacy_empty ?>");
+			<?php if ( get_option('alo_em_use_recaptcha') == 'yes' && get_option('alo_em_recaptcha_site_key') != '' && get_option('alo_em_recaptcha_secret_key') != '' ) : ?>
+			alo_em_sack.setVar( "alo_em_error_recaptcha", "<?php echo $error_recaptcha ?>");
+			<?php endif; ?>
 			<?php
             //edit : added all this foreach
             if( $alo_em_cf ) {
@@ -432,6 +440,16 @@ function alo_em_pubblic_form_callback() {
 				}
 			}
 		}
+		if ( get_option('alo_em_use_recaptcha') == 'yes' && get_option('alo_em_recaptcha_site_key') != '' && get_option('alo_em_recaptcha_secret_key') != '' )
+		{
+			$recaptcha_response = ( isset($_POST['g-recaptcha-response']) ? $_POST['g-recaptcha-response']  : '' );
+			$response = json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.get_option('alo_em_recaptcha_secret_key').'&response='.$recaptcha_response.'&remoteip='.$_SERVER['REMOTE_ADDR']), true);
+
+			if ($response['success'] === false)
+			{
+				$error_on_adding .= esc_js($_POST['alo_em_error_recaptcha']) . ".<br />";
+			}
+		}
 		if ($error_on_adding == "") { // if no error
 			// try to add new subscriber (and send mail if necessary) and return TRUE if success
 			$activated = ( get_option('alo_em_no_activation_mail') != "yes" ) ? 0 : 1;
@@ -494,6 +512,10 @@ function alo_em_pubblic_form_callback() {
 				${'alo_em_'.$key} = ( $just_added ) ? '' : esc_js(sanitize_text_field($_POST['alo_em_'.$key]));
 				$feedback .= "document.alo_easymail_widget_form.alo_em_".$key.".value ='". ${'alo_em_'.$key} ."';";
 			}
+		}
+
+		if ( get_option('alo_em_use_recaptcha') == 'yes' && get_option('alo_em_recaptcha_site_key') != '' && get_option('alo_em_recaptcha_secret_key') != '' ) {
+			$feedback .= "grecaptcha.reset();";
 		}
 
 		$feedback .= "document.alo_easymail_widget_form.submit.disabled = false;";

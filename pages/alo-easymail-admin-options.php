@@ -155,6 +155,13 @@ if ( isset($_POST['submit']) ) {
 			} else {
 				update_option('alo_em_compact_form', "no") ;
 			}
+			if ( isset($_POST['use_recaptcha']) ) {
+				update_option('alo_em_use_recaptcha', "yes");
+			} else {
+				update_option('alo_em_use_recaptcha', "no") ;
+			}
+			if(isset($_POST['recaptcha_site_key'])) update_option('alo_em_recaptcha_site_key', trim($_POST['recaptcha_site_key']) );
+			if(isset($_POST['recaptcha_secret_key'])) update_option('alo_em_recaptcha_secret_key', trim($_POST['recaptcha_secret_key']) );
 
 		} // end Tab GENERAL
 
@@ -421,6 +428,23 @@ if ( get_option('alo_em_compact_form') == "yes" ) {
 <tr valign="top">
 	<th scope="row"><?php _e("Compact form", "alo-easymail") ?>:</th>
 	<td><input type="checkbox" name="compact_form" id="compact_form" value="yes" <?php echo $checked_compact_form ?> /> <span class="description"><?php _e("If yes, the text field(s) will have placeholder(s) instead of label(s) in the subscription form", "alo-easymail") ?>.</span></td>
+</tr>
+
+
+<?php
+if ( get_option('alo_em_use_recaptcha') == "yes" ) {
+	$checked_use_recaptcha = 'checked="checked"';
+} else {
+	$checked_use_recaptcha = "";
+}
+?>
+<tr valign="top">
+	<th scope="row"><?php _e("Use reCAPTCHA", "alo-easymail") ?>:</th>
+	<td>
+		<input type="checkbox" name="use_recaptcha" id="use_recaptcha" value="yes" <?php echo $checked_use_recaptcha ?> /> <span class="description"><?php _e("If yes, the subscription form for not-registered users will have reCAPTCHA. Keys are required for this to work. Get them at", "alo-easymail") ?> <a href="https://www.google.com/recaptcha/admin" target="_blank">google.com/recaptcha/admin</a>.</span>
+		<p><label for="recaptcha_site_key" style="display: inline-block; width: 150px;"><?php _e("reCAPTCHA Site key", "alo-easymail") ?>:</label> <input type="text" autocomplete="off" name="recaptcha_site_key" value="<?php echo get_option('alo_em_recaptcha_site_key') ?>" id="recaptcha_site_key" size="60" maxlength="100" /></p>
+		<p><label for="recaptcha_secret_key" style="display: inline-block; width: 150px;"><?php _e("reCAPTCHA Secret key", "alo-easymail") ?>:</label> <input type="text" autocomplete="off" name="recaptcha_secret_key" value="<?php echo get_option('alo_em_recaptcha_secret_key') ?>" id="recaptcha_secret_key" size="60" maxlength="100" /></p>
+	</td>
 </tr>
 
 
