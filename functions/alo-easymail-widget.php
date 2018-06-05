@@ -40,7 +40,7 @@ function alo_em_show_widget_form ( ) {
 	}
 	
 	$preform_msg	= ( alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_preform_msg',false) !="")? alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_preform_msg',false) : false; 
-    $preform_html 	= ( $preform_msg ) ? "<div class='alo_easymail_preform_msg'>" . $preform_msg . "</div>\n" : ""; 
+    $preform_html 	= ( $preform_msg ) ? "<div class='alo_easymail_preform_msg' style='margin: 10px 0;'>" . $preform_msg . "</div>\n" : ""; 
     	
 	$disclaimer_msg	= alo_em_translate_option ( alo_em_get_language (), 'alo_em_custom_disclaimer_msg',false);
 	if ( empty( $disclaimer_msg ) ) {
