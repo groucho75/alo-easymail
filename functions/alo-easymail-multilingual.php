@@ -10,7 +10,6 @@
 
 /**
  * Fix a type in English text: 'e-email' must become 'e-mail'.
- * And "e-mail" should be "email" and "E-mail" should be "Email".
  *
  * We cannot update the strings because in that case we should update all translation files.
  *
@@ -22,9 +21,12 @@
 function alo_em_filter_gettext ( $translated_text, $untranslated_text, $domain ) {
 
 	if( $domain == 'alo-easymail' )  {
-		$translated_text = str_replace( 'e-email', 'email', $translated_text );
-		$translated_text = str_replace( 'e-mail', 'email', $translated_text );
-		$translated_text = str_replace( 'E-mail', 'Email', $translated_text );
+		$translated_text = str_replace( 'e-email', 'e-mail', $translated_text );
+		// If locale is English: "e-mail" should be "email" and "E-mail" should be "Email"
+		if (strpos(get_locale(), 'en') !== false) {
+			$translated_text = str_replace( 'e-mail', 'email', $translated_text );
+			$translated_text = str_replace( 'E-mail', 'Email', $translated_text );
+		}
 	}
 	return $translated_text;
 }
