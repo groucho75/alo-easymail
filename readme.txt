@@ -5,7 +5,7 @@ Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sendi
 Requires at least: 3.6
 Requires PHP: 5.2
 Tested up to: 4.9
-Stable tag: 2.11.0
+Stable tag: 2.11.1
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -88,6 +88,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
+= 2.11.1 =
+* Fixed: remove a php warning
+
 = 2.11.0 =
 * Added: [GDPR] added a new "re-permission" newsletter type: each recipient is deactivated and he/she must click the confirmation-link to reactivate his/her subscription
 * Added: [GDPR] added confirmation-link placeholders for "re-permission" newsletter
@@ -127,29 +130,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 = 2.9.5 =
 * Updated: now encrypting the unsubscribed emails is an option, default is clear text
 
-= 2.9.4 =
-* Updated: add only-date format for archive shortcode: [ALO-EASYMAIL-ARCHIVE li_format=date]
-* Updated: now unsubscribed emails are stored in md5, not plain yet
-* Updated: added max-width css rule for images in bundled newsletter themes
-* Updated: added some css classes to messages in subscription page
-* Fixed: a warning about Polylang function check
-
-= 2.9.3 =
-* Fixed: a CSRF issue
-
-= 2.9.2 =
-* Fixed: now right param is passed to action hook on profile optin save
-* Fixed: properly escape a query var in report page
-
 *The full changelog is in changelog.txt inside plugin folder*
 
 == Upgrade Notice ==
 
-= 2.11.0 =
-New "re-permission" newsletter type.
-
-= 2.10.1 =
-Fix error on php < 5.4.
-
-= 2.10.0 =
-GDPR compliance, better WPML integration.
+= 2.11.1 =
+* Fixed: remove a php warning

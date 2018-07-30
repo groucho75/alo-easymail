@@ -848,6 +848,8 @@ add_filter ( 'alo_easymail_newsletter_content',  'alo_em_privacy_placeholders_re
 function alo_em_placeholders_replace_confirmation_tags ( $content, $newsletter, $recipient, $stop_recursive_the_content=false ) {
 	if ( !is_object( $recipient ) ) $recipient = new stdClass();
 	if ( empty( $recipient->lang ) ) $recipient->lang = alo_em_short_langcode ( get_locale() );
+	if ( empty( $recipient->unikey ) ) $recipient->unikey = '';
+	if ( empty( $recipient->ID ) ) $recipient->ID = '';
 
 	// Prepare activation url
 	$act_vars = $recipient->email . "|"  . $recipient->unikey . "|" . $recipient->lang . "|" . $recipient->ID;
