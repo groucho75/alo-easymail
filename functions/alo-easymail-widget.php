@@ -116,14 +116,14 @@ function alo_em_show_widget_form ( ) {
 		if ( get_option('alo_em_hide_name_input') != 'yes' )
 		{
 			$html .= "    <td><label for='opt_name'>".__("Name", "alo-easymail")."</label></td>"; //edit : added the "label" element for better accessibility
-			$html .= "    <td><input type='text' name='alo_em_opt_name' value='". $alo_em_opt_name ."' id='opt_name' maxlength='50' class='input-text' /></td>\n";
+			$html .= "    <td><input type='text' name='alo_em_opt_name' value='". $alo_em_opt_name ."' id='opt_name' placeholder="Name" maxlength='50' class='input-text' /></td>\n";
 		} else {
 			//$html .= "    <td><input type='text' name='alo_em_opt_name' value='' id='opt_name' maxlength='50' class='input-text' /></td>\n";
 		}
 		$html .= "  </tr>\n";
         $html .= "  <tr>\n";
         $html .= "    <td><label for='opt_email'>".__("E-mail", "alo-easymail")."</label></td>\n"; //edit : added the "label" element for better accessibility
-        $html .= "    <td><input type='text' name='alo_em_opt_email' value='". $alo_em_opt_email ."' id='opt_email' maxlength='50' class='input-text' /></td>\n";
+        $html .= "    <td><input type='text' name='alo_em_opt_email' value='". $alo_em_opt_email ."' id='opt_email' maxlength='50' placeholder="Email" class='input-text' /></td>\n";
         $html .= "  </tr>\n";
 		
 		//edit : added all the next if
