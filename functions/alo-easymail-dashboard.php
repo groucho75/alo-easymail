@@ -65,6 +65,11 @@ function alo_em_add_admin_script () {
 			'errGeneric' => esc_js( __("Error during operation.", "alo-easymail") )
 		) );
 	}
+
+	if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] == "alo-easymail-admin-report" ) {
+		wp_enqueue_style( 'alo-easymail-backend-css', ALO_EM_PLUGIN_URL.'/inc/alo-easymail-backend.css' );
+		wp_enqueue_style( 'alo-jquery-ui-tabs', ALO_EM_PLUGIN_URL.'/inc/jquery.ui.tabs.css', null, null, 'print, projection, screen' );
+	}
 }
 add_action('admin_print_scripts', 'alo_em_add_admin_script' );
 
@@ -123,6 +128,8 @@ function alo_em_add_admin_menu() {
 	}
 	add_action( 'load-edit.php', 'alo_em_contextual_help_tabs' );
 	add_action( 'load-post-new.php', 'alo_em_contextual_help_tabs' );
+
+	add_submenu_page( null, __( 'Report', "alo-easymail"), __( 'Report', "alo-easymail"), 'edit_newsletters', 'alo-easymail-admin-report', 'alo_em_load_newsletter_report'	);
 }
 add_action('admin_menu', 'alo_em_add_admin_menu');
 
@@ -551,5 +558,11 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 	return $html;
 }
 
+/**
+ * Show newsletter report
+ */
+function alo_em_load_newsletter_report() {
+	include( ALO_EM_PLUGIN_ABS .'/pages/alo-easymail-admin-report.php' );
+}
 
 /* EOF */

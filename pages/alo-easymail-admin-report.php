@@ -6,12 +6,8 @@
  * @subpackage ALO EasyMail plugin
  */
 
-include('../../../../wp-load.php');
-//auth_redirect();
 
 if ( !current_user_can( "edit_newsletters" ) ) 	wp_die( __('Cheatin&#8217; uh?') );
-
-//print_r ($_REQUEST); // DEBUG
 
 check_admin_referer('alo-easymail_report');
 global $wpdb;
@@ -30,18 +26,7 @@ if ( isset( $_REQUEST['newsletter'] ) ) {
 }
 
 
-if ( $newsletter ) { 
-
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" <?php do_action('admin_xml_ns'); ?> <?php language_attributes(); ?>>
-<head>
-<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php echo get_option('blog_charset'); ?>" />
-<title><?php  _e('Newsletter report', "alo-easymail") ?></title>
-<?php
-	
-    // ID of newsletter (to make the report)
-    $id = $newsletter; // $_REQUEST['newsletter'];
+if ( $newsletter ) {
     
     // Lang
     $lang = ( isset($_REQUEST['lang'])) ? $_REQUEST['lang'] : false;
@@ -53,22 +38,18 @@ if ( $newsletter ) {
 	if ( !$newsletter ) {
 		die("The requested page doesn't exists.");
 	} else {
-		wp_enqueue_style( 'dashicons' );
-		wp_print_styles();
+
 		?>
-		<link rel="stylesheet" href="<?php echo ALO_EM_PLUGIN_URL ?>/inc/jquery.ui.tabs.css" type="text/css" media="print, projection, screen" />
-		<link rel="stylesheet" href="<?php echo ALO_EM_PLUGIN_URL ?>/inc/alo-easymail-backend.css" type="text/css" media="print, projection, screen" />
-		
-		</head>
-		
-		<body class="easymail_report">
-		
-		<div class="wrap">
-			
-			<?php if ( isset($_GET['_wpnonce']) && !isset($_GET['isnewwin']) ) : ?>
-				<a href="<?php echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&isnewwin=1', 'alo-easymail_report'); ?>" target="_blank" class="new-win-link">
-				<?php _e("open in a new window", "alo-easymail") ?></a>
-			<?php endif; ?>				
+
+        <!--<link rel="stylesheet" href="<?php echo ALO_EM_PLUGIN_URL ?>/inc/jquery.ui.tabs.css" type="text/css" media="print, projection, screen" />
+        <link rel="stylesheet" href="<?php echo ALO_EM_PLUGIN_URL ?>/inc/alo-easymail-backend.css" type="text/css" media="print, projection, screen" />-->
+
+        <h1 class="wp-heading-inline">
+            <?php _e( 'Report', "alo-easymail") ?>:
+            "<?php echo get_the_title( $newsletter ) ?>"
+        </h1>
+
+		<div class="easymail_report wrap">
 			
 			<!-- Newsletter's general details -->
 			<div id="par-1">
@@ -324,9 +305,7 @@ elseif ( !alo_em_is_newsletter_recipients_archived ( $newsletter ) ) : 	?>
 			</div>
 			
 		</div> <!-- end slider -->
-		
-		</body>
-		</html>
+
 	<?php } // end if $newsletter
 } // edn if (isset($_REQUEST['id']) && (int)$_REQUEST['id'])
 exit;

@@ -283,8 +283,17 @@ function alo_em_update_column_status ( $newsletter ) {
 		// Is it a Re-permission campaign?
 		$is_re_permission = get_post_meta( $newsletter, '_easymail_re_permission', true );
 
-		$report_url = wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?', 'alo-easymail_report');
-		$goto_report = "<a href=\"#\" onclick=\"aloEM(this).easymailReportPopup ( '$report_url', $newsletter, '". alo_em_get_language () ."' );\" title=\"". __( 'Report', "alo-easymail") ."\">";
+		/*$report_url = wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?', 'alo-easymail_report');
+		$goto_report = "<a href=\"#\" onclick=\"aloEM(this).easymailReportPopup ( '$report_url', $newsletter, '". alo_em_get_language () ."' );\" title=\"". __( 'Report', "alo-easymail") ."\">";*/
+
+		$report_url = admin_url( 'admin.php?page=alo-easymail-admin-report');
+		$report_url = add_query_arg( array(
+			'newsletter' => $newsletter,
+            'lang'       => alo_em_get_language (),
+        ), $report_url );
+        $report_url = wp_nonce_url( $report_url, 'alo-easymail_report' );
+		$goto_report = "<a href=\"{$report_url}\" title=\"". __( 'Report', "alo-easymail") ."\">";
+
 		$goto_report .= "<img src=\"". ALO_EM_PLUGIN_URL. "/images/16-report.png\" alt=\"\" /> ". __( 'Report', "alo-easymail") ."</a>";
 		if ( alo_em_is_newsletter_recipients_archived ( $newsletter ) ) $goto_report .= " <em>(". __( 'archived', "alo-easymail") . ")</em>";
 
