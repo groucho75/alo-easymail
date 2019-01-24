@@ -65,11 +65,6 @@ function alo_em_add_admin_script () {
 			'errGeneric' => esc_js( __("Error during operation.", "alo-easymail") )
 		) );
 	}
-
-	if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] == "alo-easymail-admin-report" ) {
-		wp_enqueue_style( 'alo-easymail-backend-css', ALO_EM_PLUGIN_URL.'/inc/alo-easymail-backend.css' );
-		wp_enqueue_style( 'alo-jquery-ui-tabs', ALO_EM_PLUGIN_URL.'/inc/jquery.ui.tabs.css', null, null, 'print, projection, screen' );
-	}
 }
 add_action('admin_print_scripts', 'alo_em_add_admin_script' );
 
@@ -109,6 +104,10 @@ function alo_em_add_admin_styles () {
 	if ( $pagenow == "post.php" || ( isset( $_GET['post_type'] ) && $_GET['post_type'] == "newsletter" ) ) {
 		wp_enqueue_style( 'alo-easymail-backend-css', ALO_EM_PLUGIN_URL.'/inc/alo-easymail-backend.css' );
 		wp_enqueue_style( 'thickbox' );
+	}
+	if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] == "alo-easymail-admin-report" ) {
+		wp_enqueue_style( 'alo-easymail-backend-css', ALO_EM_PLUGIN_URL.'/inc/alo-easymail-backend.css' );
+		wp_enqueue_style( 'alo-jquery-ui-tabs', ALO_EM_PLUGIN_URL.'/inc/jquery.ui.tabs.css', null, null, 'print, projection, screen' );
 	}
 }
 add_action( "admin_print_styles", 'alo_em_add_admin_styles' );
