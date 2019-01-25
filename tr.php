@@ -5,6 +5,9 @@
  *
  * @package WordPress
  * @subpackage ALO EasyMail plugin
+ *
+ * @deprecated: Now we use REST endopoint
+ * @see alo_em_register_rest_tracking_pixel()
  */
 
 define('WP_USE_THEMES', false);
@@ -48,5 +51,3 @@ if ( isset( $_GET['v'] ) ) {
 @ob_end_clean();
 header("Content-Type: image/png");
 print base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABGdBTUEAALGPC/xhBQAAAAZQTFRF////AAAAVcLTfgAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH0gQCEx05cqKA8gAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=');
-
-?>

@@ -23,6 +23,7 @@ function alo_em_register_query_vars( $vars ){
 	$vars[] = "em2";
 	$vars[] = "uk";
 	$vars[] = "lang";
+	$vars[] = "empxltrk";
 	return $vars;
 }
 add_filter( 'query_vars', 'alo_em_register_query_vars' );
@@ -123,8 +124,87 @@ function alo_em_check_get_vars () {
 		// we do not unset 'submit' because its common name, so it could be maybe used by other plugins: only a safe escape
 		if ( isset($_REQUEST['submit']) ) esc_sql($_REQUEST['submit']);
 	}
+
+
+	// Tracking pixel
+	if ( get_option('alo_em_use_tracking_pixel') != "no" && ( $empxltrk = get_query_var('empxltrk') ) ) {
+
+		exit;
+	}
 }
 add_action('template_redirect', 'alo_em_check_get_vars');
 
+
+/**
+ * Register the REST route to track newsletter opening
+ */
+function alo_em_register_rest_tracking_pixel() {
+
+	if ( get_option('alo_em_use_tracking_pixel') != "no" ) {
+
+		register_rest_route(
+			'alo-easymail' . '/v1',
+			'trkpxl',
+			[
+				'methods'  => \WP_REST_Server::READABLE,
+				'callback' => 'alo_em_rest_load_tracking_pixel',
+				'args'     => [
+					'empxltrk'   => [
+						'type'              => 'string',
+						'required'          => true,
+						'sanitize_callback' => 'sanitize_text_field',
+					],
+					'lang'   => [
+						'type'              => 'string',
+						'required'          => true,
+						'sanitize_callback' => 'sanitize_key',
+					],
+				]
+			]
+		);
+	}
+}
+add_action( 'rest_api_init', 'alo_em_register_rest_tracking_pixel' );
+
+
+/**
+ * Load the 1x1 pixel to track newsletter opening
+ *
+ * @param \WP_REST_Request
+ * @return \WP_REST_Response
+ */
+function alo_em_rest_load_tracking_pixel( \WP_REST_Request $request ) {
+
+
+	if ( get_option('alo_em_use_tracking_pixel') == "no" ) {
+		echo '';
+		exit;
+	}
+
+	ob_start();
+	error_reporting(0);
+
+	if ( get_option('alo_em_use_tracking_pixel') != "no" && ( $empxltrk = $request->get_param( 'empxltrk' ) ) ) {
+
+		$get_vars = base64_decode( $empxltrk );
+		$get = explode( "|", $get_vars );
+
+		$recipient	= ( isset( $get[0] ) && is_numeric($get[0]) ) ? (int)$get[0] : false;
+		$unikey		= ( isset( $get[1] ) ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', $get[1]) : false;
+
+		if ( $recipient && $unikey ) {
+			$rec_info = alo_em_get_recipient_by_id( $recipient );
+			if ( $rec_info && alo_em_check_subscriber_email_and_unikey ( $rec_info->email, $unikey ) ) {
+				alo_em_tracking_recipient ( $recipient, $rec_info->newsletter, false );
+			}
+		}
+
+	}
+
+	@ob_end_clean();
+	header("Content-Type: image/png");
+	print base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABGdBTUEAALGPC/xhBQAAAAZQTFRF////AAAAVcLTfgAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH0gQCEx05cqKA8gAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=');
+
+}
 
 /* EOF */
