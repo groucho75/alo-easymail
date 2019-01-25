@@ -361,7 +361,7 @@ function alo_em_update_column_status ( $newsletter ) {
 							//$rec_url = wp_nonce_url( ALO_EM_PLUGIN_URL . '/alo-easymail_recipients-list.php?', 'alo-easymail_recipients-list');
 							if ( alo_em_user_can_edit_newsletter( $newsletter ) && current_user_can( "publish_newsletters" ) ) {
 								//echo "<a href=\"#\" onclick=\"aloEM(this).easymailRecipientsGenPopup ( '$rec_url', $newsletter, '". alo_em_get_language () ."' );\">";
-								echo "<a href=\"#\" class=\"easymail-reciepient-list-open\"  rel=\"".$newsletter."\" data-disable-send-now=\"". ( $is_re_permission ? 'yes' : 'no' ) ."\">";
+								echo "<a href=\"#\" class=\"easymail-reciepient-list-open\"  rel=\"".$newsletter."\" data-disable-send-now=\"". ( $is_re_permission || 'future' == $post_status ? 'yes' : 'no' ) ."\">";
 								echo "<img src=\"". ALO_EM_PLUGIN_URL. "/images/16-arrow-right.png\" alt=\"\" /> <strong class=\"easymail-column-status-required-list-".$user_ID."\">" . __( 'Required', "alo-easymail") .":</strong> " . __( 'Create list of recipients', "alo-easymail");
 								echo "</a>";
 							} else {
@@ -809,7 +809,7 @@ function alo_em_recipient_list_modal() {
 	global $post, $pagenow, $user_email;
 	if ( $pagenow == "post.php" || ( isset( $_GET['post_type'] ) && $_GET['post_type'] == "newsletter" ) ) { ?>
 
-		<div id="easymail-recipient-list-modal" data-current-id="" data-previous-id="">
+		<div id="easymail-recipient-list-modal" data-current-id="" data-previous-id="" style="display: none">
 
 
 			<div id='alo-easymail-bar-outer' style="display:none"><div id='alo-easymail-bar-inner'></div></div>
