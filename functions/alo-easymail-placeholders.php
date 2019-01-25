@@ -850,6 +850,7 @@ function alo_em_placeholders_replace_confirmation_tags ( $content, $newsletter, 
 	if ( empty( $recipient->lang ) ) $recipient->lang = alo_em_short_langcode ( get_locale() );
 	if ( empty( $recipient->unikey ) ) $recipient->unikey = '';
 	if ( empty( $recipient->ID ) ) $recipient->ID = '';
+	if ( empty( $recipient->email ) ) $recipient->email = '';
 
 	// Prepare activation url
 	$act_vars = $recipient->email . "|"  . $recipient->unikey . "|" . $recipient->lang . "|" . $recipient->ID;
