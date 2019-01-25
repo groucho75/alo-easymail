@@ -19,7 +19,7 @@
 }
 
 .easymail-edit-recipients ul li input[type=checkbox] {
-	float: right;	
+	float: right;
 }
 
 .easymail-edit-recipients ul li.list-title {
@@ -51,7 +51,7 @@
 /*
  * Table List Newsletters
  */
- 
+
 td.column-easymail_status img {
 	vertical-align: text-top;
 }
@@ -87,7 +87,7 @@ td.column-easymail_status .status-paused {
 /*
  * Newsletters Recipients Thickbox
  */
- 
+
 #easymail-recipient-list-modal {
 	text-align: center;
 	margin: 0 auto;
@@ -130,7 +130,7 @@ td.column-easymail_status .status-paused {
 #alo-easymail-bar-inner {
 	background-color: #21759B;
 	background-image: url("../images/pbar-ani.gif");
-	height:	22px;	
+	height:	22px;
 	text-align: center;
 }
 
@@ -148,28 +148,35 @@ td.column-easymail_status .status-paused {
  * Report
  */
 
-#par-1 { padding:1px 12px;border-bottom:1px dotted #aaa}
-#par-1 dl {font-size:80%}
-#par-1 dd {margin-bottm:5px}
-#par-1 dt {font-style: italic;}
+#par-1 { padding:1px 12px 20px;border-bottom:1px dotted #aaa}
+#par-1 tr {margin-bottm:5px}
+#par-1 th { padding: 5px; font-style: italic; text-align: right; }
+#par-1 td { padding: 5px; }
+#par-1 #mailbody { font-weight:normal; font-size:90%; height: 100px; overflow: auto; border-left:1px dotted #aaa; padding-left: 1em; background-color: #ffffff; }
+#par-1 #mailbody img { height: 5em; width: auto; display: block; }
+#par-1 #mailbody img[src=""] { height: 0; width: 0; display: none; }
+#par-1 #mailbody p { margin:0 }
 
-#par-2 {padding:10px 12px;}
-#par-3 { padding: 14px 12px; border-bottom:1px dotted #aaa; text-align: center}
-#par-2 .tot, #par-2  .success, #par-2 .error, #par-2 .done, #par-2 .views {font-size:300%;}
+
+#par-2 {padding: 20px 12px}
+#par-2 .tot, #par-2  .success, #par-2 .error, #par-2 .done, #par-2 .views {font-size:300%; padding-bottom: 5px;}
 #par-2 .tot {color:#666;font-weight:bold;}
 #par-2 .done {color:#999;font-weight:bold;}
 #par-2 .success {color:#0c6;font-weight:bold;}
 #par-2 .error {color:#f00;font-weight:bold;}
 #par-2 .views {color:#fa0;font-weight:bold;}
-#par-2 table {font-size:75%;width:550px;margin:0 auto;}
+#par-2 table {width:550px;margin:0 auto;}
+#par-2 table.summary thead th {font-size: 120%; padding-bottom: 7px;}
 #par-2 td {padding:4px}
 #par-2 td.center {text-align:center}
-#par-2 table.summary { width:100%;margin-top:10px;background-color:#eef;padding: 1em 0.5em; }
-#par-1 #mailbody { font-weight:normal; font-size:90%;height: 50px; overflow: auto; border-left:1px dotted #aaa; padding-left: 1em;}
-#par-1 #mailbody img { height: 5em; width: auto; display: block; }
-#par-1 #mailbody p { margin:0 }
+#par-2 table.summary { width:100%;margin: 10px 0;background-color:#eef;padding: 1em 0.5em; }
+#par-2 table.recipient-summary { font-size:90%;width:100%;font-family: sans-serif; background-color: #ffffff; }
+
+#par-3 { padding: 14px 12px; margin-top: 10px; border-bottom:1px dotted #aaa; text-align: center}
 
 .new-win-link { font-size:75%; float:right; }
+
+h1 a.alo-easymail-report-back { display: inline-block !important; margin-top: -4px !important; }
 
 body.easymail_report .clicked-links {
 	font-size: 16px;
@@ -177,7 +184,8 @@ body.easymail_report .clicked-links {
 	width: 18px;
 }
 
-#easymail_report_tabs { margin-top: 15px; font-weight: bold }
+#easymail_report_tabs { margin-top: 15px; font-weight: bold; font-size: 150% }
+#easymail_report_tabs li { margin-bottom: 0px }
 
 .easymail-navbutton.button-archive {
 	background: linear-gradient(to bottom, #FEFEFE, #F4F4F4) repeat scroll 0 0 #F3F3F3;
@@ -196,7 +204,7 @@ body.easymail_report .clicked-links {
     margin: 0;
     padding: 0 10px 1px;
     text-decoration: none;
-    white-space: nowrap;    
+    white-space: nowrap;
 }
 
 
@@ -291,4 +299,24 @@ table#alo-easymailsubscriber-table tbody tr:nth-child(odd) {
 	}
 
 	table#alo-easymailsubscriber-table th.row-important-column img { display: none; }
+}
+
+@media print {
+	/* Printable Report */
+	body.admin_page_alo-easymail-admin-report #adminmenumain,
+	body.admin_page_alo-easymail-admin-report #adminmenuback,
+	body.admin_page_alo-easymail-admin-report #adminmenuwrap,
+	body.admin_page_alo-easymail-admin-report .update-nag,
+	body.admin_page_alo-easymail-admin-report .hide-on-print {
+		width: 0px;
+		height: 0px;
+		visibility: hidden;
+		display: none;
+	}
+	body.admin_page_alo-easymail-admin-report #wpcontent {
+		margin-left: 0px;
+	}
+	body.admin_page_alo-easymail-admin-report .ui-tabs-nav {
+		display: block;
+	}
 }

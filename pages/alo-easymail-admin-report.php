@@ -48,56 +48,43 @@ if ( $newsletter ) {
 		?>
 
         <h1 class="wp-heading-inline">
-            <?php _e( 'Report', "alo-easymail") ?>:
+            <a class="button alo-easymail-report-back hide-on-print" href="javascript:history.back()">&laquo; <?php _e("Back", "alo-easymail") ?></a>
+
+            <?php _e("Newsletter report", "alo-easymail") ?>:
             "<?php echo get_the_title( $newsletter ) ?>"
         </h1>
 
 		<div class="easymail_report wrap">
-			
-			<!-- Newsletter's general details -->
-			<div id="par-1">
-				<dl>
-					<dt><?php _e("Subject", "alo-easymail");  ?>:</dt>
-					<dd><strong><?php 
-					$subject = get_the_title( $newsletter );
-					/*
-					TODO tag title in subject
-					
-					if ( $newsletter->tag ) {
-						$obj_post = get_post( $newsletter->tag );
-						$post_title = stripslashes ( alo_em___ ( $obj_post->post_title ) );
-						$subject = str_replace('[POST-TITLE]', $post_title, $subject);
-						echo "<strong>". stripslashes ( alo_em_translate_text ( $lang, $subject ) ) . "</strong>";
-						echo "<br /><em>". stripslashes ( alo_em_translate_text ( $lang, $newsletter->subject ) ) ."</em>";
-					} else {
-						echo "<strong>". stripslashes ( alo_em_translate_text ( $lang, $subject ) ) . "</strong>";
-					}
-					*/
-					echo $subject;
-					?></strong></dd>
-				</dl>
-					<dl><dt><?php _e("Scheduled by", "alo-easymail") ?></dt>
-					<dd><?php echo get_user_meta( $newsletter_post->post_author, 'nickname', true ) ?></dd></dl>
-				<dl>
-					<dt><?php _e("Start", "alo-easymail") ?>:</dt>
-					<dd><?php echo date_i18n( __( 'j M Y @ G:i', "alo-easymail" ), strtotime( $newsletter_post->post_date ) ) ?></dd>
-				</dl>
-				<dl>
-					<dt><?php _e("Completed", "alo-easymail") ?>:</dt>
-					<dd><?php 
-						$end = get_post_meta ( $newsletter, "_easymail_completed", current_time( 'mysql', 0 ) );
-						echo ( $end ) ? date_i18n( __( 'j M Y @ G:i', "alo-easymail" ), strtotime( $end ) ) : __("No", "alo-easymail" );
-					 ?></dd>
-				</dl>		
-				<dl>
-					<dt><?php _e("Main body", "alo-easymail") ?> (<?php _e("without formatting", "alo-easymail") ?>):</dt>
-					<dd id="mailbody">
-						<?php echo strip_tags( alo_em_translate_text ( $lang, $newsletter_post->post_content ), "<img>");
-						//echo apply_filters('the_content', $newsletter_post->post_content ) ?>
-					</dd>
-				</dl>	
-			</div>
-			
+
+            <!-- Newsletter's general details -->
+            <table id="par-1" class="alo-easymail-header-table">
+                <tbody>
+                    <tr>
+                        <th scope="row"><?php _e("Subject", "alo-easymail");  ?></th>
+                        <td><?php echo get_the_title( $newsletter ) ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php _e("Scheduled by", "alo-easymail") ?></th>
+                        <td><?php echo get_user_meta( $newsletter_post->post_author, 'nickname', true ) ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php _e("Start", "alo-easymail") ?></th>
+                        <td><?php echo date_i18n( __( 'j M Y @ G:i', "alo-easymail" ), strtotime( $newsletter_post->post_date ) ) ?></td>
+                    </tr>
+                    <tr>
+                        <th scope="row"><?php _e("Completed", "alo-easymail") ?></th>
+                        <td><?php
+	                        $end = get_post_meta ( $newsletter, "_easymail_completed", current_time( 'mysql', 0 ) );
+	                        echo ( $end ) ? date_i18n( __( 'j M Y @ G:i', "alo-easymail" ), strtotime( $end ) ) : __("No", "alo-easymail" );
+                        ?></td>
+                    </tr>
+                    <tr class="hide-on-print">
+                        <th scope="row" style="vertical-align: top"><?php _e("Main body", "alo-easymail") ?> (<?php _e("without formatting", "alo-easymail") ?>)</th>
+                        <td><div id="mailbody"><?php echo strip_tags( alo_em_translate_text ( $lang, $newsletter_post->post_content ), "<img>");?></div></td>
+                    </tr>
+                </tbody>
+            </table>
+
 			<!-- Newsletter's recipients list -->
 			<div id="par-2">
 			
@@ -165,11 +152,14 @@ if ( $newsletter ) {
 						<td class="error center" style="width:15%"><?php echo $sent_with_error  ?>	</td>
 						<td class="views center" style="width:15%"><?php echo $unique_views  ?></td>		
 						<td class="success center" style="width:15%"><?php echo $unique_clicks ?><?php
-						if ( $unique_clicks >0 ) : ?><a href="<?php echo add_query_arg( 'show_clicked', '1', $report_url ); //wp_nonce_url(ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&show_clicked=1', 'alo-easymail_report'); ?>" title="<?php esc_attr_e(__("click to view list of clicked links", "alo-easymail")) ?>"><img src="<?php echo ALO_EM_PLUGIN_URL ?>/images/16-arrow-right.png" /></a><?php
-						endif; ?>
+						if ( $unique_clicks >0 ) : ?>
+                            <a class="hide-on-print" href="<?php echo add_query_arg( 'show_clicked', '1', $report_url ); ?>" title="<?php esc_attr_e(__("click to view list of clicked links", "alo-easymail")) ?>">
+                                <img src="<?php echo ALO_EM_PLUGIN_URL ?>/images/16-arrow-right.png" />
+                            </a>
+                        <?php endif; ?>
 						</td>
 					</tr>
-					<tr style="font-size: 60%">
+					<tr style="font-size: 50%">
 						<td class="tot center">100%</td>
 						<td class="done center"><?php echo alo_em_rate_on_total($already_sent, $tot_recipients); ?>%</td>
 						<td class="success center"><?php echo alo_em_rate_on_total($sent_with_success, $tot_recipients); ?>%</td>
@@ -185,8 +175,8 @@ if ( $newsletter ) {
 				if ( alo_em_is_newsletter_recipients_archived ( $newsletter ) ) {
 					if ( !isset($_GET['archive']) ) echo "<div class=\"easymail-alert\">". __("Detailed report was archived", "alo-easymail") ."</div>\n";
 				} else if ( alo_em_get_newsletter_status( $newsletter ) == "sent" ) { ?>
-				<div id="par-3">
-					<a href="<?php echo add_query_arg( 'archive', '1', $report_url ) // echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&archive=1', 'alo-easymail_report') ; ?>" class="easymail-navbutton button-archive" onclick='javascript:if( confirm("<?php echo esc_js( __("Are you sure?", "alo-easymail")." " .__("You are about to DELETE the detailed info about recipients", "alo-easymail").". " . __("This action cannot be undone", "alo-easymail") ) ?>") == false ) return false;' title="<?php esc_attr_e(__("You are about to DELETE the detailed info about recipients", "alo-easymail")) ?>">
+				<div id="par-3" class="hide-on-print">
+					<a href="<?php echo add_query_arg( 'archive', '1', $report_url ) ?>" class="easymail-navbutton button-archive" onclick='javascript:if( confirm("<?php echo esc_js( __("Are you sure?", "alo-easymail")." " .__("You are about to DELETE the detailed info about recipients", "alo-easymail").". " . __("This action cannot be undone", "alo-easymail") ) ?>") == false ) return false;' title="<?php esc_attr_e(__("You are about to DELETE the detailed info about recipients", "alo-easymail")) ?>">
 					<?php _e("Delete the detailed report of recipients", "alo-easymail") ?></a> 
 					<?php echo alo_em_help_tooltip( __("You are about to DELETE the detailed info about recipients", "alo-easymail").". " .__("This action deletes the detailed info about recipients (see below) and keeps only the summary (see above)", "alo-easymail"). ". " .__("It reduces the data in database tables and make the plugin queries and actions faster", "alo-easymail"). ". " ); ?>
 				</div>
@@ -199,7 +189,7 @@ if ( isset($_GET['show_clicked']) ) : ?>
 
 <a href="<?php echo $report_url; // echo wp_nonce_url(ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang, 'alo-easymail_report'); ?>" class="easymail-navbutton" style="margin-top:15px;display: inline-block;">&laquo; <?php _e("Back to list of recipients", "alo-easymail") ?></a>
 
-		<table style="margin-top:15px;width:100%;font-family: sans-serif">
+		<table class="recipient-summary">
 			<thead>
 			<tr>
 				<th scope="col"><?php _e("Requested URL", "alo-easymail") ?></th>
@@ -240,12 +230,16 @@ elseif ( !alo_em_is_newsletter_recipients_archived ( $newsletter ) ) : 	?>
 						$to_offset = ( $i * $per_page ); 
 						$active = ( $offset == $to_offset ) ? "ui-tabs-selected ui-state-active" : "";
 						$atitle = __("Recipients", "alo-easymail").": ". ($to_offset+1) ." - ". ( ( $i < $tot_pages-1 ) ? $to_offset + $per_page : $tot_recipients ); ?>		
-						<li class="ui-state-default ui-corner-top <?php echo $active ?>"><a href="<?php echo add_query_arg( 'offset', $to_offset, $report_url ) //echo wp_nonce_url( ALO_EM_PLUGIN_URL . '/pages/alo-easymail-admin-report.php?newsletter='.$newsletter.'&lang='.$lang.'&offset='. $to_offset, 'alo-easymail_report') ; ?>" title="<?php echo $atitle ?>"><?php echo $to_offset+1 ?></a></li>
+						<li class="ui-state-default ui-corner-top <?php echo $active ?>">
+                            <a href="<?php echo add_query_arg( 'offset', $to_offset, $report_url ) ?>" title="<?php echo $atitle ?>">
+                                <?php echo $to_offset+1 ?>
+                            </a>
+                        </li>
 					<?php endfor; ?>
 				</ul>
 				<?php endif; // if ( $tot_pages > 1 ) ?>
 				
-				<table style="margin-top:15px;width:100%;font-family: sans-serif">
+				<table class="recipient-summary">
 					<thead>
 					<tr>
 						<th scope="col"></th>
