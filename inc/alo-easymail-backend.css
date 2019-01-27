@@ -152,7 +152,7 @@ td.column-easymail_status .status-paused {
 #par-1 tr {margin-bottm:5px}
 #par-1 th { padding: 5px; font-style: italic; text-align: right; }
 #par-1 td { padding: 5px; }
-#par-1 #mailbody { font-weight:normal; font-size:90%; height: 100px; overflow: auto; border-left:1px dotted #aaa; padding-left: 1em; background-color: #ffffff; }
+#par-1 #mailbody { font-weight:normal; font-size:90%; max-height: 100px; overflow: auto; border-left:1px dotted #aaa; padding-left: 1em; background-color: #ffffff; }
 #par-1 #mailbody img { height: 5em; width: auto; display: block; }
 #par-1 #mailbody img[src=""] { height: 0; width: 0; display: none; }
 #par-1 #mailbody p { margin:0 }

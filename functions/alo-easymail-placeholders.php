@@ -187,7 +187,11 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 			if ( get_option('alo_em_use_tracking_pixel') != "no" ) {
 				$track_vars = $recipient->ID . '|' . $recipient->unikey;
 				$track_vars = urlencode( base64_encode( $track_vars ) );
-				$tracking_url = add_query_arg( 'empxltrk', $track_vars, alo_em_translate_home_url ( $recipient->lang ) );
+				$tracking_url = site_url( '/wp-json/alo-easymail/v1/trkpxl' );
+				$tracking_url = add_query_arg( array(
+					'empxltrk' => $track_vars,
+					'lang'     => $recipient->lang,
+				), $tracking_url );
 				$tracking_view = '<img src="'. $tracking_url .'" width="1" height="1" border="0" alt="" >';
 			} else {
 				$tracking_view = '';
