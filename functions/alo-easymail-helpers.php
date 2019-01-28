@@ -210,5 +210,16 @@ function alo_em_role_checkboxes ( $name='roles', $search_caps=array(), $attrs=''
 }
 
 
+/**
+ * Wrapper of a filter to return if the subscription form is enabled and must be shown.
+ * Default is true, but it's possible to disable form from page and widget at all and use the plugin only to
+ * send newsletters, whereas the subscribers are collected using other tools.
+ *
+ * @return boolean
+ */
+function alo_em_subscription_form_is_enabled () {
+
+	return apply_filters ( 'alo_easymail_subscription_form_is_enabled', true );
+}
 
 /* EOF */

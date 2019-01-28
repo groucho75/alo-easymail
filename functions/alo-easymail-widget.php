@@ -13,7 +13,11 @@
  */
 function alo_em_show_widget_form ( ) {
 	global $user_ID, $user_email, $wpdb;
-	
+
+	if ( ! alo_em_subscription_form_is_enabled() ) {
+		return;
+	}
+
 	// If registerd user check if subscriber
 	$subscriber_id = alo_em_is_subscriber($user_email); 
 	
@@ -247,7 +251,9 @@ class ALO_Easymail_Widget extends WP_Widget {
  * Widget activation
  */
 function alo_em_load_widgets() {
-	register_widget( 'ALO_Easymail_Widget' );
+	if ( alo_em_subscription_form_is_enabled() ) {
+		register_widget( 'ALO_Easymail_Widget' );
+	}
 }
 add_action( 'widgets_init', 'alo_em_load_widgets' );
 

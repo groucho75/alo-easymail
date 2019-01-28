@@ -12,7 +12,7 @@
  * Load scripts & styles on Frontend
  */
 function alo_em_load_scripts() {
-	if ( get_option('alo_em_embed_css') == "yes" ) {
+	if ( alo_em_subscription_form_is_enabled() && get_option('alo_em_embed_css') == "yes" ) {
 		if ( @file_exists ( STYLESHEETPATH.'/alo-easymail.css' ) ) {
 			wp_enqueue_style ('alo-easymail', get_bloginfo('stylesheet_directory') .'/alo-easymail.css' );
 		} else {
@@ -66,6 +66,9 @@ function alo_em_ajax_js()
 {
 	// Do not include js if required
 	if ( get_option('alo_em_hide_widget_users') == "yes" && is_user_logged_in() ) return;
+
+	// Exit if the form is not shown at all
+	if ( ! alo_em_subscription_form_is_enabled() ) return;
 
 	// use JavaScript SACK library for Ajax
 	wp_print_scripts( array( 'sack' ));

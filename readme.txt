@@ -5,7 +5,7 @@ Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sendi
 Requires at least: 4.4
 Requires PHP: 5.2
 Tested up to: 4.9
-Stable tag: 2.11.1
+Stable tag: 2.12.0
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -88,8 +88,13 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
-= DEV =
-* TBD
+= 2.12.0 =
+* Added: a filter ('alo_easymail_subscription_form_is_enabled') to disable the subscription form from page and widget at all, useful if using other tools to collect subscribers
+* Updated: the newsletter report is loaded as a page, not as a modal
+* Updated: the tracking pixel is loaded from a REST url (WP >= 4.4), not from the php file inside plugin
+* Fixed: to include files use ABSPATH instead of relative path
+* Fixed: hide the modal of recipient list on page load to avoid that it appears for some seconds
+* Fixed: remove a php warning
 
 = 2.11.1 =
 * Fixed: remove a php warning
@@ -137,5 +142,5 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Upgrade Notice ==
 
-= 2.11.1 =
-* Fixed: remove a php warning
+= 2.12.0 =
+* Pay attention: new requirement WP >= 4.4
