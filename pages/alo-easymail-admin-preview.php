@@ -6,7 +6,8 @@
  * @subpackage ALO EasyMail plugin
  */
 
-include('../../../../wp-load.php');
+require_once( ABSPATH . 'wp-load.php' );
+
 global $wpdb;
 global $user_ID;
 

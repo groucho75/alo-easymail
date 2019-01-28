@@ -48,8 +48,6 @@ if ( $newsletter ) {
 		?>
 
         <h1 class="wp-heading-inline">
-            <a class="button alo-easymail-report-back hide-on-print" href="javascript:history.back()">&laquo; <?php _e("Back", "alo-easymail") ?></a>
-
             <?php _e("Newsletter report", "alo-easymail") ?>:
             "<?php echo get_the_title( $newsletter ) ?>"
         </h1>

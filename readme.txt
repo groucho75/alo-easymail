@@ -88,6 +88,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
+= DEV =
+* TBD
+
 = 2.11.1 =
 * Fixed: remove a php warning
 

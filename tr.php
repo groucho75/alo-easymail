@@ -11,7 +11,7 @@
  */
 
 define('WP_USE_THEMES', false);
-include('../../../wp-load.php');
+include( ABSPATH . 'wp-load.php');
 
 global $wpdb;
 
