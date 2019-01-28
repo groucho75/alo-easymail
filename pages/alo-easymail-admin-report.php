@@ -78,7 +78,7 @@ if ( $newsletter ) {
                     </tr>
                     <tr class="hide-on-print">
                         <th scope="row" style="vertical-align: top"><?php _e("Main body", "alo-easymail") ?> (<?php _e("without formatting", "alo-easymail") ?>)</th>
-                        <td><div id="mailbody"><?php echo strip_tags( alo_em_translate_text ( $lang, $newsletter_post->post_content ), "<img>");?></div></td>
+                        <td><div id="mailbody"><?php echo nl2br( strip_tags( alo_em_translate_text ( $lang, $newsletter_post->post_content ), "<img>") );?></div></td>
                     </tr>
                 </tbody>
             </table>
