@@ -23,7 +23,6 @@ function alo_em_register_query_vars( $vars ){
 	$vars[] = "em2";
 	$vars[] = "uk";
 	$vars[] = "lang";
-	$vars[] = "empxltrk";
 	return $vars;
 }
 add_filter( 'query_vars', 'alo_em_register_query_vars' );
@@ -123,13 +122,6 @@ function alo_em_check_get_vars () {
 		if ( isset($_REQUEST['alo_em_opt_email']) ) unset($_REQUEST['alo_em_opt_email']);
 		// we do not unset 'submit' because its common name, so it could be maybe used by other plugins: only a safe escape
 		if ( isset($_REQUEST['submit']) ) esc_sql($_REQUEST['submit']);
-	}
-
-
-	// Tracking pixel
-	if ( get_option('alo_em_use_tracking_pixel') != "no" && ( $empxltrk = get_query_var('empxltrk') ) ) {
-
-		exit;
 	}
 }
 add_action('template_redirect', 'alo_em_check_get_vars');
