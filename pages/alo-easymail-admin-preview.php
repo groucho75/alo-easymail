@@ -6,7 +6,8 @@
  * @subpackage ALO EasyMail plugin
  */
 
-require_once( ABSPATH . 'wp-load.php' );
+//require_once( ABSPATH . 'wp-load.php' ); // @todo "Preview-in-rest"
+include('../../../../wp-load.php');
 
 global $wpdb;
 global $user_ID;
