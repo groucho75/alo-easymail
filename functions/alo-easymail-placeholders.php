@@ -187,7 +187,7 @@ function alo_em_zirkuss_newsletter_content( $content, $newsletter, $recipient, $
 			if ( get_option('alo_em_use_tracking_pixel') != "no" ) {
 				$track_vars = $recipient->ID . '|' . $recipient->unikey;
 				$track_vars = urlencode( base64_encode( $track_vars ) );
-				$tracking_url = site_url( '/wp-json/alo-easymail/v1/trkpxl' );
+				$tracking_url = rest_url( 'alo-easymail/v1/trkpxl' );
 				$tracking_url = add_query_arg( array(
 					'empxltrk' => $track_vars,
 					'lang'     => $recipient->lang,

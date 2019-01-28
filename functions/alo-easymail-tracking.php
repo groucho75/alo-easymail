@@ -104,4 +104,44 @@ function alo_em_make_url_trackable ( $recipient, $url ) {
 }
 
 
+/**
+ * Load the 1x1 pixel to track newsletter opening
+ *
+ * @param \WP_REST_Request
+ * @return \WP_REST_Response
+ */
+function alo_em_rest_load_tracking_pixel( \WP_REST_Request $request ) {
+
+
+	if ( get_option('alo_em_use_tracking_pixel') == "no" ) {
+		echo '';
+		exit;
+	}
+
+	ob_start();
+	error_reporting(0);
+
+	if ( get_option('alo_em_use_tracking_pixel') != "no" && ( $empxltrk = $request->get_param( 'empxltrk' ) ) ) {
+
+		$get_vars = base64_decode( $empxltrk );
+		$get = explode( "|", $get_vars );
+
+		$recipient	= ( isset( $get[0] ) && is_numeric($get[0]) ) ? (int)$get[0] : false;
+		$unikey		= ( isset( $get[1] ) ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', $get[1]) : false;
+
+		if ( $recipient && $unikey ) {
+			$rec_info = alo_em_get_recipient_by_id( $recipient );
+			if ( $rec_info && alo_em_check_subscriber_email_and_unikey ( $rec_info->email, $unikey ) ) {
+				alo_em_tracking_recipient ( $recipient, $rec_info->newsletter, false );
+			}
+		}
+
+	}
+
+	@ob_end_clean();
+	header("Content-Type: image/png");
+	print base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABGdBTUEAALGPC/xhBQAAAAZQTFRF////AAAAVcLTfgAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH0gQCEx05cqKA8gAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=');
+
+}
+
 /* EOF */

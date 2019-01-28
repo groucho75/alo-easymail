@@ -123,6 +123,8 @@ aloEM (document).ready ( function(){
 						setTimeout(function(){
 							aloEM("#easymail-open-preview-loading").hide();
 							window.open ( easymailJs.pluginPath + 'pages/alo-easymail-admin-preview.php?newsletter=' + easymailJs.postID + '&_wpnonce=' + easymailJs.nonce, 'easymail-preview-'+ easymailJs.postID );
+							// @todo "Preview-in-rest"
+                            //window.open ( easymailJs.previewEditUrl + '?newsletter=' + easymailJs.postID + '&preview_nonce=' + easymailJs.nonce, 'easymail-preview-'+ easymailJs.postID );
 						}, 1000);
 				
 					}

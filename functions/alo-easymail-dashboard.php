@@ -74,6 +74,7 @@ function alo_em_localize_admin_script () {
 	$screen_id = ( $current_screen ) ? $current_screen->id : false;
 	return array(
 		'ajaxurl' => admin_url( 'admin-ajax.php' ),
+		'previewEditUrl' => rest_url( 'alo-easymail/v1/newsletter-edit-preview' ),
 		'pluginPath' => ALO_EM_PLUGIN_URL."/",
 		'postID' => $post_id,
 		'pagenow' => $pagenow,

@@ -893,4 +893,24 @@ function alo_em_ajax_recipient_list_ajaxloop () {
 add_action('wp_ajax_alo_easymail_recipient_list_ajaxloop', 'alo_em_ajax_recipient_list_ajaxloop');
 
 
+/**
+ * Load the preview in newsletter edit screen
+ *
+ * @todo "Preview-in-rest"
+ *
+ * @param \WP_REST_Request
+ * @return \WP_REST_Response
+ */
+/*
+function alo_em_rest_load_newsletter_edit_preview( \WP_REST_Request $request ) {
+
+	$_GET['newsletter'] = $request->get_param( 'newsletter' );
+    $_GET['preview_nonce'] =   $request->get_param( 'preview_nonce' );
+
+	//$user_ID = wp_validate_auth_cookie( $_COOKIE[LOGGED_IN_COOKIE], 'logged_in' );
+
+    include( ALO_EM_PLUGIN_ABS .'/pages/alo-easymail-admin-preview.php' );
+}
+*/
+
 /* EOF */

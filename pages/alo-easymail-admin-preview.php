@@ -14,6 +14,7 @@ global $user_ID;
 if ( !current_user_can( "edit_newsletters" ) ) 	wp_die( __('Cheatin&#8217; uh?') );
 
 check_admin_referer( "alo-easymail" );
+//wp_verify_nonce( $_GET['preview_nonce'], 'alo-easymail' ); // @todo "Preview-in-rest"
 
 $newsletter_id = ( isset( $_GET['newsletter'] ) && is_numeric( $_GET['newsletter'] ) ) ? (int) $_GET['newsletter'] : false;
 

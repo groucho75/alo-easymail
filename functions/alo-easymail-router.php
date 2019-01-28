@@ -128,12 +128,15 @@ add_action('template_redirect', 'alo_em_check_get_vars');
 
 
 /**
- * Register the REST route to track newsletter opening
+ * Register the REST routes
  */
-function alo_em_register_rest_tracking_pixel() {
+function alo_em_register_rest_routes() {
 
 	if ( get_option('alo_em_use_tracking_pixel') != "no" ) {
 
+		/**
+		 * Track newsletter opening using pixel
+		 */
 		register_rest_route(
 			'alo-easymail' . '/v1',
 			'trkpxl',
@@ -154,49 +157,39 @@ function alo_em_register_rest_tracking_pixel() {
 				]
 			]
 		);
+
+		/**
+		 * Newsletter preview
+		 * @todo "Preview-in-rest"
+		 */
+		/*
+		register_rest_route(
+			'alo-easymail' . '/v1',
+			'newsletter-edit-preview',
+			[
+				'methods'  => \WP_REST_Server::READABLE,
+				'callback' => 'alo_em_rest_load_newsletter_edit_preview',
+				'args'     => [
+					'newsletter'   => [
+						'type'              => 'integer',
+						'required'          => true,
+						'sanitize_callback' => 'absint',
+						'validate_callback' => function( $param, $request, $key ) {
+							return is_numeric( $param );
+						}
+					],
+					'preview_nonce'   => [
+						'type'              => 'string',
+						'required'          => true,
+						'sanitize_callback' => 'sanitize_key',
+					],
+				]
+			]
+		);
+		*/
 	}
 }
-add_action( 'rest_api_init', 'alo_em_register_rest_tracking_pixel' );
+add_action( 'rest_api_init', 'alo_em_register_rest_routes' );
 
-
-/**
- * Load the 1x1 pixel to track newsletter opening
- *
- * @param \WP_REST_Request
- * @return \WP_REST_Response
- */
-function alo_em_rest_load_tracking_pixel( \WP_REST_Request $request ) {
-
-
-	if ( get_option('alo_em_use_tracking_pixel') == "no" ) {
-		echo '';
-		exit;
-	}
-
-	ob_start();
-	error_reporting(0);
-
-	if ( get_option('alo_em_use_tracking_pixel') != "no" && ( $empxltrk = $request->get_param( 'empxltrk' ) ) ) {
-
-		$get_vars = base64_decode( $empxltrk );
-		$get = explode( "|", $get_vars );
-
-		$recipient	= ( isset( $get[0] ) && is_numeric($get[0]) ) ? (int)$get[0] : false;
-		$unikey		= ( isset( $get[1] ) ) ? preg_replace( '/[^a-zA-Z0-9]/i', '', $get[1]) : false;
-
-		if ( $recipient && $unikey ) {
-			$rec_info = alo_em_get_recipient_by_id( $recipient );
-			if ( $rec_info && alo_em_check_subscriber_email_and_unikey ( $rec_info->email, $unikey ) ) {
-				alo_em_tracking_recipient ( $recipient, $rec_info->newsletter, false );
-			}
-		}
-
-	}
-
-	@ob_end_clean();
-	header("Content-Type: image/png");
-	print base64_decode('iVBORw0KGgoAAAANSUhEUgAAAAEAAAABAQMAAAAl21bKAAAABGdBTUEAALGPC/xhBQAAAAZQTFRF////AAAAVcLTfgAAAAF0Uk5TAEDm2GYAAAABYktHRACIBR1IAAAACXBIWXMAAAsSAAALEgHS3X78AAAAB3RJTUUH0gQCEx05cqKA8gAAAApJREFUeJxjYAAAAAIAAUivpHEAAAAASUVORK5CYII=');
-
-}
 
 /* EOF */
