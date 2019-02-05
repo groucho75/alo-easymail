@@ -140,22 +140,22 @@ function alo_em_register_rest_routes() {
 		register_rest_route(
 			'alo-easymail' . '/v1',
 			'trkpxl',
-			[
+			array(
 				'methods'  => \WP_REST_Server::READABLE,
 				'callback' => 'alo_em_rest_load_tracking_pixel',
-				'args'     => [
-					'empxltrk'   => [
+				'args'     => array(
+					'empxltrk'   => array(
 						'type'              => 'string',
 						'required'          => true,
 						'sanitize_callback' => 'sanitize_text_field',
-					],
-					'lang'   => [
+					),
+					'lang'   => array(
 						'type'              => 'string',
 						'required'          => true,
 						'sanitize_callback' => 'sanitize_key',
-					],
-				]
-			]
+					),
+				)
+			)
 		);
 
 		/**
@@ -166,25 +166,25 @@ function alo_em_register_rest_routes() {
 		register_rest_route(
 			'alo-easymail' . '/v1',
 			'newsletter-edit-preview',
-			[
+			array(
 				'methods'  => \WP_REST_Server::READABLE,
 				'callback' => 'alo_em_rest_load_newsletter_edit_preview',
-				'args'     => [
-					'newsletter'   => [
+				'args'     => array(
+					'newsletter'   => array(
 						'type'              => 'integer',
 						'required'          => true,
 						'sanitize_callback' => 'absint',
 						'validate_callback' => function( $param, $request, $key ) {
 							return is_numeric( $param );
 						}
-					],
-					'preview_nonce'   => [
+					),
+					'preview_nonce'   => array(
 						'type'              => 'string',
 						'required'          => true,
 						'sanitize_callback' => 'sanitize_key',
-					],
-				]
-			]
+					),
+				)
+			)
 		);
 		*/
 	}

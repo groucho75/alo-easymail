@@ -1,6 +1,10 @@
 ALO EasyMail Newsletter Changelog
 =================================
 
+= 2.12.1 =
+* Fixed: replace [] declarations with old array() to be compliant with php 5.2
+* Fixed: force width of recipient list modal
+
 = 2.12.0 =
 * Added: a filter ('alo_easymail_subscription_form_is_enabled') to disable the subscription form from page and widget at all, useful if using other tools to collect subscribers
 * Updated: the newsletter report is loaded as a page, not as a modal
