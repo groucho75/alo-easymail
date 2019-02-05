@@ -371,7 +371,7 @@ aloEM (document).ready ( function(){
 			autoOpen      : false, 
 			closeOnEscape : false,
 			width			: (aloEM(window).width()) * 0.8,
-			height			: (aloEM(window).height()) * 0.8,
+			height			: (aloEM(window).height()) * 0.6,
 			title			: easymailJs.titleRecListModal,
 			resizable		: true,
 			buttons       : [{
@@ -386,6 +386,8 @@ aloEM (document).ready ( function(){
 									aloEM(this).easymailUpdateColumStatus( aloEM(this).data('current-id') );
 								},
 			open			:	function( event, ui ) {
+									aloEM(this).css('width', '95%');
+
 									// Modal about a new newsletter recipient list: clear bar and response and show disclaimer
 									if ( aloEM(this).data('previous-id') != aloEM(this).data('current-id') ) {
 										aloEM('#alo-easymail-list-disclaimer').show();
