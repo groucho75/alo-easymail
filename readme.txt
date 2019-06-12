@@ -88,6 +88,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 
 == Changelog ==
 
+= CURRENT DEV =
+* Added: a filter ('alo_easymail_show_re_permission_metabox') to show/hide re permission metabox on edit screen
+
 = 2.12.2 =
 * Tested with WP 5.2
 

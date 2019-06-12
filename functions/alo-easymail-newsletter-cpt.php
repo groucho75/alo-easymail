@@ -422,7 +422,7 @@ function alo_em_newsletter_add_custom_box() {
 		add_meta_box( "alo_easymail_newsletter_themes", __("Themes", "alo-easymail"), "alo_em_meta_themes", "newsletter", "normal", "high" );
 	}
 	add_meta_box( "alo_easymail_newsletter_placeholders", __("Placeholders", "alo-easymail"), "alo_em_meta_placeholders", "newsletter", "normal", "high" );
-	if ( current_user_can('manage_newsletter_subscribers') ) {
+	if ( current_user_can('manage_newsletter_subscribers') && apply_filters( 'alo_easymail_show_re_permission_metabox', true ) ) {
 		add_meta_box( "alo_easymail_newsletter_re_permission", __("Re-permission campaign", "alo-easymail"), "alo_em_meta_re_permission", "newsletter", "normal", "default" );
 	}
 }
