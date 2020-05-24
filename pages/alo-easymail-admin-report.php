@@ -65,6 +65,13 @@ if ( $newsletter ) {
                         <th scope="row"><?php _e("Scheduled by", "alo-easymail") ?></th>
                         <td><?php echo get_user_meta( $newsletter_post->post_author, 'nickname', true ) ?></td>
                     </tr>
+					<tr>
+						<th scope="row" style="vertical-align: top"><ul style="list-style: none;"><li><?php _e("Recipients", "alo-easymail") ?></li></ul></th>
+						<td><?php
+							$recipients = alo_em_get_recipients_from_meta( $newsletter );
+							echo alo_em_recipients_short_summary ( $recipients, false );
+						?></td>
+					</tr>
                     <tr>
                         <th scope="row"><?php _e("Start", "alo-easymail") ?></th>
                         <td><?php echo date_i18n( __( 'j M Y @ G:i', "alo-easymail" ), strtotime( $newsletter_post->post_date ) ) ?></td>

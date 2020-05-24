@@ -99,15 +99,18 @@ function alo_em_count_recipients_from_meta ( $newsletter, $not_cached=false ) {
 /**
  * A short summary of Recipients
  * @param	arr
+ * @param   boolean
  */
-function alo_em_recipients_short_summary ( $recipients ) {
+function alo_em_recipients_short_summary ( $recipients, $use_tooltip=true ) {
 	$output = "<ul>";
 	if ( isset( $recipients['registered'] ) ) {
 		$output .= "<li>" . __( 'All registered users', "alo-easymail") . "</li>";
 	} else {
 		if ( isset( $recipients['role'] ) ) {
 			$role_str = implode( ", ", $recipients['role'] );
-			$output .= "<li title=\"". esc_attr( $role_str )."\">" . count( $recipients['role'] ) ." ". __( 'User Roles' ) . alo_em_help_tooltip( $role_str ) . "</li>";
+			$output .= "<li title=\"". esc_attr( $role_str )."\">" . count( $recipients['role'] ) ." ". __( 'User Roles' ) ;
+			$output .= $use_tooltip ? alo_em_help_tooltip( $role_str ) : ': '. esc_html( $role_str );
+			$output .= "</li>";
 		}
 	}
 
@@ -122,14 +125,18 @@ function alo_em_recipients_short_summary ( $recipients ) {
 					if ( in_array ( $list, $recipients['list'] ) ) $list_str .= alo_em_translate_multilangs_array ( alo_em_get_language(), $val['name'], true ) .", ";
 				}
 				$list_str = trim ( $list_str, ", " );
-				$output .= "<li title=\"". esc_attr( $list_str ) ."\" >" . count( $recipients['list'] ) ." ". __( 'Mailing Lists', "alo-easymail") . alo_em_help_tooltip( $list_str ) . "</li>";
+				$output .= "<li title=\"". esc_attr( $list_str ) ."\" >" . count( $recipients['list'] ) ." ". __( 'Mailing Lists', "alo-easymail");
+				$output .= $use_tooltip ? alo_em_help_tooltip( $list_str ) : ': '. esc_html( $list_str );
+				$output .= "</li>";
 			}
 		}
 	}
 	if ( isset( $recipients['subscribers'] ) || isset( $recipients['list'] ) ) {
 		if ( isset( $recipients['lang'] ) ) {
 			$langs_str = str_replace( "UNKNOWN", __("Not specified / others", "alo-easymail"), implode( ", ", $recipients['lang'] ) );
-			$output .= "<li title=\"". esc_attr( $langs_str )."\">" . count( $recipients['lang'] ) ." ". __( 'Languages', "alo-easymail") . alo_em_help_tooltip( $langs_str ) . "</li>";
+			$output .= "<li title=\"". esc_attr( $langs_str )."\">" . count( $recipients['lang'] ) ." ". __( 'Languages', "alo-easymail");
+			$output .=  $use_tooltip ? alo_em_help_tooltip( $langs_str ) : ': '. esc_html( $langs_str );
+			$output .= "</li>";
 		}
 	}
 	$output .= "</ul>";

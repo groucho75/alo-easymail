@@ -5,7 +5,7 @@ Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sendi
 Requires at least: 4.4
 Requires PHP: 5.2
 Tested up to: 5.2
-Stable tag: 2.12.2
+Stable tag: 2.12.3
 License: GPLv2 or later
 
 To send newsletters. Features: collect subscribers on registration or with an ajax widget, mailing lists, cron batch sending, multilanguage, bounces.
@@ -33,7 +33,7 @@ ALO EasyMail Newsletter is a plugin for WordPress that allows to write and send 
 * **view sending report**: how many subscribers have opened the newsletter and clicked on links inside it
 * **bounce management**: you can check the bounced emails and keep your email list clean
 * **multilanguage**: set all texts and options, you can write multilanguage newsletters - full integration with [WPML](http://wpml.org/), [qTranslate-X](http://wordpress.org/plugins/qtranslate-x/), [Polylang](http://wordpress.org/plugins/polylang/)
-* **privacy**: privacy policy checkbox in subscription form, subscriber data in exporter/eraser tools, re-permission campaigns
+* **privacy**: privacy policy checkbox in subscription form, subscriber data in exporter/eraser tools, re-permission campaigns, by default unsubscribed emails are stored encrypted
 * **debug tool**: rather than the recipients, you can send all emails of a newsletter to the author or you can have them recorded into a log file
 
 **Internationalization**
@@ -87,6 +87,10 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 5. The newsletter report
 
 == Changelog ==
+
+= 2.12.3
+* Added: labels for radio buttons in form for registered users
+* Added: recipients info in newsletter report
 
 = 2.12.2 =
 * Tested with WP 5.2
