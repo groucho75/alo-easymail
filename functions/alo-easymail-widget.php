@@ -70,11 +70,11 @@ function alo_em_show_widget_form ( ) {
         $html .= $preform_html;
         $html .= "<table class='alo_easymail_form_table'>\n";
         $html .= "  <tr>\n";
-        $html .= "    <td><input onchange='alo_em_user_form(\"yes\");return false;' type='radio' $optin_checked name='alo_easymail_option' value='yes' class='input-radio' /></td>\n";
-        $html .= "    <td>$optin_msg</td>\n";
+        $html .= "    <td><input onchange='alo_em_user_form(\"yes\");return false;' type='radio' $optin_checked name='alo_easymail_option' value='yes' class='input-radio' id='alo_easymail_option__yes' /></td>\n";
+        $html .= "    <td><label for='alo_easymail_option__yes'>$optin_msg</label></td>\n";
         $html .= "  </tr><tr>\n";
-        $html .= "    <td><input onchange='alo_em_user_form(\"no\");return false;' type='radio' $optout_checked name='alo_easymail_option' value='no' class='input-radio' /></td>\n";
-        $html .= "    <td>$optout_msg</td>\n";
+        $html .= "    <td><input onchange='alo_em_user_form(\"no\");return false;' type='radio' $optout_checked name='alo_easymail_option' value='no' class='input-radio' id='alo_easymail_option__no' /></td>\n";
+        $html .= "    <td><label for='alo_easymail_option__no'>$optout_msg</label></td>\n";
         $html .= "  </tr>\n";
 		
 		//edit : added all the next if
