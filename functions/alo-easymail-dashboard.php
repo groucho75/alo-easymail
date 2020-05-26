@@ -401,7 +401,7 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 
 	if ( get_option('show_avatars') )
 	{
-		$html .= "<td>" . get_avatar($subscriber->email, 30). "&nbsp;</td>";
+		$html .= "<td class=\"subscriber-avatar\">" . get_avatar($subscriber->email, 30). "&nbsp;</td>";
 	}
 
 	$html .= "<td class=\"subscriber-email row-important-column\">";
@@ -455,7 +455,7 @@ function alo_em_get_subscriber_table_row ( $subscriber_id, $row_index=0, $edit=f
 		}
 	}
 
-	$html .= "<td>";
+	$html .= "<td class=\"subscriber-username\">";
 
 	$user_id = email_exists($subscriber->email);
 	if ( !$user_id ) {
