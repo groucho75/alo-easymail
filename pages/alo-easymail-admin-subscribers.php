@@ -1014,7 +1014,7 @@ $total_items = $wpdb->get_var("SELECT COUNT(*) FROM {$wpdb->prefix}easymail_subs
 		<th scope="col" class="row-important-column"> </th>
 		<th scope="col" class="row-important-column"><input type="checkbox" name="checkall_subscribers" value="" onclick="toggleCheckboxes(this, 'posts-filter', 'subscribers');" style="margin:1px" /></th>
 		<?php if ( get_option('show_avatars') ) : ?> <th scope="col" class="subscriber-avatar"><div style="text-align: center;"><!-- Avatar --></div></th><?php endif; ?>
-		<th scope="col" class="row-important-column" class="subscriber-email"><?php echo "<a href='".$link_string."&amp;sortby=email".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".__("Order by e-mail", "alo-easymail")."'>".__("E-mail", "alo-easymail")."</a>"; ?>	</th>
+		<th scope="col" class="row-important-column subscriber-email"><?php echo "<a href='".$link_string."&amp;sortby=email".( ( isset($_GET['order']) && $_GET['order'] == 'DESC' )? "&amp;order=ASC": "&amp;order=DESC")."' title='".__("Order by e-mail", "alo-easymail")."'>".__("E-mail", "alo-easymail")."</a>"; ?>	</th>
 		<th scope="col" class="subscriber-name"><?php _e("Name", "alo-easymail") ?></th>
 
         <?php
