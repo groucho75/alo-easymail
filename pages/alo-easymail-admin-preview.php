@@ -7,7 +7,12 @@
  */
 
 //require_once( ABSPATH . 'wp-load.php' ); // @todo "Preview-in-rest"
-include('../../../../wp-load.php');
+
+if ( file_exists( '../../../../wp/wp-load.php' ) ) { // Bedrock env
+  include('../../../../wp/wp-load.php');
+} else { // Standard env
+  include('../../../../wp-load.php');
+}
 
 global $wpdb;
 global $user_ID;
@@ -74,16 +79,16 @@ if ( $theme != '' ) {
 		$html = alo_em_translate_text ( $recipient->lang, $html ); // translate the text ih html theme
 		$html = str_replace('[CONTENT]', $content, $html);
 		*/
-		
+
 		$info = pathinfo( $theme );
 		$theme_dir =  basename( $theme, '.' . $info['extension'] );
 
 		$html = preg_replace( '/ src\=[\'|"]'. $theme_dir.'(.+?)[\'|"]/', ' src="'. alo_easymail_get_themes_url().$theme_dir. '$1"', $html ); // <img src="..." >
 		$html = preg_replace( '/url(.+?)[\s|\'|"]'. $theme_dir.'(.+?)[\s|\'|"]/', "url('". alo_easymail_get_themes_url() .$theme_dir. "$2'", $html ); // in style: url("...")
 		$html = preg_replace( '/ background\=[\'|"]'. $theme_dir.'(.+?)[\'|"]/', ' background="'. alo_easymail_get_themes_url().$theme_dir. '$1"', $html ); // <table background="..." >
-		
+
 	}
-	
+
 } else {
 	$html = '<!DOCTYPE html>
 <html>
@@ -131,8 +136,10 @@ $html = str_replace("[CONTENT]", $content, $html);
 $unsubfooter = alo_em_translate_option ( $recipient->lang, 'alo_em_custom_unsub_footer', true );
 if ( empty( $unsubfooter ) ) $unsubfooter = __('You have received this message because you subscribed to our newsletter. If you want to unsubscribe: ', 'alo-easymail').' %UNSUBSCRIBELINK%';
 
-$unsubfooter = str_replace ( '%UNSUBSCRIBELINK%', ' <a href="">'. '{user-unsubscribe-url}' .'</a>', $unsubfooter );
-$unsubfooter = str_replace ( '%UNSUBSCRIBEURL%', '{user-unsubscribe-url}', $unsubfooter );
+$uns_url = add_query_arg( 'emunsub', '{user-unsubscribe-url}', alo_em_translate_home_url ( $recipient->lang ) );
+
+$unsubfooter = str_replace ( '%UNSUBSCRIBELINK%', ' <a href="#">'. $uns_url .'</a>', $unsubfooter );
+$unsubfooter = str_replace ( '%UNSUBSCRIBEURL%', $uns_url, $unsubfooter );
 
 $html = str_replace('[USER-UNSUBSCRIBE]', $unsubfooter, $html);
 $html = str_replace('[USER-UNSUBSCRIBE-URL]', '{user-unsubscribe-url}', $html);
@@ -144,7 +151,7 @@ if( empty( $viewonline_msg ) ) $viewonline_msg = __('To read the newsletter onli
 
 $viewonline_msg = str_replace( '%NEWSLETTERLINK%', ' <a href="">'. $subject .'</a>', $viewonline_msg );
 $viewonline_msg = str_replace( '%NEWSLETTERURL%', '{read-online-url}', $viewonline_msg );
-	
+
 $html = str_replace('[READ-ONLINE]', $viewonline_msg, $html);
 $html = str_replace('[READ-ONLINE-URL]', '{read-online-url}', $html);
 
