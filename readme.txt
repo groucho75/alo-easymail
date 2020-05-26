@@ -91,6 +91,9 @@ Plugin links: [homepage](https://www.eventualo.net/blog/wp-alo-easymail-newslett
 = 2.12.3
 * Added: labels for radio buttons in form for registered users
 * Added: recipients info in newsletter report
+* Added: css classes in subscriber table
+* Added: best sample of unsubscribe link in theme preview
+* Added: a filter 'alo_easymail_enable_re_permission' to disable re-permission campaigns
 
 = 2.12.2 =
 * Tested with WP 5.2
