@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: send, mail, newsletter, subscription, mailing list, subscribe, batch sending, bounce, mail throttling, signup, multilanguage
 Requires at least: 4.4
 Requires PHP: 5.2
-Tested up to: 5.2
+Tested up to: 5.4
 Stable tag: 2.12.3
 License: GPLv2 or later
 
